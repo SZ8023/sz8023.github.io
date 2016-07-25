@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sz8023.github.io/"/>
-  <updated>2016-07-21T07:51:20.000Z</updated>
+  <updated>2016-07-25T07:43:40.000Z</updated>
   <id>http://sz8023.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://sz8023.github.io/2016/07/21/hello-world/"/>
-    <id>http://sz8023.github.io/2016/07/21/hello-world/</id>
-    <published>2016-07-21T07:51:20.000Z</published>
-    <updated>2016-07-21T07:51:20.000Z</updated>
+    <title>Hello,Hexo</title>
+    <link href="http://sz8023.github.io/2016/07/25/hello-world/"/>
+    <id>http://sz8023.github.io/2016/07/25/hello-world/</id>
+    <published>2016-07-25T06:16:30.000Z</published>
+    <updated>2016-07-25T07:43:40.000Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
@@ -38,6 +38,35 @@
       &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
     
     </summary>
+    
+      <category term="Hexo教程" scheme="http://sz8023.github.io/categories/Hexo%E6%95%99%E7%A8%8B/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo教程</title>
+    <link href="http://sz8023.github.io/2016/07/22/Hexo%E6%95%99%E7%A8%8B/"/>
+    <id>http://sz8023.github.io/2016/07/22/Hexo教程/</id>
+    <published>2016-07-22T09:22:26.000Z</published>
+    <updated>2016-07-25T07:44:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="我的选择"><a href="#我的选择" class="headerlink" title="我的选择"></a>我的选择</h3><blockquote>
+<p>那天无聊查看了关于你的所有说说，只为了找一个共同的话题，我想我还不够努力，我想我没有真正的付出过。对于我来说只有坚定的付出，或许才能得到一段刻骨铭心的爱情！</p>
+</blockquote>
+<p><strong>时间</strong>从来没有辜负我们什么，只是给了我们更多的时间去思考。跟你接触了那么久，我我只在找你喜欢的东西，想找一个共同的话题。</p>
+<p><strong>今天</strong>在下班的路上听见一个女生说“如果一个男生喜欢一个女生，就要快刀斩乱麻。因为女生不喜欢磨磨唧唧的男生。”我想这句话在某些情况下是有道理的。我想试试</p>
+<p><strong>我</strong>不知道今天该不该行动，我想从她的口中得到一些什么，她肯定很讨厌我。可是我依然不想放弃</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;我的选择&quot;&gt;&lt;a href=&quot;#我的选择&quot; class=&quot;headerlink&quot; title=&quot;我的选择&quot;&gt;&lt;/a&gt;我的选择&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;那天无聊查看了关于你的所有说说，只为了找一个共同的话题，我想我还不够努力，我想我没有真正的付出过。
+    
+    </summary>
+    
+      <category term="ForYou" scheme="http://sz8023.github.io/categories/ForYou/"/>
     
     
   </entry>

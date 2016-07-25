@@ -2,9 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://sz8023.github.io/2016/07/21/hello-world/</loc>
+    <loc>http://sz8023.github.io/about/index.html</loc>
     
-    <lastmod>2016-07-21T07:51:20.000Z</lastmod>
+    <lastmod>2016-07-25T07:49:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://sz8023.github.io/2016/07/22/Hexo%E6%95%99%E7%A8%8B/</loc>
+    
+    <lastmod>2016-07-25T07:44:57.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://sz8023.github.io/2016/07/25/hello-world/</loc>
+    
+    <lastmod>2016-07-25T07:43:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://sz8023.github.io/categories/index.html</loc>
+    
+    <lastmod>2016-07-25T07:41:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://sz8023.github.io/404.html</loc>
+    
+    <lastmod>2016-07-25T03:02:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://sz8023.github.io/archives/index.html</loc>
+    
+    <lastmod>2016-07-23T06:18:12.000Z</lastmod>
     
   </url>
   

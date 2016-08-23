@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sz8023.github.io/"/>
-  <updated>2016-07-26T06:41:24.000Z</updated>
+  <updated>2016-08-02T11:06:39.000Z</updated>
   <id>http://sz8023.github.io/</id>
   
   <author>
@@ -16,23 +16,147 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Node.jsWeb模块</title>
+    <title>Your</title>
+    <link href="http://sz8023.github.io/2016/08/02/Your/"/>
+    <id>http://sz8023.github.io/2016/08/02/Your/</id>
+    <published>2016-08-02T11:06:39.000Z</published>
+    <updated>2016-08-02T11:06:39.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>HTML5教程</title>
+    <link href="http://sz8023.github.io/2016/08/02/HTML5%E6%95%99%E7%A8%8B/"/>
+    <id>http://sz8023.github.io/2016/08/02/HTML5教程/</id>
+    <published>2016-08-02T05:42:39.000Z</published>
+    <updated>2016-08-02T10:59:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="HTML5教程"><a href="#HTML5教程" class="headerlink" title="HTML5教程"></a>HTML5教程</h3><p>你可以使用HTML来创建自己的WEB站点。<br>HTML5是HTML最新的修订版，HTML5的设计目的是为了在<strong>移动设备上支持多媒体。</strong></p>
+<p>HTML5是W3C与WHATWG合作的结果。<br>WHATWG致力于web表单和应用程序，而W3C专注于XHTML2.0。</p>
+<p>HTML5中的一些有趣的新特性：</p>
+<ul>
+<li>用于会话的canvas元素</li>
+<li>用于媒介回放的video和audio元素</li>
+<li>对本地离线存储的跟好的支持</li>
+<li>新的特殊内容元素，比如article、footer、header、nav、section</li>
+<li>新的表单控件，比如calendar、date、time、email、url、search</li>
+</ul>
+<a id="more"></a>
+<h3 id="HTML5-lt-DOCTYPE-gt"><a href="#HTML5-lt-DOCTYPE-gt" class="headerlink" title="HTML5&lt;!DOCTYPE&gt;"></a>HTML5&lt;!DOCTYPE&gt;</h3><p>&lt;!DOCTYPE&gt;声明必须位于HTML5文档中的第一行，使用非常简单。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE HTML&gt;</div></pre></td></tr></table></figure>
+<h3 id="HTML5浏览器支持"><a href="#HTML5浏览器支持" class="headerlink" title="HTML5浏览器支持"></a>HTML5浏览器支持</h3><p>最新版的Safari、Chrome、Firefox以及Opera支持某些HTML5特性。Internet Explorer 9将支持某些HTML5特性。</p>
+<p><img src="../images/browsers_say.png" alt="支持哪些浏览器"></p>
+<p>不论旧的和最新的浏览器，对无法识别的元素会作为内联元素自动处理。正因为如此，你可以“教会”浏览器处理“未知”的HTML元素。</p>
+<h3 id="HTML5新元素"><a href="#HTML5新元素" class="headerlink" title="HTML5新元素"></a>HTML5新元素</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;HTML5教程&quot;&gt;&lt;a href=&quot;#HTML5教程&quot; class=&quot;headerlink&quot; title=&quot;HTML5教程&quot;&gt;&lt;/a&gt;HTML5教程&lt;/h3&gt;&lt;p&gt;你可以使用HTML来创建自己的WEB站点。&lt;br&gt;HTML5是HTML最新的修订版，HTML5的设计目的是为了在&lt;strong&gt;移动设备上支持多媒体。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;HTML5是W3C与WHATWG合作的结果。&lt;br&gt;WHATWG致力于web表单和应用程序，而W3C专注于XHTML2.0。&lt;/p&gt;
+&lt;p&gt;HTML5中的一些有趣的新特性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;用于会话的canvas元素&lt;/li&gt;
+&lt;li&gt;用于媒介回放的video和audio元素&lt;/li&gt;
+&lt;li&gt;对本地离线存储的跟好的支持&lt;/li&gt;
+&lt;li&gt;新的特殊内容元素，比如article、footer、header、nav、section&lt;/li&gt;
+&lt;li&gt;新的表单控件，比如calendar、date、time、email、url、search&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="HTML5教程" scheme="http://sz8023.github.io/categories/HTML5%E6%95%99%E7%A8%8B/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Ruby教程</title>
+    <link href="http://sz8023.github.io/2016/08/01/Ruby%E6%95%99%E7%A8%8B/"/>
+    <id>http://sz8023.github.io/2016/08/01/Ruby教程/</id>
+    <published>2016-08-01T01:46:31.000Z</published>
+    <updated>2016-08-01T02:30:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Ruby教程"><a href="#Ruby教程" class="headerlink" title="Ruby教程"></a>Ruby教程</h3><p>Ruby是一种开源的面向对象程序设计的服务器端脚本语言。Ruby可运行于多种平台，如Windowss、MAC OS和UNIX的各种版本。</p>
+<h3 id="编译-执行Ruby程序"><a href="#编译-执行Ruby程序" class="headerlink" title="编译/执行Ruby程序"></a>编译/执行Ruby程序</h3><p>Ruby与Smalltalk一样，是一个完美的面向对象语言，使用Ruby的语法比使用Smalltalk的语法要容易多。</p>
+<h3 id="Ruby的特性"><a href="#Ruby的特性" class="headerlink" title="Ruby的特性"></a>Ruby的特性</h3><ul>
+<li>Ruby是开源的，在Web上是免费提供的，但需要一个许可证。</li>
+<li>Ruby是一种通用 、解释的编程语言。</li>
+<li>Ruby是一种真正的面向对象编程语言。</li>
+<li>Ruby是一种类似于Python和Perl的服务器端脚本语言</li>
+<li>Ruby可以用来编写通用网关接口</li>
+<li>Ruby可以被嵌套</li>
+<li>……</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Ruby教程&quot;&gt;&lt;a href=&quot;#Ruby教程&quot; class=&quot;headerlink&quot; title=&quot;Ruby教程&quot;&gt;&lt;/a&gt;Ruby教程&lt;/h3&gt;&lt;p&gt;Ruby是一种开源的面向对象程序设计的服务器端脚本语言。Ruby可运行于多种平台，如Windowss、MAC
+    
+    </summary>
+    
+      <category term="Ruby教程" scheme="http://sz8023.github.io/categories/Ruby%E6%95%99%E7%A8%8B/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>青春ForYou</title>
+    <link href="http://sz8023.github.io/2016/07/30/%E9%9D%92%E6%98%A5/"/>
+    <id>http://sz8023.github.io/2016/07/30/青春/</id>
+    <published>2016-07-30T07:53:40.000Z</published>
+    <updated>2016-08-02T10:58:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="../images/oneForYou.jpg" alt="ForYou"></p>
+<h3 id="胆小的我"><a href="#胆小的我" class="headerlink" title="胆小的我"></a>胆小的我</h3><p>曾经为了追小美我咨询了身边的很多朋友，甚至是陌生的女网友，他们都给我支了招，可是都没有什么大的成效。我知道问题在我，我给自己找了很多理由，原因可能是因为我的胆小。</p>
+<h3 id="成长的我"><a href="#成长的我" class="headerlink" title="成长的我"></a>成长的我</h3><p>总结了一下各位老师和前辈说过的一些话。我觉得还是挺适合我的。如果你真的喜欢一个女孩子，那么你就勇敢的去追吧。</p>
+<ul>
+<li>要学会<code>厚脸皮</code>，这个是第一要义，适应于任何场合</li>
+<li>如果你是<code>认真</code>追一个女孩子的话，那么两个星期的时间就足够了</li>
+<li>女孩子你最多约<code>三次</code>，如果还是约不出来的话，那就放弃吧。她可能真的不喜欢你，没必要对别人死缠烂打</li>
+<li>你一定要学会了解一个女孩子的<code>心思</code>，你只有对她了解，才知道如何去关心她</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;../images/oneForYou.jpg&quot; alt=&quot;ForYou&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;胆小的我&quot;&gt;&lt;a href=&quot;#胆小的我&quot; class=&quot;headerlink&quot; title=&quot;胆小的我&quot;&gt;&lt;/a&gt;胆小的我&lt;/h3&gt;&lt;p&gt;曾经为了追小
+    
+    </summary>
+    
+      <category term="美丽" scheme="http://sz8023.github.io/categories/%E7%BE%8E%E4%B8%BD/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Node创建Web服务器</title>
     <link href="http://sz8023.github.io/2016/07/26/Node-jsWeb%E6%A8%A1%E5%9D%97/"/>
     <id>http://sz8023.github.io/2016/07/26/Node-jsWeb模块/</id>
     <published>2016-07-26T05:37:50.000Z</published>
-    <updated>2016-07-26T06:41:24.000Z</updated>
+    <updated>2016-08-02T10:41:00.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="什么是Web服务器"><a href="#什么是Web服务器" class="headerlink" title="什么是Web服务器"></a>什么是Web服务器</h1><p><code>Web服务器</code>一般指的是网站服务器，是指驻留在因特网上某种类型的计算机的程序，<code>Web服务器</code>的基本功能就是提供Web信息浏览功能服务。</p>
-<p><strong>Web架构</strong></p>
-<p><img src="images/web_architecture.jpg" width="400px"></p>
-<h3 id="使用Node创建Web服务"><a href="#使用Node创建Web服务" class="headerlink" title="使用Node创建Web服务"></a>使用Node创建Web服务</h3><p>Node.js提供了http模块，http模块主要用于搭建HTTP服务器和客户端，使用HTTP服务器或客户端功能必须调用HTTP模块。代码如下</p>
+<p><strong>Web架构</strong><br><!--![web_architecture](../images/web_architecture.jpg)--></p>
+<p><img src="../images/web_architecture.jpg"></p>
+<h3 id="使用Node创建Web服务"><a href="#使用Node创建Web服务" class="headerlink" title="使用Node创建Web服务"></a>使用Node创建Web服务</h3><a id="more"></a>
+<p>Node.js提供了http模块，http模块主要用于搭建HTTP服务器和客户端，使用HTTP服务器或客户端功能必须调用HTTP模块。代码如下</p>
 <pre><code>var http = require(&apos;http&apos;);
 </code></pre><h3 id="使用Node创建Web客户端"><a href="#使用Node创建Web客户端" class="headerlink" title="使用Node创建Web客户端"></a>使用Node创建Web客户端</h3><p>Node.js创建Web客户端需要引入http模块，创建client.js文件，代码如下所示：</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;什么是Web服务器&quot;&gt;&lt;a href=&quot;#什么是Web服务器&quot; class=&quot;headerlink&quot; title=&quot;什么是Web服务器&quot;&gt;&lt;/a&gt;什么是Web服务器&lt;/h1&gt;&lt;p&gt;&lt;code&gt;Web服务器&lt;/code&gt;一般指的是网站服务器，是指驻留在因特网上某种类
+      &lt;h1 id=&quot;什么是Web服务器&quot;&gt;&lt;a href=&quot;#什么是Web服务器&quot; class=&quot;headerlink&quot; title=&quot;什么是Web服务器&quot;&gt;&lt;/a&gt;什么是Web服务器&lt;/h1&gt;&lt;p&gt;&lt;code&gt;Web服务器&lt;/code&gt;一般指的是网站服务器，是指驻留在因特网上某种类型的计算机的程序，&lt;code&gt;Web服务器&lt;/code&gt;的基本功能就是提供Web信息浏览功能服务。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Web架构&lt;/strong&gt;&lt;br&gt;&lt;!--![web_architecture](../images/web_architecture.jpg)--&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../images/web_architecture.jpg&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;使用Node创建Web服务&quot;&gt;&lt;a href=&quot;#使用Node创建Web服务&quot; class=&quot;headerlink&quot; title=&quot;使用Node创建Web服务&quot;&gt;&lt;/a&gt;使用Node创建Web服务&lt;/h3&gt;
     
     </summary>
     

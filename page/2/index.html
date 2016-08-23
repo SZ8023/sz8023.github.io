@@ -84,46 +84,12 @@
 
 
 
-<meta name="description" content="Node.js PEPL(交互式解释器)我们可以在终端输入命令，并接收系统的响应Node自带了交互式解释器，可以执行如下任务
-
-读取 - 读取用户输入，解析输入了JavaScript数据结构并存储在内存中
-执行 - 执行输入的用户结构
-打印 - 输出结果
-循环 - 循环操作以上步骤知道用户两次按下ctrl+c 按钮退出
-
-我们可以输入以下命令来启动Node终端
-$ node
-&amp;gt;
-Node.j">
-<meta property="og:type" content="article">
-<meta property="og:title" content="NPM使用介绍">
-<meta property="og:url" content="http://sz8023.github.io/2016/07/26/NPM使用介绍/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ForYou">
+<meta property="og:url" content="http://sz8023.github.io/page/2/index.html">
 <meta property="og:site_name" content="ForYou">
-<meta property="og:description" content="Node.js PEPL(交互式解释器)我们可以在终端输入命令，并接收系统的响应Node自带了交互式解释器，可以执行如下任务
-
-读取 - 读取用户输入，解析输入了JavaScript数据结构并存储在内存中
-执行 - 执行输入的用户结构
-打印 - 输出结果
-循环 - 循环操作以上步骤知道用户两次按下ctrl+c 按钮退出
-
-我们可以输入以下命令来启动Node终端
-$ node
-&amp;gt;
-Node.j">
-<meta property="og:updated_time" content="2016-07-26T05:38:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NPM使用介绍">
-<meta name="twitter:description" content="Node.js PEPL(交互式解释器)我们可以在终端输入命令，并接收系统的响应Node自带了交互式解释器，可以执行如下任务
-
-读取 - 读取用户输入，解析输入了JavaScript数据结构并存储在内存中
-执行 - 执行输入的用户结构
-打印 - 输出结果
-循环 - 循环操作以上步骤知道用户两次按下ctrl+c 按钮退出
-
-我们可以输入以下命令来启动Node终端
-$ node
-&amp;gt;
-Node.j">
+<meta name="twitter:title" content="ForYou">
 
 
 
@@ -144,9 +110,9 @@ Node.j">
 
 
 
-  <link rel="canonical" href="http://sz8023.github.io/2016/07/26/NPM使用介绍/"/>
+  <link rel="canonical" href="http://sz8023.github.io/page/2/"/>
 
-  <title> NPM使用介绍 | ForYou </title>
+  <title> ForYou </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -167,7 +133,9 @@ Node.j">
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -254,9 +222,9 @@ Node.j">
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
   
@@ -276,7 +244,135 @@ Node.j">
             
             
               
-                NPM使用介绍
+                
+                <a class="post-title-link" href="/2016/07/26/Node-jsWeb模块/" itemprop="url">
+                  Node创建Web服务器
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-26T13:37:50+08:00" content="2016-07-26">
+              2016-07-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Node-js笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">Node.js笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/26/Node-jsWeb模块/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/26/Node-jsWeb模块/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="什么是Web服务器"><a href="#什么是Web服务器" class="headerlink" title="什么是Web服务器"></a>什么是Web服务器</h1><p><code>Web服务器</code>一般指的是网站服务器，是指驻留在因特网上某种类型的计算机的程序，<code>Web服务器</code>的基本功能就是提供Web信息浏览功能服务。</p>
+<p><strong>Web架构</strong><br><!--![web_architecture](../images/web_architecture.jpg)--></p>
+<p><img src="../images/web_architecture.jpg"></p>
+<h3 id="使用Node创建Web服务"><a href="#使用Node创建Web服务" class="headerlink" title="使用Node创建Web服务"></a>使用Node创建Web服务</h3>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/26/Node-jsWeb模块/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/26/NPM使用介绍/" itemprop="url">
+                  NPM使用介绍
+                </a>
               
             
           </h1>
@@ -342,7 +438,9 @@ Node.j">
       
 
       
-        <h1 id="Node-js-PEPL-交互式解释器"><a href="#Node-js-PEPL-交互式解释器" class="headerlink" title="Node.js PEPL(交互式解释器)"></a>Node.js PEPL(交互式解释器)</h1><p>我们可以在终端输入命令，并接收系统的响应<br>Node自带了交互式解释器，可以执行如下任务</p>
+        
+          
+            <h1 id="Node-js-PEPL-交互式解释器"><a href="#Node-js-PEPL-交互式解释器" class="headerlink" title="Node.js PEPL(交互式解释器)"></a>Node.js PEPL(交互式解释器)</h1><p>我们可以在终端输入命令，并接收系统的响应<br>Node自带了交互式解释器，可以执行如下任务</p>
 <ul>
 <li>读取 - 读取用户输入，解析输入了JavaScript数据结构并存储在内存中</li>
 <li>执行 - 执行输入的用户结构</li>
@@ -379,20 +477,16 @@ console.log(&quot;程序执行结束&quot;);
 </ul>
 <h3 id="随便"><a href="#随便" class="headerlink" title="随便"></a>随便</h3><pre><code>小到一个变量，数组，大到一个数据库或者网络通信，都离不开数据的增删改查。变量有，数据库也有。网络通信也有。GET,PUT,DELETE,POST
 </code></pre>
+          
+        
       
     </div>
 
     <div>
       
-        
-
-      
     </div>
 
     <div>
-      
-        
-
       
     </div>
 
@@ -400,73 +494,290 @@ console.log(&quot;程序执行结束&quot;);
       
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/07/25/node-js安装和配置/" rel="next" title="node.js安装和配置">
-                <i class="fa fa-chevron-left"></i> node.js安装和配置
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/26/Node-jsWeb模块/" rel="prev" title="Node创建Web服务器">
-                Node创建Web服务器 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
       
+      
+        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-
-    <div class="post-spread">
+    
       
-        <div class="ds-share flat" data-thread-key="2016/07/26/NPM使用介绍/"
-     data-title="NPM使用介绍"
-     data-content=""
-     data-url="http://sz8023.github.io/2016/07/26/NPM使用介绍/">
-  <div class="ds-share-inline">
-    <ul  class="ds-share-icons-16">
 
-      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+  
+  
 
-    </ul>
-    <div class="ds-share-icons-more">
-    </div>
-  </div>
-</div>
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/25/node-js安装和配置/" itemprop="url">
+                  node.js安装和配置
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-25T18:16:02+08:00" content="2016-07-25">
+              2016-07-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/node-js笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">node.js笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/25/node-js安装和配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/25/node-js安装和配置/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Node-js应用有哪几部分组成"><a href="#Node-js应用有哪几部分组成" class="headerlink" title="Node.js应用有哪几部分组成"></a>Node.js应用有哪几部分组成</h1><ul>
+<li>引入require模块：</li>
+<li>创建服务器：服务器可以监听客户端的请求</li>
+<li>接收请求与相应请求</li>
+</ul>
+<h2 id="创建node-js应用"><a href="#创建node-js应用" class="headerlink" title="创建node.js应用"></a>创建node.js应用</h2><ol>
+<li>我们使用require</li>
+</ol>
+<h3 id="NPM使用介绍"><a href="#NPM使用介绍" class="headerlink" title="NPM使用介绍"></a>NPM使用介绍</h3><p>NPM(Node Package Manager)是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题，常见的使用场景如下</p>
+<ul>
+<li>允许用户从NPM服务器下载别人编写的第三方包到本地使用</li>
+<li>允许用户从NPM服务器下载并安装别人编写好的命令行程序到本地使用</li>
+<li>允许用户将自己编写好的包或命令行程序上传到NPM服务器供别人使用</li>
+</ul>
+
+          
+        
       
     </div>
-  </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/25/Node-js笔记/" itemprop="url">
+                  Node.js笔记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-25T17:26:39+08:00" content="2016-07-25">
+              2016-07-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Node-js笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">Node.js笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/25/Node-js笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/25/Node-js笔记/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h1><ul>
+<li>简单的说Node.js是运行在服务器端的JavaScript</li>
+<li>Node.js是一个事件驱动I/O服务器端JavaScript环境，基于Google的V8引擎，V8引擎执行JavaScript的速度非常快，性能非常快</li>
+</ul>
+<h2 id="使用版本"><a href="#使用版本" class="headerlink" title="使用版本"></a>使用版本</h2><p>我们可以使用一下命令来查看当前的Node版本</p>
+<pre><code>node -v 
+</code></pre><p>Note:不同版本可能有差异的</p>
+<h3 id="脚本模式"><a href="#脚本模式" class="headerlink" title="脚本模式"></a>脚本模式</h3><pre><code>console.log(&quot;Hello, World&quot;);
+</code></pre><h3 id="交互模式"><a href="#交互模式" class="headerlink" title="交互模式"></a>交互模式</h3>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
           
 
-  <p>热评文章</p>
-  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
-
 
           
-  <div class="comments" id="comments">
-    
-      <div class="ds-thread" data-thread-key="2016/07/26/NPM使用介绍/"
-           data-title="NPM使用介绍" data-url="http://sz8023.github.io/2016/07/26/NPM使用介绍/">
-      </div>
-    
-  </div>
-
 
         </div>
         
@@ -486,17 +797,8 @@ console.log(&quot;程序执行结束&quot;);
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -565,17 +867,6 @@ console.log(&quot;程序执行结束&quot;);
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Node-js-PEPL-交互式解释器"><span class="nav-number">1.</span> <span class="nav-text">Node.js PEPL(交互式解释器)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-js回调函数"><span class="nav-number">1.1.</span> <span class="nav-text">Node.js回调函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#阻塞代码"><span class="nav-number">1.1.1.</span> <span class="nav-text">阻塞代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非阻塞代码"><span class="nav-number">1.1.2.</span> <span class="nav-text">非阻塞代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node-js事件循环"><span class="nav-number">1.1.3.</span> <span class="nav-text">Node.js事件循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随便"><span class="nav-number">1.1.4.</span> <span class="nav-text">随便</span></a></li></ol></li></ol></li></ol></div>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -679,10 +970,6 @@ console.log(&quot;程序执行结束&quot;);
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
 
   
 

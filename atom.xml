@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sz8023.github.io/"/>
-  <updated>2016-08-02T11:06:39.000Z</updated>
+  <updated>2016-08-02T10:59:40.000Z</updated>
   <id>http://sz8023.github.io/</id>
   
   <author>
@@ -14,20 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Your</title>
-    <link href="http://sz8023.github.io/2016/08/02/Your/"/>
-    <id>http://sz8023.github.io/2016/08/02/Your/</id>
-    <published>2016-08-02T11:06:39.000Z</published>
-    <updated>2016-08-02T11:06:39.000Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>HTML5教程</title>
@@ -79,7 +65,7 @@
     <link href="http://sz8023.github.io/2016/08/01/Ruby%E6%95%99%E7%A8%8B/"/>
     <id>http://sz8023.github.io/2016/08/01/Ruby教程/</id>
     <published>2016-08-01T01:46:31.000Z</published>
-    <updated>2016-08-01T02:30:30.000Z</updated>
+    <updated>2016-08-31T00:19:55.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Ruby教程"><a href="#Ruby教程" class="headerlink" title="Ruby教程"></a>Ruby教程</h3><p>Ruby是一种开源的面向对象程序设计的服务器端脚本语言。Ruby可运行于多种平台，如Windowss、MAC OS和UNIX的各种版本。</p>
 <h3 id="编译-执行Ruby程序"><a href="#编译-执行Ruby程序" class="headerlink" title="编译/执行Ruby程序"></a>编译/执行Ruby程序</h3><p>Ruby与Smalltalk一样，是一个完美的面向对象语言，使用Ruby的语法比使用Smalltalk的语法要容易多。</p>
@@ -101,66 +87,6 @@
     </summary>
     
       <category term="Ruby教程" scheme="http://sz8023.github.io/categories/Ruby%E6%95%99%E7%A8%8B/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>青春ForYou</title>
-    <link href="http://sz8023.github.io/2016/07/30/%E9%9D%92%E6%98%A5/"/>
-    <id>http://sz8023.github.io/2016/07/30/青春/</id>
-    <published>2016-07-30T07:53:40.000Z</published>
-    <updated>2016-08-02T10:58:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="../images/oneForYou.jpg" alt="ForYou"></p>
-<h3 id="胆小的我"><a href="#胆小的我" class="headerlink" title="胆小的我"></a>胆小的我</h3><p>曾经为了追小美我咨询了身边的很多朋友，甚至是陌生的女网友，他们都给我支了招，可是都没有什么大的成效。我知道问题在我，我给自己找了很多理由，原因可能是因为我的胆小。</p>
-<h3 id="成长的我"><a href="#成长的我" class="headerlink" title="成长的我"></a>成长的我</h3><p>总结了一下各位老师和前辈说过的一些话。我觉得还是挺适合我的。如果你真的喜欢一个女孩子，那么你就勇敢的去追吧。</p>
-<ul>
-<li>要学会<code>厚脸皮</code>，这个是第一要义，适应于任何场合</li>
-<li>如果你是<code>认真</code>追一个女孩子的话，那么两个星期的时间就足够了</li>
-<li>女孩子你最多约<code>三次</code>，如果还是约不出来的话，那就放弃吧。她可能真的不喜欢你，没必要对别人死缠烂打</li>
-<li>你一定要学会了解一个女孩子的<code>心思</code>，你只有对她了解，才知道如何去关心她</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;../images/oneForYou.jpg&quot; alt=&quot;ForYou&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;胆小的我&quot;&gt;&lt;a href=&quot;#胆小的我&quot; class=&quot;headerlink&quot; title=&quot;胆小的我&quot;&gt;&lt;/a&gt;胆小的我&lt;/h3&gt;&lt;p&gt;曾经为了追小
-    
-    </summary>
-    
-      <category term="美丽" scheme="http://sz8023.github.io/categories/%E7%BE%8E%E4%B8%BD/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Node创建Web服务器</title>
-    <link href="http://sz8023.github.io/2016/07/26/Node-jsWeb%E6%A8%A1%E5%9D%97/"/>
-    <id>http://sz8023.github.io/2016/07/26/Node-jsWeb模块/</id>
-    <published>2016-07-26T05:37:50.000Z</published>
-    <updated>2016-08-02T10:41:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="什么是Web服务器"><a href="#什么是Web服务器" class="headerlink" title="什么是Web服务器"></a>什么是Web服务器</h1><p><code>Web服务器</code>一般指的是网站服务器，是指驻留在因特网上某种类型的计算机的程序，<code>Web服务器</code>的基本功能就是提供Web信息浏览功能服务。</p>
-<p><strong>Web架构</strong><br><!--![web_architecture](../images/web_architecture.jpg)--></p>
-<p><img src="../images/web_architecture.jpg"></p>
-<h3 id="使用Node创建Web服务"><a href="#使用Node创建Web服务" class="headerlink" title="使用Node创建Web服务"></a>使用Node创建Web服务</h3><a id="more"></a>
-<p>Node.js提供了http模块，http模块主要用于搭建HTTP服务器和客户端，使用HTTP服务器或客户端功能必须调用HTTP模块。代码如下</p>
-<pre><code>var http = require(&apos;http&apos;);
-</code></pre><h3 id="使用Node创建Web客户端"><a href="#使用Node创建Web客户端" class="headerlink" title="使用Node创建Web客户端"></a>使用Node创建Web客户端</h3><p>Node.js创建Web客户端需要引入http模块，创建client.js文件，代码如下所示：</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;什么是Web服务器&quot;&gt;&lt;a href=&quot;#什么是Web服务器&quot; class=&quot;headerlink&quot; title=&quot;什么是Web服务器&quot;&gt;&lt;/a&gt;什么是Web服务器&lt;/h1&gt;&lt;p&gt;&lt;code&gt;Web服务器&lt;/code&gt;一般指的是网站服务器，是指驻留在因特网上某种类型的计算机的程序，&lt;code&gt;Web服务器&lt;/code&gt;的基本功能就是提供Web信息浏览功能服务。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Web架构&lt;/strong&gt;&lt;br&gt;&lt;!--![web_architecture](../images/web_architecture.jpg)--&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;../images/web_architecture.jpg&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;使用Node创建Web服务&quot;&gt;&lt;a href=&quot;#使用Node创建Web服务&quot; class=&quot;headerlink&quot; title=&quot;使用Node创建Web服务&quot;&gt;&lt;/a&gt;使用Node创建Web服务&lt;/h3&gt;
-    
-    </summary>
-    
-      <category term="Node.js笔记" scheme="http://sz8023.github.io/categories/Node-js%E7%AC%94%E8%AE%B0/"/>
     
     
   </entry>
@@ -222,11 +148,11 @@ console.log(&quot;程序执行结束&quot;);
   </entry>
   
   <entry>
-    <title>node.js安装和配置</title>
-    <link href="http://sz8023.github.io/2016/07/25/node-js%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/"/>
-    <id>http://sz8023.github.io/2016/07/25/node-js安装和配置/</id>
-    <published>2016-07-25T10:16:02.000Z</published>
-    <updated>2016-07-25T10:50:32.000Z</updated>
+    <title>Node.js笔记</title>
+    <link href="http://sz8023.github.io/2016/07/25/Node-js%E7%AC%94%E8%AE%B0/"/>
+    <id>http://sz8023.github.io/2016/07/25/Node-js笔记/</id>
+    <published>2016-07-25T09:26:39.000Z</published>
+    <updated>2016-08-31T00:26:07.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Node-js应用有哪几部分组成"><a href="#Node-js应用有哪几部分组成" class="headerlink" title="Node.js应用有哪几部分组成"></a>Node.js应用有哪几部分组成</h1><ul>
 <li>引入require模块：</li>
@@ -242,28 +168,7 @@ console.log(&quot;程序执行结束&quot;);
 <li>允许用户从NPM服务器下载并安装别人编写好的命令行程序到本地使用</li>
 <li>允许用户将自己编写好的包或命令行程序上传到NPM服务器供别人使用</li>
 </ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Node-js应用有哪几部分组成&quot;&gt;&lt;a href=&quot;#Node-js应用有哪几部分组成&quot; class=&quot;headerlink&quot; title=&quot;Node.js应用有哪几部分组成&quot;&gt;&lt;/a&gt;Node.js应用有哪几部分组成&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;引入requir
-    
-    </summary>
-    
-      <category term="node.js笔记" scheme="http://sz8023.github.io/categories/node-js%E7%AC%94%E8%AE%B0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Node.js笔记</title>
-    <link href="http://sz8023.github.io/2016/07/25/Node-js%E7%AC%94%E8%AE%B0/"/>
-    <id>http://sz8023.github.io/2016/07/25/Node-js笔记/</id>
-    <published>2016-07-25T09:26:39.000Z</published>
-    <updated>2016-07-25T10:11:36.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h1><ul>
+<h1 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h1><ul>
 <li>简单的说Node.js是运行在服务器端的JavaScript</li>
 <li>Node.js是一个事件驱动I/O服务器端JavaScript环境，基于Google的V8引擎，V8引擎执行JavaScript的速度非常快，性能非常快</li>
 </ul>
@@ -271,13 +176,43 @@ console.log(&quot;程序执行结束&quot;);
 <pre><code>node -v 
 </code></pre><p>Note:不同版本可能有差异的</p>
 <h3 id="脚本模式"><a href="#脚本模式" class="headerlink" title="脚本模式"></a>脚本模式</h3><pre><code>console.log(&quot;Hello, World&quot;);
-</code></pre><h3 id="交互模式"><a href="#交互模式" class="headerlink" title="交互模式"></a>交互模式</h3>]]></content>
+</code></pre><h3 id="交互模式"><a href="#交互模式" class="headerlink" title="交互模式"></a>交互模式</h3><h1 id="什么是Web服务器"><a href="#什么是Web服务器" class="headerlink" title="什么是Web服务器"></a>什么是Web服务器</h1><p><code>Web服务器</code>一般指的是网站服务器，是指驻留在因特网上某种类型的计算机的程序，<code>Web服务器</code>的基本功能就是提供Web信息浏览功能服务。</p>
+<p><strong>Web架构</strong><br><!--![web_architecture](../images/web_architecture.jpg)--></p>
+<p><img src="../images/web_architecture.jpg"></p>
+<h3 id="使用Node创建Web服务"><a href="#使用Node创建Web服务" class="headerlink" title="使用Node创建Web服务"></a>使用Node创建Web服务</h3><a id="more"></a>
+<p>Node.js提供了http模块，http模块主要用于搭建HTTP服务器和客户端，使用HTTP服务器或客户端功能必须调用HTTP模块。代码如下</p>
+<pre><code>var http = require(&apos;http&apos;);
+</code></pre><h3 id="使用Node创建Web客户端"><a href="#使用Node创建Web客户端" class="headerlink" title="使用Node创建Web客户端"></a>使用Node创建Web客户端</h3><p>Node.js创建Web客户端需要引入http模块，创建client.js文件，代码如下所示：    </p>
+]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Node-js&quot;&gt;&lt;a href=&quot;#Node-js&quot; class=&quot;headerlink&quot; title=&quot;Node.js&quot;&gt;&lt;/a&gt;Node.js&lt;/h1&gt;&lt;ul&gt;
+      &lt;h1 id=&quot;Node-js应用有哪几部分组成&quot;&gt;&lt;a href=&quot;#Node-js应用有哪几部分组成&quot; class=&quot;headerlink&quot; title=&quot;Node.js应用有哪几部分组成&quot;&gt;&lt;/a&gt;Node.js应用有哪几部分组成&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;引入require模块：&lt;/li&gt;
+&lt;li&gt;创建服务器：服务器可以监听客户端的请求&lt;/li&gt;
+&lt;li&gt;接收请求与相应请求&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;创建node-js应用&quot;&gt;&lt;a href=&quot;#创建node-js应用&quot; class=&quot;headerlink&quot; title=&quot;创建node.js应用&quot;&gt;&lt;/a&gt;创建node.js应用&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;我们使用require&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;NPM使用介绍&quot;&gt;&lt;a href=&quot;#NPM使用介绍&quot; class=&quot;headerlink&quot; title=&quot;NPM使用介绍&quot;&gt;&lt;/a&gt;NPM使用介绍&lt;/h3&gt;&lt;p&gt;NPM(Node Package Manager)是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题，常见的使用场景如下&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;允许用户从NPM服务器下载别人编写的第三方包到本地使用&lt;/li&gt;
+&lt;li&gt;允许用户从NPM服务器下载并安装别人编写好的命令行程序到本地使用&lt;/li&gt;
+&lt;li&gt;允许用户将自己编写好的包或命令行程序上传到NPM服务器供别人使用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;Node-js&quot;&gt;&lt;a href=&quot;#Node-js&quot; class=&quot;headerlink&quot; title=&quot;Node.js&quot;&gt;&lt;/a&gt;Node.js&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;简单的说Node.js是运行在服务器端的JavaScript&lt;/li&gt;
-&lt;li&gt;Node
+&lt;li&gt;Node.js是一个事件驱动I/O服务器端JavaScript环境，基于Google的V8引擎，V8引擎执行JavaScript的速度非常快，性能非常快&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;使用版本&quot;&gt;&lt;a href=&quot;#使用版本&quot; class=&quot;headerlink&quot; title=&quot;使用版本&quot;&gt;&lt;/a&gt;使用版本&lt;/h2&gt;&lt;p&gt;我们可以使用一下命令来查看当前的Node版本&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;node -v 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Note:不同版本可能有差异的&lt;/p&gt;
+&lt;h3 id=&quot;脚本模式&quot;&gt;&lt;a href=&quot;#脚本模式&quot; class=&quot;headerlink&quot; title=&quot;脚本模式&quot;&gt;&lt;/a&gt;脚本模式&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;console.log(&amp;quot;Hello, World&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;交互模式&quot;&gt;&lt;a href=&quot;#交互模式&quot; class=&quot;headerlink&quot; title=&quot;交互模式&quot;&gt;&lt;/a&gt;交互模式&lt;/h3&gt;&lt;h1 id=&quot;什么是Web服务器&quot;&gt;&lt;a href=&quot;#什么是Web服务器&quot; class=&quot;headerlink&quot; title=&quot;什么是Web服务器&quot;&gt;&lt;/a&gt;什么是Web服务器&lt;/h1&gt;&lt;p&gt;&lt;code&gt;Web服务器&lt;/code&gt;一般指的是网站服务器，是指驻留在因特网上某种类型的计算机的程序，&lt;code&gt;Web服务器&lt;/code&gt;的基本功能就是提供Web信息浏览功能服务。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Web架构&lt;/strong&gt;&lt;br&gt;&lt;!--![web_architecture](../images/web_architecture.jpg)--&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../images/web_architecture.jpg&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;使用Node创建Web服务&quot;&gt;&lt;a href=&quot;#使用Node创建Web服务&quot; class=&quot;headerlink&quot; title=&quot;使用Node创建Web服务&quot;&gt;&lt;/a&gt;使用Node创建Web服务&lt;/h3&gt;
     
     </summary>
     
@@ -311,33 +246,6 @@ console.log(&quot;程序执行结束&quot;);
     </summary>
     
       <category term="Hexo教程" scheme="http://sz8023.github.io/categories/Hexo%E6%95%99%E7%A8%8B/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo教程</title>
-    <link href="http://sz8023.github.io/2016/07/22/Hexo%E6%95%99%E7%A8%8B/"/>
-    <id>http://sz8023.github.io/2016/07/22/Hexo教程/</id>
-    <published>2016-07-22T09:22:26.000Z</published>
-    <updated>2016-07-25T07:44:57.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="我的选择"><a href="#我的选择" class="headerlink" title="我的选择"></a>我的选择</h3><blockquote>
-<p>那天无聊查看了关于你的所有说说，只为了找一个共同的话题，我想我还不够努力，我想我没有真正的付出过。对于我来说只有坚定的付出，或许才能得到一段刻骨铭心的爱情！</p>
-</blockquote>
-<p><strong>时间</strong>从来没有辜负我们什么，只是给了我们更多的时间去思考。跟你接触了那么久，我我只在找你喜欢的东西，想找一个共同的话题。</p>
-<p><strong>今天</strong>在下班的路上听见一个女生说“如果一个男生喜欢一个女生，就要快刀斩乱麻。因为女生不喜欢磨磨唧唧的男生。”我想这句话在某些情况下是有道理的。我想试试</p>
-<p><strong>我</strong>不知道今天该不该行动，我想从她的口中得到一些什么，她肯定很讨厌我。可是我依然不想放弃</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;我的选择&quot;&gt;&lt;a href=&quot;#我的选择&quot; class=&quot;headerlink&quot; title=&quot;我的选择&quot;&gt;&lt;/a&gt;我的选择&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;那天无聊查看了关于你的所有说说，只为了找一个共同的话题，我想我还不够努力，我想我没有真正的付出过。
-    
-    </summary>
-    
-      <category term="ForYou" scheme="http://sz8023.github.io/categories/ForYou/"/>
     
     
   </entry>

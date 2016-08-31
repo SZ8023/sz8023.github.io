@@ -84,37 +84,51 @@
 
 
 
-<meta name="description" content="Node.js
-简单的说Node.js是运行在服务器端的JavaScript
-Node.js是一个事件驱动I/O服务器端JavaScript环境，基于Google的V8引擎，V8引擎执行JavaScript的速度非常快，性能非常快
+<meta name="description" content="Node.js应用有哪几部分组成
+引入require模块：
+创建服务器：服务器可以监听客户端的请求
+接收请求与相应请求
 
-使用版本我们可以使用一下命令来查看当前的Node版本
-node -v 
-Note:不同版本可能有差异的
-脚本模式console.log(&amp;quot;Hello, Wo">
+创建node.js应用
+我们使用require
+
+NPM使用介绍NPM(Node Package Manager)是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题，常见的使用场景如下
+
+允许用户从NPM服务器下载别人编写的第三方包到本地使用
+允许用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node.js笔记">
 <meta property="og:url" content="http://sz8023.github.io/2016/07/25/Node-js笔记/index.html">
 <meta property="og:site_name" content="ForYou">
-<meta property="og:description" content="Node.js
-简单的说Node.js是运行在服务器端的JavaScript
-Node.js是一个事件驱动I/O服务器端JavaScript环境，基于Google的V8引擎，V8引擎执行JavaScript的速度非常快，性能非常快
+<meta property="og:description" content="Node.js应用有哪几部分组成
+引入require模块：
+创建服务器：服务器可以监听客户端的请求
+接收请求与相应请求
 
-使用版本我们可以使用一下命令来查看当前的Node版本
-node -v 
-Note:不同版本可能有差异的
-脚本模式console.log(&amp;quot;Hello, Wo">
-<meta property="og:updated_time" content="2016-07-25T10:11:36.000Z">
+创建node.js应用
+我们使用require
+
+NPM使用介绍NPM(Node Package Manager)是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题，常见的使用场景如下
+
+允许用户从NPM服务器下载别人编写的第三方包到本地使用
+允许用">
+<meta property="og:image" content="http://sz8023.github.io/../images/web_architecture.jpg">
+<meta property="og:updated_time" content="2016-08-31T00:26:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js笔记">
-<meta name="twitter:description" content="Node.js
-简单的说Node.js是运行在服务器端的JavaScript
-Node.js是一个事件驱动I/O服务器端JavaScript环境，基于Google的V8引擎，V8引擎执行JavaScript的速度非常快，性能非常快
+<meta name="twitter:description" content="Node.js应用有哪几部分组成
+引入require模块：
+创建服务器：服务器可以监听客户端的请求
+接收请求与相应请求
 
-使用版本我们可以使用一下命令来查看当前的Node版本
-node -v 
-Note:不同版本可能有差异的
-脚本模式console.log(&amp;quot;Hello, Wo">
+创建node.js应用
+我们使用require
+
+NPM使用介绍NPM(Node Package Manager)是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题，常见的使用场景如下
+
+允许用户从NPM服务器下载别人编写的第三方包到本地使用
+允许用">
+<meta name="twitter:image" content="http://sz8023.github.io/../images/web_architecture.jpg">
 
 
 
@@ -333,7 +347,21 @@ Note:不同版本可能有差异的
       
 
       
-        <h1 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h1><ul>
+        <h1 id="Node-js应用有哪几部分组成"><a href="#Node-js应用有哪几部分组成" class="headerlink" title="Node.js应用有哪几部分组成"></a>Node.js应用有哪几部分组成</h1><ul>
+<li>引入require模块：</li>
+<li>创建服务器：服务器可以监听客户端的请求</li>
+<li>接收请求与相应请求</li>
+</ul>
+<h2 id="创建node-js应用"><a href="#创建node-js应用" class="headerlink" title="创建node.js应用"></a>创建node.js应用</h2><ol>
+<li>我们使用require</li>
+</ol>
+<h3 id="NPM使用介绍"><a href="#NPM使用介绍" class="headerlink" title="NPM使用介绍"></a>NPM使用介绍</h3><p>NPM(Node Package Manager)是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题，常见的使用场景如下</p>
+<ul>
+<li>允许用户从NPM服务器下载别人编写的第三方包到本地使用</li>
+<li>允许用户从NPM服务器下载并安装别人编写好的命令行程序到本地使用</li>
+<li>允许用户将自己编写好的包或命令行程序上传到NPM服务器供别人使用</li>
+</ul>
+<h1 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h1><ul>
 <li>简单的说Node.js是运行在服务器端的JavaScript</li>
 <li>Node.js是一个事件驱动I/O服务器端JavaScript环境，基于Google的V8引擎，V8引擎执行JavaScript的速度非常快，性能非常快</li>
 </ul>
@@ -341,7 +369,14 @@ Note:不同版本可能有差异的
 <pre><code>node -v 
 </code></pre><p>Note:不同版本可能有差异的</p>
 <h3 id="脚本模式"><a href="#脚本模式" class="headerlink" title="脚本模式"></a>脚本模式</h3><pre><code>console.log(&quot;Hello, World&quot;);
-</code></pre><h3 id="交互模式"><a href="#交互模式" class="headerlink" title="交互模式"></a>交互模式</h3>
+</code></pre><h3 id="交互模式"><a href="#交互模式" class="headerlink" title="交互模式"></a>交互模式</h3><h1 id="什么是Web服务器"><a href="#什么是Web服务器" class="headerlink" title="什么是Web服务器"></a>什么是Web服务器</h1><p><code>Web服务器</code>一般指的是网站服务器，是指驻留在因特网上某种类型的计算机的程序，<code>Web服务器</code>的基本功能就是提供Web信息浏览功能服务。</p>
+<p><strong>Web架构</strong><br><!--![web_architecture](../images/web_architecture.jpg)--></p>
+<p><img src="../images/web_architecture.jpg"></p>
+<h3 id="使用Node创建Web服务"><a href="#使用Node创建Web服务" class="headerlink" title="使用Node创建Web服务"></a>使用Node创建Web服务</h3><a id="more"></a>
+<p>Node.js提供了http模块，http模块主要用于搭建HTTP服务器和客户端，使用HTTP服务器或客户端功能必须调用HTTP模块。代码如下</p>
+<pre><code>var http = require(&apos;http&apos;);
+</code></pre><h3 id="使用Node创建Web客户端"><a href="#使用Node创建Web客户端" class="headerlink" title="使用Node创建Web客户端"></a>使用Node创建Web客户端</h3><p>Node.js创建Web客户端需要引入http模块，创建client.js文件，代码如下所示：    </p>
+
       
     </div>
 
@@ -374,8 +409,8 @@ Note:不同版本可能有差异的
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/07/25/node-js安装和配置/" rel="prev" title="node.js安装和配置">
-                node.js安装和配置 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/07/26/NPM使用介绍/" rel="prev" title="NPM使用介绍">
+                NPM使用介绍 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -470,7 +505,7 @@ Note:不同版本可能有差异的
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -478,7 +513,7 @@ Note:不同版本可能有差异的
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -535,7 +570,7 @@ Note:不同版本可能有差异的
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Node-js"><span class="nav-number">1.</span> <span class="nav-text">Node.js</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用版本"><span class="nav-number">1.1.</span> <span class="nav-text">使用版本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本模式"><span class="nav-number">1.1.1.</span> <span class="nav-text">脚本模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交互模式"><span class="nav-number">1.1.2.</span> <span class="nav-text">交互模式</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Node-js应用有哪几部分组成"><span class="nav-number">1.</span> <span class="nav-text">Node.js应用有哪几部分组成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建node-js应用"><span class="nav-number">1.1.</span> <span class="nav-text">创建node.js应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NPM使用介绍"><span class="nav-number">1.1.1.</span> <span class="nav-text">NPM使用介绍</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Node-js"><span class="nav-number">2.</span> <span class="nav-text">Node.js</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用版本"><span class="nav-number">2.1.</span> <span class="nav-text">使用版本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本模式"><span class="nav-number">2.1.1.</span> <span class="nav-text">脚本模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交互模式"><span class="nav-number">2.1.2.</span> <span class="nav-text">交互模式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是Web服务器"><span class="nav-number">3.</span> <span class="nav-text">什么是Web服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Node创建Web服务"><span class="nav-number">3.0.1.</span> <span class="nav-text">使用Node创建Web服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Node创建Web客户端"><span class="nav-number">3.0.2.</span> <span class="nav-text">使用Node创建Web客户端</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>

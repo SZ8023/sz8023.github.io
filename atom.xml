@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sz8023.github.io/"/>
-  <updated>2016-08-31T12:19:20.000Z</updated>
+  <updated>2016-08-31T12:27:31.000Z</updated>
   <id>http://sz8023.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://sz8023.github.io/2015/07/05/MJExtension%E5%AD%A6%E4%B9%A0/"/>
     <id>http://sz8023.github.io/2015/07/05/MJExtension学习/</id>
     <published>2015-07-05T10:24:10.000Z</published>
-    <updated>2016-08-31T12:19:20.000Z</updated>
+    <updated>2016-08-31T12:27:31.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="CoderMJLee-MJExtension"><a href="#CoderMJLee-MJExtension" class="headerlink" title="CoderMJLee/MJExtension"></a><a href="https://github.com/CoderMJLee/MJExtension" target="_blank" rel="external">CoderMJLee/MJExtension</a></h3><p>大神李明杰的另一个框架，实现Json和Model的互相转换，转换速度快、使用简单方便的字典转模型框架。</p>
 <p><code>MJExtension</code>是一套字典和模型之间转换的超轻量级框架</p>
@@ -34,11 +34,23 @@
 </ul>
 <p>Coding all properties of model in one line code.<br>只需要一行代码，就能实现模型的所有属性进行Coding(归档和解档)</p>
 <p>同样的，MJExtension也提供了两种使用方式，一种是通过CocoaPods，另一种是通过手动导入的方式。</p>
+<a id="more"></a>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;CoderMJLee-MJExtension&quot;&gt;&lt;a href=&quot;#CoderMJLee-MJExtension&quot; class=&quot;headerlink&quot; title=&quot;CoderMJLee/MJExtension&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://git
+      &lt;h3 id=&quot;CoderMJLee-MJExtension&quot;&gt;&lt;a href=&quot;#CoderMJLee-MJExtension&quot; class=&quot;headerlink&quot; title=&quot;CoderMJLee/MJExtension&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://github.com/CoderMJLee/MJExtension&quot;&gt;CoderMJLee/MJExtension&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;大神李明杰的另一个框架，实现Json和Model的互相转换，转换速度快、使用简单方便的字典转模型框架。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;MJExtension&lt;/code&gt;是一套字典和模型之间转换的超轻量级框架&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;JSON –&amp;gt; Model、Core Data Modal&lt;/li&gt;
+&lt;li&gt;JSONString –&amp;gt; Model、Core Data Model&lt;/li&gt;
+&lt;li&gt;Model、Core Data Model –&amp;gt; JSON&lt;/li&gt;
+&lt;li&gt;JSON Array –&amp;gt; Model Array、Core Data Model Array&lt;/li&gt;
+&lt;li&gt;JSONString –&amp;gt; Model Array、Core Data Model Array&lt;/li&gt;
+&lt;li&gt;Model Array、Core Data Model Array –&amp;gt; JSON Array&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Coding all properties of model in one line code.&lt;br&gt;只需要一行代码，就能实现模型的所有属性进行Coding(归档和解档)&lt;/p&gt;
+&lt;p&gt;同样的，MJExtension也提供了两种使用方式，一种是通过CocoaPods，另一种是通过手动导入的方式。&lt;/p&gt;
     
     </summary>
     
@@ -183,7 +195,7 @@ console.log(&quot;程序执行结束&quot;);
     <link href="http://sz8023.github.io/2015/04/25/Node%E6%95%99%E7%A8%8B/"/>
     <id>http://sz8023.github.io/2015/04/25/Node教程/</id>
     <published>2015-04-25T09:26:39.000Z</published>
-    <updated>2016-08-31T10:02:23.000Z</updated>
+    <updated>2016-08-31T12:24:24.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Node-js应用有哪几部分组成"><a href="#Node-js应用有哪几部分组成" class="headerlink" title="Node.js应用有哪几部分组成"></a>Node.js应用有哪几部分组成</h1><ul>
 <li>引入require模块：</li>
@@ -209,7 +221,7 @@ console.log(&quot;程序执行结束&quot;);
 <h3 id="脚本模式"><a href="#脚本模式" class="headerlink" title="脚本模式"></a>脚本模式</h3><pre><code>console.log(&quot;Hello, World&quot;);
 </code></pre><h3 id="交互模式"><a href="#交互模式" class="headerlink" title="交互模式"></a>交互模式</h3><h1 id="什么是Web服务器"><a href="#什么是Web服务器" class="headerlink" title="什么是Web服务器"></a>什么是Web服务器</h1><p><code>Web服务器</code>一般指的是网站服务器，是指驻留在因特网上某种类型的计算机的程序，<code>Web服务器</code>的基本功能就是提供Web信息浏览功能服务。</p>
 <p><strong>Web架构</strong><br><!--![web_architecture](../images/web_architecture.jpg)--></p>
-<p><img src="../images/web_architecture.jpg"></p>
+<p><img src="../images/web_architecture.jpg" width="600px"></p>
 <a id="more"></a>
 <h3 id="使用Node创建Web服务"><a href="#使用Node创建Web服务" class="headerlink" title="使用Node创建Web服务"></a>使用Node创建Web服务</h3><p>Node.js提供了http模块，http模块主要用于搭建HTTP服务器和客户端，使用HTTP服务器或客户端功能必须调用HTTP模块。代码如下</p>
 <pre><code>var http = require(&apos;http&apos;);
@@ -242,7 +254,7 @@ console.log(&quot;程序执行结束&quot;);
 &lt;h3 id=&quot;脚本模式&quot;&gt;&lt;a href=&quot;#脚本模式&quot; class=&quot;headerlink&quot; title=&quot;脚本模式&quot;&gt;&lt;/a&gt;脚本模式&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;console.log(&amp;quot;Hello, World&amp;quot;);
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;交互模式&quot;&gt;&lt;a href=&quot;#交互模式&quot; class=&quot;headerlink&quot; title=&quot;交互模式&quot;&gt;&lt;/a&gt;交互模式&lt;/h3&gt;&lt;h1 id=&quot;什么是Web服务器&quot;&gt;&lt;a href=&quot;#什么是Web服务器&quot; class=&quot;headerlink&quot; title=&quot;什么是Web服务器&quot;&gt;&lt;/a&gt;什么是Web服务器&lt;/h1&gt;&lt;p&gt;&lt;code&gt;Web服务器&lt;/code&gt;一般指的是网站服务器，是指驻留在因特网上某种类型的计算机的程序，&lt;code&gt;Web服务器&lt;/code&gt;的基本功能就是提供Web信息浏览功能服务。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Web架构&lt;/strong&gt;&lt;br&gt;&lt;!--![web_architecture](../images/web_architecture.jpg)--&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;../images/web_architecture.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../images/web_architecture.jpg&quot; width=600px &gt;&lt;/p&gt;
     
     </summary>
     

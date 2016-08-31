@@ -84,12 +84,51 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="ForYou">
-<meta property="og:url" content="http://sz8023.github.io/page/2/index.html">
+<meta name="description" content="Node.js应用有哪几部分组成
+引入require模块：
+创建服务器：服务器可以监听客户端的请求
+接收请求与相应请求
+
+创建node.js应用
+我们使用require
+
+NPM使用介绍NPM(Node Package Manager)是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题，常见的使用场景如下
+
+允许用户从NPM服务器下载别人编写的第三方包到本地使用
+允许用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node.js笔记">
+<meta property="og:url" content="http://sz8023.github.io/2015/04/25/Node教程/index.html">
 <meta property="og:site_name" content="ForYou">
+<meta property="og:description" content="Node.js应用有哪几部分组成
+引入require模块：
+创建服务器：服务器可以监听客户端的请求
+接收请求与相应请求
+
+创建node.js应用
+我们使用require
+
+NPM使用介绍NPM(Node Package Manager)是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题，常见的使用场景如下
+
+允许用户从NPM服务器下载别人编写的第三方包到本地使用
+允许用">
+<meta property="og:image" content="http://sz8023.github.io/../images/web_architecture.jpg">
+<meta property="og:updated_time" content="2016-08-31T10:02:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ForYou">
+<meta name="twitter:title" content="Node.js笔记">
+<meta name="twitter:description" content="Node.js应用有哪几部分组成
+引入require模块：
+创建服务器：服务器可以监听客户端的请求
+接收请求与相应请求
+
+创建node.js应用
+我们使用require
+
+NPM使用介绍NPM(Node Package Manager)是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题，常见的使用场景如下
+
+允许用户从NPM服务器下载别人编写的第三方包到本地使用
+允许用">
+<meta name="twitter:image" content="http://sz8023.github.io/../images/web_architecture.jpg">
 
 
 
@@ -110,9 +149,9 @@
 
 
 
-  <link rel="canonical" href="http://sz8023.github.io/page/2/"/>
+  <link rel="canonical" href="http://sz8023.github.io/2015/04/25/Node教程/"/>
 
-  <title> ForYou </title>
+  <title> Node.js笔记 | ForYou </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -133,9 +172,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -222,9 +259,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -244,10 +281,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2015/04/25/Node教程/" itemprop="url">
-                  Node.js笔记
-                </a>
+                Node.js笔记
               
             
           </h1>
@@ -313,8 +347,7 @@
       
 
       
-        
-          <h1 id="Node-js应用有哪几部分组成"><a href="#Node-js应用有哪几部分组成" class="headerlink" title="Node.js应用有哪几部分组成"></a>Node.js应用有哪几部分组成</h1><ul>
+        <h1 id="Node-js应用有哪几部分组成"><a href="#Node-js应用有哪几部分组成" class="headerlink" title="Node.js应用有哪几部分组成"></a>Node.js应用有哪几部分组成</h1><ul>
 <li>引入require模块：</li>
 <li>创建服务器：服务器可以监听客户端的请求</li>
 <li>接收请求与相应请求</li>
@@ -339,20 +372,25 @@
 </code></pre><h3 id="交互模式"><a href="#交互模式" class="headerlink" title="交互模式"></a>交互模式</h3><h1 id="什么是Web服务器"><a href="#什么是Web服务器" class="headerlink" title="什么是Web服务器"></a>什么是Web服务器</h1><p><code>Web服务器</code>一般指的是网站服务器，是指驻留在因特网上某种类型的计算机的程序，<code>Web服务器</code>的基本功能就是提供Web信息浏览功能服务。</p>
 <p><strong>Web架构</strong><br><!--![web_architecture](../images/web_architecture.jpg)--></p>
 <p><img src="../images/web_architecture.jpg"></p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/04/25/Node教程/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+<a id="more"></a>
+<h3 id="使用Node创建Web服务"><a href="#使用Node创建Web服务" class="headerlink" title="使用Node创建Web服务"></a>使用Node创建Web服务</h3><p>Node.js提供了http模块，http模块主要用于搭建HTTP服务器和客户端，使用HTTP服务器或客户端功能必须调用HTTP模块。代码如下</p>
+<pre><code>var http = require(&apos;http&apos;);
+</code></pre><h3 id="使用Node创建Web客户端"><a href="#使用Node创建Web客户端" class="headerlink" title="使用Node创建Web客户端"></a>使用Node创建Web客户端</h3><p>Node.js创建Web客户端需要引入http模块，创建client.js文件，代码如下所示：    </p>
+
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
@@ -360,289 +398,73 @@
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2015/03/02/Html5教程/" rel="next" title="HTML5教程">
+                <i class="fa fa-chevron-left"></i> HTML5教程
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2015/03/02/Html5教程/" itemprop="url">
-                  HTML5教程
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-03-02T13:42:39+08:00" content="2015-03-02">
-              2015-03-02
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/HTML5教程/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML5教程</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
+              <a href="/2015/04/26/NPM使用介绍/" rel="prev" title="NPM使用介绍">
+                NPM使用介绍 <i class="fa fa-chevron-right"></i>
+              </a>
             
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/03/02/Html5教程/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/02/Html5教程/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h3 id="HTML5教程"><a href="#HTML5教程" class="headerlink" title="HTML5教程"></a>HTML5教程</h3><p>你可以使用HTML来创建自己的WEB站点。<br>HTML5是HTML最新的修订版，HTML5的设计目的是为了在<strong>移动设备上支持多媒体。</strong></p>
-<p>HTML5是W3C与WHATWG合作的结果。<br>WHATWG致力于web表单和应用程序，而W3C专注于XHTML2.0。</p>
-<p>HTML5中的一些有趣的新特性：</p>
-<ul>
-<li>用于会话的canvas元素</li>
-<li>用于媒介回放的video和audio元素</li>
-<li>对本地离线存储的跟好的支持</li>
-<li>新的特殊内容元素，比如article、footer、header、nav、section</li>
-<li>新的表单控件，比如calendar、date、time、email、url、search</li>
-</ul>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/03/02/Html5教程/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
+
+    <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2015/04/25/Node教程/"
+     data-title="Node.js笔记"
+     data-content=""
+     data-url="http://sz8023.github.io/2015/04/25/Node教程/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
 
-  
-  
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
 
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/02/25/Hexo教程/" itemprop="url">
-                  Hello,Hexo
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-02-25T14:16:30+08:00" content="2015-02-25">
-              2015-02-25
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Hexo教程/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo教程</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/02/25/Hexo教程/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/02/25/Hexo教程/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
-
+  </div>
 
 
           </div>
           
 
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/04/25/Node教程/"
+           data-title="Node.js笔记" data-url="http://sz8023.github.io/2015/04/25/Node教程/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -662,8 +484,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -732,6 +563,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Node-js应用有哪几部分组成"><span class="nav-number">1.</span> <span class="nav-text">Node.js应用有哪几部分组成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建node-js应用"><span class="nav-number">1.1.</span> <span class="nav-text">创建node.js应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NPM使用介绍"><span class="nav-number">1.1.1.</span> <span class="nav-text">NPM使用介绍</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Node-js"><span class="nav-number">2.</span> <span class="nav-text">Node.js</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用版本"><span class="nav-number">2.1.</span> <span class="nav-text">使用版本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本模式"><span class="nav-number">2.1.1.</span> <span class="nav-text">脚本模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交互模式"><span class="nav-number">2.1.2.</span> <span class="nav-text">交互模式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是Web服务器"><span class="nav-number">3.</span> <span class="nav-text">什么是Web服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Node创建Web服务"><span class="nav-number">3.0.1.</span> <span class="nav-text">使用Node创建Web服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Node创建Web客户端"><span class="nav-number">3.0.2.</span> <span class="nav-text">使用Node创建Web客户端</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -835,6 +677,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

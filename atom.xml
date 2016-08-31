@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sz8023.github.io/"/>
-  <updated>2016-08-31T06:38:20.000Z</updated>
+  <updated>2016-08-31T12:19:20.000Z</updated>
   <id>http://sz8023.github.io/</id>
   
   <author>
@@ -16,41 +16,87 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>MJRefresh学习</title>
-    <link href="http://sz8023.github.io/2016/08/31/MJRefresh%E5%AD%A6%E4%B9%A0/"/>
-    <id>http://sz8023.github.io/2016/08/31/MJRefresh学习/</id>
-    <published>2016-08-31T02:41:24.000Z</published>
-    <updated>2016-08-31T06:38:20.000Z</updated>
+    <title>MJExtension学习</title>
+    <link href="http://sz8023.github.io/2015/07/05/MJExtension%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://sz8023.github.io/2015/07/05/MJExtension学习/</id>
+    <published>2015-07-05T10:24:10.000Z</published>
+    <updated>2016-08-31T12:19:20.000Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
-<p>此处只用于测试使用……</p>
-</blockquote>
+    <content type="html"><![CDATA[<h3 id="CoderMJLee-MJExtension"><a href="#CoderMJLee-MJExtension" class="headerlink" title="CoderMJLee/MJExtension"></a><a href="https://github.com/CoderMJLee/MJExtension" target="_blank" rel="external">CoderMJLee/MJExtension</a></h3><p>大神李明杰的另一个框架，实现Json和Model的互相转换，转换速度快、使用简单方便的字典转模型框架。</p>
+<p><code>MJExtension</code>是一套字典和模型之间转换的超轻量级框架</p>
+<ul>
+<li>JSON –&gt; Model、Core Data Modal</li>
+<li>JSONString –&gt; Model、Core Data Model</li>
+<li>Model、Core Data Model –&gt; JSON</li>
+<li>JSON Array –&gt; Model Array、Core Data Model Array</li>
+<li>JSONString –&gt; Model Array、Core Data Model Array</li>
+<li>Model Array、Core Data Model Array –&gt; JSON Array</li>
+</ul>
+<p>Coding all properties of model in one line code.<br>只需要一行代码，就能实现模型的所有属性进行Coding(归档和解档)</p>
+<p>同样的，MJExtension也提供了两种使用方式，一种是通过CocoaPods，另一种是通过手动导入的方式。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;此处只用于测试使用……&lt;/p&gt;
-&lt;/blockquote&gt;
-
+      &lt;h3 id=&quot;CoderMJLee-MJExtension&quot;&gt;&lt;a href=&quot;#CoderMJLee-MJExtension&quot; class=&quot;headerlink&quot; title=&quot;CoderMJLee/MJExtension&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://git
     
     </summary>
     
       <category term="框架学习" scheme="http://sz8023.github.io/categories/%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="MJRefresh" scheme="http://sz8023.github.io/tags/MJRefresh/"/>
+  </entry>
+  
+  <entry>
+    <title>MJRefresh学习</title>
+    <link href="http://sz8023.github.io/2015/06/30/MJRefresh%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://sz8023.github.io/2015/06/30/MJRefresh学习/</id>
+    <published>2015-06-30T02:41:24.000Z</published>
+    <updated>2016-08-31T10:22:47.000Z</updated>
     
-      <category term="Lee MJ" scheme="http://sz8023.github.io/tags/Lee-MJ/"/>
+    <content type="html"><![CDATA[<h3 id="CoderMJLee-MJRefresh"><a href="#CoderMJLee-MJRefresh" class="headerlink" title="CoderMJLee/MJRefresh"></a><a href="https://github.com/CoderMJLee/MJRefresh" target="_blank" rel="external">CoderMJLee/MJRefresh</a></h3><p>大神李明杰写的一个刷新控件造福了国内的一批程序员，也提高了我们开发项目的进度。</p>
+<p><code>MJRefresh</code>的使用方式特别的简单，看看官网你就可以知道如何使用了。</p>
+<p><code>MJRefresh</code>支持的刷新控件有：</p>
+<ul>
+<li>UIScrollView</li>
+<li>UITableView</li>
+<li>UICollectionView</li>
+<li>UIWebView</li>
+</ul>
+<p>像很多牛逼的第三方一样，<code>MJRefresh</code>也提供了两种使用方式，你可以通过CocoaPods或者手动导入的方式来使用它。</p>
+<h3 id="MJRefresh框架的结构图"><a href="#MJRefresh框架的结构图" class="headerlink" title="MJRefresh框架的结构图"></a>MJRefresh框架的结构图</h3><p><img src="../images/MJRefresh.png" width="800px"></p>
+<p>使用者可以从这个结构图中清晰的看到自己想要使用的Class，甚至可以根据相应的结构来自己定义刷新控件。</p>
+<a id="more"></a>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;CoderMJLee-MJRefresh&quot;&gt;&lt;a href=&quot;#CoderMJLee-MJRefresh&quot; class=&quot;headerlink&quot; title=&quot;CoderMJLee/MJRefresh&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://github.com/CoderMJLee/MJRefresh&quot;&gt;CoderMJLee/MJRefresh&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;大神李明杰写的一个刷新控件造福了国内的一批程序员，也提高了我们开发项目的进度。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;MJRefresh&lt;/code&gt;的使用方式特别的简单，看看官网你就可以知道如何使用了。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;MJRefresh&lt;/code&gt;支持的刷新控件有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;UIScrollView&lt;/li&gt;
+&lt;li&gt;UITableView&lt;/li&gt;
+&lt;li&gt;UICollectionView&lt;/li&gt;
+&lt;li&gt;UIWebView&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;像很多牛逼的第三方一样，&lt;code&gt;MJRefresh&lt;/code&gt;也提供了两种使用方式，你可以通过CocoaPods或者手动导入的方式来使用它。&lt;/p&gt;
+&lt;h3 id=&quot;MJRefresh框架的结构图&quot;&gt;&lt;a href=&quot;#MJRefresh框架的结构图&quot; class=&quot;headerlink&quot; title=&quot;MJRefresh框架的结构图&quot;&gt;&lt;/a&gt;MJRefresh框架的结构图&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;../images/MJRefresh.png&quot; width=800px&gt;&lt;/p&gt;
+&lt;p&gt;使用者可以从这个结构图中清晰的看到自己想要使用的Class，甚至可以根据相应的结构来自己定义刷新控件。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="框架学习" scheme="http://sz8023.github.io/categories/%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/"/>
+    
     
   </entry>
   
   <entry>
     <title>Ruby教程</title>
-    <link href="http://sz8023.github.io/2016/05/01/Ruby%E6%95%99%E7%A8%8B/"/>
-    <id>http://sz8023.github.io/2016/05/01/Ruby教程/</id>
-    <published>2016-05-01T01:46:31.000Z</published>
-    <updated>2016-08-31T00:43:28.000Z</updated>
+    <link href="http://sz8023.github.io/2015/05/01/Ruby%E6%95%99%E7%A8%8B/"/>
+    <id>http://sz8023.github.io/2015/05/01/Ruby教程/</id>
+    <published>2015-05-01T01:46:31.000Z</published>
+    <updated>2016-08-31T10:02:39.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Ruby教程"><a href="#Ruby教程" class="headerlink" title="Ruby教程"></a>Ruby教程</h3><p>Ruby是一种开源的面向对象程序设计的服务器端脚本语言。Ruby可运行于多种平台，如Windowss、MAC OS和UNIX的各种版本。</p>
 <h3 id="编译-执行Ruby程序"><a href="#编译-执行Ruby程序" class="headerlink" title="编译/执行Ruby程序"></a>编译/执行Ruby程序</h3><p>Ruby与Smalltalk一样，是一个完美的面向对象语言，使用Ruby的语法比使用Smalltalk的语法要容易多。</p>
@@ -78,10 +124,10 @@
   
   <entry>
     <title>NPM使用介绍</title>
-    <link href="http://sz8023.github.io/2016/04/26/NPM%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/"/>
-    <id>http://sz8023.github.io/2016/04/26/NPM使用介绍/</id>
-    <published>2016-04-26T01:08:19.000Z</published>
-    <updated>2016-08-31T05:56:29.000Z</updated>
+    <link href="http://sz8023.github.io/2015/04/26/NPM%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://sz8023.github.io/2015/04/26/NPM使用介绍/</id>
+    <published>2015-04-26T01:08:19.000Z</published>
+    <updated>2016-08-31T10:02:32.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Node-js-PEPL-交互式解释器"><a href="#Node-js-PEPL-交互式解释器" class="headerlink" title="Node.js PEPL(交互式解释器)"></a>Node.js PEPL(交互式解释器)</h1><p>我们可以在终端输入命令，并接收系统的响应<br>Node自带了交互式解释器，可以执行如下任务</p>
 <ul>
@@ -134,10 +180,10 @@ console.log(&quot;程序执行结束&quot;);
   
   <entry>
     <title>Node.js笔记</title>
-    <link href="http://sz8023.github.io/2016/04/25/Node%E6%95%99%E7%A8%8B/"/>
-    <id>http://sz8023.github.io/2016/04/25/Node教程/</id>
-    <published>2016-04-25T09:26:39.000Z</published>
-    <updated>2016-08-31T05:56:07.000Z</updated>
+    <link href="http://sz8023.github.io/2015/04/25/Node%E6%95%99%E7%A8%8B/"/>
+    <id>http://sz8023.github.io/2015/04/25/Node教程/</id>
+    <published>2015-04-25T09:26:39.000Z</published>
+    <updated>2016-08-31T10:02:23.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Node-js应用有哪几部分组成"><a href="#Node-js应用有哪几部分组成" class="headerlink" title="Node.js应用有哪几部分组成"></a>Node.js应用有哪几部分组成</h1><ul>
 <li>引入require模块：</li>
@@ -164,8 +210,8 @@ console.log(&quot;程序执行结束&quot;);
 </code></pre><h3 id="交互模式"><a href="#交互模式" class="headerlink" title="交互模式"></a>交互模式</h3><h1 id="什么是Web服务器"><a href="#什么是Web服务器" class="headerlink" title="什么是Web服务器"></a>什么是Web服务器</h1><p><code>Web服务器</code>一般指的是网站服务器，是指驻留在因特网上某种类型的计算机的程序，<code>Web服务器</code>的基本功能就是提供Web信息浏览功能服务。</p>
 <p><strong>Web架构</strong><br><!--![web_architecture](../images/web_architecture.jpg)--></p>
 <p><img src="../images/web_architecture.jpg"></p>
-<h3 id="使用Node创建Web服务"><a href="#使用Node创建Web服务" class="headerlink" title="使用Node创建Web服务"></a>使用Node创建Web服务</h3><a id="more"></a>
-<p>Node.js提供了http模块，http模块主要用于搭建HTTP服务器和客户端，使用HTTP服务器或客户端功能必须调用HTTP模块。代码如下</p>
+<a id="more"></a>
+<h3 id="使用Node创建Web服务"><a href="#使用Node创建Web服务" class="headerlink" title="使用Node创建Web服务"></a>使用Node创建Web服务</h3><p>Node.js提供了http模块，http模块主要用于搭建HTTP服务器和客户端，使用HTTP服务器或客户端功能必须调用HTTP模块。代码如下</p>
 <pre><code>var http = require(&apos;http&apos;);
 </code></pre><h3 id="使用Node创建Web客户端"><a href="#使用Node创建Web客户端" class="headerlink" title="使用Node创建Web客户端"></a>使用Node创建Web客户端</h3><p>Node.js创建Web客户端需要引入http模块，创建client.js文件，代码如下所示：    </p>
 ]]></content>
@@ -197,7 +243,6 @@ console.log(&quot;程序执行结束&quot;);
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;交互模式&quot;&gt;&lt;a href=&quot;#交互模式&quot; class=&quot;headerlink&quot; title=&quot;交互模式&quot;&gt;&lt;/a&gt;交互模式&lt;/h3&gt;&lt;h1 id=&quot;什么是Web服务器&quot;&gt;&lt;a href=&quot;#什么是Web服务器&quot; class=&quot;headerlink&quot; title=&quot;什么是Web服务器&quot;&gt;&lt;/a&gt;什么是Web服务器&lt;/h1&gt;&lt;p&gt;&lt;code&gt;Web服务器&lt;/code&gt;一般指的是网站服务器，是指驻留在因特网上某种类型的计算机的程序，&lt;code&gt;Web服务器&lt;/code&gt;的基本功能就是提供Web信息浏览功能服务。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Web架构&lt;/strong&gt;&lt;br&gt;&lt;!--![web_architecture](../images/web_architecture.jpg)--&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;../images/web_architecture.jpg&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;使用Node创建Web服务&quot;&gt;&lt;a href=&quot;#使用Node创建Web服务&quot; class=&quot;headerlink&quot; title=&quot;使用Node创建Web服务&quot;&gt;&lt;/a&gt;使用Node创建Web服务&lt;/h3&gt;
     
     </summary>
     
@@ -208,10 +253,10 @@ console.log(&quot;程序执行结束&quot;);
   
   <entry>
     <title>HTML5教程</title>
-    <link href="http://sz8023.github.io/2016/03/02/Html5%E6%95%99%E7%A8%8B/"/>
-    <id>http://sz8023.github.io/2016/03/02/Html5教程/</id>
-    <published>2016-03-02T05:42:39.000Z</published>
-    <updated>2016-08-31T00:43:06.000Z</updated>
+    <link href="http://sz8023.github.io/2015/03/02/Html5%E6%95%99%E7%A8%8B/"/>
+    <id>http://sz8023.github.io/2015/03/02/Html5教程/</id>
+    <published>2015-03-02T05:42:39.000Z</published>
+    <updated>2016-08-31T10:02:15.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="HTML5教程"><a href="#HTML5教程" class="headerlink" title="HTML5教程"></a>HTML5教程</h3><p>你可以使用HTML来创建自己的WEB站点。<br>HTML5是HTML最新的修订版，HTML5的设计目的是为了在<strong>移动设备上支持多媒体。</strong></p>
 <p>HTML5是W3C与WHATWG合作的结果。<br>WHATWG致力于web表单和应用程序，而W3C专注于XHTML2.0。</p>
@@ -253,10 +298,10 @@ console.log(&quot;程序执行结束&quot;);
   
   <entry>
     <title>Hello,Hexo</title>
-    <link href="http://sz8023.github.io/2016/02/25/Hexo%E6%95%99%E7%A8%8B/"/>
-    <id>http://sz8023.github.io/2016/02/25/Hexo教程/</id>
-    <published>2016-02-25T06:16:30.000Z</published>
-    <updated>2016-08-31T00:42:59.000Z</updated>
+    <link href="http://sz8023.github.io/2015/02/25/Hexo%E6%95%99%E7%A8%8B/"/>
+    <id>http://sz8023.github.io/2015/02/25/Hexo教程/</id>
+    <published>2015-02-25T06:16:30.000Z</published>
+    <updated>2016-08-31T10:02:03.000Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sz8023.github.io/"/>
-  <updated>2016-08-31T06:18:08.000Z</updated>
+  <updated>2016-08-31T06:33:00.000Z</updated>
   <id>http://sz8023.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://sz8023.github.io/2016/08/31/MJRefresh%E5%AD%A6%E4%B9%A0/"/>
     <id>http://sz8023.github.io/2016/08/31/MJRefresh学习/</id>
     <published>2016-08-31T02:41:24.000Z</published>
-    <updated>2016-08-31T06:18:08.000Z</updated>
+    <updated>2016-08-31T06:33:00.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>此处只用于测试使用……</p>
@@ -35,6 +35,8 @@
     
       <category term="框架学习" scheme="http://sz8023.github.io/categories/%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/"/>
     
+    
+      <category term="MJRefresh" scheme="http://sz8023.github.io/tags/MJRefresh/"/>
     
   </entry>
   

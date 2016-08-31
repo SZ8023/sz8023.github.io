@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sz8023.github.io/"/>
-  <updated>2016-08-31T00:36:25.000Z</updated>
+  <updated>2016-08-31T00:43:28.000Z</updated>
   <id>http://sz8023.github.io/</id>
   
   <author>
@@ -16,56 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>HTML5教程</title>
-    <link href="http://sz8023.github.io/2016/08/02/HTML5%E6%95%99%E7%A8%8B/"/>
-    <id>http://sz8023.github.io/2016/08/02/HTML5教程/</id>
-    <published>2016-08-02T05:42:39.000Z</published>
-    <updated>2016-08-31T00:36:25.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="HTML5教程"><a href="#HTML5教程" class="headerlink" title="HTML5教程"></a>HTML5教程</h3><p>你可以使用HTML来创建自己的WEB站点。<br>HTML5是HTML最新的修订版，HTML5的设计目的是为了在<strong>移动设备上支持多媒体。</strong></p>
-<p>HTML5是W3C与WHATWG合作的结果。<br>WHATWG致力于web表单和应用程序，而W3C专注于XHTML2.0。</p>
-<p>HTML5中的一些有趣的新特性：</p>
-<ul>
-<li>用于会话的canvas元素</li>
-<li>用于媒介回放的video和audio元素</li>
-<li>对本地离线存储的跟好的支持</li>
-<li>新的特殊内容元素，比如article、footer、header、nav、section</li>
-<li>新的表单控件，比如calendar、date、time、email、url、search</li>
-</ul>
-<a id="more"></a>
-<h3 id="HTML5-lt-DOCTYPE-gt"><a href="#HTML5-lt-DOCTYPE-gt" class="headerlink" title="HTML5&lt;!DOCTYPE&gt;"></a>HTML5&lt;!DOCTYPE&gt;</h3><p>&lt;!DOCTYPE&gt;声明必须位于HTML5文档中的第一行，使用非常简单。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE HTML&gt;</div></pre></td></tr></table></figure>
-<h3 id="HTML5浏览器支持"><a href="#HTML5浏览器支持" class="headerlink" title="HTML5浏览器支持"></a>HTML5浏览器支持</h3><p>最新版的Safari、Chrome、Firefox以及Opera支持某些HTML5特性。Internet Explorer 9将支持某些HTML5特性。</p>
-<p><img src="../images/browsers_say.png" alt="支持哪些浏览器"></p>
-<p>不论旧的和最新的浏览器，对无法识别的元素会作为内联元素自动处理。正因为如此，你可以“教会”浏览器处理“未知”的HTML元素。</p>
-<h3 id="HTML5新元素"><a href="#HTML5新元素" class="headerlink" title="HTML5新元素"></a>HTML5新元素</h3>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;HTML5教程&quot;&gt;&lt;a href=&quot;#HTML5教程&quot; class=&quot;headerlink&quot; title=&quot;HTML5教程&quot;&gt;&lt;/a&gt;HTML5教程&lt;/h3&gt;&lt;p&gt;你可以使用HTML来创建自己的WEB站点。&lt;br&gt;HTML5是HTML最新的修订版，HTML5的设计目的是为了在&lt;strong&gt;移动设备上支持多媒体。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;HTML5是W3C与WHATWG合作的结果。&lt;br&gt;WHATWG致力于web表单和应用程序，而W3C专注于XHTML2.0。&lt;/p&gt;
-&lt;p&gt;HTML5中的一些有趣的新特性：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;用于会话的canvas元素&lt;/li&gt;
-&lt;li&gt;用于媒介回放的video和audio元素&lt;/li&gt;
-&lt;li&gt;对本地离线存储的跟好的支持&lt;/li&gt;
-&lt;li&gt;新的特殊内容元素，比如article、footer、header、nav、section&lt;/li&gt;
-&lt;li&gt;新的表单控件，比如calendar、date、time、email、url、search&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="HTML5教程" scheme="http://sz8023.github.io/categories/HTML5%E6%95%99%E7%A8%8B/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Ruby教程</title>
-    <link href="http://sz8023.github.io/2016/08/01/Ruby%E6%95%99%E7%A8%8B/"/>
-    <id>http://sz8023.github.io/2016/08/01/Ruby教程/</id>
-    <published>2016-08-01T01:46:31.000Z</published>
-    <updated>2016-08-31T00:37:00.000Z</updated>
+    <link href="http://sz8023.github.io/2016/05/01/Ruby%E6%95%99%E7%A8%8B/"/>
+    <id>http://sz8023.github.io/2016/05/01/Ruby教程/</id>
+    <published>2016-05-01T01:46:31.000Z</published>
+    <updated>2016-08-31T00:43:28.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Ruby教程"><a href="#Ruby教程" class="headerlink" title="Ruby教程"></a>Ruby教程</h3><p>Ruby是一种开源的面向对象程序设计的服务器端脚本语言。Ruby可运行于多种平台，如Windowss、MAC OS和UNIX的各种版本。</p>
 <h3 id="编译-执行Ruby程序"><a href="#编译-执行Ruby程序" class="headerlink" title="编译/执行Ruby程序"></a>编译/执行Ruby程序</h3><p>Ruby与Smalltalk一样，是一个完美的面向对象语言，使用Ruby的语法比使用Smalltalk的语法要容易多。</p>
@@ -93,10 +48,10 @@
   
   <entry>
     <title>NPM使用介绍</title>
-    <link href="http://sz8023.github.io/2016/07/26/NPM%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/"/>
-    <id>http://sz8023.github.io/2016/07/26/NPM使用介绍/</id>
-    <published>2016-07-26T01:08:19.000Z</published>
-    <updated>2016-08-31T00:36:46.000Z</updated>
+    <link href="http://sz8023.github.io/2016/04/26/NPM%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://sz8023.github.io/2016/04/26/NPM使用介绍/</id>
+    <published>2016-04-26T01:08:19.000Z</published>
+    <updated>2016-08-31T00:43:21.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Node-js-PEPL-交互式解释器"><a href="#Node-js-PEPL-交互式解释器" class="headerlink" title="Node.js PEPL(交互式解释器)"></a>Node.js PEPL(交互式解释器)</h1><p>我们可以在终端输入命令，并接收系统的响应<br>Node自带了交互式解释器，可以执行如下任务</p>
 <ul>
@@ -149,10 +104,10 @@ console.log(&quot;程序执行结束&quot;);
   
   <entry>
     <title>Node.js笔记</title>
-    <link href="http://sz8023.github.io/2016/07/25/Node-js%E7%AC%94%E8%AE%B0/"/>
-    <id>http://sz8023.github.io/2016/07/25/Node-js笔记/</id>
-    <published>2016-07-25T09:26:39.000Z</published>
-    <updated>2016-08-31T00:26:07.000Z</updated>
+    <link href="http://sz8023.github.io/2016/04/25/Node-js%E7%AC%94%E8%AE%B0/"/>
+    <id>http://sz8023.github.io/2016/04/25/Node-js笔记/</id>
+    <published>2016-04-25T09:26:39.000Z</published>
+    <updated>2016-08-31T00:43:15.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Node-js应用有哪几部分组成"><a href="#Node-js应用有哪几部分组成" class="headerlink" title="Node.js应用有哪几部分组成"></a>Node.js应用有哪几部分组成</h1><ul>
 <li>引入require模块：</li>
@@ -222,11 +177,56 @@ console.log(&quot;程序执行结束&quot;);
   </entry>
   
   <entry>
+    <title>HTML5教程</title>
+    <link href="http://sz8023.github.io/2016/03/02/HTML5%E6%95%99%E7%A8%8B/"/>
+    <id>http://sz8023.github.io/2016/03/02/HTML5教程/</id>
+    <published>2016-03-02T05:42:39.000Z</published>
+    <updated>2016-08-31T00:43:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="HTML5教程"><a href="#HTML5教程" class="headerlink" title="HTML5教程"></a>HTML5教程</h3><p>你可以使用HTML来创建自己的WEB站点。<br>HTML5是HTML最新的修订版，HTML5的设计目的是为了在<strong>移动设备上支持多媒体。</strong></p>
+<p>HTML5是W3C与WHATWG合作的结果。<br>WHATWG致力于web表单和应用程序，而W3C专注于XHTML2.0。</p>
+<p>HTML5中的一些有趣的新特性：</p>
+<ul>
+<li>用于会话的canvas元素</li>
+<li>用于媒介回放的video和audio元素</li>
+<li>对本地离线存储的跟好的支持</li>
+<li>新的特殊内容元素，比如article、footer、header、nav、section</li>
+<li>新的表单控件，比如calendar、date、time、email、url、search</li>
+</ul>
+<a id="more"></a>
+<h3 id="HTML5-lt-DOCTYPE-gt"><a href="#HTML5-lt-DOCTYPE-gt" class="headerlink" title="HTML5&lt;!DOCTYPE&gt;"></a>HTML5&lt;!DOCTYPE&gt;</h3><p>&lt;!DOCTYPE&gt;声明必须位于HTML5文档中的第一行，使用非常简单。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE HTML&gt;</div></pre></td></tr></table></figure>
+<h3 id="HTML5浏览器支持"><a href="#HTML5浏览器支持" class="headerlink" title="HTML5浏览器支持"></a>HTML5浏览器支持</h3><p>最新版的Safari、Chrome、Firefox以及Opera支持某些HTML5特性。Internet Explorer 9将支持某些HTML5特性。</p>
+<p><img src="../images/browsers_say.png" alt="支持哪些浏览器"></p>
+<p>不论旧的和最新的浏览器，对无法识别的元素会作为内联元素自动处理。正因为如此，你可以“教会”浏览器处理“未知”的HTML元素。</p>
+<h3 id="HTML5新元素"><a href="#HTML5新元素" class="headerlink" title="HTML5新元素"></a>HTML5新元素</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;HTML5教程&quot;&gt;&lt;a href=&quot;#HTML5教程&quot; class=&quot;headerlink&quot; title=&quot;HTML5教程&quot;&gt;&lt;/a&gt;HTML5教程&lt;/h3&gt;&lt;p&gt;你可以使用HTML来创建自己的WEB站点。&lt;br&gt;HTML5是HTML最新的修订版，HTML5的设计目的是为了在&lt;strong&gt;移动设备上支持多媒体。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;HTML5是W3C与WHATWG合作的结果。&lt;br&gt;WHATWG致力于web表单和应用程序，而W3C专注于XHTML2.0。&lt;/p&gt;
+&lt;p&gt;HTML5中的一些有趣的新特性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;用于会话的canvas元素&lt;/li&gt;
+&lt;li&gt;用于媒介回放的video和audio元素&lt;/li&gt;
+&lt;li&gt;对本地离线存储的跟好的支持&lt;/li&gt;
+&lt;li&gt;新的特殊内容元素，比如article、footer、header、nav、section&lt;/li&gt;
+&lt;li&gt;新的表单控件，比如calendar、date、time、email、url、search&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="HTML5教程" scheme="http://sz8023.github.io/categories/HTML5%E6%95%99%E7%A8%8B/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Hello,Hexo</title>
-    <link href="http://sz8023.github.io/2016/07/25/hello-world/"/>
-    <id>http://sz8023.github.io/2016/07/25/hello-world/</id>
-    <published>2016-07-25T06:16:30.000Z</published>
-    <updated>2016-07-25T07:43:40.000Z</updated>
+    <link href="http://sz8023.github.io/2016/02/25/hello-world/"/>
+    <id>http://sz8023.github.io/2016/02/25/hello-world/</id>
+    <published>2016-02-25T06:16:30.000Z</published>
+    <updated>2016-08-31T00:42:59.000Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>

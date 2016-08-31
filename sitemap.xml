@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://sz8023.github.io/2016/08/01/Ruby%E6%95%99%E7%A8%8B/</loc>
+    
+    <lastmod>2016-08-31T00:37:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://sz8023.github.io/2016/07/26/NPM%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/</loc>
+    
+    <lastmod>2016-08-31T00:36:46.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://sz8023.github.io/2016/08/02/HTML5%E6%95%99%E7%A8%8B/</loc>
+    
+    <lastmod>2016-08-31T00:36:25.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://sz8023.github.io/2016/07/25/Node-js%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2016-08-31T00:26:07.000Z</lastmod>
@@ -9,30 +30,9 @@
   </url>
   
   <url>
-    <loc>http://sz8023.github.io/2016/08/01/Ruby%E6%95%99%E7%A8%8B/</loc>
-    
-    <lastmod>2016-08-31T00:19:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://sz8023.github.io/about/index.html</loc>
     
     <lastmod>2016-08-23T00:21:51.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://sz8023.github.io/2016/08/02/HTML5%E6%95%99%E7%A8%8B/</loc>
-    
-    <lastmod>2016-08-02T10:59:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://sz8023.github.io/2016/07/26/NPM%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/</loc>
-    
-    <lastmod>2016-07-26T05:38:16.000Z</lastmod>
     
   </url>
   

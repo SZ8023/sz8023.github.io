@@ -1,0 +1,21 @@
+{"name":"hexo","hostname":"sunzhen.local","pid":598,"level":20,"msg":"Hexo version: \u001b[35m3.2.2\u001b[39m","time":"2016-08-31T00:30:00.052Z","v":0}
+{"name":"hexo","hostname":"sunzhen.local","pid":598,"level":20,"msg":"Working directory: \u001b[35m~/GitBook/SZBlog/\u001b[39m","time":"2016-08-31T00:30:00.055Z","v":0}
+{"name":"hexo","hostname":"sunzhen.local","pid":598,"level":20,"msg":"Config loaded: \u001b[35m~/GitBook/SZBlog/_config.yml\u001b[39m","time":"2016-08-31T00:30:00.130Z","v":0}
+{"name":"hexo","hostname":"sunzhen.local","pid":598,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-browsersync\u001b[39m","time":"2016-08-31T00:30:00.189Z","v":0}
+{"name":"hexo","hostname":"sunzhen.local","pid":598,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-deployer-git\u001b[39m","time":"2016-08-31T00:30:00.372Z","v":0}
+{"name":"hexo","hostname":"sunzhen.local","pid":598,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-archive\u001b[39m","time":"2016-08-31T00:30:00.375Z","v":0}
+{"name":"hexo","hostname":"sunzhen.local","pid":598,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-category\u001b[39m","time":"2016-08-31T00:30:00.376Z","v":0}
+{"name":"hexo","hostname":"sunzhen.local","pid":598,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-feed\u001b[39m","time":"2016-08-31T00:30:00.477Z","v":0}
+{"name":"hexo","hostname":"sunzhen.local","pid":598,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-index\u001b[39m","time":"2016-08-31T00:30:00.479Z","v":0}
+{"name":"hexo","hostname":"sunzhen.local","pid":598,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-sitemap\u001b[39m","time":"2016-08-31T00:30:00.484Z","v":0}
+{"name":"hexo","hostname":"sunzhen.local","pid":598,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-tag\u001b[39m","time":"2016-08-31T00:30:00.487Z","v":0}
+{"name":"hexo","hostname":"sunzhen.local","pid":598,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-renderer-ejs\u001b[39m","time":"2016-08-31T00:30:00.489Z","v":0}
+{"name":"hexo","hostname":"sunzhen.local","pid":598,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-renderer-marked\u001b[39m","time":"2016-08-31T00:30:00.557Z","v":0}
+{"name":"hexo","hostname":"sunzhen.local","pid":598,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-renderer-pug\u001b[39m","time":"2016-08-31T00:30:00.776Z","v":0}
+{"name":"hexo","hostname":"sunzhen.local","pid":598,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-renderer-stylus\u001b[39m","time":"2016-08-31T00:30:00.777Z","v":0}
+{"name":"hexo","hostname":"sunzhen.local","pid":598,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-server\u001b[39m","time":"2016-08-31T00:30:00.869Z","v":0}
+{"name":"hexo","hostname":"sunzhen.local","pid":598,"level":20,"msg":"Script loaded: \u001b[35mthemes/next/scripts/merge-configs.js\u001b[39m","time":"2016-08-31T00:30:00.870Z","v":0}
+{"name":"hexo","hostname":"sunzhen.local","pid":598,"level":20,"msg":"Script loaded: \u001b[35mthemes/next/scripts/tags/center-quote.js\u001b[39m","time":"2016-08-31T00:30:00.871Z","v":0}
+{"name":"hexo","hostname":"sunzhen.local","pid":598,"level":20,"msg":"Script loaded: \u001b[35mthemes/next/scripts/tags/full-image.js\u001b[39m","time":"2016-08-31T00:30:00.871Z","v":0}
+{"name":"hexo","hostname":"sunzhen.local","pid":598,"level":20,"msg":"Script loaded: \u001b[35mthemes/next/scripts/tags/group-pictures.js\u001b[39m","time":"2016-08-31T00:30:00.872Z","v":0}
+{"name":"hexo","hostname":"sunzhen.local","pid":598,"level":20,"msg":"Database saved","time":"2016-08-31T00:30:00.876Z","v":0}

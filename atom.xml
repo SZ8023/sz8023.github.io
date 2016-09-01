@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sz8023.github.io/"/>
-  <updated>2016-08-31T12:27:31.000Z</updated>
+  <updated>2016-09-01T00:51:04.000Z</updated>
   <id>http://sz8023.github.io/</id>
   
   <author>
@@ -16,11 +16,48 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>SDWebImage学习</title>
+    <link href="http://sz8023.github.io/2015/09/01/SDWebImage%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://sz8023.github.io/2015/09/01/SDWebImage学习/</id>
+    <published>2015-08-31T23:42:53.000Z</published>
+    <updated>2016-09-01T00:51:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="rs-SDWebImage"><a href="#rs-SDWebImage" class="headerlink" title="rs/SDWebImage"></a><a href="https://github.com/rs/SDWebImage" target="_blank" rel="external">rs/SDWebImage</a></h3><p><code>SDWebImage</code>是一个优秀的图片处理框架，你可以通过它来实现异步图片下载，并且支持图片的缓存。</p>
+<p>这个第三方库为UIImageView提供了一个分类，支持处理来自网络的图片，主要功能包括以下几点：</p>
+<ul>
+<li>一个UIImageView的分类来添加图片和缓存处理</li>
+<li>一个异步图片下载器</li>
+<li>一个异步内存和磁盘图片缓存和对缓存过期的处理</li>
+<li>支持Gif图片</li>
+<li>支持WebP</li>
+<li>背景图片解压</li>
+<li>相同URL的图片不会下载多次</li>
+<li>假的URL不会尝试一直请求</li>
+<li>保证主线程不会卡死</li>
+<li>……</li>
+</ul>
+<h3 id="应该如何使用"><a href="#应该如何使用" class="headerlink" title="应该如何使用"></a>应该如何使用</h3><p><code>SDWebImage</code>为使用者提供了<a href="http://cocoadocs.org/docsets/SDWebImage/3.8.1/" target="_blank" rel="external">API document</a>，以下只是简单列举以下最常见的用法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">#import &lt;SDWebImage/UIImageView+WebCache.h&gt;</div><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line">- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath &#123;</div><div class="line">    static NSString *MyIdentifier = @&quot;MyIdentifier&quot;;</div><div class="line"></div><div class="line">    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];</div><div class="line">    if (cell == nil) &#123;</div><div class="line">        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault</div><div class="line">                                       reuseIdentifier:MyIdentifier] autorelease];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // Here we use the new provided sd_setImageWithURL: method to load the web image</div><div class="line">    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:@&quot;http://www.domain.com/path/to/image.jpg&quot;]</div><div class="line">                      placeholderImage:[UIImage imageNamed:@&quot;placeholder.png&quot;]];</div><div class="line"></div><div class="line">    cell.textLabel.text = @&quot;My Text&quot;;</div><div class="line">    return cell;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>或者通过使用block的形式</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;rs-SDWebImage&quot;&gt;&lt;a href=&quot;#rs-SDWebImage&quot; class=&quot;headerlink&quot; title=&quot;rs/SDWebImage&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://github.com/rs/SDWebImage&quot; targ
+    
+    </summary>
+    
+      <category term="框架学习" scheme="http://sz8023.github.io/categories/%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>MJExtension学习</title>
     <link href="http://sz8023.github.io/2015/07/05/MJExtension%E5%AD%A6%E4%B9%A0/"/>
     <id>http://sz8023.github.io/2015/07/05/MJExtension学习/</id>
     <published>2015-07-05T10:24:10.000Z</published>
-    <updated>2016-08-31T12:27:31.000Z</updated>
+    <updated>2016-08-31T12:57:54.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="CoderMJLee-MJExtension"><a href="#CoderMJLee-MJExtension" class="headerlink" title="CoderMJLee/MJExtension"></a><a href="https://github.com/CoderMJLee/MJExtension" target="_blank" rel="external">CoderMJLee/MJExtension</a></h3><p>大神李明杰的另一个框架，实现Json和Model的互相转换，转换速度快、使用简单方便的字典转模型框架。</p>
 <p><code>MJExtension</code>是一套字典和模型之间转换的超轻量级框架</p>

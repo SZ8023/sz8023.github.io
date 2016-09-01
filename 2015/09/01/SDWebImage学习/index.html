@@ -108,7 +108,7 @@
 支持WebP
 背景图片解压
 相同UR">
-<meta property="og:updated_time" content="2016-09-01T01:13:32.000Z">
+<meta property="og:updated_time" content="2016-09-01T01:32:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SDWebImage学习">
 <meta name="twitter:description" content="rs/SDWebImageSDWebImage是一个优秀的图片处理框架，你可以通过它来实现异步图片下载，并且支持图片的缓存。
@@ -354,8 +354,10 @@
 <li>……</li>
 </ul>
 <h3 id="应该如何使用"><a href="#应该如何使用" class="headerlink" title="应该如何使用"></a>应该如何使用</h3><p><code>SDWebImage</code>为使用者提供了<a href="http://cocoadocs.org/docsets/SDWebImage/3.8.1/" target="_blank" rel="external">API document</a>，以下只是简单列举以下最常见的用法。</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">&lt;SDWebImage/UIImageView+WebCache.h&gt;</span></span></div><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line">- (<span class="built_in">UITableViewCell</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView cellForRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath &#123;</div><div class="line">    <span class="keyword">static</span> <span class="built_in">NSString</span> *MyIdentifier = <span class="string">@"MyIdentifier"</span>;</div><div class="line"></div><div class="line">    <span class="built_in">UITableViewCell</span> *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];</div><div class="line">    <span class="keyword">if</span> (cell == <span class="literal">nil</span>) &#123;</div><div class="line">        cell = [[[<span class="built_in">UITableViewCell</span> alloc] initWithStyle:<span class="built_in">UITableViewCellStyleDefault</span></div><div class="line">                                       reuseIdentifier:MyIdentifier] autorelease];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// Here we use the new provided sd_setImageWithURL: method to load the web image</span></div><div class="line">    [cell.imageView sd_setImageWithURL:[<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://www.domain.com/path/to/image.jpg"</span>]</div><div class="line">                      placeholderImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"placeholder.png"</span>]];</div><div class="line"></div><div class="line">    cell.textLabel.text = <span class="string">@"My Text"</span>;</div><div class="line">    <span class="keyword">return</span> cell;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">&lt;SDWebImage/UIImageView+WebCache.h&gt;</span></span></div><div class="line">...</div><div class="line">- (<span class="built_in">UITableViewCell</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView cellForRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath &#123;</div><div class="line">   <span class="keyword">static</span> <span class="built_in">NSString</span> *MyIdentifier = <span class="string">@"MyIdentifier"</span>;</div><div class="line"></div><div class="line">   <span class="built_in">UITableViewCell</span> *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];</div><div class="line">   <span class="keyword">if</span> (cell == <span class="literal">nil</span>) &#123;</div><div class="line">       cell = [[[<span class="built_in">UITableViewCell</span> alloc] initWithStyle:<span class="built_in">UITableViewCellStyleDefault</span></div><div class="line">                                      reuseIdentifier:MyIdentifier] autorelease];</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   <span class="comment">// Here we use the new provided sd_setImageWithURL: method to load the web image</span></div><div class="line">   [cell.imageView sd_setImageWithURL:[<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://www.domain.com/path/to/image.jpg"</span>]</div><div class="line">                     placeholderImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"placeholder.png"</span>]];</div><div class="line"></div><div class="line">   cell.textLabel.text = <span class="string">@"My Text"</span>;</div><div class="line">   <span class="keyword">return</span> cell;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>或者通过使用block的形式</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Here we use the new provided sd_setImageWithURL: method to load the web image</span></div><div class="line">[cell.imageView sd_setImageWithURL:[<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://www.domain.com/path/to/image.jpg"</span>]</div><div class="line">                      placeholderImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"placeholder.png"</span>]</div><div class="line">                             completed:^(<span class="built_in">UIImage</span> *image, <span class="built_in">NSError</span> *error, SDImageCacheType cacheType, <span class="built_in">NSURL</span> *imageURL) &#123;</div><div class="line">                                ... completion code here ...</div><div class="line">                             &#125;];</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -582,6 +584,9 @@
     NexT.Pisces
   </a>
 </div>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
 
         
 

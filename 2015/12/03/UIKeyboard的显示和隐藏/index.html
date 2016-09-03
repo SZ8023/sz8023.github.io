@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="实用技巧," />
 
 
 
@@ -84,12 +84,19 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="ForYou">
-<meta property="og:url" content="http://sz8023.github.io/page/3/index.html">
+<meta name="description" content="实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？首先经常会弹出键盘的控件主要有UITextField、UITextView等。而这些控件的父控件要么是常规的是视图，如UIView，或者是常用的UIScrollView、UITableView。那么这个时候就需要分2种情况来处理了。
+UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UIScrollView中键盘的显示和隐藏">
+<meta property="og:url" content="http://sz8023.github.io/2015/12/03/UIKeyboard的显示和隐藏/index.html">
 <meta property="og:site_name" content="ForYou">
+<meta property="og:description" content="实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？首先经常会弹出键盘的控件主要有UITextField、UITextView等。而这些控件的父控件要么是常规的是视图，如UIView，或者是常用的UIScrollView、UITableView。那么这个时候就需要分2种情况来处理了。
+UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现">
+<meta property="og:updated_time" content="2016-09-03T10:54:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ForYou">
+<meta name="twitter:title" content="UIScrollView中键盘的显示和隐藏">
+<meta name="twitter:description" content="实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？首先经常会弹出键盘的控件主要有UITextField、UITextView等。而这些控件的父控件要么是常规的是视图，如UIView，或者是常用的UIScrollView、UITableView。那么这个时候就需要分2种情况来处理了。
+UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现">
 
 
 
@@ -110,9 +117,9 @@
 
 
 
-  <link rel="canonical" href="http://sz8023.github.io/page/3/"/>
+  <link rel="canonical" href="http://sz8023.github.io/2015/12/03/UIKeyboard的显示和隐藏/"/>
 
-  <title> ForYou </title>
+  <title> UIScrollView中键盘的显示和隐藏 | ForYou </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -133,9 +140,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -222,9 +227,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -244,10 +249,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2015/03/02/Html5教程/" itemprop="url">
-                  HTML5教程
-                </a>
+                UIScrollView中键盘的显示和隐藏
               
             
           </h1>
@@ -259,8 +261,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-03-02T13:42:39+08:00" content="2015-03-02">
-              2015-03-02
+            <time itemprop="dateCreated" datetime="2015-12-03T17:54:14+08:00" content="2015-12-03">
+              2015-12-03
             </time>
           </span>
 
@@ -273,8 +275,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/HTML5教程/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML5教程</span>
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
                   </a>
                 </span>
 
@@ -289,8 +291,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/03/02/Html5教程/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/02/Html5教程/" itemprop="commentsCount"></span>
+                <a href="/2015/12/03/UIKeyboard的显示和隐藏/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/03/UIKeyboard的显示和隐藏/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -313,190 +315,116 @@
       
 
       
-        
-          <h3 id="HTML5教程"><a href="#HTML5教程" class="headerlink" title="HTML5教程"></a>HTML5教程</h3><p>你可以使用HTML来创建自己的WEB站点。<br>HTML5是HTML最新的修订版，HTML5的设计目的是为了在<strong>移动设备上支持多媒体。</strong></p>
-<p>HTML5是W3C与WHATWG合作的结果。<br>WHATWG致力于web表单和应用程序，而W3C专注于XHTML2.0。</p>
-<p>HTML5中的一些有趣的新特性：</p>
+        <p>实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？<br>首先经常会弹出键盘的控件主要有<code>UITextField</code>、<code>UITextView</code>等。而这些控件的父控件要么是常规的是视图，如<code>UIView</code>，或者是常用的<code>UIScrollView</code>、<code>UITableView</code>。那么这个时候就需要分2种情况来处理了。</p>
+<h4 id="UIView处理方案"><a href="#UIView处理方案" class="headerlink" title="UIView处理方案"></a>UIView处理方案</h4><p>如果使用的是UIView而不是UIScrollView，那么实现方式很简单，只要重写这个方法处理键盘事件就可以了。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event &#123;</div><div class="line">       [textfield endEditing:<span class="literal">YES</span>];</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p>但是上面的情况不会处理UIscrollView，因为：</p>
 <ul>
-<li>用于会话的canvas元素</li>
-<li>用于媒介回放的video和audio元素</li>
-<li>对本地离线存储的跟好的支持</li>
-<li>新的特殊内容元素，比如article、footer、header、nav、section</li>
-<li>新的表单控件，比如calendar、date、time、email、url、search</li>
+<li>UIScrollView是UIView的子控件</li>
+<li>UIScrollView会先接受触摸事件，并不会把UIEvent传递给UIView</li>
 </ul>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/03/02/Html5教程/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+<h4 id="UIScrollView处理方案"><a href="#UIScrollView处理方案" class="headerlink" title="UIScrollView处理方案"></a>UIScrollView处理方案</h4><p>UIScrollView如果只是在Drag的时候处理键盘，那么处理方式比较简单，你只需要做这样的一个简单设置即可</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">scrollView.keyboardDismissMode = <span class="built_in">UIScrollViewKeyboardDismissModeOnDrag</span>;</div></pre></td></tr></table></figure>
+<p>但是如果你还想要给UIScrollView添加点击事件来处理键盘，那么你就需要给视图添加一个手势来识别它。Coding like this</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="built_in">UITapGestureRecognizer</span> *tapGesture = [[<span class="built_in">UITapGestureRecognizer</span> alloc] initWithTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(tapEvent:)];</div><div class="line">   tapGesture.delegate = <span class="keyword">self</span>;</div><div class="line">   tapGesture.numberOfTapsRequired = <span class="number">1</span>;</div><div class="line">   tapGesture.numberOfTouchesRequired = <span class="number">1</span>;</div><div class="line">   [scrollView addGestureRecognizer:tapGesture];</div></pre></td></tr></table></figure>
+<p>然后在代理方法中你需要这样来处理</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)tapEvent &#123;</div><div class="line">    [<span class="keyword">self</span>.view endEditing:<span class="literal">YES</span>];</div><div class="line"><span class="comment">//     或者想这样</span></div><div class="line"><span class="comment">//    [textField endEditing:YES];</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果你将手势运用在UITableView中的话，那么cell可能就无法接收到点击事件了，也就是说方法<code>- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath</code>走不通了。</p>
+<a id="more"></a>
+<p>为什么cell接收不到事件呢？你需要了解这些知识<a href="https://developer.apple.com/library/ios/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/event_delivery_responder_chain/event_delivery_responder_chain.html" target="_blank" rel="external">Responder Chain</a></p>
+<p>针对这样的问题，你需要实现手势的代理方法。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="built_in">BOOL</span>)gestureRecognizer:(<span class="built_in">UIGestureRecognizer</span> *)gestureRecognizer shouldReceiveTouch:(<span class="built_in">UITouch</span> *)touch &#123;</div><div class="line">    <span class="comment">// 若为UITableViewCellContentView，就不接受tap事件</span></div><div class="line">    <span class="keyword">if</span> ([<span class="built_in">NSStringFromClass</span>([touch.view <span class="keyword">class</span>]) isEqualToString:<span class="string">@"UITableViewCellContentView"</span>]) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/02/25/Hexo教程/" itemprop="url">
-                  Hello,Hexo
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-02-25T14:16:30+08:00" content="2015-02-25">
-              2015-02-25
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Hexo教程/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo教程</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/02/25/Hexo教程/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/02/25/Hexo教程/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
+            <a href="/tags/实用技巧/" rel="tag">#实用技巧</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/12/手势解锁实现/" rel="next" title="手势解锁实现">
+                <i class="fa fa-chevron-left"></i> 手势解锁实现
+              </a>
+            
+          </div>
 
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/12/03/UIKeyboard的显示和隐藏/"
+     data-title="UIScrollView中键盘的显示和隐藏"
+     data-content=""
+     data-url="http://sz8023.github.io/2015/12/03/UIKeyboard的显示和隐藏/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
 
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
           
 
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/12/03/UIKeyboard的显示和隐藏/"
+           data-title="UIScrollView中键盘的显示和隐藏" data-url="http://sz8023.github.io/2015/12/03/UIKeyboard的显示和隐藏/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -516,8 +444,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -593,6 +530,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#UIView处理方案"><span class="nav-number">1.</span> <span class="nav-text">UIView处理方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UIScrollView处理方案"><span class="nav-number">2.</span> <span class="nav-text">UIScrollView处理方案</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -696,6 +644,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

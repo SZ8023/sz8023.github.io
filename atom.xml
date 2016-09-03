@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sz8023.github.io/"/>
-  <updated>2016-09-02T03:06:07.000Z</updated>
+  <updated>2016-09-03T10:54:04.000Z</updated>
   <id>http://sz8023.github.io/</id>
   
   <author>
@@ -16,11 +16,66 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>UIScrollView中键盘的显示和隐藏</title>
+    <link href="http://sz8023.github.io/2015/12/03/UIKeyboard%E7%9A%84%E6%98%BE%E7%A4%BA%E5%92%8C%E9%9A%90%E8%97%8F/"/>
+    <id>http://sz8023.github.io/2015/12/03/UIKeyboard的显示和隐藏/</id>
+    <published>2015-12-03T09:54:14.000Z</published>
+    <updated>2016-09-03T10:54:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？<br>首先经常会弹出键盘的控件主要有<code>UITextField</code>、<code>UITextView</code>等。而这些控件的父控件要么是常规的是视图，如<code>UIView</code>，或者是常用的<code>UIScrollView</code>、<code>UITableView</code>。那么这个时候就需要分2种情况来处理了。</p>
+<h4 id="UIView处理方案"><a href="#UIView处理方案" class="headerlink" title="UIView处理方案"></a>UIView处理方案</h4><p>如果使用的是UIView而不是UIScrollView，那么实现方式很简单，只要重写这个方法处理键盘事件就可以了。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event &#123;</div><div class="line">       [textfield endEditing:<span class="literal">YES</span>];</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p>但是上面的情况不会处理UIscrollView，因为：</p>
+<ul>
+<li>UIScrollView是UIView的子控件</li>
+<li>UIScrollView会先接受触摸事件，并不会把UIEvent传递给UIView</li>
+</ul>
+<h4 id="UIScrollView处理方案"><a href="#UIScrollView处理方案" class="headerlink" title="UIScrollView处理方案"></a>UIScrollView处理方案</h4><p>UIScrollView如果只是在Drag的时候处理键盘，那么处理方式比较简单，你只需要做这样的一个简单设置即可</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">scrollView.keyboardDismissMode = <span class="built_in">UIScrollViewKeyboardDismissModeOnDrag</span>;</div></pre></td></tr></table></figure>
+<p>但是如果你还想要给UIScrollView添加点击事件来处理键盘，那么你就需要给视图添加一个手势来识别它。Coding like this</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="built_in">UITapGestureRecognizer</span> *tapGesture = [[<span class="built_in">UITapGestureRecognizer</span> alloc] initWithTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(tapEvent:)];</div><div class="line">   tapGesture.delegate = <span class="keyword">self</span>;</div><div class="line">   tapGesture.numberOfTapsRequired = <span class="number">1</span>;</div><div class="line">   tapGesture.numberOfTouchesRequired = <span class="number">1</span>;</div><div class="line">   [scrollView addGestureRecognizer:tapGesture];</div></pre></td></tr></table></figure>
+<p>然后在代理方法中你需要这样来处理</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)tapEvent &#123;</div><div class="line">    [<span class="keyword">self</span>.view endEditing:<span class="literal">YES</span>];</div><div class="line"><span class="comment">//     或者想这样</span></div><div class="line"><span class="comment">//    [textField endEditing:YES];</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果你将手势运用在UITableView中的话，那么cell可能就无法接收到点击事件了，也就是说方法<code>- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath</code>走不通了。</p>
+<a id="more"></a>
+<p>为什么cell接收不到事件呢？你需要了解这些知识<a href="https://developer.apple.com/library/ios/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/event_delivery_responder_chain/event_delivery_responder_chain.html" target="_blank" rel="external">Responder Chain</a></p>
+<p>针对这样的问题，你需要实现手势的代理方法。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="built_in">BOOL</span>)gestureRecognizer:(<span class="built_in">UIGestureRecognizer</span> *)gestureRecognizer shouldReceiveTouch:(<span class="built_in">UITouch</span> *)touch &#123;</div><div class="line">    <span class="comment">// 若为UITableViewCellContentView，就不接受tap事件</span></div><div class="line">    <span class="keyword">if</span> ([<span class="built_in">NSStringFromClass</span>([touch.view <span class="keyword">class</span>]) isEqualToString:<span class="string">@"UITableViewCellContentView"</span>]) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？&lt;br&gt;首先经常会弹出键盘的控件主要有&lt;code&gt;UITextField&lt;/code&gt;、&lt;code&gt;UITextView&lt;/code&gt;等。而这些控件的父控件要么是常规的是视图，如&lt;code&gt;UIView&lt;/code&gt;，或者是常用的&lt;code&gt;UIScrollView&lt;/code&gt;、&lt;code&gt;UITableView&lt;/code&gt;。那么这个时候就需要分2种情况来处理了。&lt;/p&gt;
+&lt;h4 id=&quot;UIView处理方案&quot;&gt;&lt;a href=&quot;#UIView处理方案&quot; class=&quot;headerlink&quot; title=&quot;UIView处理方案&quot;&gt;&lt;/a&gt;UIView处理方案&lt;/h4&gt;&lt;p&gt;如果使用的是UIView而不是UIScrollView，那么实现方式很简单，只要重写这个方法处理键盘事件就可以了。&lt;/p&gt;
+&lt;figure class=&quot;highlight objc&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;- (&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt;)touchesBegan:(&lt;span class=&quot;built_in&quot;&gt;NSSet&lt;/span&gt; *)touches withEvent:(&lt;span class=&quot;built_in&quot;&gt;UIEvent&lt;/span&gt; *)event &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;       [textfield endEditing:&lt;span class=&quot;literal&quot;&gt;YES&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   &amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;但是上面的情况不会处理UIscrollView，因为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;UIScrollView是UIView的子控件&lt;/li&gt;
+&lt;li&gt;UIScrollView会先接受触摸事件，并不会把UIEvent传递给UIView&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;UIScrollView处理方案&quot;&gt;&lt;a href=&quot;#UIScrollView处理方案&quot; class=&quot;headerlink&quot; title=&quot;UIScrollView处理方案&quot;&gt;&lt;/a&gt;UIScrollView处理方案&lt;/h4&gt;&lt;p&gt;UIScrollView如果只是在Drag的时候处理键盘，那么处理方式比较简单，你只需要做这样的一个简单设置即可&lt;/p&gt;
+&lt;figure class=&quot;highlight objc&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;scrollView.keyboardDismissMode = &lt;span class=&quot;built_in&quot;&gt;UIScrollViewKeyboardDismissModeOnDrag&lt;/span&gt;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;但是如果你还想要给UIScrollView添加点击事件来处理键盘，那么你就需要给视图添加一个手势来识别它。Coding like this&lt;/p&gt;
+&lt;figure class=&quot;highlight objc&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;UITapGestureRecognizer&lt;/span&gt; *tapGesture = [[&lt;span class=&quot;built_in&quot;&gt;UITapGestureRecognizer&lt;/span&gt; alloc] initWithTarget:&lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt; action:&lt;span class=&quot;keyword&quot;&gt;@selector&lt;/span&gt;(tapEvent:)];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   tapGesture.delegate = &lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   tapGesture.numberOfTapsRequired = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   tapGesture.numberOfTouchesRequired = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   [scrollView addGestureRecognizer:tapGesture];&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;然后在代理方法中你需要这样来处理&lt;/p&gt;
+&lt;figure class=&quot;highlight objc&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;- (&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt;)tapEvent &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    [&lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;.view endEditing:&lt;span class=&quot;literal&quot;&gt;YES&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//     或者想这样&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//    [textField endEditing:YES];&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;如果你将手势运用在UITableView中的话，那么cell可能就无法接收到点击事件了，也就是说方法&lt;code&gt;- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath&lt;/code&gt;走不通了。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="iOS开发" scheme="http://sz8023.github.io/categories/iOS%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="实用技巧" scheme="http://sz8023.github.io/tags/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
+  
+  <entry>
     <title>手势解锁实现</title>
     <link href="http://sz8023.github.io/2015/11/12/%E6%89%8B%E5%8A%BF%E8%A7%A3%E9%94%81%E5%AE%9E%E7%8E%B0/"/>
     <id>http://sz8023.github.io/2015/11/12/手势解锁实现/</id>
     <published>2015-11-12T01:39:53.000Z</published>
-    <updated>2016-09-02T03:06:07.000Z</updated>
+    <updated>2016-09-02T03:07:46.000Z</updated>
     
     <content type="html"><![CDATA[<p>如今很多涉及到安全方面的app都会有手势解锁这个功能。这个功能看似简单，其实还是有很多的注意点在里面。以下是我写的一个简单的手势解锁。</p>
 <p>如果你需要改变根控制器的view，你可以自定义，我这边简单定义了一下：</p>
@@ -29,7 +84,7 @@
 <p>主要的手势解锁在LockView这个类中，部分代码存在注释。这个LockView也是手势的主要绘制区域</p>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//  LockView.m</span></div><div class="line"><span class="comment">//  05-手势解锁</span></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//  Created by styshy on 15/11/4.</span></div><div class="line"><span class="comment">//  Copyright (c) 2015年 sz. All rights reserved.</span></div><div class="line"><span class="comment">//</span></div><div class="line"></div><div class="line"><span class="meta">#import <span class="meta-string">"LockView.h"</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">LockView</span> ()</span></div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>,<span class="keyword">strong</span>) <span class="built_in">NSMutableArray</span> *buttons;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>,<span class="keyword">assign</span>) <span class="built_in">CGPoint</span> curP;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">LockView</span></span></div><div class="line"></div><div class="line"><span class="comment">// 懒加载</span></div><div class="line">- (<span class="built_in">NSMutableArray</span> *)buttons&#123;</div><div class="line">    <span class="keyword">if</span> (_buttons == <span class="literal">nil</span>) &#123;</div><div class="line">        _buttons = [<span class="built_in">NSMutableArray</span> array];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> _buttons;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 添加按钮</span></div><div class="line">- (<span class="keyword">void</span>)awakeFromNib&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i ++) &#123;</div><div class="line">        <span class="comment">// 创建按钮</span></div><div class="line">        <span class="built_in">UIButton</span> *button = [<span class="built_in">UIButton</span> buttonWithType:<span class="built_in">UIButtonTypeCustom</span>];</div><div class="line">        </div><div class="line">        <span class="comment">// 设置按钮的背景图片</span></div><div class="line">        [button setBackgroundImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"gesture_node_normal"</span>] forState:<span class="built_in">UIControlStateNormal</span>];</div><div class="line">        [button setBackgroundImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"gesture_node_selected"</span>] forState:<span class="built_in">UIControlStateSelected</span>];</div><div class="line">        </div><div class="line">        [button addTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(btnClick:) forControlEvents:<span class="built_in">UIControlEventTouchUpInside</span>];</div><div class="line">        </div><div class="line">        <span class="comment">// 将按钮添加到视图当中</span></div><div class="line">        [<span class="keyword">self</span> addSubview:button];</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 按钮的高亮状态是系统自动达到的,当用户长按按钮的时候就会达到高亮状态</span></div><div class="line"><span class="comment">// 按钮的选中状态必须通过代码手动达到</span></div><div class="line">- (<span class="keyword">void</span>)btnClick:(<span class="built_in">UIButton</span> *)btn&#123;</div><div class="line">    btn.selected = <span class="literal">YES</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 布局按钮</span></div><div class="line">- (<span class="keyword">void</span>)layoutSubviews&#123;</div><div class="line">    </div><div class="line">    [<span class="keyword">super</span> layoutSubviews];</div><div class="line">    </div><div class="line">    <span class="built_in">CGFloat</span> WH = <span class="number">74</span>;</div><div class="line">    <span class="built_in">CGFloat</span> btnX = <span class="number">0</span>;</div><div class="line">    <span class="built_in">CGFloat</span> btnY = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> totalCols = <span class="number">3</span>;</div><div class="line">    <span class="keyword">int</span> btnCol = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> btnRow = <span class="number">0</span>;</div><div class="line">    </div><div class="line">    <span class="built_in">CGFloat</span> margin = (<span class="keyword">self</span>.bounds.size.width - totalCols * WH)/(totalCols + <span class="number">1</span>);</div><div class="line">    </div><div class="line">    <span class="keyword">int</span> count = (<span class="keyword">int</span>)<span class="keyword">self</span>.subviews.count;</div><div class="line">    </div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i ++) &#123;</div><div class="line">        <span class="comment">// 当前按钮的所在列</span></div><div class="line">        btnCol =(<span class="keyword">int</span>) i % totalCols;</div><div class="line">        <span class="comment">// 当前按钮所在行</span></div><div class="line">        btnRow = i / totalCols;</div><div class="line">        <span class="comment">// 当前按钮的x坐标</span></div><div class="line">        btnX = margin + btnCol * (margin + WH);</div><div class="line">        <span class="comment">// 当前按钮的y坐标</span></div><div class="line">        btnY = margin + btnRow * (margin + WH);</div><div class="line">        </div><div class="line">        <span class="built_in">UIButton</span> *button = <span class="keyword">self</span>.subviews[i];</div><div class="line">        </div><div class="line">        button.frame = <span class="built_in">CGRectMake</span>(btnX, btnY, WH,WH);</div><div class="line">        <span class="comment">// 将按钮的交互状态转给drawRect方法处理</span></div><div class="line">        button.userInteractionEnabled = <span class="literal">NO</span>;</div><div class="line">        </div><div class="line">        <span class="comment">// 记录按钮，每个按钮都有一个数字标示</span></div><div class="line">        button.tag = i;</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 手势移动</span></div><div class="line">- (<span class="keyword">void</span>)touchesMoved:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event&#123;</div><div class="line">    <span class="comment">// 获取手势</span></div><div class="line">    <span class="built_in">UITouch</span> *touch = [touches anyObject];</div><div class="line">    <span class="comment">// 获取当前的位置坐标</span></div><div class="line">    <span class="built_in">CGPoint</span> point = [touch locationInView:<span class="keyword">self</span>];</div><div class="line">    <span class="keyword">self</span>.curP = point;</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="built_in">UIButton</span>* button <span class="keyword">in</span> <span class="keyword">self</span>.subviews) &#123;</div><div class="line">        <span class="comment">// 判断当前按钮是否被选中</span></div><div class="line">        <span class="keyword">if</span> (<span class="built_in">CGRectContainsPoint</span>(button.frame, point)) &#123;</div><div class="line">            <span class="keyword">if</span> (button.selected == <span class="literal">NO</span>) &#123;</div><div class="line">                button.selected = <span class="literal">YES</span>;</div><div class="line">                [<span class="keyword">self</span>.buttons addObject:button];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">// 重回</span></div><div class="line">    [<span class="keyword">self</span> setNeedsDisplay];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 手势结束</span></div><div class="line">- (<span class="keyword">void</span>)touchesEnded:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event&#123;</div><div class="line">    </div><div class="line">    <span class="built_in">NSMutableString</span> *str = [<span class="built_in">NSMutableString</span> string];</div><div class="line">    <span class="keyword">for</span> (<span class="built_in">UIButton</span> * btn <span class="keyword">in</span> <span class="keyword">self</span>.buttons) &#123;</div><div class="line">        [str appendFormat:<span class="string">@"%ld"</span>,btn.tag];</div><div class="line">        btn.selected = <span class="literal">NO</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,str);</div><div class="line">    </div><div class="line">    <span class="comment">// 清空所有的选中按钮</span></div><div class="line">    [<span class="keyword">self</span>.buttons removeAllObjects];</div><div class="line">    </div><div class="line">    <span class="comment">// 重新绘图</span></div><div class="line">    [<span class="keyword">self</span> setNeedsDisplay];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 绘图</span></div><div class="line">- (<span class="keyword">void</span>)drawRect:(<span class="built_in">CGRect</span>)rect&#123;</div><div class="line">    <span class="comment">// 如果没有选中的按钮，则直接返回</span></div><div class="line">    <span class="keyword">if</span> (<span class="keyword">self</span>.buttons.count == <span class="number">0</span>) <span class="keyword">return</span>;</div><div class="line">    </div><div class="line">    </div><div class="line">    <span class="comment">// 创建路径</span></div><div class="line">    <span class="built_in">UIBezierPath</span> *path = [[<span class="built_in">UIBezierPath</span> alloc] init];</div><div class="line"></div><div class="line">    </div><div class="line">    <span class="keyword">int</span> count = (<span class="keyword">int</span>)<span class="keyword">self</span>.buttons.count;</div><div class="line">    </div><div class="line">    <span class="comment">// 去除path，绘制线条</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt; count; i ++) &#123;</div><div class="line">        <span class="built_in">UIButton</span> *selectedBtn = <span class="keyword">self</span>.buttons[i];</div><div class="line">        <span class="keyword">if</span> (<span class="number">0</span> == i) &#123;</div><div class="line">            [path moveToPoint:selectedBtn.center];</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            [path addLineToPoint:selectedBtn.center];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    [path addLineToPoint:<span class="keyword">self</span>.curP];</div><div class="line">    </div><div class="line">    [path setLineWidth:<span class="number">8</span>];<span class="comment">// 设置线宽</span></div><div class="line">    [[<span class="built_in">UIColor</span> greenColor] set];<span class="comment">//设置线条颜色</span></div><div class="line">    [path stroke];<span class="comment">//绘制空心线条</span></div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
 <p>效果展示图片：</p>
-<p><img src="http://img.blog.csdn.net/20151104234836789?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="LockView"></p>
+<p><img src="../images/LockView.gif" alt="LockView"></p>
 ]]></content>
     
     <summary type="html">
@@ -50,7 +105,7 @@
     <link href="http://sz8023.github.io/2015/09/01/SDWebImage%E5%AD%A6%E4%B9%A0/"/>
     <id>http://sz8023.github.io/2015/09/01/SDWebImage学习/</id>
     <published>2015-08-31T23:42:53.000Z</published>
-    <updated>2016-09-01T01:32:16.000Z</updated>
+    <updated>2016-09-03T09:58:28.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="rs-SDWebImage"><a href="#rs-SDWebImage" class="headerlink" title="rs/SDWebImage"></a><a href="https://github.com/rs/SDWebImage" target="_blank" rel="external">rs/SDWebImage</a></h3><p><code>SDWebImage</code>是一个优秀的图片处理框架，你可以通过它来实现异步图片下载，并且支持图片的缓存。</p>
 <p>这个第三方库为UIImageView提供了一个分类，支持处理来自网络的图片，主要功能包括以下几点：</p>
@@ -94,8 +149,10 @@
     
     </summary>
     
-      <category term="框架学习" scheme="http://sz8023.github.io/categories/%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/"/>
+      <category term="iOS开发" scheme="http://sz8023.github.io/categories/iOS%E5%BC%80%E5%8F%91/"/>
     
+    
+      <category term="框架学习" scheme="http://sz8023.github.io/tags/%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -104,7 +161,7 @@
     <link href="http://sz8023.github.io/2015/07/05/MJExtension%E5%AD%A6%E4%B9%A0/"/>
     <id>http://sz8023.github.io/2015/07/05/MJExtension学习/</id>
     <published>2015-07-05T10:24:10.000Z</published>
-    <updated>2016-08-31T12:57:54.000Z</updated>
+    <updated>2016-09-03T09:59:12.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="CoderMJLee-MJExtension"><a href="#CoderMJLee-MJExtension" class="headerlink" title="CoderMJLee/MJExtension"></a><a href="https://github.com/CoderMJLee/MJExtension" target="_blank" rel="external">CoderMJLee/MJExtension</a></h3><p>大神李明杰的另一个框架，实现Json和Model的互相转换，转换速度快、使用简单方便的字典转模型框架。</p>
 <p><code>MJExtension</code>是一套字典和模型之间转换的超轻量级框架</p>
@@ -138,8 +195,10 @@
     
     </summary>
     
-      <category term="框架学习" scheme="http://sz8023.github.io/categories/%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/"/>
+      <category term="iOS开发" scheme="http://sz8023.github.io/categories/iOS%E5%BC%80%E5%8F%91/"/>
     
+    
+      <category term="框架学习" scheme="http://sz8023.github.io/tags/%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -148,7 +207,7 @@
     <link href="http://sz8023.github.io/2015/06/30/MJRefresh%E5%AD%A6%E4%B9%A0/"/>
     <id>http://sz8023.github.io/2015/06/30/MJRefresh学习/</id>
     <published>2015-06-30T02:41:24.000Z</published>
-    <updated>2016-08-31T10:22:47.000Z</updated>
+    <updated>2016-09-03T09:58:50.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="CoderMJLee-MJRefresh"><a href="#CoderMJLee-MJRefresh" class="headerlink" title="CoderMJLee/MJRefresh"></a><a href="https://github.com/CoderMJLee/MJRefresh" target="_blank" rel="external">CoderMJLee/MJRefresh</a></h3><p>大神李明杰写的一个刷新控件造福了国内的一批程序员，也提高了我们开发项目的进度。</p>
 <p><code>MJRefresh</code>的使用方式特别的简单，看看官网你就可以知道如何使用了。</p>
@@ -182,8 +241,10 @@
     
     </summary>
     
-      <category term="框架学习" scheme="http://sz8023.github.io/categories/%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/"/>
+      <category term="iOS开发" scheme="http://sz8023.github.io/categories/iOS%E5%BC%80%E5%8F%91/"/>
     
+    
+      <category term="框架学习" scheme="http://sz8023.github.io/tags/%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   

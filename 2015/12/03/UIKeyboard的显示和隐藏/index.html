@@ -84,19 +84,19 @@
 
 
 
-<meta name="description" content="实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？首先经常会弹出键盘的控件主要有UITextField、UITextView等。而这些控件的父控件要么是常规的是视图，如UIView，或者是常用的UIScrollView、UITableView。那么这个时候就需要分2种情况来处理了。
-UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现">
+<meta name="description" content="实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？首先经常会弹出键盘的控件主要有UITextField、UITextView等。而这些控件的父控件要么是常规的视图，如UIView、UIScrollView或UITableView等。这个时候也许我们就要分2种情况来处理了。
+UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现方式很简单">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UIScrollView中键盘的显示和隐藏">
 <meta property="og:url" content="http://sz8023.github.io/2015/12/03/UIKeyboard的显示和隐藏/index.html">
 <meta property="og:site_name" content="ForYou">
-<meta property="og:description" content="实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？首先经常会弹出键盘的控件主要有UITextField、UITextView等。而这些控件的父控件要么是常规的是视图，如UIView，或者是常用的UIScrollView、UITableView。那么这个时候就需要分2种情况来处理了。
-UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现">
-<meta property="og:updated_time" content="2016-09-03T10:54:04.000Z">
+<meta property="og:description" content="实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？首先经常会弹出键盘的控件主要有UITextField、UITextView等。而这些控件的父控件要么是常规的视图，如UIView、UIScrollView或UITableView等。这个时候也许我们就要分2种情况来处理了。
+UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现方式很简单">
+<meta property="og:updated_time" content="2016-09-03T14:25:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UIScrollView中键盘的显示和隐藏">
-<meta name="twitter:description" content="实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？首先经常会弹出键盘的控件主要有UITextField、UITextView等。而这些控件的父控件要么是常规的是视图，如UIView，或者是常用的UIScrollView、UITableView。那么这个时候就需要分2种情况来处理了。
-UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现">
+<meta name="twitter:description" content="实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？首先经常会弹出键盘的控件主要有UITextField、UITextView等。而这些控件的父控件要么是常规的视图，如UIView、UIScrollView或UITableView等。这个时候也许我们就要分2种情况来处理了。
+UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现方式很简单">
 
 
 
@@ -315,9 +315,9 @@ UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现">
       
 
       
-        <p>实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？<br>首先经常会弹出键盘的控件主要有<code>UITextField</code>、<code>UITextView</code>等。而这些控件的父控件要么是常规的是视图，如<code>UIView</code>，或者是常用的<code>UIScrollView</code>、<code>UITableView</code>。那么这个时候就需要分2种情况来处理了。</p>
+        <p>实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？<br>首先经常会弹出键盘的控件主要有<code>UITextField</code>、<code>UITextView</code>等。而这些控件的父控件要么是常规的视图，如<code>UIView</code>、<code>UIScrollView</code>或<code>UITableView</code>等。这个时候也许我们就要分2种情况来处理了。</p>
 <h4 id="UIView处理方案"><a href="#UIView处理方案" class="headerlink" title="UIView处理方案"></a>UIView处理方案</h4><p>如果使用的是UIView而不是UIScrollView，那么实现方式很简单，只要重写这个方法处理键盘事件就可以了。</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event &#123;</div><div class="line">       [textfield endEditing:<span class="literal">YES</span>];</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event &#123;</div><div class="line">        [textfield endEditing:<span class="literal">YES</span>];</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
 <p>但是上面的情况不会处理UIscrollView，因为：</p>
 <ul>
 <li>UIScrollView是UIView的子控件</li>
@@ -325,13 +325,13 @@ UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现">
 </ul>
 <h4 id="UIScrollView处理方案"><a href="#UIScrollView处理方案" class="headerlink" title="UIScrollView处理方案"></a>UIScrollView处理方案</h4><p>UIScrollView如果只是在Drag的时候处理键盘，那么处理方式比较简单，你只需要做这样的一个简单设置即可</p>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">scrollView.keyboardDismissMode = <span class="built_in">UIScrollViewKeyboardDismissModeOnDrag</span>;</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>但是如果你还想要给UIScrollView添加点击事件来处理键盘，那么你就需要给视图添加一个手势来识别它。Coding like this</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="built_in">UITapGestureRecognizer</span> *tapGesture = [[<span class="built_in">UITapGestureRecognizer</span> alloc] initWithTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(tapEvent:)];</div><div class="line">   tapGesture.delegate = <span class="keyword">self</span>;</div><div class="line">   tapGesture.numberOfTapsRequired = <span class="number">1</span>;</div><div class="line">   tapGesture.numberOfTouchesRequired = <span class="number">1</span>;</div><div class="line">   [scrollView addGestureRecognizer:tapGesture];</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="built_in">UITapGestureRecognizer</span> *tapGesture = [[<span class="built_in">UITapGestureRecognizer</span> alloc] initWithTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(tapEvent:)];</div><div class="line">tapGesture.delegate = <span class="keyword">self</span>;</div><div class="line">tapGesture.numberOfTapsRequired = <span class="number">1</span>;</div><div class="line">tapGesture.numberOfTouchesRequired = <span class="number">1</span>;</div><div class="line">[scrollView addGestureRecognizer:tapGesture];</div></pre></td></tr></table></figure>
 <p>然后在代理方法中你需要这样来处理</p>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)tapEvent &#123;</div><div class="line">    [<span class="keyword">self</span>.view endEditing:<span class="literal">YES</span>];</div><div class="line"><span class="comment">//     或者想这样</span></div><div class="line"><span class="comment">//    [textField endEditing:YES];</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>如果你将手势运用在UITableView中的话，那么cell可能就无法接收到点击事件了，也就是说方法<code>- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath</code>走不通了。</p>
-<a id="more"></a>
-<p>为什么cell接收不到事件呢？你需要了解这些知识<a href="https://developer.apple.com/library/ios/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/event_delivery_responder_chain/event_delivery_responder_chain.html" target="_blank" rel="external">Responder Chain</a></p>
+<p>为什么cell接收不到事件呢？可能你还需要了解这些知识<a href="https://developer.apple.com/library/ios/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/event_delivery_responder_chain/event_delivery_responder_chain.html" target="_blank" rel="external">Responder Chain</a></p>
 <p>针对这样的问题，你需要实现手势的代理方法。</p>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="built_in">BOOL</span>)gestureRecognizer:(<span class="built_in">UIGestureRecognizer</span> *)gestureRecognizer shouldReceiveTouch:(<span class="built_in">UITouch</span> *)touch &#123;</div><div class="line">    <span class="comment">// 若为UITableViewCellContentView，就不接受tap事件</span></div><div class="line">    <span class="keyword">if</span> ([<span class="built_in">NSStringFromClass</span>([touch.view <span class="keyword">class</span>]) isEqualToString:<span class="string">@"UITableViewCellContentView"</span>]) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
@@ -372,6 +372,10 @@ UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现">
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/14/自定义控件/" rel="prev" title="自定义控件">
+                自定义控件 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -465,7 +469,7 @@ UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

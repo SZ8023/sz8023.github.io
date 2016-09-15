@@ -316,13 +316,13 @@
         
           <p>在iOS的开发中，系统自带的控件有时候根本无法满足开发的需要，这个时候你就需要自定义控件。关于自定义控件我是这么理解的。</p>
 <ul>
-<li>如果可以修改原生控件，那么就去修改原生的控件，毕竟系统的控件创建了很多高性能的控件给我们使用。比如修改原生控件的布局。</li>
+<li>如果可以修改原生控件，那么就去修改原生的控件，毕竟系统的控件自带了很多高性能的功能给我们使用。比如修改原生控件的布局。</li>
 <li>可以在原生控件的基础上进行再造轮子，比如添加一些控件，这样就可以保留原生控件的一些性能。</li>
 <li>完全自定义控件，这个时候你可能需要考虑2个问题，这个控件是否支持Xib或storyboard，还是仅仅支持代码的格式。</li>
 </ul>
-<p>基于以上的几种情况，大致进行了一些总结</p>
+<p>基于以上的几种情况，大致进行了一些总结。</p>
 <h3 id="修改原生控件的布局"><a href="#修改原生控件的布局" class="headerlink" title="修改原生控件的布局"></a>修改原生控件的布局</h3><p>修改原生控件的布局情况在UIButton这个控件当中尤为明显。比如说UIButton的图片默认是居左显示的，那么有时候可能需要让图片居上，居下或者居右显示。这个时候你就可以选择修改原生控件的布局来结局这个问题。</p>
-<pre><code><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"></div><div class="line">- (<span class="keyword">void</span>)layoutSubviews &#123;</div><div class="line">   [<span class="keyword">super</span> layoutSubviews];</div><div class="line">   <span class="comment">// 此处给title和image进行重新布局</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)layoutSubviews &#123;</div><div class="line">   [<span class="keyword">super</span> layoutSubviews];</div><div class="line">   <span class="comment">// 此处给title和image进行重新布局</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </code></pre><p>重写了父类的<code>- (void)layoutSubviews</code>方法，在这个方法里面进行布局。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/01/14/自定义控件/#more" rel="contents">

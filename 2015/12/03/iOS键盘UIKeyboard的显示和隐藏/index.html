@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="实用技巧," />
 
 
 
@@ -84,51 +84,19 @@
 
 
 
-<meta name="description" content="Node.js应用有哪几部分组成
-引入require模块：
-创建服务器：服务器可以监听客户端的请求
-接收请求与相应请求
-
-创建node.js应用
-我们使用require
-
-NPM使用介绍NPM(Node Package Manager)是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题，常见的使用场景如下
-
-允许用户从NPM服务器下载别人编写的第三方包到本地使用
-允许用">
+<meta name="description" content="实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？首先经常会弹出键盘的控件主要有UITextField、UITextView等。而这些控件的父控件要么是常规的视图，如UIView、UIScrollView或UITableView等。这个时候也许我们就要分2种情况来处理了。
+UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现方式很简单">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Node.js笔记">
-<meta property="og:url" content="http://sz8023.github.io/2015/04/25/Node教程/index.html">
+<meta property="og:title" content="UIScrollView中键盘的显示和隐藏">
+<meta property="og:url" content="http://sz8023.github.io/2015/12/03/iOS键盘UIKeyboard的显示和隐藏/index.html">
 <meta property="og:site_name" content="ForYou">
-<meta property="og:description" content="Node.js应用有哪几部分组成
-引入require模块：
-创建服务器：服务器可以监听客户端的请求
-接收请求与相应请求
-
-创建node.js应用
-我们使用require
-
-NPM使用介绍NPM(Node Package Manager)是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题，常见的使用场景如下
-
-允许用户从NPM服务器下载别人编写的第三方包到本地使用
-允许用">
-<meta property="og:image" content="http://sz8023.github.io/../images/web_architecture.jpg">
-<meta property="og:updated_time" content="2016-08-31T12:24:24.000Z">
+<meta property="og:description" content="实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？首先经常会弹出键盘的控件主要有UITextField、UITextView等。而这些控件的父控件要么是常规的视图，如UIView、UIScrollView或UITableView等。这个时候也许我们就要分2种情况来处理了。
+UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现方式很简单">
+<meta property="og:updated_time" content="2016-09-03T14:25:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Node.js笔记">
-<meta name="twitter:description" content="Node.js应用有哪几部分组成
-引入require模块：
-创建服务器：服务器可以监听客户端的请求
-接收请求与相应请求
-
-创建node.js应用
-我们使用require
-
-NPM使用介绍NPM(Node Package Manager)是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题，常见的使用场景如下
-
-允许用户从NPM服务器下载别人编写的第三方包到本地使用
-允许用">
-<meta name="twitter:image" content="http://sz8023.github.io/../images/web_architecture.jpg">
+<meta name="twitter:title" content="UIScrollView中键盘的显示和隐藏">
+<meta name="twitter:description" content="实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？首先经常会弹出键盘的控件主要有UITextField、UITextView等。而这些控件的父控件要么是常规的视图，如UIView、UIScrollView或UITableView等。这个时候也许我们就要分2种情况来处理了。
+UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现方式很简单">
 
 
 
@@ -149,9 +117,9 @@ NPM使用介绍NPM(Node Package Manager)是随同NodeJS一起安装的包管理�
 
 
 
-  <link rel="canonical" href="http://sz8023.github.io/2015/04/25/Node教程/"/>
+  <link rel="canonical" href="http://sz8023.github.io/2015/12/03/iOS键盘UIKeyboard的显示和隐藏/"/>
 
-  <title> Node.js笔记 | ForYou </title>
+  <title> UIScrollView中键盘的显示和隐藏 | ForYou </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -281,7 +249,7 @@ NPM使用介绍NPM(Node Package Manager)是随同NodeJS一起安装的包管理�
             
             
               
-                Node.js笔记
+                UIScrollView中键盘的显示和隐藏
               
             
           </h1>
@@ -293,8 +261,8 @@ NPM使用介绍NPM(Node Package Manager)是随同NodeJS一起安装的包管理�
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-04-25T17:26:39+08:00" content="2015-04-25">
-              2015-04-25
+            <time itemprop="dateCreated" datetime="2015-12-03T17:54:14+08:00" content="2015-12-03">
+              2015-12-03
             </time>
           </span>
 
@@ -307,8 +275,8 @@ NPM使用介绍NPM(Node Package Manager)是随同NodeJS一起安装的包管理�
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Node教程/" itemprop="url" rel="index">
-                    <span itemprop="name">Node教程</span>
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
                   </a>
                 </span>
 
@@ -323,8 +291,8 @@ NPM使用介绍NPM(Node Package Manager)是随同NodeJS一起安装的包管理�
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/04/25/Node教程/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/25/Node教程/" itemprop="commentsCount"></span>
+                <a href="/2015/12/03/iOS键盘UIKeyboard的显示和隐藏/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/03/iOS键盘UIKeyboard的显示和隐藏/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -347,35 +315,25 @@ NPM使用介绍NPM(Node Package Manager)是随同NodeJS一起安装的包管理�
       
 
       
-        <h1 id="Node-js应用有哪几部分组成"><a href="#Node-js应用有哪几部分组成" class="headerlink" title="Node.js应用有哪几部分组成"></a>Node.js应用有哪几部分组成</h1><ul>
-<li>引入require模块：</li>
-<li>创建服务器：服务器可以监听客户端的请求</li>
-<li>接收请求与相应请求</li>
-</ul>
-<h2 id="创建node-js应用"><a href="#创建node-js应用" class="headerlink" title="创建node.js应用"></a>创建node.js应用</h2><ol>
-<li>我们使用require</li>
-</ol>
-<h3 id="NPM使用介绍"><a href="#NPM使用介绍" class="headerlink" title="NPM使用介绍"></a>NPM使用介绍</h3><p>NPM(Node Package Manager)是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题，常见的使用场景如下</p>
+        <p>实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？<br>首先经常会弹出键盘的控件主要有<code>UITextField</code>、<code>UITextView</code>等。而这些控件的父控件要么是常规的视图，如<code>UIView</code>、<code>UIScrollView</code>或<code>UITableView</code>等。这个时候也许我们就要分2种情况来处理了。</p>
+<h4 id="UIView处理方案"><a href="#UIView处理方案" class="headerlink" title="UIView处理方案"></a>UIView处理方案</h4><p>如果使用的是UIView而不是UIScrollView，那么实现方式很简单，只要重写这个方法处理键盘事件就可以了。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event &#123;</div><div class="line">        [textfield endEditing:<span class="literal">YES</span>];</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>但是上面的情况不会处理UIscrollView，因为：</p>
 <ul>
-<li>允许用户从NPM服务器下载别人编写的第三方包到本地使用</li>
-<li>允许用户从NPM服务器下载并安装别人编写好的命令行程序到本地使用</li>
-<li>允许用户将自己编写好的包或命令行程序上传到NPM服务器供别人使用</li>
+<li>UIScrollView是UIView的子控件</li>
+<li>UIScrollView会先接受触摸事件，并不会把UIEvent传递给UIView</li>
 </ul>
-<h1 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h1><ul>
-<li>简单的说Node.js是运行在服务器端的JavaScript</li>
-<li>Node.js是一个事件驱动I/O服务器端JavaScript环境，基于Google的V8引擎，V8引擎执行JavaScript的速度非常快，性能非常快</li>
-</ul>
-<h2 id="使用版本"><a href="#使用版本" class="headerlink" title="使用版本"></a>使用版本</h2><p>我们可以使用一下命令来查看当前的Node版本</p>
-<pre><code>node -v 
-</code></pre><p>Note:不同版本可能有差异的</p>
-<h3 id="脚本模式"><a href="#脚本模式" class="headerlink" title="脚本模式"></a>脚本模式</h3><pre><code>console.log(&quot;Hello, World&quot;);
-</code></pre><h3 id="交互模式"><a href="#交互模式" class="headerlink" title="交互模式"></a>交互模式</h3><h1 id="什么是Web服务器"><a href="#什么是Web服务器" class="headerlink" title="什么是Web服务器"></a>什么是Web服务器</h1><p><code>Web服务器</code>一般指的是网站服务器，是指驻留在因特网上某种类型的计算机的程序，<code>Web服务器</code>的基本功能就是提供Web信息浏览功能服务。</p>
-<p><strong>Web架构</strong><br><!--![web_architecture](../images/web_architecture.jpg)--></p>
-<p><img src="../images/web_architecture.jpg" width="600px"></p>
+<h4 id="UIScrollView处理方案"><a href="#UIScrollView处理方案" class="headerlink" title="UIScrollView处理方案"></a>UIScrollView处理方案</h4><p>UIScrollView如果只是在Drag的时候处理键盘，那么处理方式比较简单，你只需要做这样的一个简单设置即可</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">scrollView.keyboardDismissMode = <span class="built_in">UIScrollViewKeyboardDismissModeOnDrag</span>;</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h3 id="使用Node创建Web服务"><a href="#使用Node创建Web服务" class="headerlink" title="使用Node创建Web服务"></a>使用Node创建Web服务</h3><p>Node.js提供了http模块，http模块主要用于搭建HTTP服务器和客户端，使用HTTP服务器或客户端功能必须调用HTTP模块。代码如下</p>
-<pre><code>var http = require(&apos;http&apos;);
-</code></pre><h3 id="使用Node创建Web客户端"><a href="#使用Node创建Web客户端" class="headerlink" title="使用Node创建Web客户端"></a>使用Node创建Web客户端</h3><p>Node.js创建Web客户端需要引入http模块，创建client.js文件，代码如下所示：    </p>
+<p>但是如果你还想要给UIScrollView添加点击事件来处理键盘，那么你就需要给视图添加一个手势来识别它。Coding like this</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="built_in">UITapGestureRecognizer</span> *tapGesture = [[<span class="built_in">UITapGestureRecognizer</span> alloc] initWithTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(tapEvent:)];</div><div class="line">tapGesture.delegate = <span class="keyword">self</span>;</div><div class="line">tapGesture.numberOfTapsRequired = <span class="number">1</span>;</div><div class="line">tapGesture.numberOfTouchesRequired = <span class="number">1</span>;</div><div class="line">[scrollView addGestureRecognizer:tapGesture];</div></pre></td></tr></table></figure>
+<p>然后在代理方法中你需要这样来处理</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)tapEvent &#123;</div><div class="line">    [<span class="keyword">self</span>.view endEditing:<span class="literal">YES</span>];</div><div class="line"><span class="comment">//     或者想这样</span></div><div class="line"><span class="comment">//    [textField endEditing:YES];</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果你将手势运用在UITableView中的话，那么cell可能就无法接收到点击事件了，也就是说方法<code>- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath</code>走不通了。</p>
+<p>为什么cell接收不到事件呢？可能你还需要了解这些知识<a href="https://developer.apple.com/library/ios/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/event_delivery_responder_chain/event_delivery_responder_chain.html" target="_blank" rel="external">Responder Chain</a></p>
+<p>针对这样的问题，你需要实现手势的代理方法。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="built_in">BOOL</span>)gestureRecognizer:(<span class="built_in">UIGestureRecognizer</span> *)gestureRecognizer shouldReceiveTouch:(<span class="built_in">UITouch</span> *)touch &#123;</div><div class="line">    <span class="comment">// 若为UITableViewCellContentView，就不接受tap事件</span></div><div class="line">    <span class="keyword">if</span> ([<span class="built_in">NSStringFromClass</span>([touch.view <span class="keyword">class</span>]) isEqualToString:<span class="string">@"UITableViewCellContentView"</span>]) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -396,21 +354,27 @@ NPM使用介绍NPM(Node Package Manager)是随同NodeJS一起安装的包管理�
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/实用技巧/" rel="tag">#实用技巧</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/03/02/Html5教程/" rel="next" title="HTML5教程">
-                <i class="fa fa-chevron-left"></i> HTML5教程
+              <a href="/2015/11/12/iOS手势解锁实现/" rel="next" title="手势解锁实现">
+                <i class="fa fa-chevron-left"></i> 手势解锁实现
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/04/26/NPM使用介绍/" rel="prev" title="NPM使用介绍">
-                NPM使用介绍 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/01/14/iOS自定义控件/" rel="prev" title="自定义控件">
+                自定义控件 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -426,10 +390,10 @@ NPM使用介绍NPM(Node Package Manager)是随同NodeJS一起安装的包管理�
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/04/25/Node教程/"
-     data-title="Node.js笔记"
+        <div class="ds-share flat" data-thread-key="2015/12/03/iOS键盘UIKeyboard的显示和隐藏/"
+     data-title="UIScrollView中键盘的显示和隐藏"
      data-content=""
-     data-url="http://sz8023.github.io/2015/04/25/Node教程/">
+     data-url="http://sz8023.github.io/2015/12/03/iOS键盘UIKeyboard的显示和隐藏/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -459,8 +423,8 @@ NPM使用介绍NPM(Node Package Manager)是随同NodeJS一起安装的包管理�
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/04/25/Node教程/"
-           data-title="Node.js笔记" data-url="http://sz8023.github.io/2015/04/25/Node教程/">
+      <div class="ds-thread" data-thread-key="2015/12/03/iOS键盘UIKeyboard的显示和隐藏/"
+           data-title="UIScrollView中键盘的显示和隐藏" data-url="http://sz8023.github.io/2015/12/03/iOS键盘UIKeyboard的显示和隐藏/">
       </div>
     
   </div>
@@ -577,7 +541,7 @@ NPM使用介绍NPM(Node Package Manager)是随同NodeJS一起安装的包管理�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Node-js应用有哪几部分组成"><span class="nav-number">1.</span> <span class="nav-text">Node.js应用有哪几部分组成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建node-js应用"><span class="nav-number">1.1.</span> <span class="nav-text">创建node.js应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NPM使用介绍"><span class="nav-number">1.1.1.</span> <span class="nav-text">NPM使用介绍</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Node-js"><span class="nav-number">2.</span> <span class="nav-text">Node.js</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用版本"><span class="nav-number">2.1.</span> <span class="nav-text">使用版本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本模式"><span class="nav-number">2.1.1.</span> <span class="nav-text">脚本模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交互模式"><span class="nav-number">2.1.2.</span> <span class="nav-text">交互模式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是Web服务器"><span class="nav-number">3.</span> <span class="nav-text">什么是Web服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Node创建Web服务"><span class="nav-number">3.0.1.</span> <span class="nav-text">使用Node创建Web服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Node创建Web客户端"><span class="nav-number">3.0.2.</span> <span class="nav-text">使用Node创建Web客户端</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#UIView处理方案"><span class="nav-number">1.</span> <span class="nav-text">UIView处理方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UIScrollView处理方案"><span class="nav-number">2.</span> <span class="nav-text">UIScrollView处理方案</span></a></li></ol></div>
             
           </div>
         </section>

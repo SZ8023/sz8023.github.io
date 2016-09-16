@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="实用技巧," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,19 +84,28 @@
 
 
 
-<meta name="description" content="实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？首先经常会弹出键盘的控件主要有UITextField、UITextView等。而这些控件的父控件要么是常规的视图，如UIView、UIScrollView或UITableView等。这个时候也许我们就要分2种情况来处理了。
-UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现方式很简单">
+<meta name="description" content="在iOS的开发中，系统自带的控件有时候根本无法满足开发的需要，这个时候你就需要自定义控件。关于自定义控件我是这么理解的。
+
+如果可以修改原生控件，那么就去修改原生的控件，毕竟系统的控件自带了很多高性能的功能给我们使用。比如修改原生控件的布局。
+可以在原生控件的基础上进行再造轮子，比如添加一些控件，这样就可以保留原生控件的一些性能。
+完全自定义控件，这个时候你可能需要考虑2个问题，这个控件是否支持X">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UIScrollView中键盘的显示和隐藏">
-<meta property="og:url" content="http://sz8023.github.io/2015/12/03/UIKeyboard的显示和隐藏/index.html">
+<meta property="og:title" content="自定义控件">
+<meta property="og:url" content="http://sz8023.github.io/2016/01/14/iOS自定义控件/index.html">
 <meta property="og:site_name" content="ForYou">
-<meta property="og:description" content="实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？首先经常会弹出键盘的控件主要有UITextField、UITextView等。而这些控件的父控件要么是常规的视图，如UIView、UIScrollView或UITableView等。这个时候也许我们就要分2种情况来处理了。
-UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现方式很简单">
-<meta property="og:updated_time" content="2016-09-03T14:25:43.000Z">
+<meta property="og:description" content="在iOS的开发中，系统自带的控件有时候根本无法满足开发的需要，这个时候你就需要自定义控件。关于自定义控件我是这么理解的。
+
+如果可以修改原生控件，那么就去修改原生的控件，毕竟系统的控件自带了很多高性能的功能给我们使用。比如修改原生控件的布局。
+可以在原生控件的基础上进行再造轮子，比如添加一些控件，这样就可以保留原生控件的一些性能。
+完全自定义控件，这个时候你可能需要考虑2个问题，这个控件是否支持X">
+<meta property="og:updated_time" content="2016-09-15T10:03:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UIScrollView中键盘的显示和隐藏">
-<meta name="twitter:description" content="实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？首先经常会弹出键盘的控件主要有UITextField、UITextView等。而这些控件的父控件要么是常规的视图，如UIView、UIScrollView或UITableView等。这个时候也许我们就要分2种情况来处理了。
-UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现方式很简单">
+<meta name="twitter:title" content="自定义控件">
+<meta name="twitter:description" content="在iOS的开发中，系统自带的控件有时候根本无法满足开发的需要，这个时候你就需要自定义控件。关于自定义控件我是这么理解的。
+
+如果可以修改原生控件，那么就去修改原生的控件，毕竟系统的控件自带了很多高性能的功能给我们使用。比如修改原生控件的布局。
+可以在原生控件的基础上进行再造轮子，比如添加一些控件，这样就可以保留原生控件的一些性能。
+完全自定义控件，这个时候你可能需要考虑2个问题，这个控件是否支持X">
 
 
 
@@ -117,9 +126,9 @@ UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现�
 
 
 
-  <link rel="canonical" href="http://sz8023.github.io/2015/12/03/UIKeyboard的显示和隐藏/"/>
+  <link rel="canonical" href="http://sz8023.github.io/2016/01/14/iOS自定义控件/"/>
 
-  <title> UIScrollView中键盘的显示和隐藏 | ForYou </title>
+  <title> 自定义控件 | ForYou </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -249,7 +258,7 @@ UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现�
             
             
               
-                UIScrollView中键盘的显示和隐藏
+                自定义控件
               
             
           </h1>
@@ -261,8 +270,8 @@ UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现�
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-12-03T17:54:14+08:00" content="2015-12-03">
-              2015-12-03
+            <time itemprop="dateCreated" datetime="2016-01-14T17:04:37+08:00" content="2016-01-14">
+              2016-01-14
             </time>
           </span>
 
@@ -291,8 +300,8 @@ UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现�
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/12/03/UIKeyboard的显示和隐藏/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/03/UIKeyboard的显示和隐藏/" itemprop="commentsCount"></span>
+                <a href="/2016/01/14/iOS自定义控件/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/14/iOS自定义控件/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -315,25 +324,22 @@ UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现�
       
 
       
-        <p>实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？<br>首先经常会弹出键盘的控件主要有<code>UITextField</code>、<code>UITextView</code>等。而这些控件的父控件要么是常规的视图，如<code>UIView</code>、<code>UIScrollView</code>或<code>UITableView</code>等。这个时候也许我们就要分2种情况来处理了。</p>
-<h4 id="UIView处理方案"><a href="#UIView处理方案" class="headerlink" title="UIView处理方案"></a>UIView处理方案</h4><p>如果使用的是UIView而不是UIScrollView，那么实现方式很简单，只要重写这个方法处理键盘事件就可以了。</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event &#123;</div><div class="line">        [textfield endEditing:<span class="literal">YES</span>];</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-<p>但是上面的情况不会处理UIscrollView，因为：</p>
+        <p>在iOS的开发中，系统自带的控件有时候根本无法满足开发的需要，这个时候你就需要自定义控件。关于自定义控件我是这么理解的。</p>
 <ul>
-<li>UIScrollView是UIView的子控件</li>
-<li>UIScrollView会先接受触摸事件，并不会把UIEvent传递给UIView</li>
+<li>如果可以修改原生控件，那么就去修改原生的控件，毕竟系统的控件自带了很多高性能的功能给我们使用。比如修改原生控件的布局。</li>
+<li>可以在原生控件的基础上进行再造轮子，比如添加一些控件，这样就可以保留原生控件的一些性能。</li>
+<li>完全自定义控件，这个时候你可能需要考虑2个问题，这个控件是否支持Xib或storyboard，还是仅仅支持代码的格式。</li>
 </ul>
-<h4 id="UIScrollView处理方案"><a href="#UIScrollView处理方案" class="headerlink" title="UIScrollView处理方案"></a>UIScrollView处理方案</h4><p>UIScrollView如果只是在Drag的时候处理键盘，那么处理方式比较简单，你只需要做这样的一个简单设置即可</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">scrollView.keyboardDismissMode = <span class="built_in">UIScrollViewKeyboardDismissModeOnDrag</span>;</div></pre></td></tr></table></figure>
+<p>基于以上的几种情况，大致进行了一些总结。</p>
+<h3 id="修改原生控件的布局"><a href="#修改原生控件的布局" class="headerlink" title="修改原生控件的布局"></a>修改原生控件的布局</h3><p>修改原生控件的布局情况在UIButton这个控件当中尤为明显。比如说UIButton的图片默认是居左显示的，那么有时候可能需要让图片居上，居下或者居右显示。这个时候你就可以选择修改原生控件的布局来结局这个问题。</p>
+<pre><code><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)layoutSubviews &#123;</div><div class="line">   [<span class="keyword">super</span> layoutSubviews];</div><div class="line">   <span class="comment">// 此处给title和image进行重新布局</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><p>重写了父类的<code>- (void)layoutSubviews</code>方法，在这个方法里面进行布局。</p>
 <a id="more"></a>
-<p>但是如果你还想要给UIScrollView添加点击事件来处理键盘，那么你就需要给视图添加一个手势来识别它。Coding like this</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="built_in">UITapGestureRecognizer</span> *tapGesture = [[<span class="built_in">UITapGestureRecognizer</span> alloc] initWithTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(tapEvent:)];</div><div class="line">tapGesture.delegate = <span class="keyword">self</span>;</div><div class="line">tapGesture.numberOfTapsRequired = <span class="number">1</span>;</div><div class="line">tapGesture.numberOfTouchesRequired = <span class="number">1</span>;</div><div class="line">[scrollView addGestureRecognizer:tapGesture];</div></pre></td></tr></table></figure>
-<p>然后在代理方法中你需要这样来处理</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)tapEvent &#123;</div><div class="line">    [<span class="keyword">self</span>.view endEditing:<span class="literal">YES</span>];</div><div class="line"><span class="comment">//     或者想这样</span></div><div class="line"><span class="comment">//    [textField endEditing:YES];</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>如果你将手势运用在UITableView中的话，那么cell可能就无法接收到点击事件了，也就是说方法<code>- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath</code>走不通了。</p>
-<p>为什么cell接收不到事件呢？可能你还需要了解这些知识<a href="https://developer.apple.com/library/ios/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/event_delivery_responder_chain/event_delivery_responder_chain.html" target="_blank" rel="external">Responder Chain</a></p>
-<p>针对这样的问题，你需要实现手势的代理方法。</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="built_in">BOOL</span>)gestureRecognizer:(<span class="built_in">UIGestureRecognizer</span> *)gestureRecognizer shouldReceiveTouch:(<span class="built_in">UITouch</span> *)touch &#123;</div><div class="line">    <span class="comment">// 若为UITableViewCellContentView，就不接受tap事件</span></div><div class="line">    <span class="keyword">if</span> ([<span class="built_in">NSStringFromClass</span>([touch.view <span class="keyword">class</span>]) isEqualToString:<span class="string">@"UITableViewCellContentView"</span>]) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="原生基础上再造轮子"><a href="#原生基础上再造轮子" class="headerlink" title="原生基础上再造轮子"></a>原生基础上再造轮子</h3><p>依然是同样的一个问题，如果是图片需要显示在顶部。如果你不是修改UIButton中title和image的布局，那么你可以给UIImageView进行重新改造。</p>
+<pre><code><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"SZImageView.h"</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">SZImageView</span></span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)awakeFromNib &#123;</div><div class="line">    [<span class="keyword">super</span> awakeFromNib];</div><div class="line">    </div><div class="line">    [<span class="keyword">self</span> addCustomView];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">instancetype</span>)initWithFrame:(<span class="built_in">CGRect</span>)frame &#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">self</span> = [<span class="keyword">super</span> initWithFrame:frame]) &#123;</div><div class="line">        [<span class="keyword">self</span> addCustomView];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">self</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)addCustomView &#123;</div><div class="line">    <span class="built_in">UILabel</span> *imgLBL = [[<span class="built_in">UILabel</span> alloc] init];</div><div class="line">    [<span class="keyword">self</span> addSubview:imgLBL];</div><div class="line">    <span class="keyword">self</span>.imgLBL = imgLBL;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)layoutSubviews &#123;</div><div class="line">    [<span class="keyword">super</span> layoutSubviews];</div><div class="line">    <span class="comment">// 给imgLBL布局</span></div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><p>不过这个时候如果你需要给这个控件添加事件的话，可能还需要再添加手势了，此处不做进一步讨论。</p>
+<h3 id="完全自定义控件"><a href="#完全自定义控件" class="headerlink" title="完全自定义控件"></a>完全自定义控件</h3><p>同一个问题不同的解决思路，你也可以通过继承UIView来自定义一个这样的控件。你需要在这个UIView上绘制Image，绘制Text。最简单的方式就是在UIView里面添加一个UIImageView和UILabel，通过修改它们的布局来达到我们想要的效果。</p>
+<p>……</p>
 
       
     </div>
@@ -354,27 +360,21 @@ UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现�
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/实用技巧/" rel="tag">#实用技巧</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/12/手势解锁实现/" rel="next" title="手势解锁实现">
-                <i class="fa fa-chevron-left"></i> 手势解锁实现
+              <a href="/2015/12/03/iOS键盘UIKeyboard的显示和隐藏/" rel="next" title="UIScrollView中键盘的显示和隐藏">
+                <i class="fa fa-chevron-left"></i> UIScrollView中键盘的显示和隐藏
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/01/14/自定义控件/" rel="prev" title="自定义控件">
-                自定义控件 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/02/10/iOS代理和通知/" rel="prev" title="代理和通知">
+                代理和通知 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -390,10 +390,10 @@ UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现�
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/12/03/UIKeyboard的显示和隐藏/"
-     data-title="UIScrollView中键盘的显示和隐藏"
+        <div class="ds-share flat" data-thread-key="2016/01/14/iOS自定义控件/"
+     data-title="自定义控件"
      data-content=""
-     data-url="http://sz8023.github.io/2015/12/03/UIKeyboard的显示和隐藏/">
+     data-url="http://sz8023.github.io/2016/01/14/iOS自定义控件/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -423,8 +423,8 @@ UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现�
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/03/UIKeyboard的显示和隐藏/"
-           data-title="UIScrollView中键盘的显示和隐藏" data-url="http://sz8023.github.io/2015/12/03/UIKeyboard的显示和隐藏/">
+      <div class="ds-thread" data-thread-key="2016/01/14/iOS自定义控件/"
+           data-title="自定义控件" data-url="http://sz8023.github.io/2016/01/14/iOS自定义控件/">
       </div>
     
   </div>
@@ -469,7 +469,7 @@ UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -541,7 +541,7 @@ UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#UIView处理方案"><span class="nav-number">1.</span> <span class="nav-text">UIView处理方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UIScrollView处理方案"><span class="nav-number">2.</span> <span class="nav-text">UIScrollView处理方案</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改原生控件的布局"><span class="nav-number">1.</span> <span class="nav-text">修改原生控件的布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原生基础上再造轮子"><span class="nav-number">2.</span> <span class="nav-text">原生基础上再造轮子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完全自定义控件"><span class="nav-number">3.</span> <span class="nav-text">完全自定义控件</span></a></li></ol></div>
             
           </div>
         </section>

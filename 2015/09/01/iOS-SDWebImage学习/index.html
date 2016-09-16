@@ -84,31 +84,43 @@
 
 
 
-<meta name="description" content="CoderMJLee/MJExtension大神李明杰的另一个框架，实现Json和Model的互相转换，转换速度快、使用简单方便的字典转模型框架。
-MJExtension是一套字典和模型之间转换的超轻量级框架
+<meta name="description" content="rs/SDWebImageSDWebImage是一个优秀的图片处理框架，你可以通过它来实现异步图片下载，并且支持图片的缓存。
+这个第三方库为UIImageView提供了一个分类，支持处理来自网络的图片，主要功能包括以下几点：
 
-JSON –&amp;gt; Model、Core Data Modal
-JSONString –&amp;gt; Model、Core Data Model
-Model、Core Data Model">
+一个UIImageView的分类来添加图片和缓存处理
+一个异步图片下载器
+一个异步内存和磁盘图片缓存和对缓存过期的处理
+支持Gif图片
+支持WebP
+背景图片解压
+相同UR">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MJExtension学习">
-<meta property="og:url" content="http://sz8023.github.io/2015/07/05/iOS_MJExtension学习/index.html">
+<meta property="og:title" content="SDWebImage学习">
+<meta property="og:url" content="http://sz8023.github.io/2015/09/01/iOS-SDWebImage学习/index.html">
 <meta property="og:site_name" content="ForYou">
-<meta property="og:description" content="CoderMJLee/MJExtension大神李明杰的另一个框架，实现Json和Model的互相转换，转换速度快、使用简单方便的字典转模型框架。
-MJExtension是一套字典和模型之间转换的超轻量级框架
+<meta property="og:description" content="rs/SDWebImageSDWebImage是一个优秀的图片处理框架，你可以通过它来实现异步图片下载，并且支持图片的缓存。
+这个第三方库为UIImageView提供了一个分类，支持处理来自网络的图片，主要功能包括以下几点：
 
-JSON –&amp;gt; Model、Core Data Modal
-JSONString –&amp;gt; Model、Core Data Model
-Model、Core Data Model">
-<meta property="og:updated_time" content="2016-09-03T09:59:12.000Z">
+一个UIImageView的分类来添加图片和缓存处理
+一个异步图片下载器
+一个异步内存和磁盘图片缓存和对缓存过期的处理
+支持Gif图片
+支持WebP
+背景图片解压
+相同UR">
+<meta property="og:updated_time" content="2016-09-03T09:58:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MJExtension学习">
-<meta name="twitter:description" content="CoderMJLee/MJExtension大神李明杰的另一个框架，实现Json和Model的互相转换，转换速度快、使用简单方便的字典转模型框架。
-MJExtension是一套字典和模型之间转换的超轻量级框架
+<meta name="twitter:title" content="SDWebImage学习">
+<meta name="twitter:description" content="rs/SDWebImageSDWebImage是一个优秀的图片处理框架，你可以通过它来实现异步图片下载，并且支持图片的缓存。
+这个第三方库为UIImageView提供了一个分类，支持处理来自网络的图片，主要功能包括以下几点：
 
-JSON –&amp;gt; Model、Core Data Modal
-JSONString –&amp;gt; Model、Core Data Model
-Model、Core Data Model">
+一个UIImageView的分类来添加图片和缓存处理
+一个异步图片下载器
+一个异步内存和磁盘图片缓存和对缓存过期的处理
+支持Gif图片
+支持WebP
+背景图片解压
+相同UR">
 
 
 
@@ -129,9 +141,9 @@ Model、Core Data Model">
 
 
 
-  <link rel="canonical" href="http://sz8023.github.io/2015/07/05/iOS_MJExtension学习/"/>
+  <link rel="canonical" href="http://sz8023.github.io/2015/09/01/iOS-SDWebImage学习/"/>
 
-  <title> MJExtension学习 | ForYou </title>
+  <title> SDWebImage学习 | ForYou </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -261,7 +273,7 @@ Model、Core Data Model">
             
             
               
-                MJExtension学习
+                SDWebImage学习
               
             
           </h1>
@@ -273,8 +285,8 @@ Model、Core Data Model">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-07-05T18:24:10+08:00" content="2015-07-05">
-              2015-07-05
+            <time itemprop="dateCreated" datetime="2015-09-01T07:42:53+08:00" content="2015-09-01">
+              2015-09-01
             </time>
           </span>
 
@@ -303,8 +315,8 @@ Model、Core Data Model">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/07/05/iOS_MJExtension学习/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/05/iOS_MJExtension学习/" itemprop="commentsCount"></span>
+                <a href="/2015/09/01/iOS-SDWebImage学习/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/01/iOS-SDWebImage学习/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -327,19 +339,25 @@ Model、Core Data Model">
       
 
       
-        <h3 id="CoderMJLee-MJExtension"><a href="#CoderMJLee-MJExtension" class="headerlink" title="CoderMJLee/MJExtension"></a><a href="https://github.com/CoderMJLee/MJExtension" target="_blank" rel="external">CoderMJLee/MJExtension</a></h3><p>大神李明杰的另一个框架，实现Json和Model的互相转换，转换速度快、使用简单方便的字典转模型框架。</p>
-<p><code>MJExtension</code>是一套字典和模型之间转换的超轻量级框架</p>
+        <h3 id="rs-SDWebImage"><a href="#rs-SDWebImage" class="headerlink" title="rs/SDWebImage"></a><a href="https://github.com/rs/SDWebImage" target="_blank" rel="external">rs/SDWebImage</a></h3><p><code>SDWebImage</code>是一个优秀的图片处理框架，你可以通过它来实现异步图片下载，并且支持图片的缓存。</p>
+<p>这个第三方库为UIImageView提供了一个分类，支持处理来自网络的图片，主要功能包括以下几点：</p>
 <ul>
-<li>JSON –&gt; Model、Core Data Modal</li>
-<li>JSONString –&gt; Model、Core Data Model</li>
-<li>Model、Core Data Model –&gt; JSON</li>
-<li>JSON Array –&gt; Model Array、Core Data Model Array</li>
-<li>JSONString –&gt; Model Array、Core Data Model Array</li>
-<li>Model Array、Core Data Model Array –&gt; JSON Array</li>
+<li>一个UIImageView的分类来添加图片和缓存处理</li>
+<li>一个异步图片下载器</li>
+<li>一个异步内存和磁盘图片缓存和对缓存过期的处理</li>
+<li>支持Gif图片</li>
+<li>支持WebP</li>
+<li>背景图片解压</li>
+<li>相同URL的图片不会下载多次</li>
+<li>假的URL不会尝试一直请求</li>
+<li>保证主线程不会卡死</li>
+<li>……</li>
 </ul>
-<p>Coding all properties of model in one line code.<br>只需要一行代码，就能实现模型的所有属性进行Coding(归档和解档)</p>
-<p>同样的，MJExtension也提供了两种使用方式，一种是通过CocoaPods，另一种是通过手动导入的方式。</p>
+<h3 id="应该如何使用"><a href="#应该如何使用" class="headerlink" title="应该如何使用"></a>应该如何使用</h3><p><code>SDWebImage</code>为使用者提供了<a href="http://cocoadocs.org/docsets/SDWebImage/3.8.1/" target="_blank" rel="external">API document</a>，以下只是简单列举以下最常见的用法。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">&lt;SDWebImage/UIImageView+WebCache.h&gt;</span></span></div><div class="line">...</div><div class="line">- (<span class="built_in">UITableViewCell</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView cellForRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath &#123;</div><div class="line">   <span class="keyword">static</span> <span class="built_in">NSString</span> *MyIdentifier = <span class="string">@"MyIdentifier"</span>;</div><div class="line"></div><div class="line">   <span class="built_in">UITableViewCell</span> *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];</div><div class="line">   <span class="keyword">if</span> (cell == <span class="literal">nil</span>) &#123;</div><div class="line">       cell = [[[<span class="built_in">UITableViewCell</span> alloc] initWithStyle:<span class="built_in">UITableViewCellStyleDefault</span></div><div class="line">                                      reuseIdentifier:MyIdentifier] autorelease];</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   <span class="comment">// Here we use the new provided sd_setImageWithURL: method to load the web image</span></div><div class="line">   [cell.imageView sd_setImageWithURL:[<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://www.domain.com/path/to/image.jpg"</span>]</div><div class="line">                     placeholderImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"placeholder.png"</span>]];</div><div class="line"></div><div class="line">   cell.textLabel.text = <span class="string">@"My Text"</span>;</div><div class="line">   <span class="keyword">return</span> cell;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <a id="more"></a>
+<p>或者通过使用block的形式</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Here we use the new provided sd_setImageWithURL: method to load the web image</span></div><div class="line">[cell.imageView sd_setImageWithURL:[<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://www.domain.com/path/to/image.jpg"</span>]</div><div class="line">                      placeholderImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"placeholder.png"</span>]</div><div class="line">                             completed:^(<span class="built_in">UIImage</span> *image, <span class="built_in">NSError</span> *error, SDImageCacheType cacheType, <span class="built_in">NSURL</span> *imageURL) &#123;</div><div class="line">                                ... completion code here ...</div><div class="line">                             &#125;];</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -371,16 +389,16 @@ Model、Core Data Model">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/06/30/iOS_MJRefresh学习/" rel="next" title="MJRefresh学习">
-                <i class="fa fa-chevron-left"></i> MJRefresh学习
+              <a href="/2015/07/05/iOS-MJExtension学习/" rel="next" title="MJExtension学习">
+                <i class="fa fa-chevron-left"></i> MJExtension学习
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/01/iOS_SDWebImage学习/" rel="prev" title="SDWebImage学习">
-                SDWebImage学习 <i class="fa fa-chevron-right"></i>
+              <a href="/2015/11/12/iOS手势解锁实现/" rel="prev" title="手势解锁实现">
+                手势解锁实现 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -396,10 +414,10 @@ Model、Core Data Model">
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/07/05/iOS_MJExtension学习/"
-     data-title="MJExtension学习"
+        <div class="ds-share flat" data-thread-key="2015/09/01/iOS-SDWebImage学习/"
+     data-title="SDWebImage学习"
      data-content=""
-     data-url="http://sz8023.github.io/2015/07/05/iOS_MJExtension学习/">
+     data-url="http://sz8023.github.io/2015/09/01/iOS-SDWebImage学习/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -429,8 +447,8 @@ Model、Core Data Model">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/07/05/iOS_MJExtension学习/"
-           data-title="MJExtension学习" data-url="http://sz8023.github.io/2015/07/05/iOS_MJExtension学习/">
+      <div class="ds-thread" data-thread-key="2015/09/01/iOS-SDWebImage学习/"
+           data-title="SDWebImage学习" data-url="http://sz8023.github.io/2015/09/01/iOS-SDWebImage学习/">
       </div>
     
   </div>
@@ -475,7 +493,7 @@ Model、Core Data Model">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -547,7 +565,7 @@ Model、Core Data Model">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CoderMJLee-MJExtension"><span class="nav-number">1.</span> <span class="nav-text">CoderMJLee/MJExtension</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#rs-SDWebImage"><span class="nav-number">1.</span> <span class="nav-text">rs/SDWebImage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应该如何使用"><span class="nav-number">2.</span> <span class="nav-text">应该如何使用</span></a></li></ol></div>
             
           </div>
         </section>

@@ -245,6 +245,137 @@
             
               
                 
+                <a class="post-title-link" href="/2015/12/03/iOS键盘UIKeyboard的显示和隐藏/" itemprop="url">
+                  UIScrollView中键盘的显示和隐藏
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-12-03T17:54:14+08:00" content="2015-12-03">
+              2015-12-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/03/iOS键盘UIKeyboard的显示和隐藏/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/03/iOS键盘UIKeyboard的显示和隐藏/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？<br>首先经常会弹出键盘的控件主要有<code>UITextField</code>、<code>UITextView</code>等。而这些控件的父控件要么是常规的视图，如<code>UIView</code>、<code>UIScrollView</code>或<code>UITableView</code>等。这个时候也许我们就要分2种情况来处理了。</p>
+<h4 id="UIView处理方案"><a href="#UIView处理方案" class="headerlink" title="UIView处理方案"></a>UIView处理方案</h4><p>如果使用的是UIView而不是UIScrollView，那么实现方式很简单，只要重写这个方法处理键盘事件就可以了。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event &#123;</div><div class="line">        [textfield endEditing:<span class="literal">YES</span>];</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>但是上面的情况不会处理UIscrollView，因为：</p>
+<ul>
+<li>UIScrollView是UIView的子控件</li>
+<li>UIScrollView会先接受触摸事件，并不会把UIEvent传递给UIView</li>
+</ul>
+<h4 id="UIScrollView处理方案"><a href="#UIScrollView处理方案" class="headerlink" title="UIScrollView处理方案"></a>UIScrollView处理方案</h4><p>UIScrollView如果只是在Drag的时候处理键盘，那么处理方式比较简单，你只需要做这样的一个简单设置即可</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">scrollView.keyboardDismissMode = <span class="built_in">UIScrollViewKeyboardDismissModeOnDrag</span>;</div></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/12/03/iOS键盘UIKeyboard的显示和隐藏/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2015/11/12/iOS手势解锁实现/" itemprop="url">
                   手势解锁实现
                 </a>
@@ -369,7 +500,7 @@
             
               
                 
-                <a class="post-title-link" href="/2015/09/01/iOS_SDWebImage学习/" itemprop="url">
+                <a class="post-title-link" href="/2015/09/01/iOS-SDWebImage学习/" itemprop="url">
                   SDWebImage学习
                 </a>
               
@@ -413,8 +544,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/09/01/iOS_SDWebImage学习/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/01/iOS_SDWebImage学习/" itemprop="commentsCount"></span>
+                <a href="/2015/09/01/iOS-SDWebImage学习/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/01/iOS-SDWebImage学习/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -455,7 +586,7 @@
 <h3 id="应该如何使用"><a href="#应该如何使用" class="headerlink" title="应该如何使用"></a>应该如何使用</h3><p><code>SDWebImage</code>为使用者提供了<a href="http://cocoadocs.org/docsets/SDWebImage/3.8.1/">API document</a>，以下只是简单列举以下最常见的用法。</p>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">&lt;SDWebImage/UIImageView+WebCache.h&gt;</span></span></div><div class="line">...</div><div class="line">- (<span class="built_in">UITableViewCell</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView cellForRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath &#123;</div><div class="line">   <span class="keyword">static</span> <span class="built_in">NSString</span> *MyIdentifier = <span class="string">@"MyIdentifier"</span>;</div><div class="line"></div><div class="line">   <span class="built_in">UITableViewCell</span> *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];</div><div class="line">   <span class="keyword">if</span> (cell == <span class="literal">nil</span>) &#123;</div><div class="line">       cell = [[[<span class="built_in">UITableViewCell</span> alloc] initWithStyle:<span class="built_in">UITableViewCellStyleDefault</span></div><div class="line">                                      reuseIdentifier:MyIdentifier] autorelease];</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   <span class="comment">// Here we use the new provided sd_setImageWithURL: method to load the web image</span></div><div class="line">   [cell.imageView sd_setImageWithURL:[<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://www.domain.com/path/to/image.jpg"</span>]</div><div class="line">                     placeholderImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"placeholder.png"</span>]];</div><div class="line"></div><div class="line">   cell.textLabel.text = <span class="string">@"My Text"</span>;</div><div class="line">   <span class="keyword">return</span> cell;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/01/iOS_SDWebImage学习/#more" rel="contents">
+            <a class="btn" href="/2015/09/01/iOS-SDWebImage学习/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -506,7 +637,7 @@
             
               
                 
-                <a class="post-title-link" href="/2015/07/05/iOS_MJExtension学习/" itemprop="url">
+                <a class="post-title-link" href="/2015/07/05/iOS-MJExtension学习/" itemprop="url">
                   MJExtension学习
                 </a>
               
@@ -550,8 +681,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/07/05/iOS_MJExtension学习/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/05/iOS_MJExtension学习/" itemprop="commentsCount"></span>
+                <a href="/2015/07/05/iOS-MJExtension学习/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/05/iOS-MJExtension学习/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -588,140 +719,7 @@
 <p>Coding all properties of model in one line code.<br>只需要一行代码，就能实现模型的所有属性进行Coding(归档和解档)</p>
 <p>同样的，MJExtension也提供了两种使用方式，一种是通过CocoaPods，另一种是通过手动导入的方式。</p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/07/05/iOS_MJExtension学习/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/06/30/iOS_MJRefresh学习/" itemprop="url">
-                  MJRefresh学习
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-06-30T10:41:24+08:00" content="2015-06-30">
-              2015-06-30
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/06/30/iOS_MJRefresh学习/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/30/iOS_MJRefresh学习/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="CoderMJLee-MJRefresh"><a href="#CoderMJLee-MJRefresh" class="headerlink" title="CoderMJLee/MJRefresh"></a><a href="https://github.com/CoderMJLee/MJRefresh">CoderMJLee/MJRefresh</a></h3><p>大神李明杰写的一个刷新控件造福了国内的一批程序员，也提高了我们开发项目的进度。</p>
-<p><code>MJRefresh</code>的使用方式特别的简单，看看官网你就可以知道如何使用了。</p>
-<p><code>MJRefresh</code>支持的刷新控件有：</p>
-<ul>
-<li>UIScrollView</li>
-<li>UITableView</li>
-<li>UICollectionView</li>
-<li>UIWebView</li>
-</ul>
-<p>像很多牛逼的第三方一样，<code>MJRefresh</code>也提供了两种使用方式，你可以通过CocoaPods或者手动导入的方式来使用它。</p>
-<h3 id="MJRefresh框架的结构图"><a href="#MJRefresh框架的结构图" class="headerlink" title="MJRefresh框架的结构图"></a>MJRefresh框架的结构图</h3><p><img src="../images/MJRefresh.png" width=800px></p>
-<p>使用者可以从这个结构图中清晰的看到自己想要使用的Class，甚至可以根据相应的结构来自己定义刷新控件。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/06/30/iOS_MJRefresh学习/#more" rel="contents">
+            <a class="btn" href="/2015/07/05/iOS-MJExtension学习/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -796,7 +794,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

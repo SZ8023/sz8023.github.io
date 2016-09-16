@@ -84,43 +84,45 @@
 
 
 
-<meta name="description" content="rs/SDWebImageSDWebImage是一个优秀的图片处理框架，你可以通过它来实现异步图片下载，并且支持图片的缓存。
-这个第三方库为UIImageView提供了一个分类，支持处理来自网络的图片，主要功能包括以下几点：
+<meta name="description" content="CoderMJLee/MJRefresh大神李明杰写的一个刷新控件造福了国内的一批程序员，也提高了我们开发项目的进度。
+MJRefresh的使用方式特别的简单，看看官网你就可以知道如何使用了。
+MJRefresh支持的刷新控件有：
 
-一个UIImageView的分类来添加图片和缓存处理
-一个异步图片下载器
-一个异步内存和磁盘图片缓存和对缓存过期的处理
-支持Gif图片
-支持WebP
-背景图片解压
-相同UR">
+UIScrollView
+UITableView
+UICollectionView
+UIWebView
+
+像很多牛逼的第三方一样，MJRefresh也提供了两种使用方">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SDWebImage学习">
-<meta property="og:url" content="http://sz8023.github.io/2015/09/01/iOS_SDWebImage学习/index.html">
+<meta property="og:title" content="MJRefresh学习">
+<meta property="og:url" content="http://sz8023.github.io/2015/06/30/iOS-MJRefresh学习/index.html">
 <meta property="og:site_name" content="ForYou">
-<meta property="og:description" content="rs/SDWebImageSDWebImage是一个优秀的图片处理框架，你可以通过它来实现异步图片下载，并且支持图片的缓存。
-这个第三方库为UIImageView提供了一个分类，支持处理来自网络的图片，主要功能包括以下几点：
+<meta property="og:description" content="CoderMJLee/MJRefresh大神李明杰写的一个刷新控件造福了国内的一批程序员，也提高了我们开发项目的进度。
+MJRefresh的使用方式特别的简单，看看官网你就可以知道如何使用了。
+MJRefresh支持的刷新控件有：
 
-一个UIImageView的分类来添加图片和缓存处理
-一个异步图片下载器
-一个异步内存和磁盘图片缓存和对缓存过期的处理
-支持Gif图片
-支持WebP
-背景图片解压
-相同UR">
-<meta property="og:updated_time" content="2016-09-03T09:58:28.000Z">
+UIScrollView
+UITableView
+UICollectionView
+UIWebView
+
+像很多牛逼的第三方一样，MJRefresh也提供了两种使用方">
+<meta property="og:image" content="http://sz8023.github.io/../images/MJRefresh.png">
+<meta property="og:updated_time" content="2016-09-03T09:58:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SDWebImage学习">
-<meta name="twitter:description" content="rs/SDWebImageSDWebImage是一个优秀的图片处理框架，你可以通过它来实现异步图片下载，并且支持图片的缓存。
-这个第三方库为UIImageView提供了一个分类，支持处理来自网络的图片，主要功能包括以下几点：
+<meta name="twitter:title" content="MJRefresh学习">
+<meta name="twitter:description" content="CoderMJLee/MJRefresh大神李明杰写的一个刷新控件造福了国内的一批程序员，也提高了我们开发项目的进度。
+MJRefresh的使用方式特别的简单，看看官网你就可以知道如何使用了。
+MJRefresh支持的刷新控件有：
 
-一个UIImageView的分类来添加图片和缓存处理
-一个异步图片下载器
-一个异步内存和磁盘图片缓存和对缓存过期的处理
-支持Gif图片
-支持WebP
-背景图片解压
-相同UR">
+UIScrollView
+UITableView
+UICollectionView
+UIWebView
+
+像很多牛逼的第三方一样，MJRefresh也提供了两种使用方">
+<meta name="twitter:image" content="http://sz8023.github.io/../images/MJRefresh.png">
 
 
 
@@ -141,9 +143,9 @@
 
 
 
-  <link rel="canonical" href="http://sz8023.github.io/2015/09/01/iOS_SDWebImage学习/"/>
+  <link rel="canonical" href="http://sz8023.github.io/2015/06/30/iOS-MJRefresh学习/"/>
 
-  <title> SDWebImage学习 | ForYou </title>
+  <title> MJRefresh学习 | ForYou </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -273,7 +275,7 @@
             
             
               
-                SDWebImage学习
+                MJRefresh学习
               
             
           </h1>
@@ -285,8 +287,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-09-01T07:42:53+08:00" content="2015-09-01">
-              2015-09-01
+            <time itemprop="dateCreated" datetime="2015-06-30T10:41:24+08:00" content="2015-06-30">
+              2015-06-30
             </time>
           </span>
 
@@ -315,8 +317,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/09/01/iOS_SDWebImage学习/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/01/iOS_SDWebImage学习/" itemprop="commentsCount"></span>
+                <a href="/2015/06/30/iOS-MJRefresh学习/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/30/iOS-MJRefresh学习/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -339,25 +341,19 @@
       
 
       
-        <h3 id="rs-SDWebImage"><a href="#rs-SDWebImage" class="headerlink" title="rs/SDWebImage"></a><a href="https://github.com/rs/SDWebImage" target="_blank" rel="external">rs/SDWebImage</a></h3><p><code>SDWebImage</code>是一个优秀的图片处理框架，你可以通过它来实现异步图片下载，并且支持图片的缓存。</p>
-<p>这个第三方库为UIImageView提供了一个分类，支持处理来自网络的图片，主要功能包括以下几点：</p>
+        <h3 id="CoderMJLee-MJRefresh"><a href="#CoderMJLee-MJRefresh" class="headerlink" title="CoderMJLee/MJRefresh"></a><a href="https://github.com/CoderMJLee/MJRefresh" target="_blank" rel="external">CoderMJLee/MJRefresh</a></h3><p>大神李明杰写的一个刷新控件造福了国内的一批程序员，也提高了我们开发项目的进度。</p>
+<p><code>MJRefresh</code>的使用方式特别的简单，看看官网你就可以知道如何使用了。</p>
+<p><code>MJRefresh</code>支持的刷新控件有：</p>
 <ul>
-<li>一个UIImageView的分类来添加图片和缓存处理</li>
-<li>一个异步图片下载器</li>
-<li>一个异步内存和磁盘图片缓存和对缓存过期的处理</li>
-<li>支持Gif图片</li>
-<li>支持WebP</li>
-<li>背景图片解压</li>
-<li>相同URL的图片不会下载多次</li>
-<li>假的URL不会尝试一直请求</li>
-<li>保证主线程不会卡死</li>
-<li>……</li>
+<li>UIScrollView</li>
+<li>UITableView</li>
+<li>UICollectionView</li>
+<li>UIWebView</li>
 </ul>
-<h3 id="应该如何使用"><a href="#应该如何使用" class="headerlink" title="应该如何使用"></a>应该如何使用</h3><p><code>SDWebImage</code>为使用者提供了<a href="http://cocoadocs.org/docsets/SDWebImage/3.8.1/" target="_blank" rel="external">API document</a>，以下只是简单列举以下最常见的用法。</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">&lt;SDWebImage/UIImageView+WebCache.h&gt;</span></span></div><div class="line">...</div><div class="line">- (<span class="built_in">UITableViewCell</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView cellForRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath &#123;</div><div class="line">   <span class="keyword">static</span> <span class="built_in">NSString</span> *MyIdentifier = <span class="string">@"MyIdentifier"</span>;</div><div class="line"></div><div class="line">   <span class="built_in">UITableViewCell</span> *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];</div><div class="line">   <span class="keyword">if</span> (cell == <span class="literal">nil</span>) &#123;</div><div class="line">       cell = [[[<span class="built_in">UITableViewCell</span> alloc] initWithStyle:<span class="built_in">UITableViewCellStyleDefault</span></div><div class="line">                                      reuseIdentifier:MyIdentifier] autorelease];</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   <span class="comment">// Here we use the new provided sd_setImageWithURL: method to load the web image</span></div><div class="line">   [cell.imageView sd_setImageWithURL:[<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://www.domain.com/path/to/image.jpg"</span>]</div><div class="line">                     placeholderImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"placeholder.png"</span>]];</div><div class="line"></div><div class="line">   cell.textLabel.text = <span class="string">@"My Text"</span>;</div><div class="line">   <span class="keyword">return</span> cell;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>像很多牛逼的第三方一样，<code>MJRefresh</code>也提供了两种使用方式，你可以通过CocoaPods或者手动导入的方式来使用它。</p>
+<h3 id="MJRefresh框架的结构图"><a href="#MJRefresh框架的结构图" class="headerlink" title="MJRefresh框架的结构图"></a>MJRefresh框架的结构图</h3><p><img src="../images/MJRefresh.png" width="800px"></p>
+<p>使用者可以从这个结构图中清晰的看到自己想要使用的Class，甚至可以根据相应的结构来自己定义刷新控件。</p>
 <a id="more"></a>
-<p>或者通过使用block的形式</p>
-<figure class="highlight objectivec"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Here we use the new provided sd_setImageWithURL: method to load the web image</span></div><div class="line">[cell.imageView sd_setImageWithURL:[<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://www.domain.com/path/to/image.jpg"</span>]</div><div class="line">                      placeholderImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"placeholder.png"</span>]</div><div class="line">                             completed:^(<span class="built_in">UIImage</span> *image, <span class="built_in">NSError</span> *error, SDImageCacheType cacheType, <span class="built_in">NSURL</span> *imageURL) &#123;</div><div class="line">                                ... completion code here ...</div><div class="line">                             &#125;];</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -389,16 +385,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/07/05/iOS_MJExtension学习/" rel="next" title="MJExtension学习">
-                <i class="fa fa-chevron-left"></i> MJExtension学习
+              <a href="/2015/05/01/Ruby教程/" rel="next" title="Ruby教程">
+                <i class="fa fa-chevron-left"></i> Ruby教程
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/11/12/iOS手势解锁实现/" rel="prev" title="手势解锁实现">
-                手势解锁实现 <i class="fa fa-chevron-right"></i>
+              <a href="/2015/07/05/iOS-MJExtension学习/" rel="prev" title="MJExtension学习">
+                MJExtension学习 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -414,10 +410,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/09/01/iOS_SDWebImage学习/"
-     data-title="SDWebImage学习"
+        <div class="ds-share flat" data-thread-key="2015/06/30/iOS-MJRefresh学习/"
+     data-title="MJRefresh学习"
      data-content=""
-     data-url="http://sz8023.github.io/2015/09/01/iOS_SDWebImage学习/">
+     data-url="http://sz8023.github.io/2015/06/30/iOS-MJRefresh学习/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -447,8 +443,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/09/01/iOS_SDWebImage学习/"
-           data-title="SDWebImage学习" data-url="http://sz8023.github.io/2015/09/01/iOS_SDWebImage学习/">
+      <div class="ds-thread" data-thread-key="2015/06/30/iOS-MJRefresh学习/"
+           data-title="MJRefresh学习" data-url="http://sz8023.github.io/2015/06/30/iOS-MJRefresh学习/">
       </div>
     
   </div>
@@ -493,7 +489,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -565,7 +561,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#rs-SDWebImage"><span class="nav-number">1.</span> <span class="nav-text">rs/SDWebImage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应该如何使用"><span class="nav-number">2.</span> <span class="nav-text">应该如何使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CoderMJLee-MJRefresh"><span class="nav-number">1.</span> <span class="nav-text">CoderMJLee/MJRefresh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MJRefresh框架的结构图"><span class="nav-number">2.</span> <span class="nav-text">MJRefresh框架的结构图</span></a></li></ol></div>
             
           </div>
         </section>

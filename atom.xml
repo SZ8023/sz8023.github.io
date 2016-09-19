@@ -42,7 +42,7 @@
     <link href="http://sz8023.github.io/2016/03/11/iOS20160916%E6%8E%A7%E5%88%B6%E5%99%A8%E4%B8%AD%E8%A7%86%E5%9B%BE%E7%9A%84%E5%B8%83%E5%B1%80/"/>
     <id>http://sz8023.github.io/2016/03/11/iOS20160916控制器中视图的布局/</id>
     <published>2016-03-11T06:35:28.000Z</published>
-    <updated>2016-09-19T03:00:38.000Z</updated>
+    <updated>2016-09-19T03:03:15.000Z</updated>
     
     <content type="html"><![CDATA[<p>控制器中除了默认的根视图不需要我们适配之外，根视图的所有子视图几乎都需要我们进行适配。如果是纯代码的话你可以在<code>- (void)viewDidLoad</code>中进行适配(相对父视图进行布局)。但是如果你想要跟新rootView的子视图，你需要在<code>viewWillLayoutSubviews</code>或<code>viewDidLayoutSubviews</code>方法中进行更新。这2个方法的主要区别是前者根视图适配完成，但是子视图适配并没有确定（需要根据设备来确定），而后者子视图的适配已经完成。如果你参考非根视图进行布局更新，建议在后者方法中进行布局更新。如果参考根视图则任意选择。</p>
 <p>当然你也可以在其他方法中通过调动[view setNeedsLayout]和[view layoutIfNeeded]给控件进行提前布局。</p>
@@ -69,19 +69,26 @@
     <link href="http://sz8023.github.io/2016/02/10/iOS%E4%BB%A3%E7%90%86%E5%92%8C%E9%80%9A%E7%9F%A5/"/>
     <id>http://sz8023.github.io/2016/02/10/iOS代理和通知/</id>
     <published>2016-02-09T23:46:27.000Z</published>
-    <updated>2016-09-18T02:17:32.000Z</updated>
+    <updated>2016-09-19T07:59:19.000Z</updated>
     
     <content type="html"><![CDATA[<p>开发中离不开代理（或Block）和通知。到底什么时候使用代理，什么时候使用通知呢？首先我们从概念入手。<br><!--此处概念来自苹果官网或者stackoverflow--></p>
 <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p><strong>协议Protocol：</strong>接口是一堆方法的声明，但是没有实现。协议也是一堆方法的声明没有实现，在此基础上增加了选择实现和必须实现方法的选择。</p>
-<p><strong>代理Delegate：</strong>传入的对象代替了当前类完成了某个功能，成为代理模式。使用场景，对象A发生了某些十事情想要告诉对象B的时候或者对象B想要监听对象A发生了什么事情，都可以让对象B成为对象A的代理。</p>
+<p><strong>代理Delegate：</strong>传入的对象代替了当前类完成了某个功能，成为代理模式。使用场景，对象A发生了某些事情想要告诉对象B的时候或者对象B想要监听对象A发生了什么事情，都可以让对象B成为对象A的代理。</p>
 <p><strong>通知Notification：</strong> 通知可以实现多个对象之间传递消息，不论对象之间的层次关系多么复杂。通知是线程同步的。</p>
 <h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p>通知和代理都可以实现对象和对象之间的传值，不同之处在与代理实现的是逻辑关系简单，视图层次不复杂的一对一传值，而通知用的比较多的场合是逻辑关系较为复杂，视图层次比较深的一对多传值。</p>
+<a id="more"></a>
 <h4 id="什么时候使用代理"><a href="#什么时候使用代理" class="headerlink" title="什么时候使用代理"></a>什么时候使用代理</h4><ul>
 <li>自定义控件的时候，如果想要将控件的点击事件传递出去，需要使用代理。</li>
 <li>控制器传值，如果想要将目标控制器中的数据传递给源控制器可以使用代理。</li>
 <li>网络部分也可以通过代理的方式来处理响应结果。</li>
 </ul>
-<h4 id="什么时候使用通知"><a href="#什么时候使用通知" class="headerlink" title="什么时候使用通知"></a>什么时候使用通知</h4><h3 id="开发中哪些地方会用到"><a href="#开发中哪些地方会用到" class="headerlink" title="开发中哪些地方会用到"></a>开发中哪些地方会用到</h3><p>从顺传和逆传的角度考虑</p>
+<p>可以使用代理的地方都可以使用block来代替，而且使用方式更简单！</p>
+<h4 id="什么时候使用通知"><a href="#什么时候使用通知" class="headerlink" title="什么时候使用通知"></a>什么时候使用通知</h4><p>如果是自定义的view，那么可以在init方法中添加通知，如果是控制器，可以在viewDidLoad方法中添加通知，在dealloc方法中移除通知，移除通知的时候，一定要使用<code>removeObserver: name: object:</code>带有name的方法，这样可以避免移除该对象的其他通知（可能是系统自带的通知）。</p>
+<ul>
+<li>如果自定义控件存在多层嵌套，可以使用通知来传递事件</li>
+<li>如果一个控制器想要通知其他控制器刷新界面的时候可以使用通知</li>
+</ul>
+<h3 id="开发中哪些地方会用到"><a href="#开发中哪些地方会用到" class="headerlink" title="开发中哪些地方会用到"></a>开发中哪些地方会用到</h3><p>从顺传和逆传的角度考虑</p>
 <ul>
 <li>自定义控件</li>
 <li>控制器之间传值</li>
@@ -91,7 +98,10 @@
     <summary type="html">
     
       &lt;p&gt;开发中离不开代理（或Block）和通知。到底什么时候使用代理，什么时候使用通知呢？首先我们从概念入手。&lt;br&gt;&lt;!--此处概念来自苹果官网或者stackoverflow--&gt;&lt;/p&gt;
-&lt;h3 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; 
+&lt;h3 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;协议Protocol：&lt;/strong&gt;接口是一堆方法的声明，但是没有实现。协议也是一堆方法的声明没有实现，在此基础上增加了选择实现和必须实现方法的选择。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;代理Delegate：&lt;/strong&gt;传入的对象代替了当前类完成了某个功能，成为代理模式。使用场景，对象A发生了某些事情想要告诉对象B的时候或者对象B想要监听对象A发生了什么事情，都可以让对象B成为对象A的代理。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;通知Notification：&lt;/strong&gt; 通知可以实现多个对象之间传递消息，不论对象之间的层次关系多么复杂。通知是线程同步的。&lt;/p&gt;
+&lt;h3 id=&quot;用法&quot;&gt;&lt;a href=&quot;#用法&quot; class=&quot;headerlink&quot; title=&quot;用法&quot;&gt;&lt;/a&gt;用法&lt;/h3&gt;&lt;p&gt;通知和代理都可以实现对象和对象之间的传值，不同之处在与代理实现的是逻辑关系简单，视图层次不复杂的一对一传值，而通知用的比较多的场合是逻辑关系较为复杂，视图层次比较深的一对多传值。&lt;/p&gt;
     
     </summary>
     

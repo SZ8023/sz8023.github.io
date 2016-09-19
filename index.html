@@ -434,8 +434,8 @@
 
       
         
-          <p>控制器中除了默认的根视图不需要我们适配之外，根视图的所有子视图几乎都需要我们进行适配。如果是纯代码的话你可以在<code>- (void)viewDidLoad</code>中进行适配(相对父视图进行布局)。但是如果是rootView的子视图，你需要在<code>viewWillLayoutSubviews</code>或<code>viewDidLayoutSubviews</code>方法中进行适配。这2个方法的主要区别是前者根视图适配完成，但是子视图适配并没有确定（需要根据设备来确定），而后者子视图的适配已经完成。如果你参考非根视图进行布局，建议在后者方法中进行布局。如果参考根视图则任意选择。</p>
-<p>当然你也可以在其他方法中通过调动<code>layoutIfNeeded</code>给控件进行提前布局。</p>
+          <p>控制器中除了默认的根视图不需要我们适配之外，根视图的所有子视图几乎都需要我们进行适配。如果是纯代码的话你可以在<code>- (void)viewDidLoad</code>中进行适配(相对父视图进行布局)。但是如果你想要跟新rootView的子视图，你需要在<code>viewWillLayoutSubviews</code>或<code>viewDidLayoutSubviews</code>方法中进行更新。这2个方法的主要区别是前者根视图适配完成，但是子视图适配并没有确定（需要根据设备来确定），而后者子视图的适配已经完成。如果你参考非根视图进行布局更新，建议在后者方法中进行布局更新。如果参考根视图则任意选择。</p>
+<p>当然你也可以在其他方法中通过调动[view setNeedsLayout]和[view layoutIfNeeded]给控件进行提前布局。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/03/11/iOS20160916控制器中视图的布局/#more" rel="contents">
               阅读全文 &raquo;
@@ -559,7 +559,16 @@
         
           
             <p>开发中离不开代理（或Block）和通知。到底什么时候使用代理，什么时候使用通知呢？首先我们从概念入手。<br><!--此处概念来自苹果官网或者stackoverflow--></p>
-<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><h3 id="开发中哪些地方会用到"><a href="#开发中哪些地方会用到" class="headerlink" title="开发中哪些地方会用到"></a>开发中哪些地方会用到</h3><p>从顺传和逆传的角度考虑</p>
+<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p><strong>协议Protocol：</strong>接口是一堆方法的声明，但是没有实现。协议也是一堆方法的声明没有实现，在此基础上增加了选择实现和必须实现方法的选择。</p>
+<p><strong>代理Delegate：</strong>传入的对象代替了当前类完成了某个功能，成为代理模式。使用场景，对象A发生了某些十事情想要告诉对象B的时候或者对象B想要监听对象A发生了什么事情，都可以让对象B成为对象A的代理。</p>
+<p><strong>通知Notification：</strong> 通知可以实现多个对象之间传递消息，不论对象之间的层次关系多么复杂。通知是线程同步的。</p>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p>通知和代理都可以实现对象和对象之间的传值，不同之处在与代理实现的是逻辑关系简单，视图层次不复杂的一对一传值，而通知用的比较多的场合是逻辑关系较为复杂，视图层次比较深的一对多传值。</p>
+<h4 id="什么时候使用代理"><a href="#什么时候使用代理" class="headerlink" title="什么时候使用代理"></a>什么时候使用代理</h4><ul>
+<li>自定义控件的时候，如果想要将控件的点击事件传递出去，需要使用代理。</li>
+<li>控制器传值，如果想要将目标控制器中的数据传递给源控制器可以使用代理。</li>
+<li>网络部分也可以通过代理的方式来处理响应结果。</li>
+</ul>
+<h4 id="什么时候使用通知"><a href="#什么时候使用通知" class="headerlink" title="什么时候使用通知"></a>什么时候使用通知</h4><h3 id="开发中哪些地方会用到"><a href="#开发中哪些地方会用到" class="headerlink" title="开发中哪些地方会用到"></a>开发中哪些地方会用到</h3><p>从顺传和逆传的角度考虑</p>
 <ul>
 <li>自定义控件</li>
 <li>控制器之间传值</li>
@@ -689,9 +698,25 @@
 <li>完全自定义控件，这个时候你可能需要考虑2个问题，这个控件是否支持Xib或storyboard，还是仅仅支持代码的格式。</li>
 </ul>
 <p>基于以上的几种情况，大致进行了一些总结。</p>
-<h3 id="修改原生控件的布局"><a href="#修改原生控件的布局" class="headerlink" title="修改原生控件的布局"></a>修改原生控件的布局</h3><p>修改原生控件的布局情况在UIButton这个控件当中尤为明显。比如说UIButton的图片默认是居左显示的，那么有时候可能需要让图片居上，居下或者居右显示。这个时候你就可以选择修改原生控件的布局来结局这个问题。</p>
-<pre><code><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)layoutSubviews &#123;</div><div class="line">   [<span class="keyword">super</span> layoutSubviews];</div><div class="line">   <span class="comment">// 此处给title和image进行重新布局</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</code></pre><p>重写了父类的<code>- (void)layoutSubviews</code>方法，在这个方法里面进行布局。</p>
+<h3 id="修改原生控件的布局"><a href="#修改原生控件的布局" class="headerlink" title="修改原生控件的布局"></a>修改原生控件的布局</h3><p>修改原生控件的布局情况在UIButton这个控件当中尤为明显。比如说UIButton的图片默认是居左显示的，那么有时候可能需要让图片居上，居下或者居右显示。这个时候你就可以选择修改原生控件的布局来结局这个问题。由于<code>layoutSubviews</code>在以下几种情况下回自动调用。</p>
+<ol>
+<li>init初始化不会出发layoutSubviews。但是用initWithFrame进行初始化的时候，如果rect的值不为CGRectZero时，也会触发。</li>
+<li>addSubview会触发layoutSubviews</li>
+<li>设置view的Frame会触发layoutSubviews，当然前提是frame的值设置前后发生了变化</li>
+<li>滚动一个UIScrollView会触发layoutSubviews</li>
+<li>旋转UIScreen会触发父UIView的layoutSubviews事件</li>
+<li>改变一个UIView大小的时候也会触发父UIView上的layoutSubviews事件</li>
+</ol>
+<p>以上都是系统自动刷新，那么我们如何进行手动刷新呢？</p>
+<ol>
+<li>setNeedsLayout：标记为需要重新布局，异步调用layoutIfNeeded刷新布局，不立即刷新，但是layoutSubviews一定会被调用</li>
+<li>layoutIfNeeded：如果，有需要刷新的标记，立即调用layoutSubviews进行重新布局(如果没有标记，不会调用layoutSubviews)</li>
+</ol>
+<p>如果要立即刷新，需要先调用[view setNeedsLayout]，把标记设置为需要布局，然后马上调用[view layoutIfNeeded]，实现布局。</p>
+<p>在视图第一次显示之前，标记总是“需要刷新”的，可以直接调用[view layoutIfNeeded]。</p>
+<p>所以如果不需要更新布局，那么你只需要在init方法中给添加的子控件布局就可以了。</p>
+<pre><code><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">instancetype</span>)initWithFrame:(<span class="built_in">CGRect</span>)frame &#123;</div><div class="line">   <span class="keyword">if</span> (<span class="keyword">self</span> = [<span class="keyword">super</span> initWithFrame:frame]) &#123;</div><div class="line">       <span class="comment">// 在此处对子控件进行布局</span></div><div class="line">   &#125;</div><div class="line">   <span class="keyword">return</span> <span class="keyword">self</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><p>你可是在<code>- (void)layoutSubviews</code>中对子控件更新布局。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/01/14/iOS自定义控件/#more" rel="contents">
               阅读全文 &raquo;

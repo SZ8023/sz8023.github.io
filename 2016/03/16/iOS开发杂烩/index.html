@@ -85,21 +85,21 @@
 
 
 <meta name="description" content="本文主要记录一些开发中常用的技巧。比如常用的常量文件，宏定义文件，什么时候创建分类，什么时候使用继承，什么时候使用代理封装第三方库（哪些第三方库需要封装，如何封装）等等。
-关于常量整型，浮点建议使用const，
-关于宏定义什么时候创建分类什么时候使用继承什么时候封装第三方库">
+关于常量很显然不变的量就是常量，比较常用的地方就是整形，浮点型，字符串等。这个时候不建议使用#define来定义。
+static NSInteger const weight = 70;// 定义一个整形常量static CGF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="开发杂烩">
 <meta property="og:url" content="http://sz8023.github.io/2016/03/16/iOS开发杂烩/index.html">
 <meta property="og:site_name" content="ForYou">
 <meta property="og:description" content="本文主要记录一些开发中常用的技巧。比如常用的常量文件，宏定义文件，什么时候创建分类，什么时候使用继承，什么时候使用代理封装第三方库（哪些第三方库需要封装，如何封装）等等。
-关于常量整型，浮点建议使用const，
-关于宏定义什么时候创建分类什么时候使用继承什么时候封装第三方库">
-<meta property="og:updated_time" content="2016-09-20T11:56:04.000Z">
+关于常量很显然不变的量就是常量，比较常用的地方就是整形，浮点型，字符串等。这个时候不建议使用#define来定义。
+static NSInteger const weight = 70;// 定义一个整形常量static CGF">
+<meta property="og:updated_time" content="2016-09-22T03:59:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开发杂烩">
 <meta name="twitter:description" content="本文主要记录一些开发中常用的技巧。比如常用的常量文件，宏定义文件，什么时候创建分类，什么时候使用继承，什么时候使用代理封装第三方库（哪些第三方库需要封装，如何封装）等等。
-关于常量整型，浮点建议使用const，
-关于宏定义什么时候创建分类什么时候使用继承什么时候封装第三方库">
+关于常量很显然不变的量就是常量，比较常用的地方就是整形，浮点型，字符串等。这个时候不建议使用#define来定义。
+static NSInteger const weight = 70;// 定义一个整形常量static CGF">
 
 
 
@@ -319,8 +319,17 @@
 
       
         <p>本文主要记录一些开发中常用的技巧。比如常用的常量文件，宏定义文件，什么时候创建分类，什么时候使用继承，什么时候使用代理封装第三方库（哪些第三方库需要封装，如何封装）等等。</p>
-<h3 id="关于常量"><a href="#关于常量" class="headerlink" title="关于常量"></a>关于常量</h3><p>整型，浮点建议使用const，</p>
-<h3 id="关于宏定义"><a href="#关于宏定义" class="headerlink" title="关于宏定义"></a>关于宏定义</h3><h3 id="什么时候创建分类"><a href="#什么时候创建分类" class="headerlink" title="什么时候创建分类"></a>什么时候创建分类</h3><h3 id="什么时候使用继承"><a href="#什么时候使用继承" class="headerlink" title="什么时候使用继承"></a>什么时候使用继承</h3><h3 id="什么时候封装第三方库"><a href="#什么时候封装第三方库" class="headerlink" title="什么时候封装第三方库"></a>什么时候封装第三方库</h3>
+<h3 id="关于常量"><a href="#关于常量" class="headerlink" title="关于常量"></a>关于常量</h3><p>很显然不变的量就是常量，比较常用的地方就是整形，浮点型，字符串等。这个时候不建议使用#define来定义。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="built_in">NSInteger</span> <span class="keyword">const</span> weight = <span class="number">70</span>;<span class="comment">// 定义一个整形常量</span></div><div class="line"><span class="keyword">static</span> <span class="built_in">CGFloat</span> <span class="keyword">const</span> height = <span class="number">166.0</span>;<span class="comment">// 定义一个浮点型常量</span></div><div class="line"><span class="keyword">static</span> <span class="built_in">NSString</span> <span class="keyword">const</span> *city = <span class="string">@"上海"</span>;<span class="comment">// 定义一个常量字符串</span></div></pre></td></tr></table></figure>
+<h3 id="关于宏定义"><a href="#关于宏定义" class="headerlink" title="关于宏定义"></a>关于宏定义</h3><p>宏定义是预处理命令，及在预编译阶段进行字符替换，在使用的时候要注意“边缘效应”。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">\<span class="meta">#define kScreen_bounds [[UIScreen mainScreen] bounds]</span></div><div class="line">\<span class="meta">#define kScreen_Height [[UIScreen mainScreen] bounds].size.height</span></div><div class="line">\<span class="meta">#define kScreen_Width [[UIScreen mainScreen] bounds].size.width</span></div><div class="line">\<span class="meta">#define IS_IPHONE4 (([[UIScreen mainScreen] bounds].size.height == 480) ? YES : NO)</span></div><div class="line">\<span class="meta">#define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height == 568) ? YES : NO)</span></div><div class="line">\<span class="meta">#define IS_IPhone6 (([[UIScreen mainScreen] bounds].size.height == 667) ? YES : NO)</span></div><div class="line">\<span class="meta">#define IOS_IPhone6plusS (([[UIScreen mainScreen] bounds].size.height = 736) ? YES : NO)</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>所谓的边缘效应是指：</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">/<span class="meta">#define sum(a) a + 5</span></div><div class="line"><span class="built_in">CGFloat</span> minus = sum(<span class="number">5</span>) * <span class="number">4</span>;</div><div class="line"><span class="comment">// 由于宏定义只是简单的替换，所以minus的结果不是40，而是 5 + 5 * 4 = 25;这就是边缘效应。</span></div><div class="line"><span class="comment">// 正确使用方式 /#define sum(a) (a + 5)</span></div></pre></td></tr></table></figure>
+<h3 id="什么时候创建分类"><a href="#什么时候创建分类" class="headerlink" title="什么时候创建分类"></a>什么时候创建分类</h3><h3 id="什么时候使用继承"><a href="#什么时候使用继承" class="headerlink" title="什么时候使用继承"></a>什么时候使用继承</h3><h3 id="什么时候封装第三方库"><a href="#什么时候封装第三方库" class="headerlink" title="什么时候封装第三方库"></a>什么时候封装第三方库</h3><h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
+<li><a href="http://blog.csdn.net/fiona_yang123456/article/details/41044979" target="_blank" rel="external">iOS中继承与分类</a></li>
+</ul>
+
       
     </div>
 
@@ -345,7 +354,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/11/iOS20160916控制器中视图的布局/" rel="next" title="控制器中视图的布局">
+              <a href="/2016/03/11/iOS-20160916控制器中视图的布局/" rel="next" title="控制器中视图的布局">
                 <i class="fa fa-chevron-left"></i> 控制器中视图的布局
               </a>
             
@@ -521,7 +530,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于常量"><span class="nav-number">1.</span> <span class="nav-text">关于常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于宏定义"><span class="nav-number">2.</span> <span class="nav-text">关于宏定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么时候创建分类"><span class="nav-number">3.</span> <span class="nav-text">什么时候创建分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么时候使用继承"><span class="nav-number">4.</span> <span class="nav-text">什么时候使用继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么时候封装第三方库"><span class="nav-number">5.</span> <span class="nav-text">什么时候封装第三方库</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于常量"><span class="nav-number">1.</span> <span class="nav-text">关于常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于宏定义"><span class="nav-number">2.</span> <span class="nav-text">关于宏定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么时候创建分类"><span class="nav-number">3.</span> <span class="nav-text">什么时候创建分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么时候使用继承"><span class="nav-number">4.</span> <span class="nav-text">什么时候使用继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么时候封装第三方库"><span class="nav-number">5.</span> <span class="nav-text">什么时候封装第三方库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考链接"><span class="nav-number">6.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
             
           </div>
         </section>

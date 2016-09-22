@@ -98,7 +98,7 @@
 如果可以修改原生控件，那么就去修改原生的控件，毕竟系统的控件自带了很多高性能的功能给我们使用。比如修改原生控件的布局。
 可以在原生控件的基础上进行再造轮子，比如添加一些控件，这样就可以保留原生控件的一些性能。
 完全自定义控件，这个时候你可能需要考虑2个问题，这个控件是否支持X">
-<meta property="og:updated_time" content="2016-09-19T02:56:23.000Z">
+<meta property="og:updated_time" content="2016-09-19T08:03:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自定义控件">
 <meta name="twitter:description" content="在iOS的开发中，系统自带的控件有时候根本无法满足开发的需要，这个时候你就需要自定义控件。关于自定义控件我是这么理解的。
@@ -345,12 +345,12 @@
 <li>setNeedsLayout：标记为需要重新布局，异步调用layoutIfNeeded刷新布局，不立即刷新，但是layoutSubviews一定会被调用</li>
 <li>layoutIfNeeded：如果，有需要刷新的标记，立即调用layoutSubviews进行重新布局(如果没有标记，不会调用layoutSubviews)</li>
 </ol>
+<a id="more"></a>
 <p>如果要立即刷新，需要先调用[view setNeedsLayout]，把标记设置为需要布局，然后马上调用[view layoutIfNeeded]，实现布局。</p>
 <p>在视图第一次显示之前，标记总是“需要刷新”的，可以直接调用[view layoutIfNeeded]。</p>
 <p>所以如果不需要更新布局，那么你只需要在init方法中给添加的子控件布局就可以了。</p>
 <pre><code><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">instancetype</span>)initWithFrame:(<span class="built_in">CGRect</span>)frame &#123;</div><div class="line">   <span class="keyword">if</span> (<span class="keyword">self</span> = [<span class="keyword">super</span> initWithFrame:frame]) &#123;</div><div class="line">       <span class="comment">// 在此处对子控件进行布局</span></div><div class="line">   &#125;</div><div class="line">   <span class="keyword">return</span> <span class="keyword">self</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </code></pre><p>你可是在<code>- (void)layoutSubviews</code>中对子控件更新布局。</p>
-<a id="more"></a>
 <h3 id="原生基础上再造轮子"><a href="#原生基础上再造轮子" class="headerlink" title="原生基础上再造轮子"></a>原生基础上再造轮子</h3><p>依然是同样的一个问题，如果是图片需要显示在顶部。如果你不是修改UIButton中title和image的布局，那么你可以给UIImageView进行重新改造。</p>
 <pre><code><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"SZImageView.h"</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">SZImageView</span></span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)awakeFromNib &#123;</div><div class="line">    [<span class="keyword">super</span> awakeFromNib];</div><div class="line">    </div><div class="line">    [<span class="keyword">self</span> addCustomView];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">instancetype</span>)initWithFrame:(<span class="built_in">CGRect</span>)frame &#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">self</span> = [<span class="keyword">super</span> initWithFrame:frame]) &#123;</div><div class="line">        [<span class="keyword">self</span> addCustomView];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">self</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)addCustomView &#123;</div><div class="line">    <span class="built_in">UILabel</span> *imgLBL = [[<span class="built_in">UILabel</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="built_in">CGRectGetWidth</span>(<span class="keyword">self</span>.bounds), <span class="built_in">CGRectGetHeight</span>(<span class="keyword">self</span>.bounds)/<span class="number">4.0</span>)];</div><div class="line">    [<span class="keyword">self</span> addSubview:imgLBL];</div><div class="line">    <span class="keyword">self</span>.imgLBL = imgLBL;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </code></pre><p>不过这个时候如果你需要给这个控件添加事件的话，可能还需要再添加手势了，此处不做进一步讨论。</p>
@@ -487,7 +487,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

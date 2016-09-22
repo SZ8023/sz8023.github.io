@@ -245,6 +245,137 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/22/iOS-20160922Xcode8相关问题汇总/" itemprop="url">
+                  Xcode8相关问题汇总
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-22T09:14:46+08:00" content="2016-09-22">
+              2016-09-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/22/iOS-20160922Xcode8相关问题汇总/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/22/iOS-20160922Xcode8相关问题汇总/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>这几天很多苹果开发的小伙伴迫不及待的升级了Xcode8，可是升级完成之后项目中也遇到了很多小问题，下面就意义列举相关问题。</p>
+<p>如果你的项目中访问了相机，相册，麦克风等设备，你需要在info.plist文件里做先关配置，如果没有配置相关信息，程序会直接退出。</p>
+<h5 id="访问相机"><a href="#访问相机" class="headerlink" title="访问相机"></a><a href="https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html">访问相机</a></h5><blockquote>
+<p>Important: To protect user privacy, an iOS app linked on or after iOS 10.0, and which accesses the device’s camera, must statically declare the intent to do so. Include the NSCameraUsageDescription key in your app’s Info.plist file and provide a purpose string for this key. If your app attempts to access the device’s camera without a corresponding purpose string, your app exits.</p>
+</blockquote>
+<p>根据苹果的描述信息，你需要在info.plist文件里面做相关配置。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSCameraUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;允许此权限才能使用相机&lt;/string&gt;</div></pre></td></tr></table></figure>
+<h5 id="访问相册"><a href="#访问相册" class="headerlink" title="访问相册"></a>访问相册</h5><p>此处相关链接可以参考访问相机，以下连接相同。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSPhotoLibraryUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;允许此权限才能访问相册&lt;/string&gt;</div></pre></td></tr></table></figure>
+<h5 id="访问麦克风"><a href="#访问麦克风" class="headerlink" title="访问麦克风"></a>访问麦克风</h5>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/22/iOS-20160922Xcode8相关问题汇总/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/16/iOS开发杂烩/" itemprop="url">
                   开发杂烩
                 </a>
@@ -316,7 +447,8 @@
         
           
             <p>本文主要记录一些开发中常用的技巧。比如常用的常量文件，宏定义文件，什么时候创建分类，什么时候使用继承，什么时候使用代理封装第三方库（哪些第三方库需要封装，如何封装）等等。</p>
-
+<h3 id="关于常量"><a href="#关于常量" class="headerlink" title="关于常量"></a>关于常量</h3><p>整型，浮点建议使用const，</p>
+<h3 id="关于宏定义"><a href="#关于宏定义" class="headerlink" title="关于宏定义"></a>关于宏定义</h3><h3 id="什么时候创建分类"><a href="#什么时候创建分类" class="headerlink" title="什么时候创建分类"></a>什么时候创建分类</h3><h3 id="什么时候使用继承"><a href="#什么时候使用继承" class="headerlink" title="什么时候使用继承"></a>什么时候使用继承</h3><h3 id="什么时候封装第三方库"><a href="#什么时候封装第三方库" class="headerlink" title="什么时候封装第三方库"></a>什么时候封装第三方库</h3>
           
         
       
@@ -593,153 +725,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/14/iOS自定义控件/" itemprop="url">
-                  自定义控件
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-14T17:04:37+08:00" content="2016-01-14">
-              2016-01-14
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/01/14/iOS自定义控件/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/14/iOS自定义控件/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>在iOS的开发中，系统自带的控件有时候根本无法满足开发的需要，这个时候你就需要自定义控件。关于自定义控件我是这么理解的。</p>
-<ul>
-<li>如果可以修改原生控件，那么就去修改原生的控件，毕竟系统的控件自带了很多高性能的功能给我们使用。比如修改原生控件的布局。</li>
-<li>可以在原生控件的基础上进行再造轮子，比如添加一些控件，这样就可以保留原生控件的一些性能。</li>
-<li>完全自定义控件，这个时候你可能需要考虑2个问题，这个控件是否支持Xib或storyboard，还是仅仅支持代码的格式。</li>
-</ul>
-<p>基于以上的几种情况，大致进行了一些总结。</p>
-<h3 id="修改原生控件的布局"><a href="#修改原生控件的布局" class="headerlink" title="修改原生控件的布局"></a>修改原生控件的布局</h3><p>修改原生控件的布局情况在UIButton这个控件当中尤为明显。比如说UIButton的图片默认是居左显示的，那么有时候可能需要让图片居上，居下或者居右显示。这个时候你就可以选择修改原生控件的布局来结局这个问题。由于<code>layoutSubviews</code>在以下几种情况下回自动调用。</p>
-<ol>
-<li>init初始化不会出发layoutSubviews。但是用initWithFrame进行初始化的时候，如果rect的值不为CGRectZero时，也会触发。</li>
-<li>addSubview会触发layoutSubviews</li>
-<li>设置view的Frame会触发layoutSubviews，当然前提是frame的值设置前后发生了变化</li>
-<li>滚动一个UIScrollView会触发layoutSubviews</li>
-<li>旋转UIScreen会触发父UIView的layoutSubviews事件</li>
-<li>改变一个UIView大小的时候也会触发父UIView上的layoutSubviews事件</li>
-</ol>
-<p>以上都是系统自动刷新，那么我们如何进行手动刷新呢？</p>
-<ol>
-<li>setNeedsLayout：标记为需要重新布局，异步调用layoutIfNeeded刷新布局，不立即刷新，但是layoutSubviews一定会被调用</li>
-<li>layoutIfNeeded：如果，有需要刷新的标记，立即调用layoutSubviews进行重新布局(如果没有标记，不会调用layoutSubviews)</li>
-</ol>
-<p>如果要立即刷新，需要先调用[view setNeedsLayout]，把标记设置为需要布局，然后马上调用[view layoutIfNeeded]，实现布局。</p>
-<p>在视图第一次显示之前，标记总是“需要刷新”的，可以直接调用[view layoutIfNeeded]。</p>
-<p>所以如果不需要更新布局，那么你只需要在init方法中给添加的子控件布局就可以了。</p>
-<pre><code><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">instancetype</span>)initWithFrame:(<span class="built_in">CGRect</span>)frame &#123;</div><div class="line">   <span class="keyword">if</span> (<span class="keyword">self</span> = [<span class="keyword">super</span> initWithFrame:frame]) &#123;</div><div class="line">       <span class="comment">// 在此处对子控件进行布局</span></div><div class="line">   &#125;</div><div class="line">   <span class="keyword">return</span> <span class="keyword">self</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</code></pre><p>你可是在<code>- (void)layoutSubviews</code>中对子控件更新布局。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/01/14/iOS自定义控件/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -785,7 +770,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

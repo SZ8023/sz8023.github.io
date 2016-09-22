@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sz8023.github.io/"/>
-  <updated>2016-09-15T23:56:53.000Z</updated>
+  <updated>2016-09-22T02:10:06.000Z</updated>
   <id>http://sz8023.github.io/</id>
   
   <author>
@@ -16,19 +16,65 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>开发杂烩</title>
-    <link href="http://sz8023.github.io/2016/03/16/iOS%E5%BC%80%E5%8F%91%E6%9D%82%E7%83%A9/"/>
-    <id>http://sz8023.github.io/2016/03/16/iOS开发杂烩/</id>
-    <published>2016-03-15T23:53:10.000Z</published>
-    <updated>2016-09-15T23:56:53.000Z</updated>
+    <title>Xcode8相关问题汇总</title>
+    <link href="http://sz8023.github.io/2016/09/22/iOS-20160922Xcode8%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"/>
+    <id>http://sz8023.github.io/2016/09/22/iOS-20160922Xcode8相关问题汇总/</id>
+    <published>2016-09-22T01:14:46.000Z</published>
+    <updated>2016-09-22T02:10:06.000Z</updated>
     
-    <content type="html"><![CDATA[<p>本文主要记录一些开发中常用的技巧。比如常用的常量文件，宏定义文件，什么时候创建分类，什么时候使用继承，什么时候使用代理封装第三方库（哪些第三方库需要封装，如何封装）等等。</p>
+    <content type="html"><![CDATA[<p>这几天很多苹果开发的小伙伴迫不及待的升级了Xcode8，可是升级完成之后项目中也遇到了很多小问题，下面就意义列举相关问题。</p>
+<p>如果你的项目中访问了相机，相册，麦克风等设备，你需要在info.plist文件里做先关配置，如果没有配置相关信息，程序会直接退出。</p>
+<h5 id="访问相机"><a href="#访问相机" class="headerlink" title="访问相机"></a><a href="https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html" target="_blank" rel="external">访问相机</a></h5><blockquote>
+<p>Important: To protect user privacy, an iOS app linked on or after iOS 10.0, and which accesses the device’s camera, must statically declare the intent to do so. Include the NSCameraUsageDescription key in your app’s Info.plist file and provide a purpose string for this key. If your app attempts to access the device’s camera without a corresponding purpose string, your app exits.</p>
+</blockquote>
+<p>根据苹果的描述信息，你需要在info.plist文件里面做相关配置。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSCameraUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;允许此权限才能使用相机&lt;/string&gt;</div></pre></td></tr></table></figure>
+<h5 id="访问相册"><a href="#访问相册" class="headerlink" title="访问相册"></a>访问相册</h5><p>此处相关链接可以参考访问相机，以下连接相同。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSPhotoLibraryUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;允许此权限才能访问相册&lt;/string&gt;</div></pre></td></tr></table></figure>
+<h5 id="访问麦克风"><a href="#访问麦克风" class="headerlink" title="访问麦克风"></a>访问麦克风</h5><a id="more"></a>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSMicrophoneUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;允许此权限才能使用麦克风&lt;/string&gt;</div></pre></td></tr></table></figure>
+<p>还有其他的权限，比如媒体库，蓝牙，日历，健康等，更多权限参考<a href="https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html" target="_blank" rel="external">Information Property List Key Reference</a></p>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
+<li><a href="http://blog.csdn.net/u012681458/article/details/51865435" target="_blank" rel="external">升级Xcode8后的相机crash问题-IOS10权限问题</a></li>
+<li></li>
+</ul>
 ]]></content>
     
     <summary type="html">
     
+      &lt;p&gt;这几天很多苹果开发的小伙伴迫不及待的升级了Xcode8，可是升级完成之后项目中也遇到了很多小问题，下面就意义列举相关问题。&lt;/p&gt;
+&lt;p&gt;如果你的项目中访问了相机，相册，麦克风等设备，你需要在info.plist文件里做先关配置，如果没有配置相关信息，程序会直接退出。&lt;/p&gt;
+&lt;h5 id=&quot;访问相机&quot;&gt;&lt;a href=&quot;#访问相机&quot; class=&quot;headerlink&quot; title=&quot;访问相机&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html&quot;&gt;访问相机&lt;/a&gt;&lt;/h5&gt;&lt;blockquote&gt;
+&lt;p&gt;Important: To protect user privacy, an iOS app linked on or after iOS 10.0, and which accesses the device’s camera, must statically declare the intent to do so. Include the NSCameraUsageDescription key in your app’s Info.plist file and provide a purpose string for this key. If your app attempts to access the device’s camera without a corresponding purpose string, your app exits.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;根据苹果的描述信息，你需要在info.plist文件里面做相关配置。&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;key&amp;gt;NSCameraUsageDescription&amp;lt;/key&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;string&amp;gt;允许此权限才能使用相机&amp;lt;/string&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h5 id=&quot;访问相册&quot;&gt;&lt;a href=&quot;#访问相册&quot; class=&quot;headerlink&quot; title=&quot;访问相册&quot;&gt;&lt;/a&gt;访问相册&lt;/h5&gt;&lt;p&gt;此处相关链接可以参考访问相机，以下连接相同。&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;key&amp;gt;NSPhotoLibraryUsageDescription&amp;lt;/key&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;string&amp;gt;允许此权限才能访问相册&amp;lt;/string&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h5 id=&quot;访问麦克风&quot;&gt;&lt;a href=&quot;#访问麦克风&quot; class=&quot;headerlink&quot; title=&quot;访问麦克风&quot;&gt;&lt;/a&gt;访问麦克风&lt;/h5&gt;
+    
+    </summary>
+    
+      <category term="iOS开发" scheme="http://sz8023.github.io/categories/iOS%E5%BC%80%E5%8F%91/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>开发杂烩</title>
+    <link href="http://sz8023.github.io/2016/03/16/iOS%E5%BC%80%E5%8F%91%E6%9D%82%E7%83%A9/"/>
+    <id>http://sz8023.github.io/2016/03/16/iOS开发杂烩/</id>
+    <published>2016-03-15T23:53:10.000Z</published>
+    <updated>2016-09-20T11:56:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文主要记录一些开发中常用的技巧。比如常用的常量文件，宏定义文件，什么时候创建分类，什么时候使用继承，什么时候使用代理封装第三方库（哪些第三方库需要封装，如何封装）等等。</p>
+<h3 id="关于常量"><a href="#关于常量" class="headerlink" title="关于常量"></a>关于常量</h3><p>整型，浮点建议使用const，</p>
+<h3 id="关于宏定义"><a href="#关于宏定义" class="headerlink" title="关于宏定义"></a>关于宏定义</h3><h3 id="什么时候创建分类"><a href="#什么时候创建分类" class="headerlink" title="什么时候创建分类"></a>什么时候创建分类</h3><h3 id="什么时候使用继承"><a href="#什么时候使用继承" class="headerlink" title="什么时候使用继承"></a>什么时候使用继承</h3><h3 id="什么时候封装第三方库"><a href="#什么时候封装第三方库" class="headerlink" title="什么时候封装第三方库"></a>什么时候封装第三方库</h3>]]></content>
+    
+    <summary type="html">
+    
       &lt;p&gt;本文主要记录一些开发中常用的技巧。比如常用的常量文件，宏定义文件，什么时候创建分类，什么时候使用继承，什么时候使用代理封装第三方库（哪些第三方库需要封装，如何封装）等等。&lt;/p&gt;
-
+&lt;h3 id=&quot;关于常量&quot;&gt;&lt;a href=&quot;#关于常量&quot; class=&quot;headerlink
     
     </summary>
     
@@ -115,7 +161,7 @@
     <link href="http://sz8023.github.io/2016/01/14/iOS%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6/"/>
     <id>http://sz8023.github.io/2016/01/14/iOS自定义控件/</id>
     <published>2016-01-14T09:04:37.000Z</published>
-    <updated>2016-09-19T02:56:23.000Z</updated>
+    <updated>2016-09-19T08:03:09.000Z</updated>
     
     <content type="html"><![CDATA[<p>在iOS的开发中，系统自带的控件有时候根本无法满足开发的需要，这个时候你就需要自定义控件。关于自定义控件我是这么理解的。</p>
 <ul>
@@ -138,12 +184,12 @@
 <li>setNeedsLayout：标记为需要重新布局，异步调用layoutIfNeeded刷新布局，不立即刷新，但是layoutSubviews一定会被调用</li>
 <li>layoutIfNeeded：如果，有需要刷新的标记，立即调用layoutSubviews进行重新布局(如果没有标记，不会调用layoutSubviews)</li>
 </ol>
+<a id="more"></a>
 <p>如果要立即刷新，需要先调用[view setNeedsLayout]，把标记设置为需要布局，然后马上调用[view layoutIfNeeded]，实现布局。</p>
 <p>在视图第一次显示之前，标记总是“需要刷新”的，可以直接调用[view layoutIfNeeded]。</p>
 <p>所以如果不需要更新布局，那么你只需要在init方法中给添加的子控件布局就可以了。</p>
 <pre><code><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">instancetype</span>)initWithFrame:(<span class="built_in">CGRect</span>)frame &#123;</div><div class="line">   <span class="keyword">if</span> (<span class="keyword">self</span> = [<span class="keyword">super</span> initWithFrame:frame]) &#123;</div><div class="line">       <span class="comment">// 在此处对子控件进行布局</span></div><div class="line">   &#125;</div><div class="line">   <span class="keyword">return</span> <span class="keyword">self</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </code></pre><p>你可是在<code>- (void)layoutSubviews</code>中对子控件更新布局。</p>
-<a id="more"></a>
 <h3 id="原生基础上再造轮子"><a href="#原生基础上再造轮子" class="headerlink" title="原生基础上再造轮子"></a>原生基础上再造轮子</h3><p>依然是同样的一个问题，如果是图片需要显示在顶部。如果你不是修改UIButton中title和image的布局，那么你可以给UIImageView进行重新改造。</p>
 <pre><code><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"SZImageView.h"</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">SZImageView</span></span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)awakeFromNib &#123;</div><div class="line">    [<span class="keyword">super</span> awakeFromNib];</div><div class="line">    </div><div class="line">    [<span class="keyword">self</span> addCustomView];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">instancetype</span>)initWithFrame:(<span class="built_in">CGRect</span>)frame &#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">self</span> = [<span class="keyword">super</span> initWithFrame:frame]) &#123;</div><div class="line">        [<span class="keyword">self</span> addCustomView];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">self</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)addCustomView &#123;</div><div class="line">    <span class="built_in">UILabel</span> *imgLBL = [[<span class="built_in">UILabel</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="built_in">CGRectGetWidth</span>(<span class="keyword">self</span>.bounds), <span class="built_in">CGRectGetHeight</span>(<span class="keyword">self</span>.bounds)/<span class="number">4.0</span>)];</div><div class="line">    [<span class="keyword">self</span> addSubview:imgLBL];</div><div class="line">    <span class="keyword">self</span>.imgLBL = imgLBL;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </code></pre><p>不过这个时候如果你需要给这个控件添加事件的话，可能还需要再添加手势了，此处不做进一步讨论。</p>
@@ -176,11 +222,6 @@
 &lt;li&gt;setNeedsLayout：标记为需要重新布局，异步调用layoutIfNeeded刷新布局，不立即刷新，但是layoutSubviews一定会被调用&lt;/li&gt;
 &lt;li&gt;layoutIfNeeded：如果，有需要刷新的标记，立即调用layoutSubviews进行重新布局(如果没有标记，不会调用layoutSubviews)&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;如果要立即刷新，需要先调用[view setNeedsLayout]，把标记设置为需要布局，然后马上调用[view layoutIfNeeded]，实现布局。&lt;/p&gt;
-&lt;p&gt;在视图第一次显示之前，标记总是“需要刷新”的，可以直接调用[view layoutIfNeeded]。&lt;/p&gt;
-&lt;p&gt;所以如果不需要更新布局，那么你只需要在init方法中给添加的子控件布局就可以了。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&lt;figure class=&quot;highlight objc&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;- (&lt;span class=&quot;keyword&quot;&gt;instancetype&lt;/span&gt;)initWithFrame:(&lt;span class=&quot;built_in&quot;&gt;CGRect&lt;/span&gt;)frame &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt; = [&lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt; initWithFrame:frame]) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;       &lt;span class=&quot;comment&quot;&gt;// 在此处对子控件进行布局&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;你可是在&lt;code&gt;- (void)layoutSubviews&lt;/code&gt;中对子控件更新布局。&lt;/p&gt;
     
     </summary>
     

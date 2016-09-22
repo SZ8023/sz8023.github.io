@@ -245,6 +245,148 @@
             
               
                 
+                <a class="post-title-link" href="/2016/01/14/iOS自定义控件/" itemprop="url">
+                  自定义控件
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-01-14T17:04:37+08:00" content="2016-01-14">
+              2016-01-14
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/14/iOS自定义控件/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/14/iOS自定义控件/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>在iOS的开发中，系统自带的控件有时候根本无法满足开发的需要，这个时候你就需要自定义控件。关于自定义控件我是这么理解的。</p>
+<ul>
+<li>如果可以修改原生控件，那么就去修改原生的控件，毕竟系统的控件自带了很多高性能的功能给我们使用。比如修改原生控件的布局。</li>
+<li>可以在原生控件的基础上进行再造轮子，比如添加一些控件，这样就可以保留原生控件的一些性能。</li>
+<li>完全自定义控件，这个时候你可能需要考虑2个问题，这个控件是否支持Xib或storyboard，还是仅仅支持代码的格式。</li>
+</ul>
+<p>基于以上的几种情况，大致进行了一些总结。</p>
+<h3 id="修改原生控件的布局"><a href="#修改原生控件的布局" class="headerlink" title="修改原生控件的布局"></a>修改原生控件的布局</h3><p>修改原生控件的布局情况在UIButton这个控件当中尤为明显。比如说UIButton的图片默认是居左显示的，那么有时候可能需要让图片居上，居下或者居右显示。这个时候你就可以选择修改原生控件的布局来结局这个问题。由于<code>layoutSubviews</code>在以下几种情况下回自动调用。</p>
+<ol>
+<li>init初始化不会出发layoutSubviews。但是用initWithFrame进行初始化的时候，如果rect的值不为CGRectZero时，也会触发。</li>
+<li>addSubview会触发layoutSubviews</li>
+<li>设置view的Frame会触发layoutSubviews，当然前提是frame的值设置前后发生了变化</li>
+<li>滚动一个UIScrollView会触发layoutSubviews</li>
+<li>旋转UIScreen会触发父UIView的layoutSubviews事件</li>
+<li>改变一个UIView大小的时候也会触发父UIView上的layoutSubviews事件</li>
+</ol>
+<p>以上都是系统自动刷新，那么我们如何进行手动刷新呢？</p>
+<ol>
+<li>setNeedsLayout：标记为需要重新布局，异步调用layoutIfNeeded刷新布局，不立即刷新，但是layoutSubviews一定会被调用</li>
+<li>layoutIfNeeded：如果，有需要刷新的标记，立即调用layoutSubviews进行重新布局(如果没有标记，不会调用layoutSubviews)</li>
+</ol>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/01/14/iOS自定义控件/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2015/12/03/iOS键盘UIKeyboard的显示和隐藏/" itemprop="url">
                   UIScrollView中键盘的显示和隐藏
                 </a>
@@ -616,139 +758,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/07/05/iOS-MJExtension学习/" itemprop="url">
-                  MJExtension学习
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-07-05T18:24:10+08:00" content="2015-07-05">
-              2015-07-05
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/07/05/iOS-MJExtension学习/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/05/iOS-MJExtension学习/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="CoderMJLee-MJExtension"><a href="#CoderMJLee-MJExtension" class="headerlink" title="CoderMJLee/MJExtension"></a><a href="https://github.com/CoderMJLee/MJExtension">CoderMJLee/MJExtension</a></h3><p>大神李明杰的另一个框架，实现Json和Model的互相转换，转换速度快、使用简单方便的字典转模型框架。</p>
-<p><code>MJExtension</code>是一套字典和模型之间转换的超轻量级框架</p>
-<ul>
-<li>JSON –&gt; Model、Core Data Modal</li>
-<li>JSONString –&gt; Model、Core Data Model</li>
-<li>Model、Core Data Model –&gt; JSON</li>
-<li>JSON Array –&gt; Model Array、Core Data Model Array</li>
-<li>JSONString –&gt; Model Array、Core Data Model Array</li>
-<li>Model Array、Core Data Model Array –&gt; JSON Array</li>
-</ul>
-<p>Coding all properties of model in one line code.<br>只需要一行代码，就能实现模型的所有属性进行Coding(归档和解档)</p>
-<p>同样的，MJExtension也提供了两种使用方式，一种是通过CocoaPods，另一种是通过手动导入的方式。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/07/05/iOS-MJExtension学习/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -794,7 +803,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

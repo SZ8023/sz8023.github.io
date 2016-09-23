@@ -245,6 +245,143 @@
             
               
                 
+                <a class="post-title-link" href="/2015/09/01/iOS-SDWebImage学习/" itemprop="url">
+                  SDWebImage学习
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-09-01T07:42:53+08:00" content="2015-09-01">
+              2015-09-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/09/01/iOS-SDWebImage学习/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/01/iOS-SDWebImage学习/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="rs-SDWebImage"><a href="#rs-SDWebImage" class="headerlink" title="rs/SDWebImage"></a><a href="https://github.com/rs/SDWebImage">rs/SDWebImage</a></h3><p><code>SDWebImage</code>是一个优秀的图片处理框架，你可以通过它来实现异步图片下载，并且支持图片的缓存。</p>
+<p>这个第三方库为UIImageView提供了一个分类，支持处理来自网络的图片，主要功能包括以下几点：</p>
+<ul>
+<li>一个UIImageView的分类来添加图片和缓存处理</li>
+<li>一个异步图片下载器</li>
+<li>一个异步内存和磁盘图片缓存和对缓存过期的处理</li>
+<li>支持Gif图片</li>
+<li>支持WebP</li>
+<li>背景图片解压</li>
+<li>相同URL的图片不会下载多次</li>
+<li>假的URL不会尝试一直请求</li>
+<li>保证主线程不会卡死</li>
+<li>……</li>
+</ul>
+<h3 id="应该如何使用"><a href="#应该如何使用" class="headerlink" title="应该如何使用"></a>应该如何使用</h3><p><code>SDWebImage</code>为使用者提供了<a href="http://cocoadocs.org/docsets/SDWebImage/3.8.1/">API document</a>，以下只是简单列举以下最常见的用法。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">&lt;SDWebImage/UIImageView+WebCache.h&gt;</span></span></div><div class="line">...</div><div class="line">- (<span class="built_in">UITableViewCell</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView cellForRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath &#123;</div><div class="line">   <span class="keyword">static</span> <span class="built_in">NSString</span> *MyIdentifier = <span class="string">@"MyIdentifier"</span>;</div><div class="line"></div><div class="line">   <span class="built_in">UITableViewCell</span> *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];</div><div class="line">   <span class="keyword">if</span> (cell == <span class="literal">nil</span>) &#123;</div><div class="line">       cell = [[[<span class="built_in">UITableViewCell</span> alloc] initWithStyle:<span class="built_in">UITableViewCellStyleDefault</span></div><div class="line">                                      reuseIdentifier:MyIdentifier] autorelease];</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   <span class="comment">// Here we use the new provided sd_setImageWithURL: method to load the web image</span></div><div class="line">   [cell.imageView sd_setImageWithURL:[<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://www.domain.com/path/to/image.jpg"</span>]</div><div class="line">                     placeholderImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"placeholder.png"</span>]];</div><div class="line"></div><div class="line">   cell.textLabel.text = <span class="string">@"My Text"</span>;</div><div class="line">   <span class="keyword">return</span> cell;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/09/01/iOS-SDWebImage学习/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2015/07/05/iOS-MJExtension学习/" itemprop="url">
                   MJExtension学习
                 </a>
@@ -620,161 +757,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/04/26/NPM使用介绍/" itemprop="url">
-                  NPM使用介绍
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-04-26T09:08:19+08:00" content="2015-04-26">
-              2015-04-26
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Node教程/" itemprop="url" rel="index">
-                    <span itemprop="name">Node教程</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/04/26/NPM使用介绍/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/26/NPM使用介绍/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Node-js-PEPL-交互式解释器"><a href="#Node-js-PEPL-交互式解释器" class="headerlink" title="Node.js PEPL(交互式解释器)"></a>Node.js PEPL(交互式解释器)</h1><p>我们可以在终端输入命令，并接收系统的响应<br>Node自带了交互式解释器，可以执行如下任务</p>
-<ul>
-<li>读取 - 读取用户输入，解析输入了JavaScript数据结构并存储在内存中</li>
-<li>执行 - 执行输入的用户结构</li>
-<li>打印 - 输出结果</li>
-<li>循环 - 循环操作以上步骤知道用户两次按下ctrl+c 按钮退出</li>
-</ul>
-<p>我们可以输入以下命令来启动Node终端</p>
-<pre><code>$ node
-&gt;
-</code></pre><h2 id="Node-js回调函数"><a href="#Node-js回调函数" class="headerlink" title="Node.js回调函数"></a>Node.js回调函数</h2><ul>
-<li>Node.js异步编程的直接体现就是回调</li>
-<li>异步编程依托于回调来实现，但不能说使用了回调后程序就异步化了。</li>
-<li>回调函数在完成任务之后就会被调用，Node使用了大量的回调函数，Node所有的API都支持回调函数。</li>
-</ul>
-<h3 id="阻塞代码"><a href="#阻塞代码" class="headerlink" title="阻塞代码"></a>阻塞代码</h3><pre><code>var fs = require(&quot;fs&quot;);
-var data = fs.readFileSync(&apos;input.txt&apos;);
-
-console.log(data.toString());
-console.log(&quot;程序执行结束&quot;);
-</code></pre><h3 id="非阻塞代码"><a href="#非阻塞代码" class="headerlink" title="非阻塞代码"></a>非阻塞代码</h3><pre><code>var fs = require(&quot;fs&quot;);
-
-fs.readFile(&apos;input.txt&apos;,function(err,data) {
-    if(err) return console.error(err);
-    console.log(data.toString());
-});
-
-console.log(&quot;程序执行结束&quot;);
-</code></pre><p><em>第一个实例在文件读取之后才执行程序。第二个实例我们不需要等待文件读取完成，这样就可以在读取文件的同时执行接下来的代码</em></p>
-<h3 id="Node-js事件循环"><a href="#Node-js事件循环" class="headerlink" title="Node.js事件循环"></a>Node.js事件循环</h3><ul>
-<li>Node.js是单进程单线程应用程序，但是通过事件和回调支持并发，所以性能非常高。</li>
-<li>Node.js的每一个API都是异步的，并作为一个独立线程运行，使用异步函数调用，并处理并发。</li>
-<li>Node.js基本上所有的事件机制都是通过设计模式中的观察者模式实现</li>
-<li>Node.js单线程类似进入一个while(true)的事件循环，直到没有事件观察者退出，每个异步事件都生成一个事件观察者，如果有事件发生就调用该回调函数。</li>
-</ul>
-<h3 id="随便"><a href="#随便" class="headerlink" title="随便"></a>随便</h3><pre><code>小到一个变量，数组，大到一个数据库或者网络通信，都离不开数据的增删改查。变量有，数据库也有。网络通信也有。GET,PUT,DELETE,POST
-</code></pre>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -820,7 +802,7 @@ console.log(&quot;程序执行结束&quot;);
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

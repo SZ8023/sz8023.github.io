@@ -64,9 +64,9 @@
     <link href="http://sz8023.github.io/2016/05/14/iOS-20160928%E5%85%B3%E4%BA%8E%E9%80%82%E9%85%8D%E7%9A%84%E6%80%BB%E7%BB%93/"/>
     <id>http://sz8023.github.io/2016/05/14/iOS-20160928关于适配的总结/</id>
     <published>2016-05-14T06:49:15.000Z</published>
-    <updated>2016-09-29T02:50:00.000Z</updated>
+    <updated>2016-09-29T10:02:17.000Z</updated>
     
-    <content type="html"><![CDATA[<p>在日常开发中，比较常用的适配模式就是xib，storyboard和纯代码的方式。而纯代码方式我使用比较多的是第三方库Masonry。但是对于这些概念一直比较模糊，比如发展历史，使用区别，使用频率，在什么时候选用什么样的布局方式等等。</p>
+    <content type="html"><![CDATA[<p>在日常开发中，比较常用的适配模式就是xib，storyboard和纯代码的方式。而纯代码方式我使用比较多的是第三方库<a href="https://github.com/SnapKit/Masonry" target="_blank" rel="external">Masonry</a>。但是对于这些概念一直比较模糊，比如发展历史，使用区别，使用频率，在什么时候选用什么样的布局方式等等。</p>
 <table>
 <thead>
 <tr>
@@ -89,7 +89,7 @@
 <tr>
 <td style="text-align:center">iPhone5/5s</td>
 <td style="text-align:center">AutoLayout</td>
-<td style="text-align:center">既可以实现父子控件约束，有可以实现同级控件之间的约束</td>
+<td style="text-align:center">既可以实现父子控件约束，又可以实现同级控件之间的约束</td>
 </tr>
 <tr>
 <td style="text-align:center">iPhone6/6s</td>
@@ -98,29 +98,81 @@
 </tr>
 </tbody>
 </table>
-<p>通常这几种技术当中，AutoResizing的工作完全可以由AutoLayout来代替，所以开发中几乎不再考虑。对于iPhone的不同设备采用同一套布局方式是很多公司都会采用的方式，因为在去考虑iPad的话开发工作是比较繁琐的，所以AutoLayout的使用频率是最高的。倘若真的要考虑同时适配iPhone和iPad的话，那么肯定要采用不同的布局方式，因为iPad的屏幕宽高比个iPhone相差还是很大的，这个时候SizeClass就是你的最佳选择。</p>
+<p>通常这几种技术当中，AutoResizing的工作完全可以由AutoLayout来代替，所以开发中几乎不再考虑。对于iPhone的不同设备采用同一套布局方式是很多公司都会采用的方式，如果再去考虑iPad的话开发工作是比较繁琐的，所以AutoLayout的使用频率是最高的。倘若真的要考虑同时适配iPhone和iPad的话，那么肯定要采用不同的布局方式，因为iPad的屏幕宽高比跟iPhone相差还是很大的，这个时候SizeClass就是你的最佳选择。</p>
 <p>这个时候我觉得还需要把计算frame和AutoLayout拿出来说一下，毕竟很多人可能会像我一样在日常的Demo中会通过计算frame的方式最快的查看想要的结果。</p>
 <ul>
-<li>通过frame计算的方式实现方式比较简单，远比NSLayoutContraint语法简单</li>
+<li>通过frame计算的方式实现方式比较简单，远比NSLayoutConstraints语法简单</li>
 <li>相对布局frame可以通过CGRectGetMaxY或者CGRectGetMaxX等来实现相对布局。</li>
 <li>重点是：通过frame和AutoLayout其他方式上的区别还在探索当中……</li>
 </ul>
-<p>开发中有2个概念，一个是设备，一个是系统。</p>
-<h4 id="关于适配"><a href="#关于适配" class="headerlink" title="关于适配"></a>关于适配</h4><p>一般在开发中都喜欢使用下面的方式来判断设备的类型。通过不同设备的高度来区分设备。</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#define IS_IPHONE4 (([[UIScreen mainScreen] bounds].size.height == 480) ? YES : NO)</span></div><div class="line"><span class="meta">#define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height == 568) ? YES : NO)</span></div><div class="line"><span class="meta">#define IS_IPhone6 (([[UIScreen mainScreen] bounds].size.height == 667) ? YES : NO)</span></div><div class="line"></div><div class="line"><span class="meta">#define IOS_IPhone6plusS (([[UIScreen mainScreen] bounds].size.height = 736) ? YES : NO)</span></div></pre></td></tr></table></figure>
+<h4 id="关于适配"><a href="#关于适配" class="headerlink" title="关于适配"></a>关于适配</h4><p>跟设备有关的会涉及到设备和系统，如今iPhone有很多不同设备，比如iPhone5,iPhone6等；同一个种设备又可能存在不同的系统，比如iOS9.0，iOS10.0等。</p>
+<p>如何区分不同设备，开发中喜欢使用下面的方式，由于iPhone7跟iPhone6的尺寸没有发生变化，所以这边值需要对不同的设备尺寸有个区分就可以了。</p>
+<a id="more"></a>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#define IS_IPHONE4 (([[UIScreen mainScreen] bounds].size.height == 480) ? YES : NO)</span></div><div class="line"><span class="meta">#define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height == 568) ? YES : NO)</span></div><div class="line"><span class="meta">#define IS_IPhone6 (([[UIScreen mainScreen] bounds].size.height == 667) ? YES : NO)</span></div><div class="line"><span class="meta">#define IOS_IPhone6plusS (([[UIScreen mainScreen] bounds].size.height = 736) ? YES : NO)</span></div></pre></td></tr></table></figure>
 <p>那么在什么地方经常会用到这些宏呢？</p>
 <ul>
 <li>配置启动图片</li>
 <li>设置UICollectionView中cell之间的spacing</li>
+<li>……</li>
 </ul>
-<h4 id="关于Masonry"><a href="#关于Masonry" class="headerlink" title="关于Masonry"></a>关于Masonry</h4>]]></content>
+<p>设备系统的判断，也可以通过宏定义的方式来实现，下面的代码可用于系统的判断</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#define IS_OS_8_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] &gt;= 8.0)</span></div><div class="line"><span class="meta">#define IS_OS_9_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] &gt;= 9.0)</span></div><div class="line"><span class="meta">#define IS_OS_10_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] &gt;= 10.0)</span></div></pre></td></tr></table></figure>
+<p>或者通过这样判断也可以达到相同的效果。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="comment">//判断系统版本</span></div><div class="line"><span class="meta">#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)</span></div><div class="line"><span class="meta">#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)</span></div><div class="line"><span class="meta">#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)</span></div><div class="line"><span class="meta">#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)</span></div><div class="line"><span class="meta">#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)</span></div></pre></td></tr></table></figure>
+<p>同样，什么地方需要用来判断系统？有些功能低版本的没有！</p>
+<ul>
+<li>地图需要请求权限才可以，并且需要配合info.plist，这个在iOS8.0以后</li>
+<li>字体设置，比如“PingFangSC-Regular”字体iOS9.0之后才可以使用</li>
+<li>3DTouch功能只有iOS9.0之后才有</li>
+<li>……</li>
+</ul>
+<h4 id="关于Masonry"><a href="#关于Masonry" class="headerlink" title="关于Masonry"></a>关于Masonry</h4><p>开发中最长使用的是Masonry，关于这个可以参考<a href="https://github.com/SnapKit/Masonry" target="_blank" rel="external">Masonry官网</a></p>
+<p>关于使用方式可以参考官方的Demo。</p>
+]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;在日常开发中，比较常用的适配模式就是xib，storyboard和纯代码的方式。而纯代码方式我使用比较多的是第三方库Masonry。但是对于这些概念一直比较模糊，比如发展历史，使用区别，使用频率，在什么时候选用什么样的布局方式等等。&lt;/p&gt;
+      &lt;p&gt;在日常开发中，比较常用的适配模式就是xib，storyboard和纯代码的方式。而纯代码方式我使用比较多的是第三方库&lt;a href=&quot;https://github.com/SnapKit/Masonry&quot;&gt;Masonry&lt;/a&gt;。但是对于这些概念一直比较模糊，比如发展历史，使用区别，使用频率，在什么时候选用什么样的布局方式等等。&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
-
+&lt;tr&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;设备&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;适配技术&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;优缺点&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;iPhone4/4s&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;通过frame计算&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;设备比较单一，计算量比较小&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;iPad&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;AutoResizing&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;只可以实现父子控件之间的约束&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;iPhone5/5s&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;AutoLayout&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;既可以实现父子控件约束，又可以实现同级控件之间的约束&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;iPhone6/6s&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;SizeClass&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;可以给不同设备设置不同的约束，AutoLayout可以给不同设备设置同一                              套约束&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;通常这几种技术当中，AutoResizing的工作完全可以由AutoLayout来代替，所以开发中几乎不再考虑。对于iPhone的不同设备采用同一套布局方式是很多公司都会采用的方式，如果再去考虑iPad的话开发工作是比较繁琐的，所以AutoLayout的使用频率是最高的。倘若真的要考虑同时适配iPhone和iPad的话，那么肯定要采用不同的布局方式，因为iPad的屏幕宽高比跟iPhone相差还是很大的，这个时候SizeClass就是你的最佳选择。&lt;/p&gt;
+&lt;p&gt;这个时候我觉得还需要把计算frame和AutoLayout拿出来说一下，毕竟很多人可能会像我一样在日常的Demo中会通过计算frame的方式最快的查看想要的结果。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通过frame计算的方式实现方式比较简单，远比NSLayoutConstraints语法简单&lt;/li&gt;
+&lt;li&gt;相对布局frame可以通过CGRectGetMaxY或者CGRectGetMaxX等来实现相对布局。&lt;/li&gt;
+&lt;li&gt;重点是：通过frame和AutoLayout其他方式上的区别还在探索当中……&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;关于适配&quot;&gt;&lt;a href=&quot;#关于适配&quot; class=&quot;headerlink&quot; title=&quot;关于适配&quot;&gt;&lt;/a&gt;关于适配&lt;/h4&gt;&lt;p&gt;跟设备有关的会涉及到设备和系统，如今iPhone有很多不同设备，比如iPhone5,iPhone6等；同一个种设备又可能存在不同的系统，比如iOS9.0，iOS10.0等。&lt;/p&gt;
+&lt;p&gt;如何区分不同设备，开发中喜欢使用下面的方式，由于iPhone7跟iPhone6的尺寸没有发生变化，所以这边值需要对不同的设备尺寸有个区分就可以了。&lt;/p&gt;
     
     </summary>
     

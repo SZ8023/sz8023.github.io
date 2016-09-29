@@ -84,22 +84,70 @@
 
 
 
-<meta name="description" content="开发中离不开代理（或Block）和通知。到底什么时候使用代理，什么时候使用通知呢？首先我们从概念入手。
-概念协议Protocol：接口是一堆方法的声明，但是没有实现。协议也是一堆方法的声明没有实现，在此基础上增加了选择实现和必须实现方法的选择。
-代理Delegate：传入的对象代替了当前类完成了某个功能，成为代理模式。使用场景，对象A发生了某些事情想要告诉对象B的时候或者对象B想要监听对象A发生了">
+<meta name="description" content="在日常开发中，比较常用的适配模式就是xib，storyboard和纯代码的方式。而纯代码方式我使用比较多的是第三方库Masonry。但是对于这些概念一直比较模糊，比如发展历史，使用区别，使用频率，在什么时候选用什么样的布局方式等等。
+
+
+
+设备
+适配技术
+优缺点
+
+
+
+
+iPhone4/4s
+通过frame计算
+设备比较单一，计算量比较小
+
+
+iPad
+AutoResizing
+只可以实现父子控件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代理和通知">
-<meta property="og:url" content="http://sz8023.github.io/2016/02/10/iOS-代理和通知/index.html">
+<meta property="og:title" content="关于适配的总结">
+<meta property="og:url" content="http://sz8023.github.io/2016/05/14/iOS-20160928关于适配的总结/index.html">
 <meta property="og:site_name" content="ForYou">
-<meta property="og:description" content="开发中离不开代理（或Block）和通知。到底什么时候使用代理，什么时候使用通知呢？首先我们从概念入手。
-概念协议Protocol：接口是一堆方法的声明，但是没有实现。协议也是一堆方法的声明没有实现，在此基础上增加了选择实现和必须实现方法的选择。
-代理Delegate：传入的对象代替了当前类完成了某个功能，成为代理模式。使用场景，对象A发生了某些事情想要告诉对象B的时候或者对象B想要监听对象A发生了">
-<meta property="og:updated_time" content="2016-09-22T05:43:20.000Z">
+<meta property="og:description" content="在日常开发中，比较常用的适配模式就是xib，storyboard和纯代码的方式。而纯代码方式我使用比较多的是第三方库Masonry。但是对于这些概念一直比较模糊，比如发展历史，使用区别，使用频率，在什么时候选用什么样的布局方式等等。
+
+
+
+设备
+适配技术
+优缺点
+
+
+
+
+iPhone4/4s
+通过frame计算
+设备比较单一，计算量比较小
+
+
+iPad
+AutoResizing
+只可以实现父子控件">
+<meta property="og:updated_time" content="2016-09-29T02:50:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="代理和通知">
-<meta name="twitter:description" content="开发中离不开代理（或Block）和通知。到底什么时候使用代理，什么时候使用通知呢？首先我们从概念入手。
-概念协议Protocol：接口是一堆方法的声明，但是没有实现。协议也是一堆方法的声明没有实现，在此基础上增加了选择实现和必须实现方法的选择。
-代理Delegate：传入的对象代替了当前类完成了某个功能，成为代理模式。使用场景，对象A发生了某些事情想要告诉对象B的时候或者对象B想要监听对象A发生了">
+<meta name="twitter:title" content="关于适配的总结">
+<meta name="twitter:description" content="在日常开发中，比较常用的适配模式就是xib，storyboard和纯代码的方式。而纯代码方式我使用比较多的是第三方库Masonry。但是对于这些概念一直比较模糊，比如发展历史，使用区别，使用频率，在什么时候选用什么样的布局方式等等。
+
+
+
+设备
+适配技术
+优缺点
+
+
+
+
+iPhone4/4s
+通过frame计算
+设备比较单一，计算量比较小
+
+
+iPad
+AutoResizing
+只可以实现父子控件">
 
 
 
@@ -120,9 +168,9 @@
 
 
 
-  <link rel="canonical" href="http://sz8023.github.io/2016/02/10/iOS-代理和通知/"/>
+  <link rel="canonical" href="http://sz8023.github.io/2016/05/14/iOS-20160928关于适配的总结/"/>
 
-  <title> 代理和通知 | ForYou </title>
+  <title> 关于适配的总结 | ForYou </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -252,7 +300,7 @@
             
             
               
-                代理和通知
+                关于适配的总结
               
             
           </h1>
@@ -264,8 +312,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-10T07:46:27+08:00" content="2016-02-10">
-              2016-02-10
+            <time itemprop="dateCreated" datetime="2016-05-14T14:49:15+08:00" content="2016-05-14">
+              2016-05-14
             </time>
           </span>
 
@@ -294,8 +342,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/02/10/iOS-代理和通知/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/10/iOS-代理和通知/" itemprop="commentsCount"></span>
+                <a href="/2016/05/14/iOS-20160928关于适配的总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/14/iOS-20160928关于适配的总结/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -318,29 +366,54 @@
       
 
       
-        <p>开发中离不开代理（或Block）和通知。到底什么时候使用代理，什么时候使用通知呢？首先我们从概念入手。<br><!--此处概念来自苹果官网或者stackoverflow--></p>
-<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p><strong>协议Protocol：</strong>接口是一堆方法的声明，但是没有实现。协议也是一堆方法的声明没有实现，在此基础上增加了选择实现和必须实现方法的选择。</p>
-<p><strong>代理Delegate：</strong>传入的对象代替了当前类完成了某个功能，成为代理模式。使用场景，对象A发生了某些事情想要告诉对象B的时候或者对象B想要监听对象A发生了什么事情，都可以让对象B成为对象A的代理。</p>
-<p><strong>通知Notification：</strong> 通知可以实现多个对象之间传递消息，不论对象之间的层次关系多么复杂。通知是线程同步的。</p>
-<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p>通知和代理都可以实现对象和对象之间的传值，不同之处在与代理实现的是逻辑关系简单，视图层次不复杂的一对一传值，而通知用的比较多的场合是逻辑关系较为复杂，视图层次比较深的一对多传值。</p>
-<h4 id="什么时候使用代理"><a href="#什么时候使用代理" class="headerlink" title="什么时候使用代理"></a>什么时候使用代理</h4><ul>
-<li>自定义控件的时候，如果想要将控件的点击事件传递出去，需要使用代理。</li>
-<li>控制器传值，如果想要将目标控制器中的数据传递给源控制器可以使用代理。</li>
-<li>网络部分也可以通过代理的方式来处理响应结果。</li>
-</ul>
-<p>可以使用代理的地方都可以使用block来代替，而且使用方式更简单！</p>
-<a id="more"></a>
-<h4 id="什么时候使用通知"><a href="#什么时候使用通知" class="headerlink" title="什么时候使用通知"></a>什么时候使用通知</h4><p>如果是自定义的view，那么可以在init方法中添加通知，如果是控制器，可以在viewDidLoad方法中添加通知，在dealloc方法中移除通知，移除通知的时候，一定要使用<code>removeObserver: name: object:</code>带有name的方法，这样可以避免移除该对象的其他通知（可能是系统自带的通知）。</p>
+        <p>在日常开发中，比较常用的适配模式就是xib，storyboard和纯代码的方式。而纯代码方式我使用比较多的是第三方库Masonry。但是对于这些概念一直比较模糊，比如发展历史，使用区别，使用频率，在什么时候选用什么样的布局方式等等。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">设备</th>
+<th style="text-align:center">适配技术</th>
+<th style="text-align:center">优缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">iPhone4/4s</td>
+<td style="text-align:center">通过frame计算</td>
+<td style="text-align:center">设备比较单一，计算量比较小</td>
+</tr>
+<tr>
+<td style="text-align:center">iPad</td>
+<td style="text-align:center">AutoResizing</td>
+<td style="text-align:center">只可以实现父子控件之间的约束</td>
+</tr>
+<tr>
+<td style="text-align:center">iPhone5/5s</td>
+<td style="text-align:center">AutoLayout</td>
+<td style="text-align:center">既可以实现父子控件约束，有可以实现同级控件之间的约束</td>
+</tr>
+<tr>
+<td style="text-align:center">iPhone6/6s</td>
+<td style="text-align:center">SizeClass</td>
+<td style="text-align:center">可以给不同设备设置不同的约束，AutoLayout可以给不同设备设置同一                              套约束</td>
+</tr>
+</tbody>
+</table>
+<p>通常这几种技术当中，AutoResizing的工作完全可以由AutoLayout来代替，所以开发中几乎不再考虑。对于iPhone的不同设备采用同一套布局方式是很多公司都会采用的方式，因为在去考虑iPad的话开发工作是比较繁琐的，所以AutoLayout的使用频率是最高的。倘若真的要考虑同时适配iPhone和iPad的话，那么肯定要采用不同的布局方式，因为iPad的屏幕宽高比个iPhone相差还是很大的，这个时候SizeClass就是你的最佳选择。</p>
+<p>这个时候我觉得还需要把计算frame和AutoLayout拿出来说一下，毕竟很多人可能会像我一样在日常的Demo中会通过计算frame的方式最快的查看想要的结果。</p>
 <ul>
-<li>如果自定义控件存在多层嵌套，可以使用通知来传递事件</li>
-<li>如果一个控制器想要通知其他控制器刷新界面的时候可以使用通知</li>
+<li>通过frame计算的方式实现方式比较简单，远比NSLayoutContraint语法简单</li>
+<li>相对布局frame可以通过CGRectGetMaxY或者CGRectGetMaxX等来实现相对布局。</li>
+<li>重点是：通过frame和AutoLayout其他方式上的区别还在探索当中……</li>
 </ul>
-<h3 id="开发中哪些地方会用到"><a href="#开发中哪些地方会用到" class="headerlink" title="开发中哪些地方会用到"></a>开发中哪些地方会用到</h3><p>从顺传和逆传的角度考虑</p>
+<p>开发中有2个概念，一个是设备，一个是系统。</p>
+<h4 id="关于适配"><a href="#关于适配" class="headerlink" title="关于适配"></a>关于适配</h4><p>一般在开发中都喜欢使用下面的方式来判断设备的类型。通过不同设备的高度来区分设备。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#define IS_IPHONE4 (([[UIScreen mainScreen] bounds].size.height == 480) ? YES : NO)</span></div><div class="line"><span class="meta">#define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height == 568) ? YES : NO)</span></div><div class="line"><span class="meta">#define IS_IPhone6 (([[UIScreen mainScreen] bounds].size.height == 667) ? YES : NO)</span></div><div class="line"></div><div class="line"><span class="meta">#define IOS_IPhone6plusS (([[UIScreen mainScreen] bounds].size.height = 736) ? YES : NO)</span></div></pre></td></tr></table></figure>
+<p>那么在什么地方经常会用到这些宏呢？</p>
 <ul>
-<li>自定义控件</li>
-<li>控制器之间传值</li>
+<li>配置启动图片</li>
+<li>设置UICollectionView中cell之间的spacing</li>
 </ul>
-
+<h4 id="关于Masonry"><a href="#关于Masonry" class="headerlink" title="关于Masonry"></a>关于Masonry</h4>
       
     </div>
 
@@ -365,16 +438,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/14/iOS-自定义控件/" rel="next" title="自定义控件">
-                <i class="fa fa-chevron-left"></i> 自定义控件
+              <a href="/2016/04/23/iOS-20160923CornerStone使用小技巧/" rel="next" title="CornerStone使用小技巧">
+                <i class="fa fa-chevron-left"></i> CornerStone使用小技巧
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/03/11/iOS-20160916控制器中视图的布局/" rel="prev" title="控制器中视图的布局">
-                控制器中视图的布局 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/09/22/iOS-20160922Xcode8相关问题汇总/" rel="prev" title="Xcode8相关问题汇总">
+                Xcode8相关问题汇总 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -390,10 +463,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/02/10/iOS-代理和通知/"
-     data-title="代理和通知"
+        <div class="ds-share flat" data-thread-key="2016/05/14/iOS-20160928关于适配的总结/"
+     data-title="关于适配的总结"
      data-content=""
-     data-url="http://sz8023.github.io/2016/02/10/iOS-代理和通知/">
+     data-url="http://sz8023.github.io/2016/05/14/iOS-20160928关于适配的总结/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -423,8 +496,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/02/10/iOS-代理和通知/"
-           data-title="代理和通知" data-url="http://sz8023.github.io/2016/02/10/iOS-代理和通知/">
+      <div class="ds-thread" data-thread-key="2016/05/14/iOS-20160928关于适配的总结/"
+           data-title="关于适配的总结" data-url="http://sz8023.github.io/2016/05/14/iOS-20160928关于适配的总结/">
       </div>
     
   </div>
@@ -541,7 +614,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用法"><span class="nav-number">2.</span> <span class="nav-text">用法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么时候使用代理"><span class="nav-number">2.1.</span> <span class="nav-text">什么时候使用代理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么时候使用通知"><span class="nav-number">2.2.</span> <span class="nav-text">什么时候使用通知</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发中哪些地方会用到"><span class="nav-number">3.</span> <span class="nav-text">开发中哪些地方会用到</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#关于适配"><span class="nav-number">1.</span> <span class="nav-text">关于适配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于Masonry"><span class="nav-number">2.</span> <span class="nav-text">关于Masonry</span></a></li></ol></div>
             
           </div>
         </section>

@@ -245,6 +245,132 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/11/iOS-20160916控制器中视图的布局/" itemprop="url">
+                  控制器中视图的布局
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-11T14:35:28+08:00" content="2016-03-11">
+              2016-03-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/11/iOS-20160916控制器中视图的布局/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/11/iOS-20160916控制器中视图的布局/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>控制器中除了默认的根视图不需要我们适配之外，根视图的所有子视图几乎都需要我们进行适配。如果是纯代码的话你可以在<code>- (void)viewDidLoad</code>中进行适配(相对父视图进行布局)。但是如果你想要跟新rootView的子视图，你需要在<code>viewWillLayoutSubviews</code>或<code>viewDidLayoutSubviews</code>方法中进行更新。这2个方法的主要区别是前者根视图适配完成，但是子视图适配并没有确定（需要根据设备来确定），而后者子视图的适配已经完成。如果你参考非根视图进行布局更新，建议在后者方法中进行布局更新。如果参考根视图则任意选择。</p>
+<p>当然你也可以在其他方法中通过调动[view setNeedsLayout]和[view layoutIfNeeded]给控件进行提前布局。</p>
+<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><p>控件szView和szLBL分别是根视图view的子视图。ViewController采用storyboard的方式进行编码。</p>
+<pre><code><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"ViewController.h"</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ViewController</span> ()</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">weak</span>, <span class="keyword">nonatomic</span>) <span class="keyword">IBOutlet</span> <span class="built_in">UIView</span> *szView;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">weak</span>, <span class="keyword">nonatomic</span>) <span class="keyword">IBOutlet</span> <span class="built_in">UILabel</span> *szLBL;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ViewController</span></span></div><div class="line"></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)awakeFromNib &#123;</div><div class="line">    [<span class="keyword">super</span> awakeFromNib];</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.view.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szView.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szLBL.frame));</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</div><div class="line">    [<span class="keyword">super</span> viewDidLoad];</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.view.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szView.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szLBL.frame));</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)viewWillAppear:(<span class="built_in">BOOL</span>)animated &#123;</div><div class="line">    [<span class="keyword">super</span> viewWillAppear: animated];</div><div class="line"><span class="comment">//    [self.view layoutIfNeeded];</span></div><div class="line"></div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.view.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szView.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szLBL.frame));</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)viewWillLayoutSubviews &#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.view.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szView.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szLBL.frame));</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)viewDidLayoutSubviews &#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.view.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szView.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szLBL.frame));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/03/11/iOS-20160916控制器中视图的布局/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/02/10/iOS-代理和通知/" itemprop="url">
                   代理和通知
                 </a>
@@ -629,135 +755,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/11/12/iOS-手势解锁实现/" itemprop="url">
-                  手势解锁实现
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-11-12T09:39:53+08:00" content="2015-11-12">
-              2015-11-12
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/自定义库/" itemprop="url" rel="index">
-                    <span itemprop="name">自定义库</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/11/12/iOS-手势解锁实现/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/12/iOS-手势解锁实现/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>如今很多涉及到安全方面的app都会有手势解锁这个功能。这个功能看似简单，其实还是有很多的注意点在里面。以下是我写的一个简单的手势解锁。</p>
-<p>如果你需要改变根控制器的view，你可以自定义，我这边简单定义了一下：</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//  BGView.m</span></div><div class="line"><span class="comment">//  05-手势解锁</span></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//  Created by styshy on 15/11/4.</span></div><div class="line"><span class="comment">//  Copyright (c) 2015年 sz. All rights reserved.</span></div><div class="line"><span class="comment">//</span></div><div class="line"></div><div class="line"><span class="meta">#import <span class="meta-string">"BGView.h"</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">BGView</span></span></div><div class="line"></div><div class="line"><span class="comment">// 在drawRect中绘制图片</span></div><div class="line">- (<span class="keyword">void</span>)drawRect:(<span class="built_in">CGRect</span>)rect&#123;</div><div class="line">    <span class="built_in">UIImage</span> *image = [<span class="built_in">UIImage</span> imageNamed:<span class="string">@"Home_refresh_bg"</span>];</div><div class="line">    [image drawInRect:rect];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/11/12/iOS-手势解锁实现/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -798,7 +800,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

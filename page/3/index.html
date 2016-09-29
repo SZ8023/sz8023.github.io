@@ -245,6 +245,130 @@
             
               
                 
+                <a class="post-title-link" href="/2015/11/12/iOS-手势解锁实现/" itemprop="url">
+                  手势解锁实现
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-11-12T09:39:53+08:00" content="2015-11-12">
+              2015-11-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/自定义库/" itemprop="url" rel="index">
+                    <span itemprop="name">自定义库</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/11/12/iOS-手势解锁实现/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/12/iOS-手势解锁实现/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>如今很多涉及到安全方面的app都会有手势解锁这个功能。这个功能看似简单，其实还是有很多的注意点在里面。以下是我写的一个简单的手势解锁。</p>
+<p>如果你需要改变根控制器的view，你可以自定义，我这边简单定义了一下：</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//  BGView.m</span></div><div class="line"><span class="comment">//  05-手势解锁</span></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//  Created by styshy on 15/11/4.</span></div><div class="line"><span class="comment">//  Copyright (c) 2015年 sz. All rights reserved.</span></div><div class="line"><span class="comment">//</span></div><div class="line"></div><div class="line"><span class="meta">#import <span class="meta-string">"BGView.h"</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">BGView</span></span></div><div class="line"></div><div class="line"><span class="comment">// 在drawRect中绘制图片</span></div><div class="line">- (<span class="keyword">void</span>)drawRect:(<span class="built_in">CGRect</span>)rect&#123;</div><div class="line">    <span class="built_in">UIImage</span> *image = [<span class="built_in">UIImage</span> imageNamed:<span class="string">@"Home_refresh_bg"</span>];</div><div class="line">    [image drawInRect:rect];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/11/12/iOS-手势解锁实现/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2015/09/01/iOS-SDWebImage学习/" itemprop="url">
                   SDWebImage学习
                 </a>
@@ -627,141 +751,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/05/01/Ruby教程/" itemprop="url">
-                  Ruby教程
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-05-01T09:46:31+08:00" content="2015-05-01">
-              2015-05-01
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Ruby教程/" itemprop="url" rel="index">
-                    <span itemprop="name">Ruby教程</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/05/01/Ruby教程/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/05/01/Ruby教程/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="Ruby教程"><a href="#Ruby教程" class="headerlink" title="Ruby教程"></a>Ruby教程</h3><p>Ruby是一种开源的面向对象程序设计的服务器端脚本语言。Ruby可运行于多种平台，如Windowss、MAC OS和UNIX的各种版本。</p>
-<h3 id="编译-执行Ruby程序"><a href="#编译-执行Ruby程序" class="headerlink" title="编译/执行Ruby程序"></a>编译/执行Ruby程序</h3><p>Ruby与Smalltalk一样，是一个完美的面向对象语言，使用Ruby的语法比使用Smalltalk的语法要容易多。</p>
-<h3 id="Ruby的特性"><a href="#Ruby的特性" class="headerlink" title="Ruby的特性"></a>Ruby的特性</h3><ul>
-<li>Ruby是开源的，在Web上是免费提供的，但需要一个许可证。</li>
-<li>Ruby是一种通用 、解释的编程语言。</li>
-<li>Ruby是一种真正的面向对象编程语言。</li>
-<li>Ruby是一种类似于Python和Perl的服务器端脚本语言</li>
-<li>Ruby可以用来编写通用网关接口</li>
-<li>Ruby可以被嵌套</li>
-<li>……</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -802,7 +796,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

@@ -376,6 +376,172 @@
             
               
                 
+                <a class="post-title-link" href="/2016/05/14/iOS-20160928关于适配的总结/" itemprop="url">
+                  关于适配的总结
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-14T14:49:15+08:00" content="2016-05-14">
+              2016-05-14
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/14/iOS-20160928关于适配的总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/14/iOS-20160928关于适配的总结/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在日常开发中，比较常用的适配模式就是xib，storyboard和纯代码的方式。而纯代码方式我使用比较多的是第三方库Masonry。但是对于这些概念一直比较模糊，比如发展历史，使用区别，使用频率，在什么时候选用什么样的布局方式等等。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">设备</th>
+<th style="text-align:center">适配技术</th>
+<th style="text-align:center">优缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">iPhone4/4s</td>
+<td style="text-align:center">通过frame计算</td>
+<td style="text-align:center">设备比较单一，计算量比较小</td>
+</tr>
+<tr>
+<td style="text-align:center">iPad</td>
+<td style="text-align:center">AutoResizing</td>
+<td style="text-align:center">只可以实现父子控件之间的约束</td>
+</tr>
+<tr>
+<td style="text-align:center">iPhone5/5s</td>
+<td style="text-align:center">AutoLayout</td>
+<td style="text-align:center">既可以实现父子控件约束，有可以实现同级控件之间的约束</td>
+</tr>
+<tr>
+<td style="text-align:center">iPhone6/6s</td>
+<td style="text-align:center">SizeClass</td>
+<td style="text-align:center">可以给不同设备设置不同的约束，AutoLayout可以给不同设备设置同一                              套约束</td>
+</tr>
+</tbody>
+</table>
+<p>通常这几种技术当中，AutoResizing的工作完全可以由AutoLayout来代替，所以开发中几乎不再考虑。对于iPhone的不同设备采用同一套布局方式是很多公司都会采用的方式，因为在去考虑iPad的话开发工作是比较繁琐的，所以AutoLayout的使用频率是最高的。倘若真的要考虑同时适配iPhone和iPad的话，那么肯定要采用不同的布局方式，因为iPad的屏幕宽高比个iPhone相差还是很大的，这个时候SizeClass就是你的最佳选择。</p>
+<p>这个时候我觉得还需要把计算frame和AutoLayout拿出来说一下，毕竟很多人可能会像我一样在日常的Demo中会通过计算frame的方式最快的查看想要的结果。</p>
+<ul>
+<li>通过frame计算的方式实现方式比较简单，远比NSLayoutContraint语法简单</li>
+<li>相对布局frame可以通过CGRectGetMaxY或者CGRectGetMaxX等来实现相对布局。</li>
+<li>重点是：通过frame和AutoLayout其他方式上的区别还在探索当中……</li>
+</ul>
+<p>开发中有2个概念，一个是设备，一个是系统。</p>
+<h4 id="关于适配"><a href="#关于适配" class="headerlink" title="关于适配"></a>关于适配</h4><p>一般在开发中都喜欢使用下面的方式来判断设备的类型。通过不同设备的高度来区分设备。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#define IS_IPHONE4 (([[UIScreen mainScreen] bounds].size.height == 480) ? YES : NO)</span></div><div class="line"><span class="meta">#define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height == 568) ? YES : NO)</span></div><div class="line"><span class="meta">#define IS_IPhone6 (([[UIScreen mainScreen] bounds].size.height == 667) ? YES : NO)</span></div><div class="line"></div><div class="line"><span class="meta">#define IOS_IPhone6plusS (([[UIScreen mainScreen] bounds].size.height = 736) ? YES : NO)</span></div></pre></td></tr></table></figure>
+<p>那么在什么地方经常会用到这些宏呢？</p>
+<ul>
+<li>配置启动图片</li>
+<li>设置UICollectionView中cell之间的spacing</li>
+</ul>
+<h4 id="关于Masonry"><a href="#关于Masonry" class="headerlink" title="关于Masonry"></a>关于Masonry</h4>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/23/iOS-20160923CornerStone使用小技巧/" itemprop="url">
                   CornerStone使用小技巧
                 </a>
@@ -609,137 +775,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/11/iOS-20160916控制器中视图的布局/" itemprop="url">
-                  控制器中视图的布局
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-11T14:35:28+08:00" content="2016-03-11">
-              2016-03-11
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/11/iOS-20160916控制器中视图的布局/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/11/iOS-20160916控制器中视图的布局/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>控制器中除了默认的根视图不需要我们适配之外，根视图的所有子视图几乎都需要我们进行适配。如果是纯代码的话你可以在<code>- (void)viewDidLoad</code>中进行适配(相对父视图进行布局)。但是如果你想要跟新rootView的子视图，你需要在<code>viewWillLayoutSubviews</code>或<code>viewDidLayoutSubviews</code>方法中进行更新。这2个方法的主要区别是前者根视图适配完成，但是子视图适配并没有确定（需要根据设备来确定），而后者子视图的适配已经完成。如果你参考非根视图进行布局更新，建议在后者方法中进行布局更新。如果参考根视图则任意选择。</p>
-<p>当然你也可以在其他方法中通过调动[view setNeedsLayout]和[view layoutIfNeeded]给控件进行提前布局。</p>
-<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><p>控件szView和szLBL分别是根视图view的子视图。ViewController采用storyboard的方式进行编码。</p>
-<pre><code><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"ViewController.h"</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ViewController</span> ()</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">weak</span>, <span class="keyword">nonatomic</span>) <span class="keyword">IBOutlet</span> <span class="built_in">UIView</span> *szView;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">weak</span>, <span class="keyword">nonatomic</span>) <span class="keyword">IBOutlet</span> <span class="built_in">UILabel</span> *szLBL;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ViewController</span></span></div><div class="line"></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)awakeFromNib &#123;</div><div class="line">    [<span class="keyword">super</span> awakeFromNib];</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.view.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szView.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szLBL.frame));</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</div><div class="line">    [<span class="keyword">super</span> viewDidLoad];</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.view.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szView.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szLBL.frame));</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)viewWillAppear:(<span class="built_in">BOOL</span>)animated &#123;</div><div class="line">    [<span class="keyword">super</span> viewWillAppear: animated];</div><div class="line"><span class="comment">//    [self.view layoutIfNeeded];</span></div><div class="line"></div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.view.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szView.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szLBL.frame));</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)viewWillLayoutSubviews &#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.view.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szView.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szLBL.frame));</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)viewDidLayoutSubviews &#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.view.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szView.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%s *****\t %@"</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szLBL.frame));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</code></pre>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/11/iOS-20160916控制器中视图的布局/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -780,7 +820,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

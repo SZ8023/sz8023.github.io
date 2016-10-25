@@ -96,7 +96,7 @@ Important: To protect user privacy, an iOS app linked on or after i">
 如果你的项目中访问了相机，相册，麦克风等设备，你需要在info.plist文件里做先关配置，如果没有配置相关信息，程序会直接退出。
 访问相机
 Important: To protect user privacy, an iOS app linked on or after i">
-<meta property="og:updated_time" content="2016-09-22T02:14:46.000Z">
+<meta property="og:updated_time" content="2016-10-25T08:01:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xcode8相关问题汇总">
 <meta name="twitter:description" content="这几天很多苹果开发的小伙伴迫不及待的升级了Xcode8，可是升级完成之后项目中也遇到了很多小问题，下面就一一列举相关问题。
@@ -327,12 +327,23 @@ Important: To protect user privacy, an iOS app linked on or after i">
 <p>Important: To protect user privacy, an iOS app linked on or after iOS 10.0, and which accesses the device’s camera, must statically declare the intent to do so. Include the NSCameraUsageDescription key in your app’s Info.plist file and provide a purpose string for this key. If your app attempts to access the device’s camera without a corresponding purpose string, your app exits.</p>
 </blockquote>
 <p>根据苹果的描述信息，你需要在info.plist文件里面做相关配置。</p>
-<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSCameraUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;允许此权限才能使用相机&lt;/string&gt;</div></pre></td></tr></table></figure>
+<p>```objc</p>
+<p><key>NSCameraUsageDescription</key></p>
+<p><string>允许此权限才能使用相机</string><br>```</p>
 <h5 id="访问相册"><a href="#访问相册" class="headerlink" title="访问相册"></a>访问相册</h5><p>此处相关链接可以参考访问相机，以下连接相同。</p>
-<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSPhotoLibraryUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;允许此权限才能访问相册&lt;/string&gt;</div></pre></td></tr></table></figure>
+<p>```objc</p>
+<p><key>NSPhotoLibraryUsageDescription</key></p>
+<p><string>允许此权限才能访问相册</string><br>```</p>
 <h5 id="访问麦克风"><a href="#访问麦克风" class="headerlink" title="访问麦克风"></a>访问麦克风</h5><a id="more"></a>
-<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSMicrophoneUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;允许此权限才能使用麦克风&lt;/string&gt;</div></pre></td></tr></table></figure>
+<p>```objc</p>
+<p><key>NSMicrophoneUsageDescription</key></p>
+<p><string>允许此权限才能使用麦克风</string><br>```</p>
 <p>还有其他的权限，比如媒体库，蓝牙，日历，健康等，更多权限参考<a href="https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html" target="_blank" rel="external">Information Property List Key Reference</a></p>
+<h5 id="Xcode8禁止控制台打印干扰信息"><a href="#Xcode8禁止控制台打印干扰信息" class="headerlink" title="Xcode8禁止控制台打印干扰信息"></a>Xcode8禁止控制台打印干扰信息</h5><p><strong>Product》Scheme》Edit Scheme…</strong> ，Run标签栏中选择Arguments选项卡，在Environments Variables 中添加字典<code>OS_ACTIVITY_MODE=disable</code></p>
+<ul>
+<li>Name:OS_ACTIVITY_MODE</li>
+<li>Value:disable</li>
+</ul>
 <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
 <li><a href="http://blog.csdn.net/u012681458/article/details/51865435" target="_blank" rel="external">升级Xcode8后的相机crash问题-IOS10权限问题</a></li>
 </ul>
@@ -533,7 +544,7 @@ Important: To protect user privacy, an iOS app linked on or after i">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#访问相机"><span class="nav-number">1.</span> <span class="nav-text">访问相机</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#访问相册"><span class="nav-number">2.</span> <span class="nav-text">访问相册</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#访问麦克风"><span class="nav-number">3.</span> <span class="nav-text">访问麦克风</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考链接"><span class="nav-number"></span> <span class="nav-text">参考链接</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#访问相机"><span class="nav-number">1.</span> <span class="nav-text">访问相机</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#访问相册"><span class="nav-number">2.</span> <span class="nav-text">访问相册</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#访问麦克风"><span class="nav-number">3.</span> <span class="nav-text">访问麦克风</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Xcode8禁止控制台打印干扰信息"><span class="nav-number">4.</span> <span class="nav-text">Xcode8禁止控制台打印干扰信息</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考链接"><span class="nav-number"></span> <span class="nav-text">参考链接</span></a></div>
             
           </div>
         </section>

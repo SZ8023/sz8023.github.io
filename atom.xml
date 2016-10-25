@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sz8023.github.io/"/>
-  <updated>2016-09-22T02:14:46.000Z</updated>
+  <updated>2016-10-25T08:01:37.000Z</updated>
   <id>http://sz8023.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://sz8023.github.io/2016/09/22/iOS-20160922Xcode8%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"/>
     <id>http://sz8023.github.io/2016/09/22/iOS-20160922Xcode8相关问题汇总/</id>
     <published>2016-09-22T01:14:46.000Z</published>
-    <updated>2016-09-22T02:14:46.000Z</updated>
+    <updated>2016-10-25T08:01:37.000Z</updated>
     
     <content type="html"><![CDATA[<p>这几天很多苹果开发的小伙伴迫不及待的升级了Xcode8，可是升级完成之后项目中也遇到了很多小问题，下面就一一列举相关问题。</p>
 <p>如果你的项目中访问了相机，相册，麦克风等设备，你需要在info.plist文件里做先关配置，如果没有配置相关信息，程序会直接退出。</p>
@@ -28,12 +28,23 @@
 <p>Important: To protect user privacy, an iOS app linked on or after iOS 10.0, and which accesses the device’s camera, must statically declare the intent to do so. Include the NSCameraUsageDescription key in your app’s Info.plist file and provide a purpose string for this key. If your app attempts to access the device’s camera without a corresponding purpose string, your app exits.</p>
 </blockquote>
 <p>根据苹果的描述信息，你需要在info.plist文件里面做相关配置。</p>
-<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSCameraUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;允许此权限才能使用相机&lt;/string&gt;</div></pre></td></tr></table></figure>
+<p>```objc</p>
+<p><key>NSCameraUsageDescription</key></p>
+<p><string>允许此权限才能使用相机</string><br>```</p>
 <h5 id="访问相册"><a href="#访问相册" class="headerlink" title="访问相册"></a>访问相册</h5><p>此处相关链接可以参考访问相机，以下连接相同。</p>
-<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSPhotoLibraryUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;允许此权限才能访问相册&lt;/string&gt;</div></pre></td></tr></table></figure>
+<p>```objc</p>
+<p><key>NSPhotoLibraryUsageDescription</key></p>
+<p><string>允许此权限才能访问相册</string><br>```</p>
 <h5 id="访问麦克风"><a href="#访问麦克风" class="headerlink" title="访问麦克风"></a>访问麦克风</h5><a id="more"></a>
-<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSMicrophoneUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;允许此权限才能使用麦克风&lt;/string&gt;</div></pre></td></tr></table></figure>
+<p>```objc</p>
+<p><key>NSMicrophoneUsageDescription</key></p>
+<p><string>允许此权限才能使用麦克风</string><br>```</p>
 <p>还有其他的权限，比如媒体库，蓝牙，日历，健康等，更多权限参考<a href="https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html" target="_blank" rel="external">Information Property List Key Reference</a></p>
+<h5 id="Xcode8禁止控制台打印干扰信息"><a href="#Xcode8禁止控制台打印干扰信息" class="headerlink" title="Xcode8禁止控制台打印干扰信息"></a>Xcode8禁止控制台打印干扰信息</h5><p><strong>Product》Scheme》Edit Scheme…</strong> ，Run标签栏中选择Arguments选项卡，在Environments Variables 中添加字典<code>OS_ACTIVITY_MODE=disable</code></p>
+<ul>
+<li>Name:OS_ACTIVITY_MODE</li>
+<li>Value:disable</li>
+</ul>
 <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
 <li><a href="http://blog.csdn.net/u012681458/article/details/51865435" target="_blank" rel="external">升级Xcode8后的相机crash问题-IOS10权限问题</a></li>
 </ul>
@@ -47,9 +58,13 @@
 &lt;p&gt;Important: To protect user privacy, an iOS app linked on or after iOS 10.0, and which accesses the device’s camera, must statically declare the intent to do so. Include the NSCameraUsageDescription key in your app’s Info.plist file and provide a purpose string for this key. If your app attempts to access the device’s camera without a corresponding purpose string, your app exits.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;根据苹果的描述信息，你需要在info.plist文件里面做相关配置。&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;key&amp;gt;NSCameraUsageDescription&amp;lt;/key&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;string&amp;gt;允许此权限才能使用相机&amp;lt;/string&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;```objc&lt;/p&gt;
+&lt;p&gt;&lt;key&gt;NSCameraUsageDescription&lt;/key&gt;&lt;/p&gt;
+&lt;p&gt;&lt;string&gt;允许此权限才能使用相机&lt;/string&gt;&lt;br&gt;```&lt;/p&gt;
 &lt;h5 id=&quot;访问相册&quot;&gt;&lt;a href=&quot;#访问相册&quot; class=&quot;headerlink&quot; title=&quot;访问相册&quot;&gt;&lt;/a&gt;访问相册&lt;/h5&gt;&lt;p&gt;此处相关链接可以参考访问相机，以下连接相同。&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;key&amp;gt;NSPhotoLibraryUsageDescription&amp;lt;/key&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;string&amp;gt;允许此权限才能访问相册&amp;lt;/string&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;```objc&lt;/p&gt;
+&lt;p&gt;&lt;key&gt;NSPhotoLibraryUsageDescription&lt;/key&gt;&lt;/p&gt;
+&lt;p&gt;&lt;string&gt;允许此权限才能访问相册&lt;/string&gt;&lt;br&gt;```&lt;/p&gt;
 &lt;h5 id=&quot;访问麦克风&quot;&gt;&lt;a href=&quot;#访问麦克风&quot; class=&quot;headerlink&quot; title=&quot;访问麦克风&quot;&gt;&lt;/a&gt;访问麦克风&lt;/h5&gt;
     
     </summary>
@@ -212,7 +227,7 @@
     <link href="http://sz8023.github.io/2016/04/23/iOS-20160923CornerStone%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
     <id>http://sz8023.github.io/2016/04/23/iOS-20160923CornerStone使用小技巧/</id>
     <published>2016-04-23T07:05:11.000Z</published>
-    <updated>2016-10-11T07:09:26.000Z</updated>
+    <updated>2016-10-12T15:46:48.000Z</updated>
     
     <content type="html"><![CDATA[<p>在使用CornerStone工具的时候有一些常用的小技巧，当然这些小技巧可能很多人都知道，但是对于刚刚接触的小伙伴来说可能就不一样了。所以，记录了一下给自己也给大家做一个参考。</p>
 <h3 id="关于忽略文件的问题"><a href="#关于忽略文件的问题" class="headerlink" title="关于忽略文件的问题"></a>关于忽略文件的问题</h3><p>在项目初始化创建的时候可能会需要处理<code>.xcuserdatad</code>文件的问题，这个问题我也在网上搜索了一些答案，但是总感觉过程太过繁琐。</p>
@@ -227,9 +242,7 @@
 </ul>
 <p><img src="../images/CornerStone_commit.png" width="640" alt="CornerStone_commit"></p>
 <ul>
-<li><p>如果你是在Xcode中通过New Group创建的文件夹，那么这个文件夹只是虚拟的文件夹，之后通过右键Finder创建的文件夹才是实实在在的文件夹，然后你可以将这个文件Import到项目中，或者拖动到项目中，这个时候CornerStone依然可以会提示你文件或者文件夹是否添加到本地的SVN当中。可以通过底部的工具栏<code>Add</code>将文件添加到本地的SVN中。</p>
-</li>
-<li></li>
+<li>如果你是在Xcode中通过New Group创建的文件夹，那么这个文件夹只是虚拟的文件夹，之后通过右键Finder创建的文件夹才是实实在在的文件夹，然后你可以将这个文件Import到项目中，或者拖动到项目中，这个时候CornerStone依然可以会提示你文件或者文件夹是否添加到本地的SVN当中。可以通过底部的工具栏<code>Add</code>将文件添加到本地的SVN中。</li>
 </ul>
 ]]></content>
     
@@ -858,7 +871,7 @@ console.log(&quot;程序执行结束&quot;);
     <link href="http://sz8023.github.io/2015/03/02/Html5%E6%95%99%E7%A8%8B/"/>
     <id>http://sz8023.github.io/2015/03/02/Html5教程/</id>
     <published>2015-03-02T05:42:39.000Z</published>
-    <updated>2016-08-31T10:02:15.000Z</updated>
+    <updated>2016-10-12T15:26:54.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="HTML5教程"><a href="#HTML5教程" class="headerlink" title="HTML5教程"></a>HTML5教程</h3><p>你可以使用HTML来创建自己的WEB站点。<br>HTML5是HTML最新的修订版，HTML5的设计目的是为了在<strong>移动设备上支持多媒体。</strong></p>
 <p>HTML5是W3C与WHATWG合作的结果。<br>WHATWG致力于web表单和应用程序，而W3C专注于XHTML2.0。</p>
@@ -871,8 +884,9 @@ console.log(&quot;程序执行结束&quot;);
 <li>新的表单控件，比如calendar、date、time、email、url、search</li>
 </ul>
 <a id="more"></a>
-<h3 id="HTML5-lt-DOCTYPE-gt"><a href="#HTML5-lt-DOCTYPE-gt" class="headerlink" title="HTML5&lt;!DOCTYPE&gt;"></a>HTML5&lt;!DOCTYPE&gt;</h3><p>&lt;!DOCTYPE&gt;声明必须位于HTML5文档中的第一行，使用非常简单。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="HTML5-lt-DOCTYPE"><a href="#HTML5-lt-DOCTYPE" class="headerlink" title="HTML5\&lt;!DOCTYPE>"></a>HTML5\&lt;!DOCTYPE></h3><p>\&lt;!DOCTYPE>声明必须位于HTML5文档中的第一行，使用非常简单。</p>
+<p>```<br>\&lt;!DOCTYPE HTML></p>
+<p>```</p>
 <h3 id="HTML5浏览器支持"><a href="#HTML5浏览器支持" class="headerlink" title="HTML5浏览器支持"></a>HTML5浏览器支持</h3><p>最新版的Safari、Chrome、Firefox以及Opera支持某些HTML5特性。Internet Explorer 9将支持某些HTML5特性。</p>
 <p><img src="../images/browsers_say.png" alt="支持哪些浏览器"></p>
 <p>不论旧的和最新的浏览器，对无法识别的元素会作为内联元素自动处理。正因为如此，你可以“教会”浏览器处理“未知”的HTML元素。</p>
@@ -903,16 +917,16 @@ console.log(&quot;程序执行结束&quot;);
     <link href="http://sz8023.github.io/2015/02/25/Hexo%E6%95%99%E7%A8%8B/"/>
     <id>http://sz8023.github.io/2015/02/25/Hexo教程/</id>
     <published>2015-02-25T06:16:30.000Z</published>
-    <updated>2016-08-31T10:02:03.000Z</updated>
+    <updated>2016-10-12T14:39:53.000Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><p>``` bash<br>$ hexo new “My New Post”<br>```</p>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><p>``` bash<br>$ hexo server<br>```</p>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><p>``` bash<br>$ hexo generate<br>```</p>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><p>``` bash<br>$ hexo deploy<br>```</p>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 ]]></content>
     

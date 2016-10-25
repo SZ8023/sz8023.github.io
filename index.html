@@ -320,9 +320,13 @@
 <p>Important: To protect user privacy, an iOS app linked on or after iOS 10.0, and which accesses the device’s camera, must statically declare the intent to do so. Include the NSCameraUsageDescription key in your app’s Info.plist file and provide a purpose string for this key. If your app attempts to access the device’s camera without a corresponding purpose string, your app exits.</p>
 </blockquote>
 <p>根据苹果的描述信息，你需要在info.plist文件里面做相关配置。</p>
-<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSCameraUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;允许此权限才能使用相机&lt;/string&gt;</div></pre></td></tr></table></figure>
+<p>```objc</p>
+<p><key>NSCameraUsageDescription</key></p>
+<p><string>允许此权限才能使用相机</string><br>```</p>
 <h5 id="访问相册"><a href="#访问相册" class="headerlink" title="访问相册"></a>访问相册</h5><p>此处相关链接可以参考访问相机，以下连接相同。</p>
-<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSPhotoLibraryUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;允许此权限才能访问相册&lt;/string&gt;</div></pre></td></tr></table></figure>
+<p>```objc</p>
+<p><key>NSPhotoLibraryUsageDescription</key></p>
+<p><string>允许此权限才能访问相册</string><br>```</p>
 <h5 id="访问麦克风"><a href="#访问麦克风" class="headerlink" title="访问麦克风"></a>访问麦克风</h5>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/09/22/iOS-20160922Xcode8相关问题汇总/#more" rel="contents">

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sz8023.github.io/"/>
-  <updated>2016-10-25T08:01:37.000Z</updated>
+  <updated>2016-10-27T10:59:58.000Z</updated>
   <id>http://sz8023.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://sz8023.github.io/2016/09/22/iOS-20160922Xcode8%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"/>
     <id>http://sz8023.github.io/2016/09/22/iOS-20160922Xcode8相关问题汇总/</id>
     <published>2016-09-22T01:14:46.000Z</published>
-    <updated>2016-10-25T08:01:37.000Z</updated>
+    <updated>2016-10-27T10:59:58.000Z</updated>
     
     <content type="html"><![CDATA[<p>这几天很多苹果开发的小伙伴迫不及待的升级了Xcode8，可是升级完成之后项目中也遇到了很多小问题，下面就一一列举相关问题。</p>
 <p>如果你的项目中访问了相机，相册，麦克风等设备，你需要在info.plist文件里做先关配置，如果没有配置相关信息，程序会直接退出。</p>
@@ -28,17 +28,11 @@
 <p>Important: To protect user privacy, an iOS app linked on or after iOS 10.0, and which accesses the device’s camera, must statically declare the intent to do so. Include the NSCameraUsageDescription key in your app’s Info.plist file and provide a purpose string for this key. If your app attempts to access the device’s camera without a corresponding purpose string, your app exits.</p>
 </blockquote>
 <p>根据苹果的描述信息，你需要在info.plist文件里面做相关配置。</p>
-<p>```objc</p>
-<p><key>NSCameraUsageDescription</key></p>
-<p><string>允许此权限才能使用相机</string><br>```</p>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSCameraUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;允许此权限才能使用相机&lt;/string&gt;</div></pre></td></tr></table></figure>
 <h5 id="访问相册"><a href="#访问相册" class="headerlink" title="访问相册"></a>访问相册</h5><p>此处相关链接可以参考访问相机，以下连接相同。</p>
-<p>```objc</p>
-<p><key>NSPhotoLibraryUsageDescription</key></p>
-<p><string>允许此权限才能访问相册</string><br>```</p>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSPhotoLibraryUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;允许此权限才能访问相册&lt;/string&gt;</div></pre></td></tr></table></figure>
 <h5 id="访问麦克风"><a href="#访问麦克风" class="headerlink" title="访问麦克风"></a>访问麦克风</h5><a id="more"></a>
-<p>```objc</p>
-<p><key>NSMicrophoneUsageDescription</key></p>
-<p><string>允许此权限才能使用麦克风</string><br>```</p>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSMicrophoneUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;允许此权限才能使用麦克风&lt;/string&gt;</div></pre></td></tr></table></figure>
 <p>还有其他的权限，比如媒体库，蓝牙，日历，健康等，更多权限参考<a href="https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html" target="_blank" rel="external">Information Property List Key Reference</a></p>
 <h5 id="Xcode8禁止控制台打印干扰信息"><a href="#Xcode8禁止控制台打印干扰信息" class="headerlink" title="Xcode8禁止控制台打印干扰信息"></a>Xcode8禁止控制台打印干扰信息</h5><p><strong>Product》Scheme》Edit Scheme…</strong> ，Run标签栏中选择Arguments选项卡，在Environments Variables 中添加字典<code>OS_ACTIVITY_MODE=disable</code></p>
 <ul>
@@ -58,13 +52,9 @@
 &lt;p&gt;Important: To protect user privacy, an iOS app linked on or after iOS 10.0, and which accesses the device’s camera, must statically declare the intent to do so. Include the NSCameraUsageDescription key in your app’s Info.plist file and provide a purpose string for this key. If your app attempts to access the device’s camera without a corresponding purpose string, your app exits.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;根据苹果的描述信息，你需要在info.plist文件里面做相关配置。&lt;/p&gt;
-&lt;p&gt;```objc&lt;/p&gt;
-&lt;p&gt;&lt;key&gt;NSCameraUsageDescription&lt;/key&gt;&lt;/p&gt;
-&lt;p&gt;&lt;string&gt;允许此权限才能使用相机&lt;/string&gt;&lt;br&gt;```&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;key&amp;gt;NSCameraUsageDescription&amp;lt;/key&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;string&amp;gt;允许此权限才能使用相机&amp;lt;/string&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h5 id=&quot;访问相册&quot;&gt;&lt;a href=&quot;#访问相册&quot; class=&quot;headerlink&quot; title=&quot;访问相册&quot;&gt;&lt;/a&gt;访问相册&lt;/h5&gt;&lt;p&gt;此处相关链接可以参考访问相机，以下连接相同。&lt;/p&gt;
-&lt;p&gt;```objc&lt;/p&gt;
-&lt;p&gt;&lt;key&gt;NSPhotoLibraryUsageDescription&lt;/key&gt;&lt;/p&gt;
-&lt;p&gt;&lt;string&gt;允许此权限才能访问相册&lt;/string&gt;&lt;br&gt;```&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;key&amp;gt;NSPhotoLibraryUsageDescription&amp;lt;/key&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;string&amp;gt;允许此权限才能访问相册&amp;lt;/string&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h5 id=&quot;访问麦克风&quot;&gt;&lt;a href=&quot;#访问麦克风&quot; class=&quot;headerlink&quot; title=&quot;访问麦克风&quot;&gt;&lt;/a&gt;访问麦克风&lt;/h5&gt;
     
     </summary>

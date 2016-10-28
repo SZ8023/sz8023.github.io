@@ -65,6 +65,31 @@
   </entry>
   
   <entry>
+    <title>使用AutoLayout布局自定义UITableViewCell</title>
+    <link href="http://sz8023.github.io/2016/05/27/%E4%BD%BF%E7%94%A8AutoLayout%E5%B8%83%E5%B1%80%E8%87%AA%E5%AE%9A%E4%B9%89UITableViewCell/"/>
+    <id>http://sz8023.github.io/2016/05/27/使用AutoLayout布局自定义UITableViewCell/</id>
+    <published>2016-05-27T14:43:45.000Z</published>
+    <updated>2016-10-27T14:57:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>此处首先感谢<code>峰哥</code>的指导，不要问我峰哥何许人也，请Google东半球最帅男人。不扯淡了，进入正题……</p>
+<p>### </p>
+<p>还是说几句吧！真心话，一直是<code>峰哥</code>在给我细心的指导，不厌其烦的给我讲解他项目中遇到的各种问题，而我真的是受益匪浅。我觉得自己总是接受的太多给予的太少，有愧于峰哥。觉得峰哥唯一的收益之处就是有个像我这样的学生认真的倾听他探索真理的过程，可以发现自己的理解是否到位，然后一起讨论一起进步</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;此处首先感谢&lt;code&gt;峰哥&lt;/code&gt;的指导，不要问我峰哥何许人也，请Google东半球最帅男人。不扯淡了，进入正题……&lt;/p&gt;
+&lt;p&gt;### &lt;/p&gt;
+&lt;p&gt;还是说几句吧！真心话，一直是&lt;code&gt;峰哥&lt;/code&gt;在给我细心的指导，不厌其烦的给我讲解他项目中遇到的各
+    
+    </summary>
+    
+      <category term="iOS开发" scheme="http://sz8023.github.io/categories/iOS%E5%BC%80%E5%8F%91/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>关于适配的总结</title>
     <link href="http://sz8023.github.io/2016/05/14/iOS-20160928%E5%85%B3%E4%BA%8E%E9%80%82%E9%85%8D%E7%9A%84%E6%80%BB%E7%BB%93/"/>
     <id>http://sz8023.github.io/2016/05/14/iOS-20160928关于适配的总结/</id>
@@ -204,6 +229,53 @@
 &lt;/ul&gt;
 &lt;h4 id=&quot;关于适配&quot;&gt;&lt;a href=&quot;#关于适配&quot; class=&quot;headerlink&quot; title=&quot;关于适配&quot;&gt;&lt;/a&gt;关于适配&lt;/h4&gt;&lt;p&gt;跟设备有关的会涉及到设备和系统，如今iPhone有很多不同设备，比如iPhone5,iPhone6等；同一个种设备又可能存在不同的系统，比如iOS9.0，iOS10.0等。&lt;/p&gt;
 &lt;p&gt;如何区分不同设备，开发中喜欢使用下面的方式，由于iPhone7跟iPhone6的尺寸没有发生变化，所以这边值需要对不同的设备尺寸有个区分就可以了。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="iOS开发" scheme="http://sz8023.github.io/categories/iOS%E5%BC%80%E5%8F%91/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>使用AutoLayout布局自定义UIView</title>
+    <link href="http://sz8023.github.io/2016/04/27/%E4%BD%BF%E7%94%A8AutoLayout%E5%B8%83%E5%B1%80%E8%87%AA%E5%AE%9A%E4%B9%89UIView/"/>
+    <id>http://sz8023.github.io/2016/04/27/使用AutoLayout布局自定义UIView/</id>
+    <published>2016-04-27T13:49:24.000Z</published>
+    <updated>2016-10-27T14:58:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在项目开发中偶尔也会遇见这样的需求，需要你自定义一个<code>UIView</code>。这个自定义的UIView需要根据内部的UILabel来调整内容。当然不论这个UIView是不是自定义的都无所谓，只要需要你根据内部的UILabel来调整父视图的frame的时候都可以采用这种方式来布局。</p>
+<p>此处的举例采用XIB布局方式</p>
+<h3 id="自定义的FGView"><a href="#自定义的FGView" class="headerlink" title="自定义的FGView"></a>自定义的FGView</h3><p>自定义一个继承自UIView的<code>FGView</code>并且创建对应的FGView.xib，然后绑定。顶部图片设置上左右约束然后高度固定，中间的UILabel设置上左右约束，然后numberoflines=0，同样底部的UILabel也设置上左右约束，然后numberoflines=0。此处千万不要设置底部的约束，否则xib会报错。（此处做一个假设，可能是因为UIView需要先确定父视图的frame，然后在确定子视图的frame；这个跟继承UIScrollView的视图不同，继承自UIScrollView的视图需要先确定内部的contentSize，然后是确定bounds，contentInset，contentOffset等）</p>
+<p><img src="../images/FGView.png" alt="FGView"></p>
+<h3 id="处理FGView的数据"><a href="#处理FGView的数据" class="headerlink" title="处理FGView的数据"></a>处理FGView的数据</h3><p>将FGView.xib和FGView类绑定之后，然后拖出对应的UILabel，</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">weak</span>, <span class="keyword">nonatomic</span>) <span class="keyword">IBOutlet</span> <span class="built_in">UILabel</span> *fgLBL;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">weak</span>, <span class="keyword">nonatomic</span>) <span class="keyword">IBOutlet</span> <span class="built_in">UILabel</span> *szLBL;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>在FGView.h文件中添加数据源，此处只是简单设置。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>)  <span class="built_in">NSDictionary</span> *fgDict;</div></pre></td></tr></table></figure>
+<p>我们需要重写fgDict的set方法来给2个标签赋值</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setFgDict:(<span class="built_in">NSDictionary</span> *)fgDict &#123;</div><div class="line">    _fgDict = fgDict;</div><div class="line">    <span class="keyword">self</span>.fgLBL.text = fgDict[<span class="string">@"fg"</span>];</div><div class="line">    <span class="keyword">self</span>.szLBL.text = fgDict[<span class="string">@"sz"</span>];</div><div class="line">    [<span class="keyword">self</span> setNeedsLayout];</div><div class="line">    [<span class="keyword">self</span> layoutIfNeeded];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后我们在这个方法中重新布局</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)layoutSubviews &#123;</div><div class="line">    [<span class="keyword">super</span> layoutSubviews];</div><div class="line">    <span class="built_in">CGFloat</span> y = <span class="built_in">CGRectGetMaxY</span>(<span class="keyword">self</span>.szLBL.frame);</div><div class="line">    <span class="built_in">CGRect</span> frame = <span class="keyword">self</span>.frame;</div><div class="line">    <span class="keyword">self</span>.frame = <span class="built_in">CGRectMake</span>(frame.origin.x, frame.origin.y, frame.size.width, y+<span class="number">20</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>此时布局完美实现。</p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>以下是测试代码，</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</div><div class="line">    [<span class="keyword">super</span> viewDidLoad];</div><div class="line">    </div><div class="line">    FGView *fgView = [[[<span class="built_in">NSBundle</span> mainBundle] loadNibNamed:<span class="string">@"FGView"</span> owner:<span class="keyword">self</span> options:<span class="literal">nil</span>] lastObject];</div><div class="line">    fgView.frame = <span class="keyword">self</span>.view.bounds;</div><div class="line">    [<span class="keyword">self</span>.view addSubview:fgView];</div><div class="line">    <span class="built_in">NSDictionary</span> *dic = @&#123;<span class="string">@"fg"</span>:<span class="string">@"月落乌啼霜满天，江枫渔火对愁眠。"</span>,</div><div class="line">                          <span class="string">@"sz"</span>:<span class="string">@"姑苏城外寒山寺，夜半钟声到客船。"</span>&#125;;</div><div class="line">    fgView.fgDict = dic;</div><div class="line">    <span class="keyword">self</span>.fgView  = fgView;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span>&lt;<span class="built_in">UITouch</span> *&gt; *)touches withEvent:(<span class="built_in">UIEvent</span> *)event &#123;</div><div class="line">    <span class="built_in">NSDictionary</span> *dic = @&#123;<span class="string">@"fg"</span>:<span class="string">@"床前明月光，疑是地上霜。举头望明月，低头思故乡。床前明月光，疑是地上霜。举头望明月，低头思故乡。床前明月光，疑是地上霜。举头望明月，低头思故乡。床前明月光，疑是地上霜。举头望明月，低头思故乡。"</span>,</div><div class="line">                          <span class="string">@"sz"</span>:<span class="string">@"白日依山尽，黄河入海流。欲穷千里目，更上一层楼。白日依山尽，黄河入海流。欲穷千里目，更上一层楼。白日依山尽，黄河入海流。欲穷千里目，更上一层楼。白日依山尽，黄河入海流。欲穷千里目，更上一层楼。"</span>&#125;;</div><div class="line">    <span class="keyword">self</span>.fgView.fgDict = dic;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>为何需要在<code>layoutSubviews</code>中设置布局。</p>
+<ul>
+<li>不可以将修改布局放在<code>-(void)setDict:(NSDictionary *)dict</code>方法中，如果在这个方法中，那么如果FGView的frame改变的话，这个方法不会调用，无法做到动态调用布局，所以需要放在frame中。</li>
+</ul>
+<p>建议在调用<code>[self layoutIfNeeded]</code>方法之前调用<code>[self setNeedsLayout]</code>。</p>
+<p>关于<code>layoutSubviews</code>在什么时候调用请参考我的文章，里面有详细的描述<a href="">自定义控件</a>;</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在项目开发中偶尔也会遇见这样的需求，需要你自定义一个&lt;code&gt;UIView&lt;/code&gt;。这个自定义的UIView需要根据内部的UILabel来调整内容。当然不论这个UIView是不是自定义的都无所谓，只要需要你根据内部的UILabel来调整父视图的frame的时候都可以采用这种方式来布局。&lt;/p&gt;
+&lt;p&gt;此处的举例采用XIB布局方式&lt;/p&gt;
+&lt;h3 id=&quot;自定义的FGView&quot;&gt;&lt;a href=&quot;#自定义的FGView&quot; class=&quot;headerlink&quot; title=&quot;自定义的FGView&quot;&gt;&lt;/a&gt;自定义的FGView&lt;/h3&gt;&lt;p&gt;自定义一个继承自UIView的&lt;code&gt;FGView&lt;/code&gt;并且创建对应的FGView.xib，然后绑定。顶部图片设置上左右约束然后高度固定，中间的UILabel设置上左右约束，然后numberoflines=0，同样底部的UILabel也设置上左右约束，然后numberoflines=0。此处千万不要设置底部的约束，否则xib会报错。（此处做一个假设，可能是因为UIView需要先确定父视图的frame，然后在确定子视图的frame；这个跟继承UIScrollView的视图不同，继承自UIScrollView的视图需要先确定内部的contentSize，然后是确定bounds，contentInset，contentOffset等）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../images/FGView.png&quot; alt=&quot;FGView&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;处理FGView的数据&quot;&gt;&lt;a href=&quot;#处理FGView的数据&quot; class=&quot;headerlink&quot; title=&quot;处理FGView的数据&quot;&gt;&lt;/a&gt;处理FGView的数据&lt;/h3&gt;&lt;p&gt;将FGView.xib和FGView类绑定之后，然后拖出对应的UILabel，&lt;/p&gt;
+&lt;figure class=&quot;highlight objc&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;@property&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;weak&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;nonatomic&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;IBOutlet&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;UILabel&lt;/span&gt; *fgLBL;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;@property&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;weak&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;nonatomic&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;IBOutlet&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;UILabel&lt;/span&gt; *szLBL;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     

@@ -84,70 +84,16 @@
 
 
 
-<meta name="description" content="在日常开发中，比较常用的适配模式就是xib，storyboard和纯代码的方式。而纯代码方式我使用比较多的是第三方库Masonry。但是对于这些概念一直比较模糊，比如发展历史，使用区别，使用频率，在什么时候选用什么样的布局方式等等。
-
-
-
-设备
-适配技术
-优缺点
-
-
-
-
-iPhone4/4s
-通过frame计算
-设备比较单一，计算量比较小
-
-
-iPad
-AutoResizing
-只可以实现父子控件">
+<meta name="description" content="&amp;#x5728;&amp;#x65E5;&amp;#x5E38;&amp;#x5F00;&amp;#x53D1;&amp;#x4E2D;&amp;#xFF0C;&amp;#x6BD4;&amp;#x8F83;&amp;#x5E38;&amp;#x7528;&amp;#x7684;&amp;#x9002;&amp;#x914D;&amp;#x6A21;&amp;#x5F0F;&amp;#x5C31;&amp;#x662F;xib&amp;#xFF0C;storyboard&amp;#x548C;&amp;#x7EAF;&amp;#x4EE3;&amp;#x7801;&amp;#x">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于适配的总结">
 <meta property="og:url" content="http://sz8023.github.io/2016/05/14/iOS-20160928关于适配的总结/index.html">
 <meta property="og:site_name" content="ForYou">
-<meta property="og:description" content="在日常开发中，比较常用的适配模式就是xib，storyboard和纯代码的方式。而纯代码方式我使用比较多的是第三方库Masonry。但是对于这些概念一直比较模糊，比如发展历史，使用区别，使用频率，在什么时候选用什么样的布局方式等等。
-
-
-
-设备
-适配技术
-优缺点
-
-
-
-
-iPhone4/4s
-通过frame计算
-设备比较单一，计算量比较小
-
-
-iPad
-AutoResizing
-只可以实现父子控件">
+<meta property="og:description" content="&amp;#x5728;&amp;#x65E5;&amp;#x5E38;&amp;#x5F00;&amp;#x53D1;&amp;#x4E2D;&amp;#xFF0C;&amp;#x6BD4;&amp;#x8F83;&amp;#x5E38;&amp;#x7528;&amp;#x7684;&amp;#x9002;&amp;#x914D;&amp;#x6A21;&amp;#x5F0F;&amp;#x5C31;&amp;#x662F;xib&amp;#xFF0C;storyboard&amp;#x548C;&amp;#x7EAF;&amp;#x4EE3;&amp;#x7801;&amp;#x">
 <meta property="og:updated_time" content="2016-09-30T07:31:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于适配的总结">
-<meta name="twitter:description" content="在日常开发中，比较常用的适配模式就是xib，storyboard和纯代码的方式。而纯代码方式我使用比较多的是第三方库Masonry。但是对于这些概念一直比较模糊，比如发展历史，使用区别，使用频率，在什么时候选用什么样的布局方式等等。
-
-
-
-设备
-适配技术
-优缺点
-
-
-
-
-iPhone4/4s
-通过frame计算
-设备比较单一，计算量比较小
-
-
-iPad
-AutoResizing
-只可以实现父子控件">
+<meta name="twitter:description" content="&amp;#x5728;&amp;#x65E5;&amp;#x5E38;&amp;#x5F00;&amp;#x53D1;&amp;#x4E2D;&amp;#xFF0C;&amp;#x6BD4;&amp;#x8F83;&amp;#x5E38;&amp;#x7528;&amp;#x7684;&amp;#x9002;&amp;#x914D;&amp;#x6A21;&amp;#x5F0F;&amp;#x5C31;&amp;#x662F;xib&amp;#xFF0C;storyboard&amp;#x548C;&amp;#x7EAF;&amp;#x4EE3;&amp;#x7801;&amp;#x">
 
 
 
@@ -366,91 +312,91 @@ AutoResizing
       
 
       
-        <p>在日常开发中，比较常用的适配模式就是xib，storyboard和纯代码的方式。而纯代码方式我使用比较多的是第三方库<a href="https://github.com/SnapKit/Masonry" target="_blank" rel="external">Masonry</a>。但是对于这些概念一直比较模糊，比如发展历史，使用区别，使用频率，在什么时候选用什么样的布局方式等等。</p>
+        <p>&#x5728;&#x65E5;&#x5E38;&#x5F00;&#x53D1;&#x4E2D;&#xFF0C;&#x6BD4;&#x8F83;&#x5E38;&#x7528;&#x7684;&#x9002;&#x914D;&#x6A21;&#x5F0F;&#x5C31;&#x662F;xib&#xFF0C;storyboard&#x548C;&#x7EAF;&#x4EE3;&#x7801;&#x7684;&#x65B9;&#x5F0F;&#x3002;&#x800C;&#x7EAF;&#x4EE3;&#x7801;&#x65B9;&#x5F0F;&#x6211;&#x4F7F;&#x7528;&#x6BD4;&#x8F83;&#x591A;&#x7684;&#x662F;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;<a href="https://github.com/SnapKit/Masonry" target="_blank" rel="external">Masonry</a>&#x3002;&#x4F46;&#x662F;&#x5BF9;&#x4E8E;&#x8FD9;&#x4E9B;&#x6982;&#x5FF5;&#x4E00;&#x76F4;&#x6BD4;&#x8F83;&#x6A21;&#x7CCA;&#xFF0C;&#x6BD4;&#x5982;&#x53D1;&#x5C55;&#x5386;&#x53F2;&#xFF0C;&#x4F7F;&#x7528;&#x533A;&#x522B;&#xFF0C;&#x4F7F;&#x7528;&#x9891;&#x7387;&#xFF0C;&#x5728;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x9009;&#x7528;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x5E03;&#x5C40;&#x65B9;&#x5F0F;&#x7B49;&#x7B49;&#x3002;</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">设备</th>
-<th style="text-align:center">适配技术</th>
-<th style="text-align:center">优缺点</th>
+<th style="text-align:center">&#x8BBE;&#x5907;</th>
+<th style="text-align:center">&#x9002;&#x914D;&#x6280;&#x672F;</th>
+<th style="text-align:center">&#x4F18;&#x7F3A;&#x70B9;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:center">iPhone4/4s</td>
-<td style="text-align:center">通过frame计算</td>
-<td style="text-align:center">设备比较单一，计算量比较小</td>
+<td style="text-align:center">&#x901A;&#x8FC7;frame&#x8BA1;&#x7B97;</td>
+<td style="text-align:center">&#x8BBE;&#x5907;&#x6BD4;&#x8F83;&#x5355;&#x4E00;&#xFF0C;&#x8BA1;&#x7B97;&#x91CF;&#x6BD4;&#x8F83;&#x5C0F;</td>
 </tr>
 <tr>
 <td style="text-align:center">iPad</td>
 <td style="text-align:center">AutoResizing</td>
-<td style="text-align:center">只可以实现父子控件之间的约束</td>
+<td style="text-align:center">&#x53EA;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x7236;&#x5B50;&#x63A7;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x7EA6;&#x675F;</td>
 </tr>
 <tr>
 <td style="text-align:center">iPhone5/5s</td>
 <td style="text-align:center">AutoLayout</td>
-<td style="text-align:center">既可以实现父子控件约束，又可以实现同级控件之间的约束</td>
+<td style="text-align:center">&#x65E2;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x7236;&#x5B50;&#x63A7;&#x4EF6;&#x7EA6;&#x675F;&#xFF0C;&#x53C8;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x540C;&#x7EA7;&#x63A7;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x7EA6;&#x675F;</td>
 </tr>
 <tr>
 <td style="text-align:center">iPhone6/6s</td>
 <td style="text-align:center">SizeClass</td>
-<td style="text-align:center">可以给不同设备设置不同的约束，AutoLayout可以给不同设备设置同一                              套约束</td>
+<td style="text-align:center">&#x53EF;&#x4EE5;&#x7ED9;&#x4E0D;&#x540C;&#x8BBE;&#x5907;&#x8BBE;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x7EA6;&#x675F;&#xFF0C;AutoLayout&#x53EF;&#x4EE5;&#x7ED9;&#x4E0D;&#x540C;&#x8BBE;&#x5907;&#x8BBE;&#x7F6E;&#x540C;&#x4E00;                              &#x5957;&#x7EA6;&#x675F;</td>
 </tr>
 </tbody>
 </table>
-<p>通常这几种技术当中，AutoResizing的工作完全可以由AutoLayout来代替，所以开发中几乎不再考虑。对于iPhone的不同设备采用同一套布局方式是很多公司都会采用的方式，如果再去考虑iPad的话开发工作是比较繁琐的，所以AutoLayout的使用频率是最高的。倘若真的要考虑同时适配iPhone和iPad的话，那么肯定要采用不同的布局方式，因为iPad的屏幕宽高比跟iPhone相差还是很大的，这个时候SizeClass就是你的最佳选择。</p>
-<p>这个时候我觉得还需要把计算frame和AutoLayout拿出来说一下，毕竟很多人可能会像我一样在日常的Demo中会通过计算frame的方式最快的查看想要的结果。</p>
+<p>&#x901A;&#x5E38;&#x8FD9;&#x51E0;&#x79CD;&#x6280;&#x672F;&#x5F53;&#x4E2D;&#xFF0C;AutoResizing&#x7684;&#x5DE5;&#x4F5C;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x7531;AutoLayout&#x6765;&#x4EE3;&#x66FF;&#xFF0C;&#x6240;&#x4EE5;&#x5F00;&#x53D1;&#x4E2D;&#x51E0;&#x4E4E;&#x4E0D;&#x518D;&#x8003;&#x8651;&#x3002;&#x5BF9;&#x4E8E;iPhone&#x7684;&#x4E0D;&#x540C;&#x8BBE;&#x5907;&#x91C7;&#x7528;&#x540C;&#x4E00;&#x5957;&#x5E03;&#x5C40;&#x65B9;&#x5F0F;&#x662F;&#x5F88;&#x591A;&#x516C;&#x53F8;&#x90FD;&#x4F1A;&#x91C7;&#x7528;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5982;&#x679C;&#x518D;&#x53BB;&#x8003;&#x8651;iPad&#x7684;&#x8BDD;&#x5F00;&#x53D1;&#x5DE5;&#x4F5C;&#x662F;&#x6BD4;&#x8F83;&#x7E41;&#x7410;&#x7684;&#xFF0C;&#x6240;&#x4EE5;AutoLayout&#x7684;&#x4F7F;&#x7528;&#x9891;&#x7387;&#x662F;&#x6700;&#x9AD8;&#x7684;&#x3002;&#x5018;&#x82E5;&#x771F;&#x7684;&#x8981;&#x8003;&#x8651;&#x540C;&#x65F6;&#x9002;&#x914D;iPhone&#x548C;iPad&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x4E48;&#x80AF;&#x5B9A;&#x8981;&#x91C7;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x5E03;&#x5C40;&#x65B9;&#x5F0F;&#xFF0C;&#x56E0;&#x4E3A;iPad&#x7684;&#x5C4F;&#x5E55;&#x5BBD;&#x9AD8;&#x6BD4;&#x8DDF;iPhone&#x76F8;&#x5DEE;&#x8FD8;&#x662F;&#x5F88;&#x5927;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;SizeClass&#x5C31;&#x662F;&#x4F60;&#x7684;&#x6700;&#x4F73;&#x9009;&#x62E9;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6211;&#x89C9;&#x5F97;&#x8FD8;&#x9700;&#x8981;&#x628A;&#x8BA1;&#x7B97;frame&#x548C;AutoLayout&#x62FF;&#x51FA;&#x6765;&#x8BF4;&#x4E00;&#x4E0B;&#xFF0C;&#x6BD5;&#x7ADF;&#x5F88;&#x591A;&#x4EBA;&#x53EF;&#x80FD;&#x4F1A;&#x50CF;&#x6211;&#x4E00;&#x6837;&#x5728;&#x65E5;&#x5E38;&#x7684;Demo&#x4E2D;&#x4F1A;&#x901A;&#x8FC7;&#x8BA1;&#x7B97;frame&#x7684;&#x65B9;&#x5F0F;&#x6700;&#x5FEB;&#x7684;&#x67E5;&#x770B;&#x60F3;&#x8981;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
 <ul>
-<li>通过frame计算的方式实现方式比较简单，远比NSLayoutConstraints语法简单</li>
-<li>相对布局frame可以通过CGRectGetMaxY或者CGRectGetMaxX等来实现相对布局。</li>
-<li>重点是：通过frame和AutoLayout其他方式上的区别还在探索当中……</li>
+<li>&#x901A;&#x8FC7;frame&#x8BA1;&#x7B97;&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x8FDC;&#x6BD4;NSLayoutConstraints&#x8BED;&#x6CD5;&#x7B80;&#x5355;</li>
+<li>&#x76F8;&#x5BF9;&#x5E03;&#x5C40;frame&#x53EF;&#x4EE5;&#x901A;&#x8FC7;CGRectGetMaxY&#x6216;&#x8005;CGRectGetMaxX&#x7B49;&#x6765;&#x5B9E;&#x73B0;&#x76F8;&#x5BF9;&#x5E03;&#x5C40;&#x3002;</li>
+<li>&#x91CD;&#x70B9;&#x662F;&#xFF1A;&#x901A;&#x8FC7;frame&#x548C;AutoLayout&#x5176;&#x4ED6;&#x65B9;&#x5F0F;&#x4E0A;&#x7684;&#x533A;&#x522B;&#x8FD8;&#x5728;&#x63A2;&#x7D22;&#x5F53;&#x4E2D;&#x2026;&#x2026;</li>
 </ul>
-<h4 id="关于适配"><a href="#关于适配" class="headerlink" title="关于适配"></a>关于适配</h4><p>跟设备有关的会涉及到设备和系统，如今iPhone有很多不同设备，比如iPhone5,iPhone6等；同一个种设备又可能存在不同的系统，比如iOS9.0，iOS10.0等。</p>
-<p>如何区分不同设备，开发中喜欢使用下面的方式，由于iPhone7跟iPhone6的尺寸没有发生变化，所以这边值需要对不同的设备尺寸有个区分就可以了。</p>
+<h4 id="&#x5173;&#x4E8E;&#x9002;&#x914D;"><a href="#&#x5173;&#x4E8E;&#x9002;&#x914D;" class="headerlink" title="&#x5173;&#x4E8E;&#x9002;&#x914D;"></a>&#x5173;&#x4E8E;&#x9002;&#x914D;</h4><p>&#x8DDF;&#x8BBE;&#x5907;&#x6709;&#x5173;&#x7684;&#x4F1A;&#x6D89;&#x53CA;&#x5230;&#x8BBE;&#x5907;&#x548C;&#x7CFB;&#x7EDF;&#xFF0C;&#x5982;&#x4ECA;iPhone&#x6709;&#x5F88;&#x591A;&#x4E0D;&#x540C;&#x8BBE;&#x5907;&#xFF0C;&#x6BD4;&#x5982;iPhone5,iPhone6&#x7B49;&#xFF1B;&#x540C;&#x4E00;&#x4E2A;&#x79CD;&#x8BBE;&#x5907;&#x53C8;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x7CFB;&#x7EDF;&#xFF0C;&#x6BD4;&#x5982;iOS9.0&#xFF0C;iOS10.0&#x7B49;&#x3002;</p>
+<p>&#x5982;&#x4F55;&#x533A;&#x5206;&#x4E0D;&#x540C;&#x8BBE;&#x5907;&#xFF0C;&#x5F00;&#x53D1;&#x4E2D;&#x559C;&#x6B22;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x7531;&#x4E8E;iPhone7&#x8DDF;iPhone6&#x7684;&#x5C3A;&#x5BF8;&#x6CA1;&#x6709;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x8FB9;&#x503C;&#x9700;&#x8981;&#x5BF9;&#x4E0D;&#x540C;&#x7684;&#x8BBE;&#x5907;&#x5C3A;&#x5BF8;&#x6709;&#x4E2A;&#x533A;&#x5206;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
 <a id="more"></a>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#define IS_IPHONE4 (([[UIScreen mainScreen] bounds].size.height == 480) ? YES : NO)</span></div><div class="line"><span class="meta">#define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height == 568) ? YES : NO)</span></div><div class="line"><span class="meta">#define IS_IPhone6 (([[UIScreen mainScreen] bounds].size.height == 667) ? YES : NO)</span></div><div class="line"><span class="meta">#define IOS_IPhone6plusS (([[UIScreen mainScreen] bounds].size.height = 736) ? YES : NO)</span></div></pre></td></tr></table></figure>
-<p>那么在什么地方经常会用到这些宏呢？</p>
+<p>&#x90A3;&#x4E48;&#x5728;&#x4EC0;&#x4E48;&#x5730;&#x65B9;&#x7ECF;&#x5E38;&#x4F1A;&#x7528;&#x5230;&#x8FD9;&#x4E9B;&#x5B8F;&#x5462;&#xFF1F;</p>
 <ul>
-<li>配置启动图片</li>
-<li>设置UICollectionView中cell之间的spacing</li>
-<li>……</li>
+<li>&#x914D;&#x7F6E;&#x542F;&#x52A8;&#x56FE;&#x7247;</li>
+<li>&#x8BBE;&#x7F6E;UICollectionView&#x4E2D;cell&#x4E4B;&#x95F4;&#x7684;spacing</li>
+<li>&#x2026;&#x2026;</li>
 </ul>
-<p>设备系统的判断，也可以通过宏定义的方式来实现，下面的代码可用于系统的判断</p>
+<p>&#x8BBE;&#x5907;&#x7CFB;&#x7EDF;&#x7684;&#x5224;&#x65AD;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5B8F;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5B9E;&#x73B0;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x7528;&#x4E8E;&#x7CFB;&#x7EDF;&#x7684;&#x5224;&#x65AD;</p>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#define IS_OS_8_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] &gt;= 8.0)</span></div><div class="line"><span class="meta">#define IS_OS_9_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] &gt;= 9.0)</span></div><div class="line"><span class="meta">#define IS_OS_10_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] &gt;= 10.0)</span></div></pre></td></tr></table></figure>
-<p>或者通过这样判断也可以达到相同的效果。</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="comment">//判断系统版本</span></div><div class="line"><span class="meta">#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)</span></div><div class="line"><span class="meta">#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)</span></div><div class="line"><span class="meta">#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)</span></div><div class="line"><span class="meta">#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)</span></div><div class="line"><span class="meta">#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)</span></div></pre></td></tr></table></figure>
-<p>同样，什么地方需要用来判断系统？有些功能低版本的没有！</p>
+<p>&#x6216;&#x8005;&#x901A;&#x8FC7;&#x8FD9;&#x6837;&#x5224;&#x65AD;&#x4E5F;&#x53EF;&#x4EE5;&#x8FBE;&#x5230;&#x76F8;&#x540C;&#x7684;&#x6548;&#x679C;&#x3002;</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="comment">//&#x5224;&#x65AD;&#x7CFB;&#x7EDF;&#x7248;&#x672C;</span></div><div class="line"><span class="meta">#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)</span></div><div class="line"><span class="meta">#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)</span></div><div class="line"><span class="meta">#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)</span></div><div class="line"><span class="meta">#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)</span></div><div class="line"><span class="meta">#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)</span></div></pre></td></tr></table></figure>
+<p>&#x540C;&#x6837;&#xFF0C;&#x4EC0;&#x4E48;&#x5730;&#x65B9;&#x9700;&#x8981;&#x7528;&#x6765;&#x5224;&#x65AD;&#x7CFB;&#x7EDF;&#xFF1F;&#x6709;&#x4E9B;&#x529F;&#x80FD;&#x4F4E;&#x7248;&#x672C;&#x7684;&#x6CA1;&#x6709;&#xFF01;</p>
 <ul>
-<li>地图需要请求权限才可以，并且需要配合info.plist，这个在iOS8.0以后</li>
-<li>字体设置，比如“PingFangSC-Regular”字体iOS9.0之后才可以使用</li>
-<li>3DTouch功能只有iOS9.0之后才有</li>
-<li>……</li>
+<li>&#x5730;&#x56FE;&#x9700;&#x8981;&#x8BF7;&#x6C42;&#x6743;&#x9650;&#x624D;&#x53EF;&#x4EE5;&#xFF0C;&#x5E76;&#x4E14;&#x9700;&#x8981;&#x914D;&#x5408;info.plist&#xFF0C;&#x8FD9;&#x4E2A;&#x5728;iOS8.0&#x4EE5;&#x540E;</li>
+<li>&#x5B57;&#x4F53;&#x8BBE;&#x7F6E;&#xFF0C;&#x6BD4;&#x5982;&#x201C;PingFangSC-Regular&#x201D;&#x5B57;&#x4F53;iOS9.0&#x4E4B;&#x540E;&#x624D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;</li>
+<li>3DTouch&#x529F;&#x80FD;&#x53EA;&#x6709;iOS9.0&#x4E4B;&#x540E;&#x624D;&#x6709;</li>
+<li>&#x2026;&#x2026;</li>
 </ul>
-<h4 id="关于Masonry"><a href="#关于Masonry" class="headerlink" title="关于Masonry"></a>关于Masonry</h4><p>开发中最长使用的是Masonry，关于这个可以参考<a href="https://github.com/SnapKit/Masonry" target="_blank" rel="external">Masonry官网</a></p>
-<p>关于使用方式可以参考官方的Demo。官方的Demo中已经给出了很好例子说明。</p>
+<h4 id="&#x5173;&#x4E8E;Masonry"><a href="#&#x5173;&#x4E8E;Masonry" class="headerlink" title="&#x5173;&#x4E8E;Masonry"></a>&#x5173;&#x4E8E;Masonry</h4><p>&#x5F00;&#x53D1;&#x4E2D;&#x6700;&#x957F;&#x4F7F;&#x7528;&#x7684;&#x662F;Masonry&#xFF0C;&#x5173;&#x4E8E;&#x8FD9;&#x4E2A;&#x53EF;&#x4EE5;&#x53C2;&#x8003;<a href="https://github.com/SnapKit/Masonry" target="_blank" rel="external">Masonry&#x5B98;&#x7F51;</a></p>
+<p>&#x5173;&#x4E8E;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x5B98;&#x65B9;&#x7684;Demo&#x3002;&#x5B98;&#x65B9;&#x7684;Demo&#x4E2D;&#x5DF2;&#x7ECF;&#x7ED9;&#x51FA;&#x4E86;&#x5F88;&#x597D;&#x4F8B;&#x5B50;&#x8BF4;&#x660E;&#x3002;</p>
 <table>
 <thead>
 <tr>
 <th>Basic</th>
-<th>基础用法</th>
+<th>&#x57FA;&#x7840;&#x7528;&#x6CD5;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Update Constraints</td>
-<td>更新约束</td>
+<td>&#x66F4;&#x65B0;&#x7EA6;&#x675F;</td>
 </tr>
 <tr>
 <td>Remark Constraints</td>
-<td>标记约束</td>
+<td>&#x6807;&#x8BB0;&#x7EA6;&#x675F;</td>
 </tr>
 <tr>
 <td>Using Constraints</td>
-<td>使用约束</td>
+<td>&#x4F7F;&#x7528;&#x7EA6;&#x675F;</td>
 </tr>
 <tr>
-<td>……</td>
-<td>……</td>
+<td>&#x2026;&#x2026;</td>
+<td>&#x2026;&#x2026;</td>
 </tr>
 </tbody>
 </table>

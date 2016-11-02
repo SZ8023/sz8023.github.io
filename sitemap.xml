@@ -2,14 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://sz8023.github.io/2016/04/27/%E4%BD%BF%E7%94%A8AutoLayout%E5%B8%83%E5%B1%80%E8%87%AA%E5%AE%9A%E4%B9%89UIView/</loc>
+    <loc>http://sz8023.github.io/2016/06/15/iOS-20161101%E5%85%B3%E4%BA%8E%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0%E5%92%8C%E4%B8%8A%E6%8B%89%E5%88%B7%E6%96%B0/</loc>
+    
+    <lastmod>2016-11-02T00:40:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://sz8023.github.io/2016/04/27/iOS-20161027%E4%BD%BF%E7%94%A8AutoLayout%E5%B8%83%E5%B1%80%E8%87%AA%E5%AE%9A%E4%B9%89UIView/</loc>
     
     <lastmod>2016-10-28T06:29:08.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://sz8023.github.io/2016/05/27/%E4%BD%BF%E7%94%A8AutoLayout%E5%B8%83%E5%B1%80%E8%87%AA%E5%AE%9A%E4%B9%89UITableViewCell/</loc>
+    <loc>http://sz8023.github.io/2016/05/27/iOS-20161027%E4%BD%BF%E7%94%A8AutoLayout%E5%B8%83%E5%B1%80%E8%87%AA%E5%AE%9A%E4%B9%89UITableViewCell/</loc>
     
     <lastmod>2016-10-27T14:57:11.000Z</lastmod>
     
@@ -30,14 +37,14 @@
   </url>
   
   <url>
-    <loc>http://sz8023.github.io/2015/03/02/Html5%E6%95%99%E7%A8%8B/</loc>
+    <loc>http://sz8023.github.io/2015/03/02/html5-Html5%E6%95%99%E7%A8%8B/</loc>
     
     <lastmod>2016-10-12T15:26:54.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://sz8023.github.io/2015/02/25/Hexo%E6%95%99%E7%A8%8B/</loc>
+    <loc>http://sz8023.github.io/2015/02/25/other-Hexo%E6%95%99%E7%A8%8B/</loc>
     
     <lastmod>2016-10-12T14:39:53.000Z</lastmod>
     
@@ -121,21 +128,21 @@
   </url>
   
   <url>
-    <loc>http://sz8023.github.io/2015/04/25/Node%E6%95%99%E7%A8%8B/</loc>
+    <loc>http://sz8023.github.io/2015/04/25/other-Node%E6%95%99%E7%A8%8B/</loc>
     
     <lastmod>2016-08-31T12:24:24.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://sz8023.github.io/2015/05/01/Ruby%E6%95%99%E7%A8%8B/</loc>
+    <loc>http://sz8023.github.io/2015/05/01/other-Ruby%E6%95%99%E7%A8%8B/</loc>
     
     <lastmod>2016-08-31T10:02:39.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://sz8023.github.io/2015/04/26/NPM%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/</loc>
+    <loc>http://sz8023.github.io/2015/04/26/other-NPM%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/</loc>
     
     <lastmod>2016-08-31T10:02:32.000Z</lastmod>
     

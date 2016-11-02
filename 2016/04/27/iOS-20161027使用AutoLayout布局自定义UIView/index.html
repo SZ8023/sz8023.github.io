@@ -87,15 +87,15 @@
 <meta name="description" content="&amp;#x5728;&amp;#x9879;&amp;#x76EE;&amp;#x5F00;&amp;#x53D1;&amp;#x4E2D;&amp;#x5076;&amp;#x5C14;&amp;#x4E5F;&amp;#x4F1A;&amp;#x9047;&amp;#x89C1;&amp;#x8FD9;&amp;#x6837;&amp;#x7684;&amp;#x9700;&amp;#x6C42;&amp;#xFF0C;&amp;#x9700;&amp;#x8981;&amp;#x4F60;&amp;#x81EA;&amp;#x5B9A;&amp;#x4E49;&amp;#x4E00;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用AutoLayout布局自定义UIView">
-<meta property="og:url" content="http://sz8023.github.io/2016/04/27/使用AutoLayout布局自定义UIView/index.html">
+<meta property="og:url" content="http://sz8023.github.io/2016/04/27/iOS-20161027使用AutoLayout布局自定义UIView/index.html">
 <meta property="og:site_name" content="ForYou">
 <meta property="og:description" content="&amp;#x5728;&amp;#x9879;&amp;#x76EE;&amp;#x5F00;&amp;#x53D1;&amp;#x4E2D;&amp;#x5076;&amp;#x5C14;&amp;#x4E5F;&amp;#x4F1A;&amp;#x9047;&amp;#x89C1;&amp;#x8FD9;&amp;#x6837;&amp;#x7684;&amp;#x9700;&amp;#x6C42;&amp;#xFF0C;&amp;#x9700;&amp;#x8981;&amp;#x4F60;&amp;#x81EA;&amp;#x5B9A;&amp;#x4E49;&amp;#x4E00;">
-<meta property="og:image" content="http://sz8023.github.io/2016/04/27/使用AutoLayout布局自定义UIView/20161027使用AutoLayout布局自定义UIView/FGView.png">
+<meta property="og:image" content="http://sz8023.github.io/2016/04/27/iOS-20161027使用AutoLayout布局自定义UIView/20161027使用AutoLayout布局自定义UIView/FGView.png">
 <meta property="og:updated_time" content="2016-10-28T06:29:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用AutoLayout布局自定义UIView">
 <meta name="twitter:description" content="&amp;#x5728;&amp;#x9879;&amp;#x76EE;&amp;#x5F00;&amp;#x53D1;&amp;#x4E2D;&amp;#x5076;&amp;#x5C14;&amp;#x4E5F;&amp;#x4F1A;&amp;#x9047;&amp;#x89C1;&amp;#x8FD9;&amp;#x6837;&amp;#x7684;&amp;#x9700;&amp;#x6C42;&amp;#xFF0C;&amp;#x9700;&amp;#x8981;&amp;#x4F60;&amp;#x81EA;&amp;#x5B9A;&amp;#x4E49;&amp;#x4E00;">
-<meta name="twitter:image" content="http://sz8023.github.io/2016/04/27/使用AutoLayout布局自定义UIView/20161027使用AutoLayout布局自定义UIView/FGView.png">
+<meta name="twitter:image" content="http://sz8023.github.io/2016/04/27/iOS-20161027使用AutoLayout布局自定义UIView/20161027使用AutoLayout布局自定义UIView/FGView.png">
 
 
 
@@ -116,7 +116,7 @@
 
 
 
-  <link rel="canonical" href="http://sz8023.github.io/2016/04/27/使用AutoLayout布局自定义UIView/"/>
+  <link rel="canonical" href="http://sz8023.github.io/2016/04/27/iOS-20161027使用AutoLayout布局自定义UIView/"/>
 
   <title> 使用AutoLayout布局自定义UIView | ForYou </title>
 </head>
@@ -290,8 +290,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/27/使用AutoLayout布局自定义UIView/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/27/使用AutoLayout布局自定义UIView/" itemprop="commentsCount"></span>
+                <a href="/2016/04/27/iOS-20161027使用AutoLayout布局自定义UIView/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/27/iOS-20161027使用AutoLayout布局自定义UIView/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -317,7 +317,7 @@
         <p>&#x5728;&#x9879;&#x76EE;&#x5F00;&#x53D1;&#x4E2D;&#x5076;&#x5C14;&#x4E5F;&#x4F1A;&#x9047;&#x89C1;&#x8FD9;&#x6837;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x9700;&#x8981;&#x4F60;&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;<code>UIView</code>&#x3002;&#x8FD9;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;UIView&#x9700;&#x8981;&#x6839;&#x636E;&#x5185;&#x90E8;&#x7684;UILabel&#x6765;&#x8C03;&#x6574;&#x5185;&#x5BB9;&#x3002;&#x5F53;&#x7136;&#x4E0D;&#x8BBA;&#x8FD9;&#x4E2A;UIView&#x662F;&#x4E0D;&#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x90FD;&#x65E0;&#x6240;&#x8C13;&#xFF0C;&#x53EA;&#x8981;&#x9700;&#x8981;&#x4F60;&#x6839;&#x636E;&#x5185;&#x90E8;&#x7684;UILabel&#x6765;&#x8C03;&#x6574;&#x7236;&#x89C6;&#x56FE;&#x7684;frame&#x7684;&#x65F6;&#x5019;&#x90FD;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x6765;&#x5E03;&#x5C40;&#x3002;</p>
 <p>&#x6B64;&#x5904;&#x7684;&#x4E3E;&#x4F8B;&#x91C7;&#x7528;XIB&#x5E03;&#x5C40;&#x65B9;&#x5F0F;</p>
 <h3 id="&#x81EA;&#x5B9A;&#x4E49;&#x7684;FGView"><a href="#&#x81EA;&#x5B9A;&#x4E49;&#x7684;FGView" class="headerlink" title="&#x81EA;&#x5B9A;&#x4E49;&#x7684;FGView"></a>&#x81EA;&#x5B9A;&#x4E49;&#x7684;FGView</h3><p>&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7EE7;&#x627F;&#x81EA;UIView&#x7684;<code>FGView</code>&#x5E76;&#x4E14;&#x521B;&#x5EFA;&#x5BF9;&#x5E94;&#x7684;FGView.xib&#xFF0C;&#x7136;&#x540E;&#x7ED1;&#x5B9A;&#x3002;&#x9876;&#x90E8;&#x56FE;&#x7247;&#x8BBE;&#x7F6E;&#x4E0A;&#x5DE6;&#x53F3;&#x7EA6;&#x675F;&#x7136;&#x540E;&#x9AD8;&#x5EA6;&#x56FA;&#x5B9A;&#xFF0C;&#x4E2D;&#x95F4;&#x7684;UILabel&#x8BBE;&#x7F6E;&#x4E0A;&#x5DE6;&#x53F3;&#x7EA6;&#x675F;&#xFF0C;&#x7136;&#x540E;numberoflines=0&#xFF0C;&#x540C;&#x6837;&#x5E95;&#x90E8;&#x7684;UILabel&#x4E5F;&#x8BBE;&#x7F6E;&#x4E0A;&#x5DE6;&#x53F3;&#x7EA6;&#x675F;&#xFF0C;&#x7136;&#x540E;numberoflines=0&#x3002;&#x6B64;&#x5904;&#x5343;&#x4E07;&#x4E0D;&#x8981;&#x8BBE;&#x7F6E;&#x5E95;&#x90E8;&#x7684;&#x7EA6;&#x675F;&#xFF0C;&#x5426;&#x5219;xib&#x4F1A;&#x62A5;&#x9519;&#x3002;&#xFF08;&#x6B64;&#x5904;&#x505A;&#x4E00;&#x4E2A;&#x5047;&#x8BBE;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x56E0;&#x4E3A;UIView&#x9700;&#x8981;&#x5148;&#x786E;&#x5B9A;&#x7236;&#x89C6;&#x56FE;&#x7684;frame&#xFF0C;&#x7136;&#x540E;&#x5728;&#x786E;&#x5B9A;&#x5B50;&#x89C6;&#x56FE;&#x7684;frame&#xFF1B;&#x8FD9;&#x4E2A;&#x8DDF;&#x7EE7;&#x627F;UIScrollView&#x7684;&#x89C6;&#x56FE;&#x4E0D;&#x540C;&#xFF0C;&#x7EE7;&#x627F;&#x81EA;UIScrollView&#x7684;&#x89C6;&#x56FE;&#x9700;&#x8981;&#x5148;&#x786E;&#x5B9A;&#x5185;&#x90E8;&#x7684;contentSize&#xFF0C;&#x7136;&#x540E;&#x662F;&#x786E;&#x5B9A;bounds&#xFF0C;contentInset&#xFF0C;contentOffset&#x7B49;&#xFF09;</p>
-<p><img src="/2016/04/27/&#x4F7F;&#x7528;AutoLayout&#x5E03;&#x5C40;&#x81EA;&#x5B9A;&#x4E49;UIView/20161027&#x4F7F;&#x7528;AutoLayout&#x5E03;&#x5C40;&#x81EA;&#x5B9A;&#x4E49;UIView/FGView.png" alt="FGView"></p>
+<p><img src="/2016/04/27/iOS-20161027&#x4F7F;&#x7528;AutoLayout&#x5E03;&#x5C40;&#x81EA;&#x5B9A;&#x4E49;UIView/20161027&#x4F7F;&#x7528;AutoLayout&#x5E03;&#x5C40;&#x81EA;&#x5B9A;&#x4E49;UIView/FGView.png" alt="FGView"></p>
 <h3 id="&#x5904;&#x7406;FGView&#x7684;&#x6570;&#x636E;"><a href="#&#x5904;&#x7406;FGView&#x7684;&#x6570;&#x636E;" class="headerlink" title="&#x5904;&#x7406;FGView&#x7684;&#x6570;&#x636E;"></a>&#x5904;&#x7406;FGView&#x7684;&#x6570;&#x636E;</h3><p>&#x5C06;FGView.xib&#x548C;FGView&#x7C7B;&#x7ED1;&#x5B9A;&#x4E4B;&#x540E;&#xFF0C;&#x7136;&#x540E;&#x62D6;&#x51FA;&#x5BF9;&#x5E94;&#x7684;UILabel&#xFF0C;</p>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">weak</span>, <span class="keyword">nonatomic</span>) <span class="keyword">IBOutlet</span> <span class="built_in">UILabel</span> *fgLBL;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">weak</span>, <span class="keyword">nonatomic</span>) <span class="keyword">IBOutlet</span> <span class="built_in">UILabel</span> *szLBL;</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -386,10 +386,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/04/27/使用AutoLayout布局自定义UIView/"
+        <div class="ds-share flat" data-thread-key="2016/04/27/iOS-20161027使用AutoLayout布局自定义UIView/"
      data-title="使用AutoLayout布局自定义UIView"
      data-content=""
-     data-url="http://sz8023.github.io/2016/04/27/使用AutoLayout布局自定义UIView/">
+     data-url="http://sz8023.github.io/2016/04/27/iOS-20161027使用AutoLayout布局自定义UIView/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -419,8 +419,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/27/使用AutoLayout布局自定义UIView/"
-           data-title="使用AutoLayout布局自定义UIView" data-url="http://sz8023.github.io/2016/04/27/使用AutoLayout布局自定义UIView/">
+      <div class="ds-thread" data-thread-key="2016/04/27/iOS-20161027使用AutoLayout布局自定义UIView/"
+           data-title="使用AutoLayout布局自定义UIView" data-url="http://sz8023.github.io/2016/04/27/iOS-20161027使用AutoLayout布局自定义UIView/">
       </div>
     
   </div>
@@ -465,7 +465,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

@@ -245,6 +245,168 @@
             
               
                 
+                <a class="post-title-link" href="/2016/05/14/iOS-20160928关于适配的总结/" itemprop="url">
+                  关于适配的总结
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-14T14:49:15+08:00" content="2016-05-14">
+              2016-05-14
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/14/iOS-20160928关于适配的总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/14/iOS-20160928关于适配的总结/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>&#x5728;&#x65E5;&#x5E38;&#x5F00;&#x53D1;&#x4E2D;&#xFF0C;&#x6BD4;&#x8F83;&#x5E38;&#x7528;&#x7684;&#x9002;&#x914D;&#x6A21;&#x5F0F;&#x5C31;&#x662F;xib&#xFF0C;storyboard&#x548C;&#x7EAF;&#x4EE3;&#x7801;&#x7684;&#x65B9;&#x5F0F;&#x3002;&#x800C;&#x7EAF;&#x4EE3;&#x7801;&#x65B9;&#x5F0F;&#x6211;&#x4F7F;&#x7528;&#x6BD4;&#x8F83;&#x591A;&#x7684;&#x662F;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;<a href="https://github.com/SnapKit/Masonry">Masonry</a>&#x3002;&#x4F46;&#x662F;&#x5BF9;&#x4E8E;&#x8FD9;&#x4E9B;&#x6982;&#x5FF5;&#x4E00;&#x76F4;&#x6BD4;&#x8F83;&#x6A21;&#x7CCA;&#xFF0C;&#x6BD4;&#x5982;&#x53D1;&#x5C55;&#x5386;&#x53F2;&#xFF0C;&#x4F7F;&#x7528;&#x533A;&#x522B;&#xFF0C;&#x4F7F;&#x7528;&#x9891;&#x7387;&#xFF0C;&#x5728;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x9009;&#x7528;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x5E03;&#x5C40;&#x65B9;&#x5F0F;&#x7B49;&#x7B49;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x8BBE;&#x5907;</th>
+<th style="text-align:center">&#x9002;&#x914D;&#x6280;&#x672F;</th>
+<th style="text-align:center">&#x4F18;&#x7F3A;&#x70B9;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">iPhone4/4s</td>
+<td style="text-align:center">&#x901A;&#x8FC7;frame&#x8BA1;&#x7B97;</td>
+<td style="text-align:center">&#x8BBE;&#x5907;&#x6BD4;&#x8F83;&#x5355;&#x4E00;&#xFF0C;&#x8BA1;&#x7B97;&#x91CF;&#x6BD4;&#x8F83;&#x5C0F;</td>
+</tr>
+<tr>
+<td style="text-align:center">iPad</td>
+<td style="text-align:center">AutoResizing</td>
+<td style="text-align:center">&#x53EA;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x7236;&#x5B50;&#x63A7;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x7EA6;&#x675F;</td>
+</tr>
+<tr>
+<td style="text-align:center">iPhone5/5s</td>
+<td style="text-align:center">AutoLayout</td>
+<td style="text-align:center">&#x65E2;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x7236;&#x5B50;&#x63A7;&#x4EF6;&#x7EA6;&#x675F;&#xFF0C;&#x53C8;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x540C;&#x7EA7;&#x63A7;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x7EA6;&#x675F;</td>
+</tr>
+<tr>
+<td style="text-align:center">iPhone6/6s</td>
+<td style="text-align:center">SizeClass</td>
+<td style="text-align:center">&#x53EF;&#x4EE5;&#x7ED9;&#x4E0D;&#x540C;&#x8BBE;&#x5907;&#x8BBE;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x7EA6;&#x675F;&#xFF0C;AutoLayout&#x53EF;&#x4EE5;&#x7ED9;&#x4E0D;&#x540C;&#x8BBE;&#x5907;&#x8BBE;&#x7F6E;&#x540C;&#x4E00;                              &#x5957;&#x7EA6;&#x675F;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x901A;&#x5E38;&#x8FD9;&#x51E0;&#x79CD;&#x6280;&#x672F;&#x5F53;&#x4E2D;&#xFF0C;AutoResizing&#x7684;&#x5DE5;&#x4F5C;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x7531;AutoLayout&#x6765;&#x4EE3;&#x66FF;&#xFF0C;&#x6240;&#x4EE5;&#x5F00;&#x53D1;&#x4E2D;&#x51E0;&#x4E4E;&#x4E0D;&#x518D;&#x8003;&#x8651;&#x3002;&#x5BF9;&#x4E8E;iPhone&#x7684;&#x4E0D;&#x540C;&#x8BBE;&#x5907;&#x91C7;&#x7528;&#x540C;&#x4E00;&#x5957;&#x5E03;&#x5C40;&#x65B9;&#x5F0F;&#x662F;&#x5F88;&#x591A;&#x516C;&#x53F8;&#x90FD;&#x4F1A;&#x91C7;&#x7528;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5982;&#x679C;&#x518D;&#x53BB;&#x8003;&#x8651;iPad&#x7684;&#x8BDD;&#x5F00;&#x53D1;&#x5DE5;&#x4F5C;&#x662F;&#x6BD4;&#x8F83;&#x7E41;&#x7410;&#x7684;&#xFF0C;&#x6240;&#x4EE5;AutoLayout&#x7684;&#x4F7F;&#x7528;&#x9891;&#x7387;&#x662F;&#x6700;&#x9AD8;&#x7684;&#x3002;&#x5018;&#x82E5;&#x771F;&#x7684;&#x8981;&#x8003;&#x8651;&#x540C;&#x65F6;&#x9002;&#x914D;iPhone&#x548C;iPad&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x4E48;&#x80AF;&#x5B9A;&#x8981;&#x91C7;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x5E03;&#x5C40;&#x65B9;&#x5F0F;&#xFF0C;&#x56E0;&#x4E3A;iPad&#x7684;&#x5C4F;&#x5E55;&#x5BBD;&#x9AD8;&#x6BD4;&#x8DDF;iPhone&#x76F8;&#x5DEE;&#x8FD8;&#x662F;&#x5F88;&#x5927;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;SizeClass&#x5C31;&#x662F;&#x4F60;&#x7684;&#x6700;&#x4F73;&#x9009;&#x62E9;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6211;&#x89C9;&#x5F97;&#x8FD8;&#x9700;&#x8981;&#x628A;&#x8BA1;&#x7B97;frame&#x548C;AutoLayout&#x62FF;&#x51FA;&#x6765;&#x8BF4;&#x4E00;&#x4E0B;&#xFF0C;&#x6BD5;&#x7ADF;&#x5F88;&#x591A;&#x4EBA;&#x53EF;&#x80FD;&#x4F1A;&#x50CF;&#x6211;&#x4E00;&#x6837;&#x5728;&#x65E5;&#x5E38;&#x7684;Demo&#x4E2D;&#x4F1A;&#x901A;&#x8FC7;&#x8BA1;&#x7B97;frame&#x7684;&#x65B9;&#x5F0F;&#x6700;&#x5FEB;&#x7684;&#x67E5;&#x770B;&#x60F3;&#x8981;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<ul>
+<li>&#x901A;&#x8FC7;frame&#x8BA1;&#x7B97;&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x8FDC;&#x6BD4;NSLayoutConstraints&#x8BED;&#x6CD5;&#x7B80;&#x5355;</li>
+<li>&#x76F8;&#x5BF9;&#x5E03;&#x5C40;frame&#x53EF;&#x4EE5;&#x901A;&#x8FC7;CGRectGetMaxY&#x6216;&#x8005;CGRectGetMaxX&#x7B49;&#x6765;&#x5B9E;&#x73B0;&#x76F8;&#x5BF9;&#x5E03;&#x5C40;&#x3002;</li>
+<li>&#x91CD;&#x70B9;&#x662F;&#xFF1A;&#x901A;&#x8FC7;frame&#x548C;AutoLayout&#x5176;&#x4ED6;&#x65B9;&#x5F0F;&#x4E0A;&#x7684;&#x533A;&#x522B;&#x8FD8;&#x5728;&#x63A2;&#x7D22;&#x5F53;&#x4E2D;&#x2026;&#x2026;</li>
+</ul>
+<h4 id="&#x5173;&#x4E8E;&#x9002;&#x914D;"><a href="#&#x5173;&#x4E8E;&#x9002;&#x914D;" class="headerlink" title="&#x5173;&#x4E8E;&#x9002;&#x914D;"></a>&#x5173;&#x4E8E;&#x9002;&#x914D;</h4><p>&#x8DDF;&#x8BBE;&#x5907;&#x6709;&#x5173;&#x7684;&#x4F1A;&#x6D89;&#x53CA;&#x5230;&#x8BBE;&#x5907;&#x548C;&#x7CFB;&#x7EDF;&#xFF0C;&#x5982;&#x4ECA;iPhone&#x6709;&#x5F88;&#x591A;&#x4E0D;&#x540C;&#x8BBE;&#x5907;&#xFF0C;&#x6BD4;&#x5982;iPhone5,iPhone6&#x7B49;&#xFF1B;&#x540C;&#x4E00;&#x4E2A;&#x79CD;&#x8BBE;&#x5907;&#x53C8;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x7CFB;&#x7EDF;&#xFF0C;&#x6BD4;&#x5982;iOS9.0&#xFF0C;iOS10.0&#x7B49;&#x3002;</p>
+<p>&#x5982;&#x4F55;&#x533A;&#x5206;&#x4E0D;&#x540C;&#x8BBE;&#x5907;&#xFF0C;&#x5F00;&#x53D1;&#x4E2D;&#x559C;&#x6B22;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x7531;&#x4E8E;iPhone7&#x8DDF;iPhone6&#x7684;&#x5C3A;&#x5BF8;&#x6CA1;&#x6709;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x8FB9;&#x503C;&#x9700;&#x8981;&#x5BF9;&#x4E0D;&#x540C;&#x7684;&#x8BBE;&#x5907;&#x5C3A;&#x5BF8;&#x6709;&#x4E2A;&#x533A;&#x5206;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/14/iOS-20160928关于适配的总结/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/27/iOS-20161027使用AutoLayout布局自定义UIView/" itemprop="url">
                   使用AutoLayout布局自定义UIView
                 </a>
@@ -605,137 +767,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/11/iOS-20160916控制器中视图的布局/" itemprop="url">
-                  控制器中视图的布局
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-11T14:35:28+08:00" content="2016-03-11">
-              2016-03-11
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/11/iOS-20160916控制器中视图的布局/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/11/iOS-20160916控制器中视图的布局/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&#x63A7;&#x5236;&#x5668;&#x4E2D;&#x9664;&#x4E86;&#x9ED8;&#x8BA4;&#x7684;&#x6839;&#x89C6;&#x56FE;&#x4E0D;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x9002;&#x914D;&#x4E4B;&#x5916;&#xFF0C;&#x6839;&#x89C6;&#x56FE;&#x7684;&#x6240;&#x6709;&#x5B50;&#x89C6;&#x56FE;&#x51E0;&#x4E4E;&#x90FD;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x8FDB;&#x884C;&#x9002;&#x914D;&#x3002;&#x5982;&#x679C;&#x662F;&#x7EAF;&#x4EE3;&#x7801;&#x7684;&#x8BDD;&#x4F60;&#x53EF;&#x4EE5;&#x5728;<code>- (void)viewDidLoad</code>&#x4E2D;&#x8FDB;&#x884C;&#x9002;&#x914D;(&#x76F8;&#x5BF9;&#x7236;&#x89C6;&#x56FE;&#x8FDB;&#x884C;&#x5E03;&#x5C40;)&#x3002;&#x4F46;&#x662F;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x8981;&#x8DDF;&#x65B0;rootView&#x7684;&#x5B50;&#x89C6;&#x56FE;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5728;<code>viewWillLayoutSubviews</code>&#x6216;<code>viewDidLayoutSubviews</code>&#x65B9;&#x6CD5;&#x4E2D;&#x8FDB;&#x884C;&#x66F4;&#x65B0;&#x3002;&#x8FD9;2&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x4E3B;&#x8981;&#x533A;&#x522B;&#x662F;&#x524D;&#x8005;&#x6839;&#x89C6;&#x56FE;&#x9002;&#x914D;&#x5B8C;&#x6210;&#xFF0C;&#x4F46;&#x662F;&#x5B50;&#x89C6;&#x56FE;&#x9002;&#x914D;&#x5E76;&#x6CA1;&#x6709;&#x786E;&#x5B9A;&#xFF08;&#x9700;&#x8981;&#x6839;&#x636E;&#x8BBE;&#x5907;&#x6765;&#x786E;&#x5B9A;&#xFF09;&#xFF0C;&#x800C;&#x540E;&#x8005;&#x5B50;&#x89C6;&#x56FE;&#x7684;&#x9002;&#x914D;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#x3002;&#x5982;&#x679C;&#x4F60;&#x53C2;&#x8003;&#x975E;&#x6839;&#x89C6;&#x56FE;&#x8FDB;&#x884C;&#x5E03;&#x5C40;&#x66F4;&#x65B0;&#xFF0C;&#x5EFA;&#x8BAE;&#x5728;&#x540E;&#x8005;&#x65B9;&#x6CD5;&#x4E2D;&#x8FDB;&#x884C;&#x5E03;&#x5C40;&#x66F4;&#x65B0;&#x3002;&#x5982;&#x679C;&#x53C2;&#x8003;&#x6839;&#x89C6;&#x56FE;&#x5219;&#x4EFB;&#x610F;&#x9009;&#x62E9;&#x3002;</p>
-<p>&#x5F53;&#x7136;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;&#x4E2D;&#x901A;&#x8FC7;&#x8C03;&#x52A8;[view setNeedsLayout]&#x548C;[view layoutIfNeeded]&#x7ED9;&#x63A7;&#x4EF6;&#x8FDB;&#x884C;&#x63D0;&#x524D;&#x5E03;&#x5C40;&#x3002;</p>
-<h3 id="&#x4EE3;&#x7801;&#x793A;&#x4F8B;"><a href="#&#x4EE3;&#x7801;&#x793A;&#x4F8B;" class="headerlink" title="&#x4EE3;&#x7801;&#x793A;&#x4F8B;"></a>&#x4EE3;&#x7801;&#x793A;&#x4F8B;</h3><p>&#x63A7;&#x4EF6;szView&#x548C;szLBL&#x5206;&#x522B;&#x662F;&#x6839;&#x89C6;&#x56FE;view&#x7684;&#x5B50;&#x89C6;&#x56FE;&#x3002;ViewController&#x91C7;&#x7528;storyboard&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x7F16;&#x7801;&#x3002;</p>
-<pre><code><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">&quot;ViewController.h&quot;</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ViewController</span> ()</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">weak</span>, <span class="keyword">nonatomic</span>) <span class="keyword">IBOutlet</span> <span class="built_in">UIView</span> *szView;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">weak</span>, <span class="keyword">nonatomic</span>) <span class="keyword">IBOutlet</span> <span class="built_in">UILabel</span> *szLBL;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ViewController</span></span></div><div class="line"></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)awakeFromNib {</div><div class="line">    [<span class="keyword">super</span> awakeFromNib];</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;%s *****\t %@&quot;</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.view.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;%s *****\t %@&quot;</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szView.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;%s *****\t %@&quot;</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szLBL.frame));</div><div class="line">}</div><div class="line"></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)viewDidLoad {</div><div class="line">    [<span class="keyword">super</span> viewDidLoad];</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;%s *****\t %@&quot;</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.view.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;%s *****\t %@&quot;</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szView.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;%s *****\t %@&quot;</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szLBL.frame));</div><div class="line">}</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)viewWillAppear:(<span class="built_in">BOOL</span>)animated {</div><div class="line">    [<span class="keyword">super</span> viewWillAppear: animated];</div><div class="line"><span class="comment">//    [self.view layoutIfNeeded];</span></div><div class="line"></div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;%s *****\t %@&quot;</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.view.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;%s *****\t %@&quot;</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szView.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;%s *****\t %@&quot;</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szLBL.frame));</div><div class="line"></div><div class="line">}</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)viewWillLayoutSubviews {</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;%s *****\t %@&quot;</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.view.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;%s *****\t %@&quot;</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szView.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;%s *****\t %@&quot;</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szLBL.frame));</div><div class="line">}</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)viewDidLayoutSubviews {</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;%s *****\t %@&quot;</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.view.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;%s *****\t %@&quot;</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szView.frame));</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;%s *****\t %@&quot;</span>,__func__,<span class="built_in">NSStringFromCGRect</span>(<span class="keyword">self</span>.szLBL.frame));</div><div class="line">}</div></pre></td></tr></table></figure>
-</code></pre>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/11/iOS-20160916控制器中视图的布局/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -776,7 +812,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

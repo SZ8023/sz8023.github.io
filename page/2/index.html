@@ -314,47 +314,47 @@
 
       
         
-          <p>&#x5728;&#x65E5;&#x5E38;&#x5F00;&#x53D1;&#x4E2D;&#xFF0C;&#x6BD4;&#x8F83;&#x5E38;&#x7528;&#x7684;&#x9002;&#x914D;&#x6A21;&#x5F0F;&#x5C31;&#x662F;xib&#xFF0C;storyboard&#x548C;&#x7EAF;&#x4EE3;&#x7801;&#x7684;&#x65B9;&#x5F0F;&#x3002;&#x800C;&#x7EAF;&#x4EE3;&#x7801;&#x65B9;&#x5F0F;&#x6211;&#x4F7F;&#x7528;&#x6BD4;&#x8F83;&#x591A;&#x7684;&#x662F;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;<a href="https://github.com/SnapKit/Masonry">Masonry</a>&#x3002;&#x4F46;&#x662F;&#x5BF9;&#x4E8E;&#x8FD9;&#x4E9B;&#x6982;&#x5FF5;&#x4E00;&#x76F4;&#x6BD4;&#x8F83;&#x6A21;&#x7CCA;&#xFF0C;&#x6BD4;&#x5982;&#x53D1;&#x5C55;&#x5386;&#x53F2;&#xFF0C;&#x4F7F;&#x7528;&#x533A;&#x522B;&#xFF0C;&#x4F7F;&#x7528;&#x9891;&#x7387;&#xFF0C;&#x5728;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x9009;&#x7528;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x5E03;&#x5C40;&#x65B9;&#x5F0F;&#x7B49;&#x7B49;&#x3002;</p>
+          <p>在日常开发中，比较常用的适配模式就是xib，storyboard和纯代码的方式。而纯代码方式我使用比较多的是第三方库<a href="https://github.com/SnapKit/Masonry">Masonry</a>。但是对于这些概念一直比较模糊，比如发展历史，使用区别，使用频率，在什么时候选用什么样的布局方式等等。</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">&#x8BBE;&#x5907;</th>
-<th style="text-align:center">&#x9002;&#x914D;&#x6280;&#x672F;</th>
-<th style="text-align:center">&#x4F18;&#x7F3A;&#x70B9;</th>
+<th style="text-align:center">设备</th>
+<th style="text-align:center">适配技术</th>
+<th style="text-align:center">优缺点</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:center">iPhone4/4s</td>
-<td style="text-align:center">&#x901A;&#x8FC7;frame&#x8BA1;&#x7B97;</td>
-<td style="text-align:center">&#x8BBE;&#x5907;&#x6BD4;&#x8F83;&#x5355;&#x4E00;&#xFF0C;&#x8BA1;&#x7B97;&#x91CF;&#x6BD4;&#x8F83;&#x5C0F;</td>
+<td style="text-align:center">通过frame计算</td>
+<td style="text-align:center">设备比较单一，计算量比较小</td>
 </tr>
 <tr>
 <td style="text-align:center">iPad</td>
 <td style="text-align:center">AutoResizing</td>
-<td style="text-align:center">&#x53EA;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x7236;&#x5B50;&#x63A7;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x7EA6;&#x675F;</td>
+<td style="text-align:center">只可以实现父子控件之间的约束</td>
 </tr>
 <tr>
 <td style="text-align:center">iPhone5/5s</td>
 <td style="text-align:center">AutoLayout</td>
-<td style="text-align:center">&#x65E2;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x7236;&#x5B50;&#x63A7;&#x4EF6;&#x7EA6;&#x675F;&#xFF0C;&#x53C8;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x540C;&#x7EA7;&#x63A7;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x7EA6;&#x675F;</td>
+<td style="text-align:center">既可以实现父子控件约束，又可以实现同级控件之间的约束</td>
 </tr>
 <tr>
 <td style="text-align:center">iPhone6/6s</td>
 <td style="text-align:center">SizeClass</td>
-<td style="text-align:center">&#x53EF;&#x4EE5;&#x7ED9;&#x4E0D;&#x540C;&#x8BBE;&#x5907;&#x8BBE;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x7EA6;&#x675F;&#xFF0C;AutoLayout&#x53EF;&#x4EE5;&#x7ED9;&#x4E0D;&#x540C;&#x8BBE;&#x5907;&#x8BBE;&#x7F6E;&#x540C;&#x4E00;                              &#x5957;&#x7EA6;&#x675F;</td>
+<td style="text-align:center">可以给不同设备设置不同的约束，AutoLayout可以给不同设备设置同一                              套约束</td>
 </tr>
 </tbody>
 </table>
-<p>&#x901A;&#x5E38;&#x8FD9;&#x51E0;&#x79CD;&#x6280;&#x672F;&#x5F53;&#x4E2D;&#xFF0C;AutoResizing&#x7684;&#x5DE5;&#x4F5C;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x7531;AutoLayout&#x6765;&#x4EE3;&#x66FF;&#xFF0C;&#x6240;&#x4EE5;&#x5F00;&#x53D1;&#x4E2D;&#x51E0;&#x4E4E;&#x4E0D;&#x518D;&#x8003;&#x8651;&#x3002;&#x5BF9;&#x4E8E;iPhone&#x7684;&#x4E0D;&#x540C;&#x8BBE;&#x5907;&#x91C7;&#x7528;&#x540C;&#x4E00;&#x5957;&#x5E03;&#x5C40;&#x65B9;&#x5F0F;&#x662F;&#x5F88;&#x591A;&#x516C;&#x53F8;&#x90FD;&#x4F1A;&#x91C7;&#x7528;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5982;&#x679C;&#x518D;&#x53BB;&#x8003;&#x8651;iPad&#x7684;&#x8BDD;&#x5F00;&#x53D1;&#x5DE5;&#x4F5C;&#x662F;&#x6BD4;&#x8F83;&#x7E41;&#x7410;&#x7684;&#xFF0C;&#x6240;&#x4EE5;AutoLayout&#x7684;&#x4F7F;&#x7528;&#x9891;&#x7387;&#x662F;&#x6700;&#x9AD8;&#x7684;&#x3002;&#x5018;&#x82E5;&#x771F;&#x7684;&#x8981;&#x8003;&#x8651;&#x540C;&#x65F6;&#x9002;&#x914D;iPhone&#x548C;iPad&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x4E48;&#x80AF;&#x5B9A;&#x8981;&#x91C7;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x5E03;&#x5C40;&#x65B9;&#x5F0F;&#xFF0C;&#x56E0;&#x4E3A;iPad&#x7684;&#x5C4F;&#x5E55;&#x5BBD;&#x9AD8;&#x6BD4;&#x8DDF;iPhone&#x76F8;&#x5DEE;&#x8FD8;&#x662F;&#x5F88;&#x5927;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;SizeClass&#x5C31;&#x662F;&#x4F60;&#x7684;&#x6700;&#x4F73;&#x9009;&#x62E9;&#x3002;</p>
-<p>&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6211;&#x89C9;&#x5F97;&#x8FD8;&#x9700;&#x8981;&#x628A;&#x8BA1;&#x7B97;frame&#x548C;AutoLayout&#x62FF;&#x51FA;&#x6765;&#x8BF4;&#x4E00;&#x4E0B;&#xFF0C;&#x6BD5;&#x7ADF;&#x5F88;&#x591A;&#x4EBA;&#x53EF;&#x80FD;&#x4F1A;&#x50CF;&#x6211;&#x4E00;&#x6837;&#x5728;&#x65E5;&#x5E38;&#x7684;Demo&#x4E2D;&#x4F1A;&#x901A;&#x8FC7;&#x8BA1;&#x7B97;frame&#x7684;&#x65B9;&#x5F0F;&#x6700;&#x5FEB;&#x7684;&#x67E5;&#x770B;&#x60F3;&#x8981;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<p>通常这几种技术当中，AutoResizing的工作完全可以由AutoLayout来代替，所以开发中几乎不再考虑。对于iPhone的不同设备采用同一套布局方式是很多公司都会采用的方式，如果再去考虑iPad的话开发工作是比较繁琐的，所以AutoLayout的使用频率是最高的。倘若真的要考虑同时适配iPhone和iPad的话，那么肯定要采用不同的布局方式，因为iPad的屏幕宽高比跟iPhone相差还是很大的，这个时候SizeClass就是你的最佳选择。</p>
+<p>这个时候我觉得还需要把计算frame和AutoLayout拿出来说一下，毕竟很多人可能会像我一样在日常的Demo中会通过计算frame的方式最快的查看想要的结果。</p>
 <ul>
-<li>&#x901A;&#x8FC7;frame&#x8BA1;&#x7B97;&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x8FDC;&#x6BD4;NSLayoutConstraints&#x8BED;&#x6CD5;&#x7B80;&#x5355;</li>
-<li>&#x76F8;&#x5BF9;&#x5E03;&#x5C40;frame&#x53EF;&#x4EE5;&#x901A;&#x8FC7;CGRectGetMaxY&#x6216;&#x8005;CGRectGetMaxX&#x7B49;&#x6765;&#x5B9E;&#x73B0;&#x76F8;&#x5BF9;&#x5E03;&#x5C40;&#x3002;</li>
-<li>&#x91CD;&#x70B9;&#x662F;&#xFF1A;&#x901A;&#x8FC7;frame&#x548C;AutoLayout&#x5176;&#x4ED6;&#x65B9;&#x5F0F;&#x4E0A;&#x7684;&#x533A;&#x522B;&#x8FD8;&#x5728;&#x63A2;&#x7D22;&#x5F53;&#x4E2D;&#x2026;&#x2026;</li>
+<li>通过frame计算的方式实现方式比较简单，远比NSLayoutConstraints语法简单</li>
+<li>相对布局frame可以通过CGRectGetMaxY或者CGRectGetMaxX等来实现相对布局。</li>
+<li>重点是：通过frame和AutoLayout其他方式上的区别还在探索当中……</li>
 </ul>
-<h4 id="&#x5173;&#x4E8E;&#x9002;&#x914D;"><a href="#&#x5173;&#x4E8E;&#x9002;&#x914D;" class="headerlink" title="&#x5173;&#x4E8E;&#x9002;&#x914D;"></a>&#x5173;&#x4E8E;&#x9002;&#x914D;</h4><p>&#x8DDF;&#x8BBE;&#x5907;&#x6709;&#x5173;&#x7684;&#x4F1A;&#x6D89;&#x53CA;&#x5230;&#x8BBE;&#x5907;&#x548C;&#x7CFB;&#x7EDF;&#xFF0C;&#x5982;&#x4ECA;iPhone&#x6709;&#x5F88;&#x591A;&#x4E0D;&#x540C;&#x8BBE;&#x5907;&#xFF0C;&#x6BD4;&#x5982;iPhone5,iPhone6&#x7B49;&#xFF1B;&#x540C;&#x4E00;&#x4E2A;&#x79CD;&#x8BBE;&#x5907;&#x53C8;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x7CFB;&#x7EDF;&#xFF0C;&#x6BD4;&#x5982;iOS9.0&#xFF0C;iOS10.0&#x7B49;&#x3002;</p>
-<p>&#x5982;&#x4F55;&#x533A;&#x5206;&#x4E0D;&#x540C;&#x8BBE;&#x5907;&#xFF0C;&#x5F00;&#x53D1;&#x4E2D;&#x559C;&#x6B22;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x7531;&#x4E8E;iPhone7&#x8DDF;iPhone6&#x7684;&#x5C3A;&#x5BF8;&#x6CA1;&#x6709;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x8FB9;&#x503C;&#x9700;&#x8981;&#x5BF9;&#x4E0D;&#x540C;&#x7684;&#x8BBE;&#x5907;&#x5C3A;&#x5BF8;&#x6709;&#x4E2A;&#x533A;&#x5206;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
+<h4 id="关于适配"><a href="#关于适配" class="headerlink" title="关于适配"></a>关于适配</h4><p>跟设备有关的会涉及到设备和系统，如今iPhone有很多不同设备，比如iPhone5,iPhone6等；同一个种设备又可能存在不同的系统，比如iOS9.0，iOS10.0等。</p>
+<p>如何区分不同设备，开发中喜欢使用下面的方式，由于iPhone7跟iPhone6的尺寸没有发生变化，所以这边值需要对不同的设备尺寸有个区分就可以了。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/14/iOS-20160928关于适配的总结/#more" rel="contents">
               阅读全文 &raquo;
@@ -476,11 +476,11 @@
 
       
         
-          <p>&#x5728;&#x9879;&#x76EE;&#x5F00;&#x53D1;&#x4E2D;&#x5076;&#x5C14;&#x4E5F;&#x4F1A;&#x9047;&#x89C1;&#x8FD9;&#x6837;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x9700;&#x8981;&#x4F60;&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;<code>UIView</code>&#x3002;&#x8FD9;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;UIView&#x9700;&#x8981;&#x6839;&#x636E;&#x5185;&#x90E8;&#x7684;UILabel&#x6765;&#x8C03;&#x6574;&#x5185;&#x5BB9;&#x3002;&#x5F53;&#x7136;&#x4E0D;&#x8BBA;&#x8FD9;&#x4E2A;UIView&#x662F;&#x4E0D;&#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x90FD;&#x65E0;&#x6240;&#x8C13;&#xFF0C;&#x53EA;&#x8981;&#x9700;&#x8981;&#x4F60;&#x6839;&#x636E;&#x5185;&#x90E8;&#x7684;UILabel&#x6765;&#x8C03;&#x6574;&#x7236;&#x89C6;&#x56FE;&#x7684;frame&#x7684;&#x65F6;&#x5019;&#x90FD;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x6765;&#x5E03;&#x5C40;&#x3002;</p>
-<p>&#x6B64;&#x5904;&#x7684;&#x4E3E;&#x4F8B;&#x91C7;&#x7528;XIB&#x5E03;&#x5C40;&#x65B9;&#x5F0F;</p>
-<h3 id="&#x81EA;&#x5B9A;&#x4E49;&#x7684;FGView"><a href="#&#x81EA;&#x5B9A;&#x4E49;&#x7684;FGView" class="headerlink" title="&#x81EA;&#x5B9A;&#x4E49;&#x7684;FGView"></a>&#x81EA;&#x5B9A;&#x4E49;&#x7684;FGView</h3><p>&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7EE7;&#x627F;&#x81EA;UIView&#x7684;<code>FGView</code>&#x5E76;&#x4E14;&#x521B;&#x5EFA;&#x5BF9;&#x5E94;&#x7684;FGView.xib&#xFF0C;&#x7136;&#x540E;&#x7ED1;&#x5B9A;&#x3002;&#x9876;&#x90E8;&#x56FE;&#x7247;&#x8BBE;&#x7F6E;&#x4E0A;&#x5DE6;&#x53F3;&#x7EA6;&#x675F;&#x7136;&#x540E;&#x9AD8;&#x5EA6;&#x56FA;&#x5B9A;&#xFF0C;&#x4E2D;&#x95F4;&#x7684;UILabel&#x8BBE;&#x7F6E;&#x4E0A;&#x5DE6;&#x53F3;&#x7EA6;&#x675F;&#xFF0C;&#x7136;&#x540E;numberoflines=0&#xFF0C;&#x540C;&#x6837;&#x5E95;&#x90E8;&#x7684;UILabel&#x4E5F;&#x8BBE;&#x7F6E;&#x4E0A;&#x5DE6;&#x53F3;&#x7EA6;&#x675F;&#xFF0C;&#x7136;&#x540E;numberoflines=0&#x3002;&#x6B64;&#x5904;&#x5343;&#x4E07;&#x4E0D;&#x8981;&#x8BBE;&#x7F6E;&#x5E95;&#x90E8;&#x7684;&#x7EA6;&#x675F;&#xFF0C;&#x5426;&#x5219;xib&#x4F1A;&#x62A5;&#x9519;&#x3002;&#xFF08;&#x6B64;&#x5904;&#x505A;&#x4E00;&#x4E2A;&#x5047;&#x8BBE;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x56E0;&#x4E3A;UIView&#x9700;&#x8981;&#x5148;&#x786E;&#x5B9A;&#x7236;&#x89C6;&#x56FE;&#x7684;frame&#xFF0C;&#x7136;&#x540E;&#x5728;&#x786E;&#x5B9A;&#x5B50;&#x89C6;&#x56FE;&#x7684;frame&#xFF1B;&#x8FD9;&#x4E2A;&#x8DDF;&#x7EE7;&#x627F;UIScrollView&#x7684;&#x89C6;&#x56FE;&#x4E0D;&#x540C;&#xFF0C;&#x7EE7;&#x627F;&#x81EA;UIScrollView&#x7684;&#x89C6;&#x56FE;&#x9700;&#x8981;&#x5148;&#x786E;&#x5B9A;&#x5185;&#x90E8;&#x7684;contentSize&#xFF0C;&#x7136;&#x540E;&#x662F;&#x786E;&#x5B9A;bounds&#xFF0C;contentInset&#xFF0C;contentOffset&#x7B49;&#xFF09;</p>
-<p><img src="/2016/04/27/iOS-20161027&#x4F7F;&#x7528;AutoLayout&#x5E03;&#x5C40;&#x81EA;&#x5B9A;&#x4E49;UIView/20161027&#x4F7F;&#x7528;AutoLayout&#x5E03;&#x5C40;&#x81EA;&#x5B9A;&#x4E49;UIView/FGView.png" alt="FGView"></p>
-<h3 id="&#x5904;&#x7406;FGView&#x7684;&#x6570;&#x636E;"><a href="#&#x5904;&#x7406;FGView&#x7684;&#x6570;&#x636E;" class="headerlink" title="&#x5904;&#x7406;FGView&#x7684;&#x6570;&#x636E;"></a>&#x5904;&#x7406;FGView&#x7684;&#x6570;&#x636E;</h3><p>&#x5C06;FGView.xib&#x548C;FGView&#x7C7B;&#x7ED1;&#x5B9A;&#x4E4B;&#x540E;&#xFF0C;&#x7136;&#x540E;&#x62D6;&#x51FA;&#x5BF9;&#x5E94;&#x7684;UILabel&#xFF0C;</p>
+          <p>在项目开发中偶尔也会遇见这样的需求，需要你自定义一个<code>UIView</code>。这个自定义的UIView需要根据内部的UILabel来调整内容。当然不论这个UIView是不是自定义的都无所谓，只要需要你根据内部的UILabel来调整父视图的frame的时候都可以采用这种方式来布局。</p>
+<p>此处的举例采用XIB布局方式</p>
+<h3 id="自定义的FGView"><a href="#自定义的FGView" class="headerlink" title="自定义的FGView"></a>自定义的FGView</h3><p>自定义一个继承自UIView的<code>FGView</code>并且创建对应的FGView.xib，然后绑定。顶部图片设置上左右约束然后高度固定，中间的UILabel设置上左右约束，然后numberoflines=0，同样底部的UILabel也设置上左右约束，然后numberoflines=0。此处千万不要设置底部的约束，否则xib会报错。（此处做一个假设，可能是因为UIView需要先确定父视图的frame，然后在确定子视图的frame；这个跟继承UIScrollView的视图不同，继承自UIScrollView的视图需要先确定内部的contentSize，然后是确定bounds，contentInset，contentOffset等）</p>
+<p><img src="20161027使用AutoLayout布局自定义UIView/FGView.png" alt="FGView"></p>
+<h3 id="处理FGView的数据"><a href="#处理FGView的数据" class="headerlink" title="处理FGView的数据"></a>处理FGView的数据</h3><p>将FGView.xib和FGView类绑定之后，然后拖出对应的UILabel，</p>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">weak</span>, <span class="keyword">nonatomic</span>) <span class="keyword">IBOutlet</span> <span class="built_in">UILabel</span> *fgLBL;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">weak</span>, <span class="keyword">nonatomic</span>) <span class="keyword">IBOutlet</span> <span class="built_in">UILabel</span> *szLBL;</div></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/27/iOS-20161027使用AutoLayout布局自定义UIView/#more" rel="contents">
@@ -603,13 +603,13 @@
 
       
         
-          <p>&#x5728;&#x4F7F;&#x7528;CornerStone&#x5DE5;&#x5177;&#x7684;&#x65F6;&#x5019;&#x6709;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;&#x5C0F;&#x6280;&#x5DE7;&#xFF0C;&#x5F53;&#x7136;&#x8FD9;&#x4E9B;&#x5C0F;&#x6280;&#x5DE7;&#x53EF;&#x80FD;&#x5F88;&#x591A;&#x4EBA;&#x90FD;&#x77E5;&#x9053;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x4E8E;&#x521A;&#x521A;&#x63A5;&#x89E6;&#x7684;&#x5C0F;&#x4F19;&#x4F34;&#x6765;&#x8BF4;&#x53EF;&#x80FD;&#x5C31;&#x4E0D;&#x4E00;&#x6837;&#x4E86;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x8BB0;&#x5F55;&#x4E86;&#x4E00;&#x4E0B;&#x7ED9;&#x81EA;&#x5DF1;&#x4E5F;&#x7ED9;&#x5927;&#x5BB6;&#x505A;&#x4E00;&#x4E2A;&#x53C2;&#x8003;&#x3002;</p>
-<h3 id="&#x5173;&#x4E8E;&#x5FFD;&#x7565;&#x6587;&#x4EF6;&#x7684;&#x95EE;&#x9898;"><a href="#&#x5173;&#x4E8E;&#x5FFD;&#x7565;&#x6587;&#x4EF6;&#x7684;&#x95EE;&#x9898;" class="headerlink" title="&#x5173;&#x4E8E;&#x5FFD;&#x7565;&#x6587;&#x4EF6;&#x7684;&#x95EE;&#x9898;"></a>&#x5173;&#x4E8E;&#x5FFD;&#x7565;&#x6587;&#x4EF6;&#x7684;&#x95EE;&#x9898;</h3><p>&#x5728;&#x9879;&#x76EE;&#x521D;&#x59CB;&#x5316;&#x521B;&#x5EFA;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x80FD;&#x4F1A;&#x9700;&#x8981;&#x5904;&#x7406;<code>.xcuserdatad</code>&#x6587;&#x4EF6;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x6211;&#x4E5F;&#x5728;&#x7F51;&#x4E0A;&#x641C;&#x7D22;&#x4E86;&#x4E00;&#x4E9B;&#x7B54;&#x6848;&#xFF0C;&#x4F46;&#x662F;&#x603B;&#x611F;&#x89C9;&#x8FC7;&#x7A0B;&#x592A;&#x8FC7;&#x7E41;&#x7410;&#x3002;</p>
-<p>&#x524D;&#x51E0;&#x5929;&#x5728;&#x8DDF;&#x670B;&#x53CB;&#x5CF0;&#x54E5;&#x8BA8;&#x8BBA;&#x201C;&#x5982;&#x4F55;&#x63D0;&#x4EA4;.a&#x6587;&#x4EF6;&#x5230;SVN&#x201D;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5728;&#x5CF0;&#x54E5;&#x6307;&#x5BFC;&#x4E0B;&#xFF0C;&#x77E5;&#x9053;&#x4E86;&#x901A;&#x8FC7;&#x5982;&#x4F55;&#x914D;&#x7F6E;CornerStone&#x6765;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;<code>.a</code>&#x6587;&#x4EF6;&#x7684;&#x63D0;&#x4EA4;&#x95EE;&#x9898;&#x3002;&#x540C;&#x6837;&#x7684;&#xFF0C;&#x6211;&#x89C9;&#x5F97;&#x5BF9;&#x4E8E;<code>.xcuserdatad</code>&#x6587;&#x4EF6;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x540C;&#x6837;&#x7684;&#x95EE;&#x9898;&#x6765;&#x89E3;&#x51B3;&#x3002;</p>
-<p>&#x901A;&#x8FC7;&#x6253;&#x5F00;CornerStone&#x7684;<strong>CornerStone</strong>&#x300B;<strong>Preferences..</strong>&#x300B;&#xFF0C;&#x7136;&#x540E;&#x70B9;&#x51FB;<strong>Subversion</strong>&#x9009;&#x9879;&#x5361;&#xFF0C;&#x518D;&#x9009;&#x62E9;<strong>General</strong>&#xFF0C;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#x6709;&#x4E2A;<strong>Global Ignores</strong>&#x3002;</p>
-<p><img src="/2016/04/23/iOS-20160923CornerStone&#x4F7F;&#x7528;&#x5C0F;&#x6280;&#x5DE7;/../images/CornerStone.png" alt="CornerStone"></p>
-<p>&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x60F3;&#x4F7F;&#x7528;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x7684;&#x5FFD;&#x7565;&#x6587;&#x4EF6;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4E0D;&#x8981;&#x52FE;&#x9009;<strong>User default global ignores</strong>&#x3002;&#x7136;&#x540E;&#x5728;&#x8FD9;&#x8FB9;&#x4F60;&#x53EF;&#x4EE5;&#x53BB;&#x6389;&#x6216;&#x8005;&#x6DFB;&#x52A0;&#x4F60;&#x60F3;&#x8981;&#x5FFD;&#x7565;&#x7684;&#x6587;&#x4EF6;&#x3002;</p>
-<h3 id="&#x5BF9;&#x4E8E;Xcode&#x5982;&#x4F55;&#x5904;&#x7406;"><a href="#&#x5BF9;&#x4E8E;Xcode&#x5982;&#x4F55;&#x5904;&#x7406;" class="headerlink" title="&#x5BF9;&#x4E8E;Xcode&#x5982;&#x4F55;&#x5904;&#x7406;"></a>&#x5BF9;&#x4E8E;Xcode&#x5982;&#x4F55;&#x5904;&#x7406;</h3><p>&#x4E4B;&#x524D;&#x6CA1;&#x6709;&#x4F7F;&#x7528;CornerStone&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E00;&#x76F4;&#x4F7F;&#x7528;&#x7684;&#x662F;Xcode&#x81EA;&#x5E26;&#x7684;SVN&#x7248;&#x672C;&#x7BA1;&#x7406;&#xFF0C;&#x5BF9;&#x4E8E;<code>.a</code>&#x6587;&#x4EF6;&#x540C;&#x6837;&#x4F1A;&#x8981;&#x76F8;&#x540C;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5F53;&#x65F6;&#x7684;&#x89E3;&#x51B3;&#x601D;&#x8DEF;&#x662F;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x7684;&#x65B9;&#x5F0F;&#x5728;&#x7EC8;&#x7AEF;&#x5C06;<code>.a</code>&#x6587;&#x4EF6;&#x63D0;&#x4EA4;&#x5230;SVN&#x3002;&#x4F46;&#x662F;&#x53EF;&#x4E0D;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x7684;&#x65B9;&#x5F0F;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x8FD8;&#x6709;&#x5F85;&#x8FDB;&#x4E00;&#x6B65;&#x7814;&#x7A76;&#x3002;</p>
+          <p>在使用CornerStone工具的时候有一些常用的小技巧，当然这些小技巧可能很多人都知道，但是对于刚刚接触的小伙伴来说可能就不一样了。所以，记录了一下给自己也给大家做一个参考。</p>
+<h3 id="关于忽略文件的问题"><a href="#关于忽略文件的问题" class="headerlink" title="关于忽略文件的问题"></a>关于忽略文件的问题</h3><p>在项目初始化创建的时候可能会需要处理<code>.xcuserdatad</code>文件的问题，这个问题我也在网上搜索了一些答案，但是总感觉过程太过繁琐。</p>
+<p>前几天在跟朋友峰哥讨论“如何提交.a文件到SVN”的时候，在峰哥指导下，知道了通过如何配置CornerStone来解决这个<code>.a</code>文件的提交问题。同样的，我觉得对于<code>.xcuserdatad</code>文件也可以用同样的问题来解决。</p>
+<p>通过打开CornerStone的<strong>CornerStone</strong>》<strong>Preferences..</strong>》，然后点击<strong>Subversion</strong>选项卡，再选择<strong>General</strong>，可以发现有个<strong>Global Ignores</strong>。</p>
+<p><img src="../images/CornerStone.png" alt="CornerStone"></p>
+<p>如果你不想使用系统默认的忽略文件，那么就不要勾选<strong>User default global ignores</strong>。然后在这边你可以去掉或者添加你想要忽略的文件。</p>
+<h3 id="对于Xcode如何处理"><a href="#对于Xcode如何处理" class="headerlink" title="对于Xcode如何处理"></a>对于Xcode如何处理</h3><p>之前没有使用CornerStone的时候，一直使用的是Xcode自带的SVN版本管理，对于<code>.a</code>文件同样会要相同的问题，当时的解决思路是通过命令的方式在终端将<code>.a</code>文件提交到SVN。但是可不可以通过配置的方式解决这个问题，还有待进一步研究。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/23/iOS-20160923CornerStone使用小技巧/#more" rel="contents">
               阅读全文 &raquo;
@@ -731,10 +731,10 @@
 
       
         
-          <p>&#x672C;&#x6587;&#x4E3B;&#x8981;&#x8BB0;&#x5F55;&#x4E00;&#x4E9B;&#x5F00;&#x53D1;&#x4E2D;&#x5E38;&#x7528;&#x7684;&#x6280;&#x5DE7;&#x3002;&#x6BD4;&#x5982;&#x5E38;&#x7528;&#x7684;&#x5E38;&#x91CF;&#x6587;&#x4EF6;&#xFF0C;&#x5B8F;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#xFF0C;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x521B;&#x5EFA;&#x5206;&#x7C7B;&#xFF0C;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x4F7F;&#x7528;&#x7EE7;&#x627F;&#xFF0C;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x4F7F;&#x7528;&#x4EE3;&#x7406;&#x5C01;&#x88C5;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#xFF08;&#x54EA;&#x4E9B;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x9700;&#x8981;&#x5C01;&#x88C5;&#xFF0C;&#x5982;&#x4F55;&#x5C01;&#x88C5;&#xFF09;&#x7B49;&#x7B49;&#x3002;</p>
-<h3 id="&#x5173;&#x4E8E;&#x5E38;&#x91CF;"><a href="#&#x5173;&#x4E8E;&#x5E38;&#x91CF;" class="headerlink" title="&#x5173;&#x4E8E;&#x5E38;&#x91CF;"></a>&#x5173;&#x4E8E;&#x5E38;&#x91CF;</h3><p>&#x5F88;&#x663E;&#x7136;&#x4E0D;&#x53D8;&#x7684;&#x91CF;&#x5C31;&#x662F;&#x5E38;&#x91CF;&#xFF0C;&#x6BD4;&#x8F83;&#x5E38;&#x7528;&#x7684;&#x5730;&#x65B9;&#x5C31;&#x662F;&#x6574;&#x5F62;&#xFF0C;&#x6D6E;&#x70B9;&#x578B;&#xFF0C;&#x5B57;&#x7B26;&#x4E32;&#x7B49;&#x3002;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;#define&#x6765;&#x5B9A;&#x4E49;&#x3002;</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="built_in">NSInteger</span> <span class="keyword">const</span> weight = <span class="number">70</span>;<span class="comment">// &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x6574;&#x5F62;&#x5E38;&#x91CF;</span></div><div class="line"><span class="keyword">static</span> <span class="built_in">CGFloat</span> <span class="keyword">const</span> height = <span class="number">166.0</span>;<span class="comment">// &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x6D6E;&#x70B9;&#x578B;&#x5E38;&#x91CF;</span></div><div class="line"><span class="keyword">static</span> <span class="built_in">NSString</span> <span class="keyword">const</span> *city = <span class="string">@&quot;&#x4E0A;&#x6D77;&quot;</span>;<span class="comment">// &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5E38;&#x91CF;&#x5B57;&#x7B26;&#x4E32;</span></div></pre></td></tr></table></figure>
-<h3 id="&#x5173;&#x4E8E;&#x5B8F;&#x5B9A;&#x4E49;"><a href="#&#x5173;&#x4E8E;&#x5B8F;&#x5B9A;&#x4E49;" class="headerlink" title="&#x5173;&#x4E8E;&#x5B8F;&#x5B9A;&#x4E49;"></a>&#x5173;&#x4E8E;&#x5B8F;&#x5B9A;&#x4E49;</h3><p>&#x5B8F;&#x5B9A;&#x4E49;&#x662F;&#x9884;&#x5904;&#x7406;&#x547D;&#x4EE4;&#xFF0C;&#x53CA;&#x5728;&#x9884;&#x7F16;&#x8BD1;&#x9636;&#x6BB5;&#x8FDB;&#x884C;&#x5B57;&#x7B26;&#x66FF;&#x6362;&#xFF0C;&#x5728;&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#x8981;&#x6CE8;&#x610F;&#x201C;&#x8FB9;&#x7F18;&#x6548;&#x5E94;&#x201D;&#x3002;</p>
+          <p>本文主要记录一些开发中常用的技巧。比如常用的常量文件，宏定义文件，什么时候创建分类，什么时候使用继承，什么时候使用代理封装第三方库（哪些第三方库需要封装，如何封装）等等。</p>
+<h3 id="关于常量"><a href="#关于常量" class="headerlink" title="关于常量"></a>关于常量</h3><p>很显然不变的量就是常量，比较常用的地方就是整形，浮点型，字符串等。这个时候不建议使用#define来定义。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="built_in">NSInteger</span> <span class="keyword">const</span> weight = <span class="number">70</span>;<span class="comment">// 定义一个整形常量</span></div><div class="line"><span class="keyword">static</span> <span class="built_in">CGFloat</span> <span class="keyword">const</span> height = <span class="number">166.0</span>;<span class="comment">// 定义一个浮点型常量</span></div><div class="line"><span class="keyword">static</span> <span class="built_in">NSString</span> <span class="keyword">const</span> *city = <span class="string">@"上海"</span>;<span class="comment">// 定义一个常量字符串</span></div></pre></td></tr></table></figure>
+<h3 id="关于宏定义"><a href="#关于宏定义" class="headerlink" title="关于宏定义"></a>关于宏定义</h3><p>宏定义是预处理命令，及在预编译阶段进行字符替换，在使用的时候要注意“边缘效应”。</p>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#define kScreen_bounds [[UIScreen mainScreen] bounds]</span></div><div class="line"><span class="meta">#define kScreen_Height [[UIScreen mainScreen] bounds].size.height</span></div><div class="line"><span class="meta">#define kScreen_Width [[UIScreen mainScreen] bounds].size.width</span></div><div class="line"><span class="meta">#define IS_IPHONE4 (([[UIScreen mainScreen] bounds].size.height == 480) ? YES : NO)</span></div><div class="line"><span class="meta">#define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height == 568) ? YES : NO)</span></div><div class="line"><span class="meta">#define IS_IPhone6 (([[UIScreen mainScreen] bounds].size.height == 667) ? YES : NO)</span></div><div class="line"><span class="meta">#define IOS_IPhone6plusS (([[UIScreen mainScreen] bounds].size.height = 736) ? YES : NO)</span></div></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/03/16/iOS-开发杂烩/#more" rel="contents">
@@ -892,7 +892,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

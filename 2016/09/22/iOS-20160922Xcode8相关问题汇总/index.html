@@ -84,16 +84,25 @@
 
 
 
-<meta name="description" content="&amp;#x8FD9;&amp;#x51E0;&amp;#x5929;&amp;#x5F88;&amp;#x591A;&amp;#x82F9;&amp;#x679C;&amp;#x5F00;&amp;#x53D1;&amp;#x7684;&amp;#x5C0F;&amp;#x4F19;&amp;#x4F34;&amp;#x8FEB;&amp;#x4E0D;&amp;#x53CA;&amp;#x5F85;&amp;#x7684;&amp;#x5347;&amp;#x7EA7;&amp;#x4E86;Xcode8&amp;#xFF0C;&amp;#x53EF;&amp;#x662F;&amp;#">
+<meta name="description" content="这几天很多苹果开发的小伙伴迫不及待的升级了Xcode8，可是升级完成之后项目中也遇到了很多小问题，下面就一一列举相关问题。
+如果你的项目中访问了相机，相册，麦克风等设备，你需要在info.plist文件里做先关配置，如果没有配置相关信息，程序会直接退出。
+访问相机
+Important: To protect user privacy, an iOS app linked on or after i">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Xcode8相关问题汇总">
 <meta property="og:url" content="http://sz8023.github.io/2016/09/22/iOS-20160922Xcode8相关问题汇总/index.html">
 <meta property="og:site_name" content="ForYou">
-<meta property="og:description" content="&amp;#x8FD9;&amp;#x51E0;&amp;#x5929;&amp;#x5F88;&amp;#x591A;&amp;#x82F9;&amp;#x679C;&amp;#x5F00;&amp;#x53D1;&amp;#x7684;&amp;#x5C0F;&amp;#x4F19;&amp;#x4F34;&amp;#x8FEB;&amp;#x4E0D;&amp;#x53CA;&amp;#x5F85;&amp;#x7684;&amp;#x5347;&amp;#x7EA7;&amp;#x4E86;Xcode8&amp;#xFF0C;&amp;#x53EF;&amp;#x662F;&amp;#">
+<meta property="og:description" content="这几天很多苹果开发的小伙伴迫不及待的升级了Xcode8，可是升级完成之后项目中也遇到了很多小问题，下面就一一列举相关问题。
+如果你的项目中访问了相机，相册，麦克风等设备，你需要在info.plist文件里做先关配置，如果没有配置相关信息，程序会直接退出。
+访问相机
+Important: To protect user privacy, an iOS app linked on or after i">
 <meta property="og:updated_time" content="2016-10-27T10:59:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xcode8相关问题汇总">
-<meta name="twitter:description" content="&amp;#x8FD9;&amp;#x51E0;&amp;#x5929;&amp;#x5F88;&amp;#x591A;&amp;#x82F9;&amp;#x679C;&amp;#x5F00;&amp;#x53D1;&amp;#x7684;&amp;#x5C0F;&amp;#x4F19;&amp;#x4F34;&amp;#x8FEB;&amp;#x4E0D;&amp;#x53CA;&amp;#x5F85;&amp;#x7684;&amp;#x5347;&amp;#x7EA7;&amp;#x4E86;Xcode8&amp;#xFF0C;&amp;#x53EF;&amp;#x662F;&amp;#">
+<meta name="twitter:description" content="这几天很多苹果开发的小伙伴迫不及待的升级了Xcode8，可是升级完成之后项目中也遇到了很多小问题，下面就一一列举相关问题。
+如果你的项目中访问了相机，相册，麦克风等设备，你需要在info.plist文件里做先关配置，如果没有配置相关信息，程序会直接退出。
+访问相机
+Important: To protect user privacy, an iOS app linked on or after i">
 
 
 
@@ -312,25 +321,25 @@
       
 
       
-        <p>&#x8FD9;&#x51E0;&#x5929;&#x5F88;&#x591A;&#x82F9;&#x679C;&#x5F00;&#x53D1;&#x7684;&#x5C0F;&#x4F19;&#x4F34;&#x8FEB;&#x4E0D;&#x53CA;&#x5F85;&#x7684;&#x5347;&#x7EA7;&#x4E86;Xcode8&#xFF0C;&#x53EF;&#x662F;&#x5347;&#x7EA7;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x9879;&#x76EE;&#x4E2D;&#x4E5F;&#x9047;&#x5230;&#x4E86;&#x5F88;&#x591A;&#x5C0F;&#x95EE;&#x9898;&#xFF0C;&#x4E0B;&#x9762;&#x5C31;&#x4E00;&#x4E00;&#x5217;&#x4E3E;&#x76F8;&#x5173;&#x95EE;&#x9898;&#x3002;</p>
-<p>&#x5982;&#x679C;&#x4F60;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#x8BBF;&#x95EE;&#x4E86;&#x76F8;&#x673A;&#xFF0C;&#x76F8;&#x518C;&#xFF0C;&#x9EA6;&#x514B;&#x98CE;&#x7B49;&#x8BBE;&#x5907;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5728;info.plist&#x6587;&#x4EF6;&#x91CC;&#x505A;&#x5148;&#x5173;&#x914D;&#x7F6E;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x914D;&#x7F6E;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#xFF0C;&#x7A0B;&#x5E8F;&#x4F1A;&#x76F4;&#x63A5;&#x9000;&#x51FA;&#x3002;</p>
-<h5 id="&#x8BBF;&#x95EE;&#x76F8;&#x673A;"><a href="#&#x8BBF;&#x95EE;&#x76F8;&#x673A;" class="headerlink" title="&#x8BBF;&#x95EE;&#x76F8;&#x673A;"></a><a href="https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html" target="_blank" rel="external">&#x8BBF;&#x95EE;&#x76F8;&#x673A;</a></h5><blockquote>
-<p>Important: To protect user privacy, an iOS app linked on or after iOS 10.0, and which accesses the device&#x2019;s camera, must statically declare the intent to do so. Include the NSCameraUsageDescription key in your app&#x2019;s Info.plist file and provide a purpose string for this key. If your app attempts to access the device&#x2019;s camera without a corresponding purpose string, your app exits.</p>
+        <p>这几天很多苹果开发的小伙伴迫不及待的升级了Xcode8，可是升级完成之后项目中也遇到了很多小问题，下面就一一列举相关问题。</p>
+<p>如果你的项目中访问了相机，相册，麦克风等设备，你需要在info.plist文件里做先关配置，如果没有配置相关信息，程序会直接退出。</p>
+<h5 id="访问相机"><a href="#访问相机" class="headerlink" title="访问相机"></a><a href="https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html" target="_blank" rel="external">访问相机</a></h5><blockquote>
+<p>Important: To protect user privacy, an iOS app linked on or after iOS 10.0, and which accesses the device’s camera, must statically declare the intent to do so. Include the NSCameraUsageDescription key in your app’s Info.plist file and provide a purpose string for this key. If your app attempts to access the device’s camera without a corresponding purpose string, your app exits.</p>
 </blockquote>
-<p>&#x6839;&#x636E;&#x82F9;&#x679C;&#x7684;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5728;info.plist&#x6587;&#x4EF6;&#x91CC;&#x9762;&#x505A;&#x76F8;&#x5173;&#x914D;&#x7F6E;&#x3002;</p>
-<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSCameraUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;&#x5141;&#x8BB8;&#x6B64;&#x6743;&#x9650;&#x624D;&#x80FD;&#x4F7F;&#x7528;&#x76F8;&#x673A;&lt;/string&gt;</div></pre></td></tr></table></figure>
-<h5 id="&#x8BBF;&#x95EE;&#x76F8;&#x518C;"><a href="#&#x8BBF;&#x95EE;&#x76F8;&#x518C;" class="headerlink" title="&#x8BBF;&#x95EE;&#x76F8;&#x518C;"></a>&#x8BBF;&#x95EE;&#x76F8;&#x518C;</h5><p>&#x6B64;&#x5904;&#x76F8;&#x5173;&#x94FE;&#x63A5;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x8BBF;&#x95EE;&#x76F8;&#x673A;&#xFF0C;&#x4EE5;&#x4E0B;&#x8FDE;&#x63A5;&#x76F8;&#x540C;&#x3002;</p>
-<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSPhotoLibraryUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;&#x5141;&#x8BB8;&#x6B64;&#x6743;&#x9650;&#x624D;&#x80FD;&#x8BBF;&#x95EE;&#x76F8;&#x518C;&lt;/string&gt;</div></pre></td></tr></table></figure>
-<h5 id="&#x8BBF;&#x95EE;&#x9EA6;&#x514B;&#x98CE;"><a href="#&#x8BBF;&#x95EE;&#x9EA6;&#x514B;&#x98CE;" class="headerlink" title="&#x8BBF;&#x95EE;&#x9EA6;&#x514B;&#x98CE;"></a>&#x8BBF;&#x95EE;&#x9EA6;&#x514B;&#x98CE;</h5><a id="more"></a>
-<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSMicrophoneUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;&#x5141;&#x8BB8;&#x6B64;&#x6743;&#x9650;&#x624D;&#x80FD;&#x4F7F;&#x7528;&#x9EA6;&#x514B;&#x98CE;&lt;/string&gt;</div></pre></td></tr></table></figure>
-<p>&#x8FD8;&#x6709;&#x5176;&#x4ED6;&#x7684;&#x6743;&#x9650;&#xFF0C;&#x6BD4;&#x5982;&#x5A92;&#x4F53;&#x5E93;&#xFF0C;&#x84DD;&#x7259;&#xFF0C;&#x65E5;&#x5386;&#xFF0C;&#x5065;&#x5EB7;&#x7B49;&#xFF0C;&#x66F4;&#x591A;&#x6743;&#x9650;&#x53C2;&#x8003;<a href="https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html" target="_blank" rel="external">Information Property List Key Reference</a></p>
-<h5 id="Xcode8&#x7981;&#x6B62;&#x63A7;&#x5236;&#x53F0;&#x6253;&#x5370;&#x5E72;&#x6270;&#x4FE1;&#x606F;"><a href="#Xcode8&#x7981;&#x6B62;&#x63A7;&#x5236;&#x53F0;&#x6253;&#x5370;&#x5E72;&#x6270;&#x4FE1;&#x606F;" class="headerlink" title="Xcode8&#x7981;&#x6B62;&#x63A7;&#x5236;&#x53F0;&#x6253;&#x5370;&#x5E72;&#x6270;&#x4FE1;&#x606F;"></a>Xcode8&#x7981;&#x6B62;&#x63A7;&#x5236;&#x53F0;&#x6253;&#x5370;&#x5E72;&#x6270;&#x4FE1;&#x606F;</h5><p><strong>Product&#x300B;Scheme&#x300B;Edit Scheme&#x2026;</strong> &#xFF0C;Run&#x6807;&#x7B7E;&#x680F;&#x4E2D;&#x9009;&#x62E9;Arguments&#x9009;&#x9879;&#x5361;&#xFF0C;&#x5728;Environments Variables &#x4E2D;&#x6DFB;&#x52A0;&#x5B57;&#x5178;<code>OS_ACTIVITY_MODE=disable</code></p>
+<p>根据苹果的描述信息，你需要在info.plist文件里面做相关配置。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSCameraUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;允许此权限才能使用相机&lt;/string&gt;</div></pre></td></tr></table></figure>
+<h5 id="访问相册"><a href="#访问相册" class="headerlink" title="访问相册"></a>访问相册</h5><p>此处相关链接可以参考访问相机，以下连接相同。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSPhotoLibraryUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;允许此权限才能访问相册&lt;/string&gt;</div></pre></td></tr></table></figure>
+<h5 id="访问麦克风"><a href="#访问麦克风" class="headerlink" title="访问麦克风"></a>访问麦克风</h5><a id="more"></a>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSMicrophoneUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;允许此权限才能使用麦克风&lt;/string&gt;</div></pre></td></tr></table></figure>
+<p>还有其他的权限，比如媒体库，蓝牙，日历，健康等，更多权限参考<a href="https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html" target="_blank" rel="external">Information Property List Key Reference</a></p>
+<h5 id="Xcode8禁止控制台打印干扰信息"><a href="#Xcode8禁止控制台打印干扰信息" class="headerlink" title="Xcode8禁止控制台打印干扰信息"></a>Xcode8禁止控制台打印干扰信息</h5><p><strong>Product》Scheme》Edit Scheme…</strong> ，Run标签栏中选择Arguments选项卡，在Environments Variables 中添加字典<code>OS_ACTIVITY_MODE=disable</code></p>
 <ul>
 <li>Name:OS_ACTIVITY_MODE</li>
 <li>Value:disable</li>
 </ul>
-<h3 id="&#x53C2;&#x8003;&#x94FE;&#x63A5;"><a href="#&#x53C2;&#x8003;&#x94FE;&#x63A5;" class="headerlink" title="&#x53C2;&#x8003;&#x94FE;&#x63A5;"></a>&#x53C2;&#x8003;&#x94FE;&#x63A5;</h3><ul>
-<li><a href="http://blog.csdn.net/u012681458/article/details/51865435" target="_blank" rel="external">&#x5347;&#x7EA7;Xcode8&#x540E;&#x7684;&#x76F8;&#x673A;crash&#x95EE;&#x9898;-IOS10&#x6743;&#x9650;&#x95EE;&#x9898;</a></li>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
+<li><a href="http://blog.csdn.net/u012681458/article/details/51865435" target="_blank" rel="external">升级Xcode8后的相机crash问题-IOS10权限问题</a></li>
 </ul>
 
       
@@ -548,7 +557,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

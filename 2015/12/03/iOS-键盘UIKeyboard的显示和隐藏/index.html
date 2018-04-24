@@ -84,16 +84,19 @@
 
 
 
-<meta name="description" content="&amp;#x5B9E;&amp;#x9645;&amp;#x5F00;&amp;#x53D1;&amp;#x5F53;&amp;#x4E2D;&amp;#xFF0C;&amp;#x7ECF;&amp;#x5E38;&amp;#x4F1A;&amp;#x9047;&amp;#x5230;&amp;#x9700;&amp;#x8981;&amp;#x663E;&amp;#x793A;&amp;#x548C;&amp;#x9690;&amp;#x85CF;&amp;#x952E;&amp;#x76D8;&amp;#x7684;&amp;#x9700;&amp;#x6C42;&amp;#x3002;">
+<meta name="description" content="实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？首先经常会弹出键盘的控件主要有UITextField、UITextView等。而这些控件的父控件要么是常规的视图，如UIView、UIScrollView或UITableView等。这个时候也许我们就要分2种情况来处理了。
+UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现方式很简单">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UIScrollView中键盘的显示和隐藏">
 <meta property="og:url" content="http://sz8023.github.io/2015/12/03/iOS-键盘UIKeyboard的显示和隐藏/index.html">
 <meta property="og:site_name" content="ForYou">
-<meta property="og:description" content="&amp;#x5B9E;&amp;#x9645;&amp;#x5F00;&amp;#x53D1;&amp;#x5F53;&amp;#x4E2D;&amp;#xFF0C;&amp;#x7ECF;&amp;#x5E38;&amp;#x4F1A;&amp;#x9047;&amp;#x5230;&amp;#x9700;&amp;#x8981;&amp;#x663E;&amp;#x793A;&amp;#x548C;&amp;#x9690;&amp;#x85CF;&amp;#x952E;&amp;#x76D8;&amp;#x7684;&amp;#x9700;&amp;#x6C42;&amp;#x3002;">
+<meta property="og:description" content="实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？首先经常会弹出键盘的控件主要有UITextField、UITextView等。而这些控件的父控件要么是常规的视图，如UIView、UIScrollView或UITableView等。这个时候也许我们就要分2种情况来处理了。
+UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现方式很简单">
 <meta property="og:updated_time" content="2016-09-03T14:25:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UIScrollView中键盘的显示和隐藏">
-<meta name="twitter:description" content="&amp;#x5B9E;&amp;#x9645;&amp;#x5F00;&amp;#x53D1;&amp;#x5F53;&amp;#x4E2D;&amp;#xFF0C;&amp;#x7ECF;&amp;#x5E38;&amp;#x4F1A;&amp;#x9047;&amp;#x5230;&amp;#x9700;&amp;#x8981;&amp;#x663E;&amp;#x793A;&amp;#x548C;&amp;#x9690;&amp;#x85CF;&amp;#x952E;&amp;#x76D8;&amp;#x7684;&amp;#x9700;&amp;#x6C42;&amp;#x3002;">
+<meta name="twitter:description" content="实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？首先经常会弹出键盘的控件主要有UITextField、UITextView等。而这些控件的父控件要么是常规的视图，如UIView、UIScrollView或UITableView等。这个时候也许我们就要分2种情况来处理了。
+UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现方式很简单">
 
 
 
@@ -312,25 +315,25 @@
       
 
       
-        <p>&#x5B9E;&#x9645;&#x5F00;&#x53D1;&#x5F53;&#x4E2D;&#xFF0C;&#x7ECF;&#x5E38;&#x4F1A;&#x9047;&#x5230;&#x9700;&#x8981;&#x663E;&#x793A;&#x548C;&#x9690;&#x85CF;&#x952E;&#x76D8;&#x7684;&#x9700;&#x6C42;&#x3002;&#x90A3;&#x4E48;&#x5728;&#x4EC0;&#x4E48;&#x60C5;&#x51B5;&#x4E0B;&#x9700;&#x8981;&#x9690;&#x85CF;&#x952E;&#x76D8;&#x5462;&#xFF1F;<br>&#x9996;&#x5148;&#x7ECF;&#x5E38;&#x4F1A;&#x5F39;&#x51FA;&#x952E;&#x76D8;&#x7684;&#x63A7;&#x4EF6;&#x4E3B;&#x8981;&#x6709;<code>UITextField</code>&#x3001;<code>UITextView</code>&#x7B49;&#x3002;&#x800C;&#x8FD9;&#x4E9B;&#x63A7;&#x4EF6;&#x7684;&#x7236;&#x63A7;&#x4EF6;&#x8981;&#x4E48;&#x662F;&#x5E38;&#x89C4;&#x7684;&#x89C6;&#x56FE;&#xFF0C;&#x5982;<code>UIView</code>&#x3001;<code>UIScrollView</code>&#x6216;<code>UITableView</code>&#x7B49;&#x3002;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x4E5F;&#x8BB8;&#x6211;&#x4EEC;&#x5C31;&#x8981;&#x5206;2&#x79CD;&#x60C5;&#x51B5;&#x6765;&#x5904;&#x7406;&#x4E86;&#x3002;</p>
-<h4 id="UIView&#x5904;&#x7406;&#x65B9;&#x6848;"><a href="#UIView&#x5904;&#x7406;&#x65B9;&#x6848;" class="headerlink" title="UIView&#x5904;&#x7406;&#x65B9;&#x6848;"></a>UIView&#x5904;&#x7406;&#x65B9;&#x6848;</h4><p>&#x5982;&#x679C;&#x4F7F;&#x7528;&#x7684;&#x662F;UIView&#x800C;&#x4E0D;&#x662F;UIScrollView&#xFF0C;&#x90A3;&#x4E48;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x53EA;&#x8981;&#x91CD;&#x5199;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5904;&#x7406;&#x952E;&#x76D8;&#x4E8B;&#x4EF6;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event {</div><div class="line">        [textfield endEditing:<span class="literal">YES</span>];</div><div class="line">  }</div></pre></td></tr></table></figure>
-<p>&#x4F46;&#x662F;&#x4E0A;&#x9762;&#x7684;&#x60C5;&#x51B5;&#x4E0D;&#x4F1A;&#x5904;&#x7406;UIscrollView&#xFF0C;&#x56E0;&#x4E3A;&#xFF1A;</p>
+        <p>实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？<br>首先经常会弹出键盘的控件主要有<code>UITextField</code>、<code>UITextView</code>等。而这些控件的父控件要么是常规的视图，如<code>UIView</code>、<code>UIScrollView</code>或<code>UITableView</code>等。这个时候也许我们就要分2种情况来处理了。</p>
+<h4 id="UIView处理方案"><a href="#UIView处理方案" class="headerlink" title="UIView处理方案"></a>UIView处理方案</h4><p>如果使用的是UIView而不是UIScrollView，那么实现方式很简单，只要重写这个方法处理键盘事件就可以了。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event &#123;</div><div class="line">        [textfield endEditing:<span class="literal">YES</span>];</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>但是上面的情况不会处理UIscrollView，因为：</p>
 <ul>
-<li>UIScrollView&#x662F;UIView&#x7684;&#x5B50;&#x63A7;&#x4EF6;</li>
-<li>UIScrollView&#x4F1A;&#x5148;&#x63A5;&#x53D7;&#x89E6;&#x6478;&#x4E8B;&#x4EF6;&#xFF0C;&#x5E76;&#x4E0D;&#x4F1A;&#x628A;UIEvent&#x4F20;&#x9012;&#x7ED9;UIView</li>
+<li>UIScrollView是UIView的子控件</li>
+<li>UIScrollView会先接受触摸事件，并不会把UIEvent传递给UIView</li>
 </ul>
-<h4 id="UIScrollView&#x5904;&#x7406;&#x65B9;&#x6848;"><a href="#UIScrollView&#x5904;&#x7406;&#x65B9;&#x6848;" class="headerlink" title="UIScrollView&#x5904;&#x7406;&#x65B9;&#x6848;"></a>UIScrollView&#x5904;&#x7406;&#x65B9;&#x6848;</h4><p>UIScrollView&#x5982;&#x679C;&#x53EA;&#x662F;&#x5728;Drag&#x7684;&#x65F6;&#x5019;&#x5904;&#x7406;&#x952E;&#x76D8;&#xFF0C;&#x90A3;&#x4E48;&#x5904;&#x7406;&#x65B9;&#x5F0F;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x4F60;&#x53EA;&#x9700;&#x8981;&#x505A;&#x8FD9;&#x6837;&#x7684;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x8BBE;&#x7F6E;&#x5373;&#x53EF;</p>
+<h4 id="UIScrollView处理方案"><a href="#UIScrollView处理方案" class="headerlink" title="UIScrollView处理方案"></a>UIScrollView处理方案</h4><p>UIScrollView如果只是在Drag的时候处理键盘，那么处理方式比较简单，你只需要做这样的一个简单设置即可</p>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">scrollView.keyboardDismissMode = <span class="built_in">UIScrollViewKeyboardDismissModeOnDrag</span>;</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>&#x4F46;&#x662F;&#x5982;&#x679C;&#x4F60;&#x8FD8;&#x60F3;&#x8981;&#x7ED9;UIScrollView&#x6DFB;&#x52A0;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#x6765;&#x5904;&#x7406;&#x952E;&#x76D8;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x5C31;&#x9700;&#x8981;&#x7ED9;&#x89C6;&#x56FE;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x624B;&#x52BF;&#x6765;&#x8BC6;&#x522B;&#x5B83;&#x3002;Coding like this</p>
+<p>但是如果你还想要给UIScrollView添加点击事件来处理键盘，那么你就需要给视图添加一个手势来识别它。Coding like this</p>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="built_in">UITapGestureRecognizer</span> *tapGesture = [[<span class="built_in">UITapGestureRecognizer</span> alloc] initWithTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(tapEvent:)];</div><div class="line">tapGesture.delegate = <span class="keyword">self</span>;</div><div class="line">tapGesture.numberOfTapsRequired = <span class="number">1</span>;</div><div class="line">tapGesture.numberOfTouchesRequired = <span class="number">1</span>;</div><div class="line">[scrollView addGestureRecognizer:tapGesture];</div></pre></td></tr></table></figure>
-<p>&#x7136;&#x540E;&#x5728;&#x4EE3;&#x7406;&#x65B9;&#x6CD5;&#x4E2D;&#x4F60;&#x9700;&#x8981;&#x8FD9;&#x6837;&#x6765;&#x5904;&#x7406;</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)tapEvent {</div><div class="line">    [<span class="keyword">self</span>.view endEditing:<span class="literal">YES</span>];</div><div class="line"><span class="comment">//     &#x6216;&#x8005;&#x60F3;&#x8FD9;&#x6837;</span></div><div class="line"><span class="comment">//    [textField endEditing:YES];</span></div><div class="line">}</div></pre></td></tr></table></figure>
-<p>&#x5982;&#x679C;&#x4F60;&#x5C06;&#x624B;&#x52BF;&#x8FD0;&#x7528;&#x5728;UITableView&#x4E2D;&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x4E48;cell&#x53EF;&#x80FD;&#x5C31;&#x65E0;&#x6CD5;&#x63A5;&#x6536;&#x5230;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#x4E86;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x65B9;&#x6CD5;<code>- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath</code>&#x8D70;&#x4E0D;&#x901A;&#x4E86;&#x3002;</p>
-<p>&#x4E3A;&#x4EC0;&#x4E48;cell&#x63A5;&#x6536;&#x4E0D;&#x5230;&#x4E8B;&#x4EF6;&#x5462;&#xFF1F;&#x53EF;&#x80FD;&#x4F60;&#x8FD8;&#x9700;&#x8981;&#x4E86;&#x89E3;&#x8FD9;&#x4E9B;&#x77E5;&#x8BC6;<a href="https://developer.apple.com/library/ios/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/event_delivery_responder_chain/event_delivery_responder_chain.html" target="_blank" rel="external">Responder Chain</a></p>
-<p>&#x9488;&#x5BF9;&#x8FD9;&#x6837;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x624B;&#x52BF;&#x7684;&#x4EE3;&#x7406;&#x65B9;&#x6CD5;&#x3002;</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="built_in">BOOL</span>)gestureRecognizer:(<span class="built_in">UIGestureRecognizer</span> *)gestureRecognizer shouldReceiveTouch:(<span class="built_in">UITouch</span> *)touch {</div><div class="line">    <span class="comment">// &#x82E5;&#x4E3A;UITableViewCellContentView&#xFF0C;&#x5C31;&#x4E0D;&#x63A5;&#x53D7;tap&#x4E8B;&#x4EF6;</span></div><div class="line">    <span class="keyword">if</span> ([<span class="built_in">NSStringFromClass</span>([touch.view <span class="keyword">class</span>]) isEqualToString:<span class="string">@&quot;UITableViewCellContentView&quot;</span>]) {</div><div class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">    }</div><div class="line">    <span class="keyword">return</span>&#xA0;<span class="literal">YES</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
+<p>然后在代理方法中你需要这样来处理</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)tapEvent &#123;</div><div class="line">    [<span class="keyword">self</span>.view endEditing:<span class="literal">YES</span>];</div><div class="line"><span class="comment">//     或者想这样</span></div><div class="line"><span class="comment">//    [textField endEditing:YES];</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果你将手势运用在UITableView中的话，那么cell可能就无法接收到点击事件了，也就是说方法<code>- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath</code>走不通了。</p>
+<p>为什么cell接收不到事件呢？可能你还需要了解这些知识<a href="https://developer.apple.com/library/ios/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/event_delivery_responder_chain/event_delivery_responder_chain.html" target="_blank" rel="external">Responder Chain</a></p>
+<p>针对这样的问题，你需要实现手势的代理方法。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="built_in">BOOL</span>)gestureRecognizer:(<span class="built_in">UIGestureRecognizer</span> *)gestureRecognizer shouldReceiveTouch:(<span class="built_in">UITouch</span> *)touch &#123;</div><div class="line">    <span class="comment">// 若为UITableViewCellContentView，就不接受tap事件</span></div><div class="line">    <span class="keyword">if</span> ([<span class="built_in">NSStringFromClass</span>([touch.view <span class="keyword">class</span>]) isEqualToString:<span class="string">@"UITableViewCellContentView"</span>]) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -557,7 +560,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

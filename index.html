@@ -314,16 +314,16 @@
 
       
         
-          <p>&#x8FD9;&#x51E0;&#x5929;&#x5F88;&#x591A;&#x82F9;&#x679C;&#x5F00;&#x53D1;&#x7684;&#x5C0F;&#x4F19;&#x4F34;&#x8FEB;&#x4E0D;&#x53CA;&#x5F85;&#x7684;&#x5347;&#x7EA7;&#x4E86;Xcode8&#xFF0C;&#x53EF;&#x662F;&#x5347;&#x7EA7;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x9879;&#x76EE;&#x4E2D;&#x4E5F;&#x9047;&#x5230;&#x4E86;&#x5F88;&#x591A;&#x5C0F;&#x95EE;&#x9898;&#xFF0C;&#x4E0B;&#x9762;&#x5C31;&#x4E00;&#x4E00;&#x5217;&#x4E3E;&#x76F8;&#x5173;&#x95EE;&#x9898;&#x3002;</p>
-<p>&#x5982;&#x679C;&#x4F60;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#x8BBF;&#x95EE;&#x4E86;&#x76F8;&#x673A;&#xFF0C;&#x76F8;&#x518C;&#xFF0C;&#x9EA6;&#x514B;&#x98CE;&#x7B49;&#x8BBE;&#x5907;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5728;info.plist&#x6587;&#x4EF6;&#x91CC;&#x505A;&#x5148;&#x5173;&#x914D;&#x7F6E;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x914D;&#x7F6E;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#xFF0C;&#x7A0B;&#x5E8F;&#x4F1A;&#x76F4;&#x63A5;&#x9000;&#x51FA;&#x3002;</p>
-<h5 id="&#x8BBF;&#x95EE;&#x76F8;&#x673A;"><a href="#&#x8BBF;&#x95EE;&#x76F8;&#x673A;" class="headerlink" title="&#x8BBF;&#x95EE;&#x76F8;&#x673A;"></a><a href="https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html">&#x8BBF;&#x95EE;&#x76F8;&#x673A;</a></h5><blockquote>
-<p>Important: To protect user privacy, an iOS app linked on or after iOS 10.0, and which accesses the device&#x2019;s camera, must statically declare the intent to do so. Include the NSCameraUsageDescription key in your app&#x2019;s Info.plist file and provide a purpose string for this key. If your app attempts to access the device&#x2019;s camera without a corresponding purpose string, your app exits.</p>
+          <p>这几天很多苹果开发的小伙伴迫不及待的升级了Xcode8，可是升级完成之后项目中也遇到了很多小问题，下面就一一列举相关问题。</p>
+<p>如果你的项目中访问了相机，相册，麦克风等设备，你需要在info.plist文件里做先关配置，如果没有配置相关信息，程序会直接退出。</p>
+<h5 id="访问相机"><a href="#访问相机" class="headerlink" title="访问相机"></a><a href="https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html">访问相机</a></h5><blockquote>
+<p>Important: To protect user privacy, an iOS app linked on or after iOS 10.0, and which accesses the device’s camera, must statically declare the intent to do so. Include the NSCameraUsageDescription key in your app’s Info.plist file and provide a purpose string for this key. If your app attempts to access the device’s camera without a corresponding purpose string, your app exits.</p>
 </blockquote>
-<p>&#x6839;&#x636E;&#x82F9;&#x679C;&#x7684;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5728;info.plist&#x6587;&#x4EF6;&#x91CC;&#x9762;&#x505A;&#x76F8;&#x5173;&#x914D;&#x7F6E;&#x3002;</p>
-<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSCameraUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;&#x5141;&#x8BB8;&#x6B64;&#x6743;&#x9650;&#x624D;&#x80FD;&#x4F7F;&#x7528;&#x76F8;&#x673A;&lt;/string&gt;</div></pre></td></tr></table></figure>
-<h5 id="&#x8BBF;&#x95EE;&#x76F8;&#x518C;"><a href="#&#x8BBF;&#x95EE;&#x76F8;&#x518C;" class="headerlink" title="&#x8BBF;&#x95EE;&#x76F8;&#x518C;"></a>&#x8BBF;&#x95EE;&#x76F8;&#x518C;</h5><p>&#x6B64;&#x5904;&#x76F8;&#x5173;&#x94FE;&#x63A5;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x8BBF;&#x95EE;&#x76F8;&#x673A;&#xFF0C;&#x4EE5;&#x4E0B;&#x8FDE;&#x63A5;&#x76F8;&#x540C;&#x3002;</p>
-<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSPhotoLibraryUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;&#x5141;&#x8BB8;&#x6B64;&#x6743;&#x9650;&#x624D;&#x80FD;&#x8BBF;&#x95EE;&#x76F8;&#x518C;&lt;/string&gt;</div></pre></td></tr></table></figure>
-<h5 id="&#x8BBF;&#x95EE;&#x9EA6;&#x514B;&#x98CE;"><a href="#&#x8BBF;&#x95EE;&#x9EA6;&#x514B;&#x98CE;" class="headerlink" title="&#x8BBF;&#x95EE;&#x9EA6;&#x514B;&#x98CE;"></a>&#x8BBF;&#x95EE;&#x9EA6;&#x514B;&#x98CE;</h5>
+<p>根据苹果的描述信息，你需要在info.plist文件里面做相关配置。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSCameraUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;允许此权限才能使用相机&lt;/string&gt;</div></pre></td></tr></table></figure>
+<h5 id="访问相册"><a href="#访问相册" class="headerlink" title="访问相册"></a>访问相册</h5><p>此处相关链接可以参考访问相机，以下连接相同。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;key&gt;NSPhotoLibraryUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;允许此权限才能访问相册&lt;/string&gt;</div></pre></td></tr></table></figure>
+<h5 id="访问麦克风"><a href="#访问麦克风" class="headerlink" title="访问麦克风"></a>访问麦克风</h5>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/09/22/iOS-20160922Xcode8相关问题汇总/#more" rel="contents">
               阅读全文 &raquo;
@@ -445,11 +445,11 @@
 
       
         
-          <h3 id="&#x5173;&#x4E8E;&#x81EA;&#x5B9A;&#x4E49;UIView"><a href="#&#x5173;&#x4E8E;&#x81EA;&#x5B9A;&#x4E49;UIView" class="headerlink" title="&#x5173;&#x4E8E;&#x81EA;&#x5B9A;&#x4E49;UIView"></a>&#x5173;&#x4E8E;&#x81EA;&#x5B9A;&#x4E49;UIView</h3><h4 id="&#x901A;&#x8FC7;xib"><a href="#&#x901A;&#x8FC7;xib" class="headerlink" title="&#x901A;&#x8FC7;xib"></a>&#x901A;&#x8FC7;xib</h4><pre><code>&#x5982;&#x679C;&#x5176;&#x4ED6;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x4E0D;&#x77E5;&#x9053;&#x4F60;&#x662F;&#x901A;&#x8FC7;xib&#x521B;&#x5EFA;&#x7684;cell&#xFF0C;&#x6216;&#x8005;&#x5176;&#x4ED6;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x4E0D;&#x5C0F;&#x5FC3;&#x4F7F;&#x7528;&#x4E86;`initWithFrame`&#x7684;&#x521B;&#x5EFA;&#x65B9;&#x5F0F;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x6837;&#x6765;&#x4FDD;&#x8BC1;&#x4ED6;&#x4EEC;&#x901A;&#x8FC7;xib&#x6765;&#x521B;&#x5EFA;&#x7684;UIView&#x3002;
-</code></pre><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">instancetype</span>)initWithFrame:(<span class="built_in">CGRect</span>)frame {</div><div class="line"><span class="keyword">self</span> = [[<span class="built_in">NSBundle</span> mainBundle]loadNibNamed:<span class="string">@&quot;YourCustomViewName&quot;</span> owner:<span class="keyword">self</span> options:<span class="literal">nil</span>].lastObject;</div><div class="line"><span class="keyword">self</span>.frame = frame;</div><div class="line"><span class="keyword">return</span> <span class="keyword">self</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
-<h3 id="automaticallyAdjustsScrollViewInsets"><a href="#automaticallyAdjustsScrollViewInsets" class="headerlink" title="automaticallyAdjustsScrollViewInsets"></a>automaticallyAdjustsScrollViewInsets</h3><p>&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x662F;YES&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x7684;UIScrollView&#x51FA;&#x73B0;&#x83AB;&#x540D;&#x7684;&#x9519;&#x4F4D;&#xFF0C;&#x53EF;&#x4EE5;&#x68C0;&#x67E5;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x662F;&#x4E0D;&#x662F;&#x8BBE;&#x7F6E;&#x9519;&#x4E86;&#x3002;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x544A;&#x8BC9;&#x5F53;&#x524D;&#x7684;&#x63A7;&#x5236;&#x5668;&#x662F;&#x5426;&#x9700;&#x8981;&#x8C03;&#x6574;&#x4ED6;&#x5185;&#x90E8;&#x6EDA;&#x52A8;&#x89C6;&#x56FE;&#x7684;&#x5185;&#x8FB9;&#x8DDD;&#xFF08;&#x4E3B;&#x8981;&#x7684;&#x6EDA;&#x52A8;&#x89C6;&#x56FE;&#x4E5F;&#x5C31;&#x662F;UIScrollView&#x6216;&#x8005;&#x5176;&#x5B50;&#x7C7B;&#xFF09;</p>
+          <h3 id="关于自定义UIView"><a href="#关于自定义UIView" class="headerlink" title="关于自定义UIView"></a>关于自定义UIView</h3><h4 id="通过xib"><a href="#通过xib" class="headerlink" title="通过xib"></a>通过xib</h4><pre><code>如果其他开发人员不知道你是通过xib创建的cell，或者其他开发人员不小心使用了`initWithFrame`的创建方式，那么你可以通过这样来保证他们通过xib来创建的UIView。
+</code></pre><figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">instancetype</span>)initWithFrame:(<span class="built_in">CGRect</span>)frame &#123;</div><div class="line"><span class="keyword">self</span> = [[<span class="built_in">NSBundle</span> mainBundle]loadNibNamed:<span class="string">@"YourCustomViewName"</span> owner:<span class="keyword">self</span> options:<span class="literal">nil</span>].lastObject;</div><div class="line"><span class="keyword">self</span>.frame = frame;</div><div class="line"><span class="keyword">return</span> <span class="keyword">self</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="automaticallyAdjustsScrollViewInsets"><a href="#automaticallyAdjustsScrollViewInsets" class="headerlink" title="automaticallyAdjustsScrollViewInsets"></a>automaticallyAdjustsScrollViewInsets</h3><p>这个属性的默认值是YES，如果你的UIScrollView出现莫名的错位，可以检查这个属性是不是设置错了。这个属性告诉当前的控制器是否需要调整他内部滚动视图的内边距（主要的滚动视图也就是UIScrollView或者其子类）</p>
 <blockquote>
-<p>The default value of this property is YES, which lets container view controllers know that they should adjust the scroll view insets of this view controller&#x2019;s view to account for screen areas consumed by a status bar, search bar, navigation bar, toolbar, or tab bar. Set this property to NO if your view controller implementation manages its own scroll view inset adjustments.</p>
+<p>The default value of this property is YES, which lets container view controllers know that they should adjust the scroll view insets of this view controller’s view to account for screen areas consumed by a status bar, search bar, navigation bar, toolbar, or tab bar. Set this property to NO if your view controller implementation manages its own scroll view inset adjustments.</p>
 </blockquote>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/07/02/iOS-20161102objc常见开发总结/#more" rel="contents">
@@ -572,13 +572,13 @@
 
       
         
-          <p>&#x79FB;&#x52A8;&#x7AEF;&#x5F00;&#x53D1;&#x79BB;&#x4E0D;&#x5F00;&#x5411;&#x540E;&#x53F0;&#x8BF7;&#x6C42;&#x6570;&#x636E;&#xFF0C;&#x7528;&#x6237;&#x5F80;&#x5F80;&#x4F1A;&#x901A;&#x8FC7;&#x4E0B;&#x62C9;&#x6216;&#x4E0A;&#x62C9;&#x6765;&#x8BF7;&#x6C42;&#x6570;&#x636E;&#x3002;&#x800C;&#x6BCF;&#x4E2A;App&#x5BF9;&#x4E0B;&#x62C9;&#x548C;&#x4E0A;&#x62C9;&#x5904;&#x7406;&#x6570;&#x636E;&#x7684;&#x65B9;&#x5F0F;&#x4E0D;&#x540C;&#x3002;</p>
-<p>&#x5173;&#x4E8E;&#x4E0B;&#x62C9;&#x5237;&#x65B0;&#xFF0C;&#x65B0;&#x6D6A;&#x5FAE;&#x535A;&#x662F;&#x5C06;&#x8BF7;&#x6C42;&#x4E0B;&#x6765;&#x7684;&#x6700;&#x65B0;&#x6570;&#x636E;&#x62FC;&#x63A5;&#x5230;&#x5DF2;&#x6709;&#x6570;&#x636E;&#x7684;&#x524D;&#x9762;&#xFF0C;&#x5E76;&#x4E14;&#x7ED9;&#x51FA;&#x63D0;&#x793A;&#x6709;&#x591A;&#x5C11;&#x6761;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x4E86;&#xFF0C;&#x540C;&#x6837;&#x4E0A;&#x62C9;&#x5237;&#x65B0;&#x662F;&#x5C06;&#x8BF7;&#x6C42;&#x6765;&#x7684;&#x6570;&#x636E;&#x62FC;&#x63A5;&#x5230;&#x5DF2;&#x6709;&#x6570;&#x636E;&#x7684;&#x540E;&#x9762;&#x3002;</p>
-<p>&#x800C;&#x5927;&#x90E8;&#x5206;&#x7684;App&#x91C7;&#x53D6;&#x7684;&#x65B9;&#x5F0F;&#x8DDF;&#x5FAE;&#x535A;&#x4E0D;&#x540C;&#xFF1A;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#x4E0B;&#x62C9;&#x90FD;&#x662F;&#x8BF7;&#x6C42;&#x6700;&#x65B0;&#x6570;&#x636E;&#xFF0C;&#x4F1A;&#x628A;&#x4E4B;&#x524D;&#x8BF7;&#x6C42;&#x4E0B;&#x6765;&#x7684;&#x6570;&#x636E;&#x7ED9;&#x66FF;&#x6362;&#x6389;&#xFF1B;&#x800C;&#x4E0A;&#x62C9;&#x5237;&#x65B0;&#x662F;&#x8BF7;&#x6C42;&#x66F4;&#x591A;&#x6570;&#x636E;&#xFF0C;&#x4F1A;&#x5C06;&#x8BF7;&#x6C42;&#x7684;&#x6570;&#x636E;&#x62FC;&#x63A5;&#x5230;&#x4E4B;&#x524D;&#x7684;&#x6570;&#x636E;&#x672B;&#x7AEF;&#x3002;</p>
-<p>&#x6211;&#x4EEC;&#x516C;&#x53F8;&#x4E5F;&#x91C7;&#x53D6;&#x4E86;&#x65B9;&#x5F0F;&#x4E8C;&#x7684;&#x5904;&#x7406;&#x65B9;&#x5F0F;&#xFF0C;&#x5BF9;&#x6B64;&#x6211;&#x505A;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x603B;&#x7ED3;&#x3002;</p>
-<h3 id="&#x53C2;&#x6570;"><a href="#&#x53C2;&#x6570;" class="headerlink" title="&#x53C2;&#x6570;"></a>&#x53C2;&#x6570;</h3><p>&#x53EF;&#x80FD;&#x6D89;&#x53CA;&#x5230;&#x7684;&#x53C2;&#x6570;&#xFF1A;</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="comment">/** &#x8BF7;&#x6C42;&#x7B2C;&#x51E0;&#x9875;&#x7684;&#x6570;&#x636E; */</span></div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">NSInteger</span> pageNum;</div><div class="line"><span class="comment">/** &#x6BCF;&#x4E2A;&#x9875;&#x9762;&#x663E;&#x793A;&#x591A;&#x5C11;&#x6761;&#x6570;&#x636E;&#xFF0C;&#x4E00;&#x822C;&#x662F;&#x56FA;&#x5B9A;&#x503C; */</span></div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">NSInteger</span> pageSize;</div></pre></td></tr></table></figure>
-<p>&#x6B64;&#x5904;&#x7684;pageNum&#x7528;&#x6765;&#x8868;&#x793A;&#x7528;&#x6237;&#x8BF7;&#x6C42;&#x7684;&#x662F;&#x7B2C;&#x51E0;&#x9875;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x800C;pageSize&#x5219;&#x7528;&#x6765;&#x8868;&#x793A;&#x6BCF;&#x9875;&#x663E;&#x793A;&#x591A;&#x5C11;&#x6761;&#x6570;&#x636E;&#xFF1B;</p>
+          <p>移动端开发离不开向后台请求数据，用户往往会通过下拉或上拉来请求数据。而每个App对下拉和上拉处理数据的方式不同。</p>
+<p>关于下拉刷新，新浪微博是将请求下来的最新数据拼接到已有数据的前面，并且给出提示有多少条数据更新了，同样上拉刷新是将请求来的数据拼接到已有数据的后面。</p>
+<p>而大部分的App采取的方式跟微博不同：一般来说下拉都是请求最新数据，会把之前请求下来的数据给替换掉；而上拉刷新是请求更多数据，会将请求的数据拼接到之前的数据末端。</p>
+<p>我们公司也采取了方式二的处理方式，对此我做了一个简单的总结。</p>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>可能涉及到的参数：</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="comment">/** 请求第几页的数据 */</span></div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">NSInteger</span> pageNum;</div><div class="line"><span class="comment">/** 每个页面显示多少条数据，一般是固定值 */</span></div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">NSInteger</span> pageSize;</div></pre></td></tr></table></figure>
+<p>此处的pageNum用来表示用户请求的是第几页的数据，而pageSize则用来表示每页显示多少条数据；</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/06/15/iOS-20161101关于下拉刷新和上拉刷新/#more" rel="contents">
               阅读全文 &raquo;
@@ -701,9 +701,9 @@
       
         
           
-            <p>&#x6B64;&#x5904;&#x9996;&#x5148;&#x611F;&#x8C22;<code>&#x5CF0;&#x54E5;</code>&#x7684;&#x6307;&#x5BFC;&#xFF0C;&#x4E0D;&#x8981;&#x95EE;&#x6211;&#x5CF0;&#x54E5;&#x4F55;&#x8BB8;&#x4EBA;&#x4E5F;&#xFF0C;&#x8BF7;Google&#x4E1C;&#x534A;&#x7403;&#x6700;&#x5E05;&#x7537;&#x4EBA;&#x3002;&#x4E0D;&#x626F;&#x6DE1;&#x4E86;&#xFF0C;&#x8FDB;&#x5165;&#x6B63;&#x9898;&#x2026;&#x2026;</p>
+            <p>此处首先感谢<code>峰哥</code>的指导，不要问我峰哥何许人也，请Google东半球最帅男人。不扯淡了，进入正题……</p>
 <p>### </p>
-<p>&#x8FD8;&#x662F;&#x8BF4;&#x51E0;&#x53E5;&#x5427;&#xFF01;&#x771F;&#x5FC3;&#x8BDD;&#xFF0C;&#x4E00;&#x76F4;&#x662F;<code>&#x5CF0;&#x54E5;</code>&#x5728;&#x7ED9;&#x6211;&#x7EC6;&#x5FC3;&#x7684;&#x6307;&#x5BFC;&#xFF0C;&#x4E0D;&#x538C;&#x5176;&#x70E6;&#x7684;&#x7ED9;&#x6211;&#x8BB2;&#x89E3;&#x4ED6;&#x9879;&#x76EE;&#x4E2D;&#x9047;&#x5230;&#x7684;&#x5404;&#x79CD;&#x95EE;&#x9898;&#xFF0C;&#x800C;&#x6211;&#x771F;&#x7684;&#x662F;&#x53D7;&#x76CA;&#x532A;&#x6D45;&#x3002;&#x6211;&#x89C9;&#x5F97;&#x81EA;&#x5DF1;&#x603B;&#x662F;&#x63A5;&#x53D7;&#x7684;&#x592A;&#x591A;&#x7ED9;&#x4E88;&#x7684;&#x592A;&#x5C11;&#xFF0C;&#x6709;&#x6127;&#x4E8E;&#x5CF0;&#x54E5;&#x3002;&#x89C9;&#x5F97;&#x5CF0;&#x54E5;&#x552F;&#x4E00;&#x7684;&#x6536;&#x76CA;&#x4E4B;&#x5904;&#x5C31;&#x662F;&#x6709;&#x4E2A;&#x50CF;&#x6211;&#x8FD9;&#x6837;&#x7684;&#x5B66;&#x751F;&#x8BA4;&#x771F;&#x7684;&#x503E;&#x542C;&#x4ED6;&#x63A2;&#x7D22;&#x771F;&#x7406;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#x81EA;&#x5DF1;&#x7684;&#x7406;&#x89E3;&#x662F;&#x5426;&#x5230;&#x4F4D;&#xFF0C;&#x7136;&#x540E;&#x4E00;&#x8D77;&#x8BA8;&#x8BBA;&#x4E00;&#x8D77;&#x8FDB;&#x6B65;</p>
+<p>还是说几句吧！真心话，一直是<code>峰哥</code>在给我细心的指导，不厌其烦的给我讲解他项目中遇到的各种问题，而我真的是受益匪浅。我觉得自己总是接受的太多给予的太少，有愧于峰哥。觉得峰哥唯一的收益之处就是有个像我这样的学生认真的倾听他探索真理的过程，可以发现自己的理解是否到位，然后一起讨论一起进步</p>
 
           
         
@@ -857,7 +857,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

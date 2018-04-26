@@ -34,7 +34,7 @@
     <link href="http://sz8023.github.io/2018/04/24/java-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
     <id>http://sz8023.github.io/2018/04/24/java-基础知识/</id>
     <published>2018-04-24T06:05:17.000Z</published>
-    <updated>2018-04-26T15:53:03.610Z</updated>
+    <updated>2018-04-26T15:54:47.656Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>java中浮点数的比较要特别注意，因为浮点数存在精度的问题，所以一般我们都会这么做</p>

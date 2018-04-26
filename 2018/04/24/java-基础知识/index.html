@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="实用技巧," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,19 +84,52 @@
 
 
 
-<meta name="description" content="实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？首先经常会弹出键盘的控件主要有UITextField、UITextView等。而这些控件的父控件要么是常规的视图，如UIView、UIScrollView或UITableView等。这个时候也许我们就要分2种情况来处理了。
-UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现方式很简单">
+<meta name="description" content="java中浮点数的比较要特别注意，因为浮点数存在精度的问题，所以一般我们都会这么做
+
+float a = 3.14f;if(a &amp;gt; 3.1 || a &amp;lt; 3.2) &amp;#123;&amp;#125;
+视频03A(04.24)
+面向对象的特向》封装
+
+
+== 和 equal的区别
+
+finalize方法的调用时机
+  可以通过调用系统的System.gc告诉系统需要进行垃圾回收了
+
+this.n">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UIScrollView中键盘的显示和隐藏">
-<meta property="og:url" content="http://sz8023.github.io/2015/12/03/iOS-键盘UIKeyboard的显示和隐藏/index.html">
+<meta property="og:title" content="java基础知识">
+<meta property="og:url" content="http://sz8023.github.io/2018/04/24/java-基础知识/index.html">
 <meta property="og:site_name" content="ForYou">
-<meta property="og:description" content="实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？首先经常会弹出键盘的控件主要有UITextField、UITextView等。而这些控件的父控件要么是常规的视图，如UIView、UIScrollView或UITableView等。这个时候也许我们就要分2种情况来处理了。
-UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现方式很简单">
-<meta property="og:updated_time" content="2016-09-03T14:25:43.000Z">
+<meta property="og:description" content="java中浮点数的比较要特别注意，因为浮点数存在精度的问题，所以一般我们都会这么做
+
+float a = 3.14f;if(a &amp;gt; 3.1 || a &amp;lt; 3.2) &amp;#123;&amp;#125;
+视频03A(04.24)
+面向对象的特向》封装
+
+
+== 和 equal的区别
+
+finalize方法的调用时机
+  可以通过调用系统的System.gc告诉系统需要进行垃圾回收了
+
+this.n">
+<meta property="og:updated_time" content="2018-04-26T15:53:03.610Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UIScrollView中键盘的显示和隐藏">
-<meta name="twitter:description" content="实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？首先经常会弹出键盘的控件主要有UITextField、UITextView等。而这些控件的父控件要么是常规的视图，如UIView、UIScrollView或UITableView等。这个时候也许我们就要分2种情况来处理了。
-UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现方式很简单">
+<meta name="twitter:title" content="java基础知识">
+<meta name="twitter:description" content="java中浮点数的比较要特别注意，因为浮点数存在精度的问题，所以一般我们都会这么做
+
+float a = 3.14f;if(a &amp;gt; 3.1 || a &amp;lt; 3.2) &amp;#123;&amp;#125;
+视频03A(04.24)
+面向对象的特向》封装
+
+
+== 和 equal的区别
+
+finalize方法的调用时机
+  可以通过调用系统的System.gc告诉系统需要进行垃圾回收了
+
+this.n">
 
 
 
@@ -117,9 +150,9 @@ UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现�
 
 
 
-  <link rel="canonical" href="http://sz8023.github.io/2015/12/03/iOS-键盘UIKeyboard的显示和隐藏/"/>
+  <link rel="canonical" href="http://sz8023.github.io/2018/04/24/java-基础知识/"/>
 
-  <title> UIScrollView中键盘的显示和隐藏 | ForYou </title>
+  <title> java基础知识 | ForYou </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -249,7 +282,7 @@ UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现�
             
             
               
-                UIScrollView中键盘的显示和隐藏
+                java基础知识
               
             
           </h1>
@@ -261,8 +294,8 @@ UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现�
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-12-03T17:54:14+08:00" content="2015-12-03">
-              2015-12-03
+            <time itemprop="dateCreated" datetime="2018-04-24T14:05:17+08:00" content="2018-04-24">
+              2018-04-24
             </time>
           </span>
 
@@ -275,8 +308,8 @@ UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现�
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发</span>
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
                   </a>
                 </span>
 
@@ -291,8 +324,8 @@ UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现�
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/12/03/iOS-键盘UIKeyboard的显示和隐藏/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/03/iOS-键盘UIKeyboard的显示和隐藏/" itemprop="commentsCount"></span>
+                <a href="/2018/04/24/java-基础知识/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/04/24/java-基础知识/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -315,25 +348,108 @@ UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现�
       
 
       
-        <p>实际开发当中，经常会遇到需要显示和隐藏键盘的需求。那么在什么情况下需要隐藏键盘呢？<br>首先经常会弹出键盘的控件主要有<code>UITextField</code>、<code>UITextView</code>等。而这些控件的父控件要么是常规的视图，如<code>UIView</code>、<code>UIScrollView</code>或<code>UITableView</code>等。这个时候也许我们就要分2种情况来处理了。</p>
-<h4 id="UIView处理方案"><a href="#UIView处理方案" class="headerlink" title="UIView处理方案"></a>UIView处理方案</h4><p>如果使用的是UIView而不是UIScrollView，那么实现方式很简单，只要重写这个方法处理键盘事件就可以了。</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event &#123;</div><div class="line">        [textfield endEditing:<span class="literal">YES</span>];</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-<p>但是上面的情况不会处理UIscrollView，因为：</p>
+        <blockquote>
+<p>java中浮点数的比较要特别注意，因为浮点数存在精度的问题，所以一般我们都会这么做</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">float</span> a = <span class="number">3.14f</span>;</div><div class="line"><span class="keyword">if</span>(a &gt; <span class="number">3.1</span> || a &lt; <span class="number">3.2</span>) &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="视频03A-04-24"><a href="#视频03A-04-24" class="headerlink" title="视频03A(04.24)"></a>视频03A(04.24)</h3><blockquote>
+<p>面向对象的特向》封装</p>
+</blockquote>
 <ul>
-<li>UIScrollView是UIView的子控件</li>
-<li>UIScrollView会先接受触摸事件，并不会把UIEvent传递给UIView</li>
+<li><p>== 和 equal的区别</p>
+</li>
+<li><p>finalize方法的调用时机</p>
+<p>  可以通过调用系统的<code>System.gc</code>告诉系统需要进行垃圾回收了</p>
+</li>
+<li><p><code>this.name = name</code> 中<code>this</code>的作用</p>
+</li>
 </ul>
-<h4 id="UIScrollView处理方案"><a href="#UIScrollView处理方案" class="headerlink" title="UIScrollView处理方案"></a>UIScrollView处理方案</h4><p>UIScrollView如果只是在Drag的时候处理键盘，那么处理方式比较简单，你只需要做这样的一个简单设置即可</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">scrollView.keyboardDismissMode = <span class="built_in">UIScrollViewKeyboardDismissModeOnDrag</span>;</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>但是如果你还想要给UIScrollView添加点击事件来处理键盘，那么你就需要给视图添加一个手势来识别它。Coding like this</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="built_in">UITapGestureRecognizer</span> *tapGesture = [[<span class="built_in">UITapGestureRecognizer</span> alloc] initWithTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(tapEvent:)];</div><div class="line">tapGesture.delegate = <span class="keyword">self</span>;</div><div class="line">tapGesture.numberOfTapsRequired = <span class="number">1</span>;</div><div class="line">tapGesture.numberOfTouchesRequired = <span class="number">1</span>;</div><div class="line">[scrollView addGestureRecognizer:tapGesture];</div></pre></td></tr></table></figure>
-<p>然后在代理方法中你需要这样来处理</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)tapEvent &#123;</div><div class="line">    [<span class="keyword">self</span>.view endEditing:<span class="literal">YES</span>];</div><div class="line"><span class="comment">//     或者想这样</span></div><div class="line"><span class="comment">//    [textField endEditing:YES];</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>如果你将手势运用在UITableView中的话，那么cell可能就无法接收到点击事件了，也就是说方法<code>- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath</code>走不通了。</p>
-<p>为什么cell接收不到事件呢？可能你还需要了解这些知识<a href="https://developer.apple.com/library/ios/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/event_delivery_responder_chain/event_delivery_responder_chain.html" target="_blank" rel="external">Responder Chain</a></p>
-<p>针对这样的问题，你需要实现手势的代理方法。</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="built_in">BOOL</span>)gestureRecognizer:(<span class="built_in">UIGestureRecognizer</span> *)gestureRecognizer shouldReceiveTouch:(<span class="built_in">UITouch</span> *)touch &#123;</div><div class="line">    <span class="comment">// 若为UITableViewCellContentView，就不接受tap事件</span></div><div class="line">    <span class="keyword">if</span> ([<span class="built_in">NSStringFromClass</span>([touch.view <span class="keyword">class</span>]) isEqualToString:<span class="string">@"UITableViewCellContentView"</span>]) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="视频03B-04-24"><a href="#视频03B-04-24" class="headerlink" title="视频03B(04.24)"></a>视频03B(04.24)</h3><blockquote>
+<p>基本数据类型 &amp; 引用数据类型    </p>
+</blockquote>
+<ul>
+<li>基本数据类型作为参数传递和引用数据类型作为参数传递</li>
+<li>static修饰成员变量的时候，成员变量修饰符跟这个关系不大，依然表示的是这个变量是这个类的所有对象共同持有。</li>
+<li><a href="![https://blog.csdn.net/u012585964/article/details/52011138]">java的反射机制</a>，这个特性特别重要，</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</div><div class="line">	<span class="comment">// 静态成员变量，所有的对象共同持有的，不论创建多少个对象，在内存中值存在一份，</span></div><div class="line">	<span class="comment">// 可以通过对象直接访问,也可以通过Student.count的形式访问，建议通过Student.count的方式访问</span></div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">	</div><div class="line">	<span class="comment">// 所有的对象都有一个共同的country属性，可以通过</span></div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> String country = <span class="string">"Chinese"</span>;	</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span> </span>&#123;</div><div class="line">		Student.count++;</div><div class="line">		System.out.println(Student.count);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] arge)</span> </span>&#123;</div><div class="line">		<span class="keyword">new</span> Student();</div><div class="line">		<span class="keyword">new</span> Student();</div><div class="line">		<span class="keyword">new</span> Student();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><p><a href="http://www.importnew.com/13504.html" target="_blank" rel="external">java回收机制</a></p>
+<p>  <a href="http://www.importnew.com/13493.html" target="_blank" rel="external">Java垃圾回收是如何工作的</a><br>  java的回收机制分为4个系列，</p>
+</li>
+<li><p>java内部类，javadoc的文档使用，java单列的书写模式</p>
+</li>
+</ul>
+<h3 id="视频04A-04-26"><a href="#视频04A-04-26" class="headerlink" title="视频04A(04.26)"></a>视频04A(04.26)</h3><blockquote>
+<p>高级特性》类的继承；<br>java中通过继承可以简化类的书写，java中只允许单继承，</p>
+</blockquote>
+<ul>
+<li>访问修饰符</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>作用域</th>
+<th>当前类</th>
+<th>同包</th>
+<th>子类</th>
+<th>其他包</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+</tr>
+<tr>
+<td>default</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>private</td>
+<td>√</td>
+<td>x</td>
+<td>×</td>
+<td>×</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://blog.csdn.net/qq_29513537/article/details/69677011" target="_blank" rel="external">访问修饰符详解</a></p>
+<p>如果没有任何修饰符，默认是default，有时候我们写的子类可以调用父类的default修饰的成员变量和方法，这是因为这个子类和父类在同一个包中，所以可以访问。</p>
+<ul>
+<li><p><code>final</code>修饰符的使用</p>
+<p>  <code>final</code>修饰的类不可以被继承；<code>final</code>修饰的方法可以被继承但是不可以被重写；</p>
+</li>
+<li><p>抽象类和抽象方法</p>
+<p>  含有抽象方法的类必须声明为抽象类；而抽象类里面不一定有抽象方法</p>
+</li>
+<li><p>接口<code>interface</code></p>
+</li>
+<li><p>匿名内部类</p>
+</li>
+</ul>
+<h3 id="视频04B-04-26"><a href="#视频04B-04-26" class="headerlink" title="视频04B(04.26)"></a>视频04B(04.26)</h3><blockquote>
+<p><code>java</code>中的异常捕获</p>
+</blockquote>
+<ul>
+<li><p>try…catch</p>
+<p>  如果某个人写了一个接口，另一个人需要调用这个接口，那么他怎么知道这个接口会抛出异常，这个时候就需要在定义这个接口的时候在函数的后面加上<code>throws Exception</code>，这样调用者就知道这个函数如果调用可能会发生异常，所以在调用这个函数的时候就需要加上<code>try...catch...</code></p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">package</span> com.ycit.one;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">divide</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span> <span class="keyword">throws</span> Exception</span>&#123;</div><div class="line">		<span class="keyword">int</span> result = x/y;</div><div class="line">		<span class="keyword">return</span> result;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestException</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			<span class="keyword">new</span> Test().divide(<span class="number">20</span>, <span class="number">0</span>);</div><div class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">			<span class="comment">// TODO Auto-generated catch block</span></div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">		System.out.println(<span class="string">"pragram is running here!"</span>);</div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -354,27 +470,21 @@ UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现�
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/实用技巧/" rel="tag">#实用技巧</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/12/iOS-手势解锁实现/" rel="next" title="手势解锁实现">
-                <i class="fa fa-chevron-left"></i> 手势解锁实现
+              <a href="/2016/09/22/iOS-20160922Xcode8相关问题汇总/" rel="next" title="Xcode8相关问题汇总">
+                <i class="fa fa-chevron-left"></i> Xcode8相关问题汇总
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/01/14/iOS-自定义控件/" rel="prev" title="自定义控件">
-                自定义控件 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/24/undefined/" rel="prev" title="java_反射">
+                java_反射 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -390,10 +500,10 @@ UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现�
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/12/03/iOS-键盘UIKeyboard的显示和隐藏/"
-     data-title="UIScrollView中键盘的显示和隐藏"
+        <div class="ds-share flat" data-thread-key="2018/04/24/java-基础知识/"
+     data-title="java基础知识"
      data-content=""
-     data-url="http://sz8023.github.io/2015/12/03/iOS-键盘UIKeyboard的显示和隐藏/">
+     data-url="http://sz8023.github.io/2018/04/24/java-基础知识/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -423,8 +533,8 @@ UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现�
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/03/iOS-键盘UIKeyboard的显示和隐藏/"
-           data-title="UIScrollView中键盘的显示和隐藏" data-url="http://sz8023.github.io/2015/12/03/iOS-键盘UIKeyboard的显示和隐藏/">
+      <div class="ds-thread" data-thread-key="2018/04/24/java-基础知识/"
+           data-title="java基础知识" data-url="http://sz8023.github.io/2018/04/24/java-基础知识/">
       </div>
     
   </div>
@@ -541,7 +651,7 @@ UIView处理方案如果使用的是UIView而不是UIScrollView，那么实现�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#UIView处理方案"><span class="nav-number">1.</span> <span class="nav-text">UIView处理方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UIScrollView处理方案"><span class="nav-number">2.</span> <span class="nav-text">UIScrollView处理方案</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#视频03A-04-24"><span class="nav-number">1.</span> <span class="nav-text">视频03A(04.24)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#视频03B-04-24"><span class="nav-number">2.</span> <span class="nav-text">视频03B(04.24)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#视频04A-04-26"><span class="nav-number">3.</span> <span class="nav-text">视频04A(04.26)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#视频04B-04-26"><span class="nav-number">4.</span> <span class="nav-text">视频04B(04.26)</span></a></li></ol></div>
             
           </div>
         </section>

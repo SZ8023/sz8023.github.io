@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sz8023.github.io/"/>
-  <updated>2018-04-24T06:05:44.263Z</updated>
+  <updated>2018-04-24T06:07:18.668Z</updated>
   <id>http://sz8023.github.io/</id>
   
   <author>
@@ -16,16 +16,128 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>java_反射</title>
+    <link href="http://sz8023.github.io/2018/04/24/undefined/"/>
+    <id>http://sz8023.github.io/2018/04/24/undefined/</id>
+    <published>2018-04-24T06:07:18.000Z</published>
+    <updated>2018-04-24T06:07:18.668Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>java基础知识</title>
-    <link href="http://sz8023.github.io/2018/04/24/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    <id>http://sz8023.github.io/2018/04/24/java基础知识/</id>
+    <link href="http://sz8023.github.io/2018/04/24/java-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    <id>http://sz8023.github.io/2018/04/24/java-基础知识/</id>
     <published>2018-04-24T06:05:17.000Z</published>
-    <updated>2018-04-24T06:05:44.263Z</updated>
+    <updated>2018-04-26T15:53:03.610Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>java中浮点数的比较要特别注意，因为浮点数存在精度的问题，所以一般我们都会这么做</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">float</span> a = <span class="number">3.14f</span>;</div><div class="line"><span class="keyword">if</span>(a &gt; <span class="number">3.1</span> || a &lt; <span class="number">3.2</span>) &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="视频03A-04-24"><a href="#视频03A-04-24" class="headerlink" title="视频03A(04.24)"></a>视频03A(04.24)</h3><blockquote>
+<p>面向对象的特向》封装</p>
+</blockquote>
+<ul>
+<li><p>== 和 equal的区别</p>
+</li>
+<li><p>finalize方法的调用时机</p>
+<p>  可以通过调用系统的<code>System.gc</code>告诉系统需要进行垃圾回收了</p>
+</li>
+<li><p><code>this.name = name</code> 中<code>this</code>的作用</p>
+</li>
+</ul>
+<h3 id="视频03B-04-24"><a href="#视频03B-04-24" class="headerlink" title="视频03B(04.24)"></a>视频03B(04.24)</h3><blockquote>
+<p>基本数据类型 &amp; 引用数据类型    </p>
+</blockquote>
+<ul>
+<li>基本数据类型作为参数传递和引用数据类型作为参数传递</li>
+<li>static修饰成员变量的时候，成员变量修饰符跟这个关系不大，依然表示的是这个变量是这个类的所有对象共同持有。</li>
+<li><a href="![https://blog.csdn.net/u012585964/article/details/52011138]">java的反射机制</a>，这个特性特别重要，</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</div><div class="line">	<span class="comment">// 静态成员变量，所有的对象共同持有的，不论创建多少个对象，在内存中值存在一份，</span></div><div class="line">	<span class="comment">// 可以通过对象直接访问,也可以通过Student.count的形式访问，建议通过Student.count的方式访问</span></div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">	</div><div class="line">	<span class="comment">// 所有的对象都有一个共同的country属性，可以通过</span></div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> String country = <span class="string">"Chinese"</span>;	</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span> </span>&#123;</div><div class="line">		Student.count++;</div><div class="line">		System.out.println(Student.count);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] arge)</span> </span>&#123;</div><div class="line">		<span class="keyword">new</span> Student();</div><div class="line">		<span class="keyword">new</span> Student();</div><div class="line">		<span class="keyword">new</span> Student();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><p><a href="http://www.importnew.com/13504.html" target="_blank" rel="external">java回收机制</a></p>
+<p>  <a href="http://www.importnew.com/13493.html" target="_blank" rel="external">Java垃圾回收是如何工作的</a><br>  java的回收机制分为4个系列，</p>
+</li>
+<li><p>java内部类，javadoc的文档使用，java单列的书写模式</p>
+</li>
+</ul>
+<h3 id="视频04A-04-26"><a href="#视频04A-04-26" class="headerlink" title="视频04A(04.26)"></a>视频04A(04.26)</h3><blockquote>
+<p>高级特性》类的继承；<br>java中通过继承可以简化类的书写，java中只允许单继承，</p>
+</blockquote>
+<ul>
+<li>访问修饰符</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>作用域</th>
+<th>当前类</th>
+<th>同包</th>
+<th>子类</th>
+<th>其他包</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+</tr>
+<tr>
+<td>default</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>private</td>
+<td>√</td>
+<td>x</td>
+<td>×</td>
+<td>×</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://blog.csdn.net/qq_29513537/article/details/69677011" target="_blank" rel="external">访问修饰符详解</a></p>
+<p>如果没有任何修饰符，默认是default，有时候我们写的子类可以调用父类的default修饰的成员变量和方法，这是因为这个子类和父类在同一个包中，所以可以访问。</p>
+<ul>
+<li><p><code>final</code>修饰符的使用</p>
+<p>  <code>final</code>修饰的类不可以被继承；<code>final</code>修饰的方法可以被继承但是不可以被重写；</p>
+</li>
+<li><p>抽象类和抽象方法</p>
+<p>  含有抽象方法的类必须声明为抽象类；而抽象类里面不一定有抽象方法</p>
+</li>
+<li><p>接口<code>interface</code></p>
+</li>
+<li><p>匿名内部类</p>
+</li>
+</ul>
+<h3 id="视频04B-04-26"><a href="#视频04B-04-26" class="headerlink" title="视频04B(04.26)"></a>视频04B(04.26)</h3><blockquote>
+<p><code>java</code>中的异常捕获</p>
+</blockquote>
+<ul>
+<li><p>try…catch</p>
+<p>  如果某个人写了一个接口，另一个人需要调用这个接口，那么他怎么知道这个接口会抛出异常，这个时候就需要在定义这个接口的时候在函数的后面加上<code>throws Exception</code>，这样调用者就知道这个函数如果调用可能会发生异常，所以在调用这个函数的时候就需要加上<code>try...catch...</code></p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">package</span> com.ycit.one;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">divide</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span> <span class="keyword">throws</span> Exception</span>&#123;</div><div class="line">		<span class="keyword">int</span> result = x/y;</div><div class="line">		<span class="keyword">return</span> result;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestException</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			<span class="keyword">new</span> Test().divide(<span class="number">20</span>, <span class="number">0</span>);</div><div class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">			<span class="comment">// TODO Auto-generated catch block</span></div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">		System.out.println(<span class="string">"pragram is running here!"</span>);</div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
@@ -985,79 +1097,6 @@ console.log(&quot;程序执行结束&quot;);
     <summary type="html">
     
       &lt;h1 id=&quot;Node-js-PEPL-交互式解释器&quot;&gt;&lt;a href=&quot;#Node-js-PEPL-交互式解释器&quot; class=&quot;headerlink&quot; title=&quot;Node.js PEPL(交互式解释器)&quot;&gt;&lt;/a&gt;Node.js PEPL(交互式解释器)&lt;/h1&gt;&lt;p&gt;
-    
-    </summary>
-    
-      <category term="Node教程" scheme="http://sz8023.github.io/categories/Node%E6%95%99%E7%A8%8B/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Node.js笔记</title>
-    <link href="http://sz8023.github.io/2015/04/25/other-Node%E6%95%99%E7%A8%8B/"/>
-    <id>http://sz8023.github.io/2015/04/25/other-Node教程/</id>
-    <published>2015-04-25T09:26:39.000Z</published>
-    <updated>2016-08-31T12:24:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Node-js应用有哪几部分组成"><a href="#Node-js应用有哪几部分组成" class="headerlink" title="Node.js应用有哪几部分组成"></a>Node.js应用有哪几部分组成</h1><ul>
-<li>引入require模块：</li>
-<li>创建服务器：服务器可以监听客户端的请求</li>
-<li>接收请求与相应请求</li>
-</ul>
-<h2 id="创建node-js应用"><a href="#创建node-js应用" class="headerlink" title="创建node.js应用"></a>创建node.js应用</h2><ol>
-<li>我们使用require</li>
-</ol>
-<h3 id="NPM使用介绍"><a href="#NPM使用介绍" class="headerlink" title="NPM使用介绍"></a>NPM使用介绍</h3><p>NPM(Node Package Manager)是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题，常见的使用场景如下</p>
-<ul>
-<li>允许用户从NPM服务器下载别人编写的第三方包到本地使用</li>
-<li>允许用户从NPM服务器下载并安装别人编写好的命令行程序到本地使用</li>
-<li>允许用户将自己编写好的包或命令行程序上传到NPM服务器供别人使用</li>
-</ul>
-<h1 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h1><ul>
-<li>简单的说Node.js是运行在服务器端的JavaScript</li>
-<li>Node.js是一个事件驱动I/O服务器端JavaScript环境，基于Google的V8引擎，V8引擎执行JavaScript的速度非常快，性能非常快</li>
-</ul>
-<h2 id="使用版本"><a href="#使用版本" class="headerlink" title="使用版本"></a>使用版本</h2><p>我们可以使用一下命令来查看当前的Node版本</p>
-<pre><code>node -v 
-</code></pre><p>Note:不同版本可能有差异的</p>
-<h3 id="脚本模式"><a href="#脚本模式" class="headerlink" title="脚本模式"></a>脚本模式</h3><pre><code>console.log(&quot;Hello, World&quot;);
-</code></pre><h3 id="交互模式"><a href="#交互模式" class="headerlink" title="交互模式"></a>交互模式</h3><h1 id="什么是Web服务器"><a href="#什么是Web服务器" class="headerlink" title="什么是Web服务器"></a>什么是Web服务器</h1><p><code>Web服务器</code>一般指的是网站服务器，是指驻留在因特网上某种类型的计算机的程序，<code>Web服务器</code>的基本功能就是提供Web信息浏览功能服务。</p>
-<p><strong>Web架构</strong><br><!--![web_architecture](../images/web_architecture.jpg)--></p>
-<p><img src="../images/web_architecture.jpg" width="600px"></p>
-<a id="more"></a>
-<h3 id="使用Node创建Web服务"><a href="#使用Node创建Web服务" class="headerlink" title="使用Node创建Web服务"></a>使用Node创建Web服务</h3><p>Node.js提供了http模块，http模块主要用于搭建HTTP服务器和客户端，使用HTTP服务器或客户端功能必须调用HTTP模块。代码如下</p>
-<pre><code>var http = require(&apos;http&apos;);
-</code></pre><h3 id="使用Node创建Web客户端"><a href="#使用Node创建Web客户端" class="headerlink" title="使用Node创建Web客户端"></a>使用Node创建Web客户端</h3><p>Node.js创建Web客户端需要引入http模块，创建client.js文件，代码如下所示：    </p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Node-js应用有哪几部分组成&quot;&gt;&lt;a href=&quot;#Node-js应用有哪几部分组成&quot; class=&quot;headerlink&quot; title=&quot;Node.js应用有哪几部分组成&quot;&gt;&lt;/a&gt;Node.js应用有哪几部分组成&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;引入require模块：&lt;/li&gt;
-&lt;li&gt;创建服务器：服务器可以监听客户端的请求&lt;/li&gt;
-&lt;li&gt;接收请求与相应请求&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;创建node-js应用&quot;&gt;&lt;a href=&quot;#创建node-js应用&quot; class=&quot;headerlink&quot; title=&quot;创建node.js应用&quot;&gt;&lt;/a&gt;创建node.js应用&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;我们使用require&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;NPM使用介绍&quot;&gt;&lt;a href=&quot;#NPM使用介绍&quot; class=&quot;headerlink&quot; title=&quot;NPM使用介绍&quot;&gt;&lt;/a&gt;NPM使用介绍&lt;/h3&gt;&lt;p&gt;NPM(Node Package Manager)是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题，常见的使用场景如下&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;允许用户从NPM服务器下载别人编写的第三方包到本地使用&lt;/li&gt;
-&lt;li&gt;允许用户从NPM服务器下载并安装别人编写好的命令行程序到本地使用&lt;/li&gt;
-&lt;li&gt;允许用户将自己编写好的包或命令行程序上传到NPM服务器供别人使用&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;Node-js&quot;&gt;&lt;a href=&quot;#Node-js&quot; class=&quot;headerlink&quot; title=&quot;Node.js&quot;&gt;&lt;/a&gt;Node.js&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;简单的说Node.js是运行在服务器端的JavaScript&lt;/li&gt;
-&lt;li&gt;Node.js是一个事件驱动I/O服务器端JavaScript环境，基于Google的V8引擎，V8引擎执行JavaScript的速度非常快，性能非常快&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;使用版本&quot;&gt;&lt;a href=&quot;#使用版本&quot; class=&quot;headerlink&quot; title=&quot;使用版本&quot;&gt;&lt;/a&gt;使用版本&lt;/h2&gt;&lt;p&gt;我们可以使用一下命令来查看当前的Node版本&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;node -v 
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Note:不同版本可能有差异的&lt;/p&gt;
-&lt;h3 id=&quot;脚本模式&quot;&gt;&lt;a href=&quot;#脚本模式&quot; class=&quot;headerlink&quot; title=&quot;脚本模式&quot;&gt;&lt;/a&gt;脚本模式&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;console.log(&amp;quot;Hello, World&amp;quot;);
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;交互模式&quot;&gt;&lt;a href=&quot;#交互模式&quot; class=&quot;headerlink&quot; title=&quot;交互模式&quot;&gt;&lt;/a&gt;交互模式&lt;/h3&gt;&lt;h1 id=&quot;什么是Web服务器&quot;&gt;&lt;a href=&quot;#什么是Web服务器&quot; class=&quot;headerlink&quot; title=&quot;什么是Web服务器&quot;&gt;&lt;/a&gt;什么是Web服务器&lt;/h1&gt;&lt;p&gt;&lt;code&gt;Web服务器&lt;/code&gt;一般指的是网站服务器，是指驻留在因特网上某种类型的计算机的程序，&lt;code&gt;Web服务器&lt;/code&gt;的基本功能就是提供Web信息浏览功能服务。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Web架构&lt;/strong&gt;&lt;br&gt;&lt;!--![web_architecture](../images/web_architecture.jpg)--&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;../images/web_architecture.jpg&quot; width=600px &gt;&lt;/p&gt;
     
     </summary>
     

@@ -245,6 +245,134 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/15/iOS-20161101关于下拉刷新和上拉刷新/" itemprop="url">
+                  关于下拉刷新和上拉刷新
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-15T22:01:03+08:00" content="2016-06-15">
+              2016-06-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/15/iOS-20161101关于下拉刷新和上拉刷新/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/15/iOS-20161101关于下拉刷新和上拉刷新/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>移动端开发离不开向后台请求数据，用户往往会通过下拉或上拉来请求数据。而每个App对下拉和上拉处理数据的方式不同。</p>
+<p>关于下拉刷新，新浪微博是将请求下来的最新数据拼接到已有数据的前面，并且给出提示有多少条数据更新了，同样上拉刷新是将请求来的数据拼接到已有数据的后面。</p>
+<p>而大部分的App采取的方式跟微博不同：一般来说下拉都是请求最新数据，会把之前请求下来的数据给替换掉；而上拉刷新是请求更多数据，会将请求的数据拼接到之前的数据末端。</p>
+<p>我们公司也采取了方式二的处理方式，对此我做了一个简单的总结。</p>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>可能涉及到的参数：</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="comment">/** 请求第几页的数据 */</span></div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">NSInteger</span> pageNum;</div><div class="line"><span class="comment">/** 每个页面显示多少条数据，一般是固定值 */</span></div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">NSInteger</span> pageSize;</div></pre></td></tr></table></figure>
+<p>此处的pageNum用来表示用户请求的是第几页的数据，而pageSize则用来表示每页显示多少条数据；</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/06/15/iOS-20161101关于下拉刷新和上拉刷新/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/27/iOS-20161027使用AutoLayout布局自定义UITableViewCell/" itemprop="url">
                   使用AutoLayout布局自定义UITableViewCell
                 </a>
@@ -635,134 +763,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/23/iOS-20160923CornerStone使用小技巧/" itemprop="url">
-                  CornerStone使用小技巧
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-23T15:05:11+08:00" content="2016-04-23">
-              2016-04-23
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/23/iOS-20160923CornerStone使用小技巧/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/23/iOS-20160923CornerStone使用小技巧/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>在使用CornerStone工具的时候有一些常用的小技巧，当然这些小技巧可能很多人都知道，但是对于刚刚接触的小伙伴来说可能就不一样了。所以，记录了一下给自己也给大家做一个参考。</p>
-<h3 id="关于忽略文件的问题"><a href="#关于忽略文件的问题" class="headerlink" title="关于忽略文件的问题"></a>关于忽略文件的问题</h3><p>在项目初始化创建的时候可能会需要处理<code>.xcuserdatad</code>文件的问题，这个问题我也在网上搜索了一些答案，但是总感觉过程太过繁琐。</p>
-<p>前几天在跟朋友峰哥讨论“如何提交.a文件到SVN”的时候，在峰哥指导下，知道了通过如何配置CornerStone来解决这个<code>.a</code>文件的提交问题。同样的，我觉得对于<code>.xcuserdatad</code>文件也可以用同样的问题来解决。</p>
-<p>通过打开CornerStone的<strong>CornerStone</strong>》<strong>Preferences..</strong>》，然后点击<strong>Subversion</strong>选项卡，再选择<strong>General</strong>，可以发现有个<strong>Global Ignores</strong>。</p>
-<p><img src="../images/CornerStone.png" alt="CornerStone"></p>
-<p>如果你不想使用系统默认的忽略文件，那么就不要勾选<strong>User default global ignores</strong>。然后在这边你可以去掉或者添加你想要忽略的文件。</p>
-<h3 id="对于Xcode如何处理"><a href="#对于Xcode如何处理" class="headerlink" title="对于Xcode如何处理"></a>对于Xcode如何处理</h3><p>之前没有使用CornerStone的时候，一直使用的是Xcode自带的SVN版本管理，对于<code>.a</code>文件同样会要相同的问题，当时的解决思路是通过命令的方式在终端将<code>.a</code>文件提交到SVN。但是可不可以通过配置的方式解决这个问题，还有待进一步研究。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/23/iOS-20160923CornerStone使用小技巧/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -808,7 +808,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-count">23</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

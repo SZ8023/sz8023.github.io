@@ -245,7 +245,107 @@
             
               
                 
-                <a class="post-title-link" href="/2018/04/24/java基础知识/" itemprop="url">
+                <a class="post-title-link" href="/2018/04/24/undefined/" itemprop="url">
+                  java_反射
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-04-24T14:07:18+08:00" content="2018-04-24">
+              2018-04-24
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/04/24/undefined/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/04/24/undefined/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/04/24/java-基础知识/" itemprop="url">
                   java基础知识
                 </a>
               
@@ -289,8 +389,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2018/04/24/java基础知识/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/04/24/java基础知识/" itemprop="commentsCount"></span>
+                <a href="/2018/04/24/java-基础知识/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/04/24/java-基础知识/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -319,6 +419,104 @@
 <p>java中浮点数的比较要特别注意，因为浮点数存在精度的问题，所以一般我们都会这么做</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">float</span> a = <span class="number">3.14f</span>;</div><div class="line"><span class="keyword">if</span>(a &gt; <span class="number">3.1</span> || a &lt; <span class="number">3.2</span>) &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="视频03A-04-24"><a href="#视频03A-04-24" class="headerlink" title="视频03A(04.24)"></a>视频03A(04.24)</h3><blockquote>
+<p>面向对象的特向》封装</p>
+</blockquote>
+<ul>
+<li><p>== 和 equal的区别</p>
+</li>
+<li><p>finalize方法的调用时机</p>
+<p>  可以通过调用系统的<code>System.gc</code>告诉系统需要进行垃圾回收了</p>
+</li>
+<li><p><code>this.name = name</code> 中<code>this</code>的作用</p>
+</li>
+</ul>
+<h3 id="视频03B-04-24"><a href="#视频03B-04-24" class="headerlink" title="视频03B(04.24)"></a>视频03B(04.24)</h3><blockquote>
+<p>基本数据类型 &amp; 引用数据类型    </p>
+</blockquote>
+<ul>
+<li>基本数据类型作为参数传递和引用数据类型作为参数传递</li>
+<li>static修饰成员变量的时候，成员变量修饰符跟这个关系不大，依然表示的是这个变量是这个类的所有对象共同持有。</li>
+<li><a href="![https://blog.csdn.net/u012585964/article/details/52011138]">java的反射机制</a>，这个特性特别重要，</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</div><div class="line">	<span class="comment">// 静态成员变量，所有的对象共同持有的，不论创建多少个对象，在内存中值存在一份，</span></div><div class="line">	<span class="comment">// 可以通过对象直接访问,也可以通过Student.count的形式访问，建议通过Student.count的方式访问</span></div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">	</div><div class="line">	<span class="comment">// 所有的对象都有一个共同的country属性，可以通过</span></div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> String country = <span class="string">"Chinese"</span>;	</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span> </span>&#123;</div><div class="line">		Student.count++;</div><div class="line">		System.out.println(Student.count);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] arge)</span> </span>&#123;</div><div class="line">		<span class="keyword">new</span> Student();</div><div class="line">		<span class="keyword">new</span> Student();</div><div class="line">		<span class="keyword">new</span> Student();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><p><a href="http://www.importnew.com/13504.html" target="_blank" rel="external">java回收机制</a></p>
+<p>  <a href="http://www.importnew.com/13493.html" target="_blank" rel="external">Java垃圾回收是如何工作的</a><br>  java的回收机制分为4个系列，</p>
+</li>
+<li><p>java内部类，javadoc的文档使用，java单列的书写模式</p>
+</li>
+</ul>
+<h3 id="视频04A-04-26"><a href="#视频04A-04-26" class="headerlink" title="视频04A(04.26)"></a>视频04A(04.26)</h3><blockquote>
+<p>高级特性》类的继承；<br>java中通过继承可以简化类的书写，java中只允许单继承，</p>
+</blockquote>
+<ul>
+<li>访问修饰符</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>作用域</th>
+<th>当前类</th>
+<th>同包</th>
+<th>子类</th>
+<th>其他包</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+</tr>
+<tr>
+<td>default</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>private</td>
+<td>√</td>
+<td>x</td>
+<td>×</td>
+<td>×</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://blog.csdn.net/qq_29513537/article/details/69677011" target="_blank" rel="external">访问修饰符详解</a></p>
+<p>如果没有任何修饰符，默认是default，有时候我们写的子类可以调用父类的default修饰的成员变量和方法，这是因为这个子类和父类在同一个包中，所以可以访问。</p>
+<ul>
+<li><p><code>final</code>修饰符的使用</p>
+<p>  <code>final</code>修饰的类不可以被继承；<code>final</code>修饰的方法可以被继承但是不可以被重写；</p>
+</li>
+<li><p>抽象类和抽象方法</p>
+<p>  含有抽象方法的类必须声明为抽象类；而抽象类里面不一定有抽象方法</p>
+</li>
+<li><p>接口<code>interface</code></p>
+</li>
+<li><p>匿名内部类</p>
+</li>
+</ul>
+<h3 id="视频04B-04-26"><a href="#视频04B-04-26" class="headerlink" title="视频04B(04.26)"></a>视频04B(04.26)</h3><blockquote>
+<p><code>java</code>中的异常捕获</p>
+</blockquote>
+<ul>
+<li><p>try…catch</p>
+<p>  如果某个人写了一个接口，另一个人需要调用这个接口，那么他怎么知道这个接口会抛出异常，这个时候就需要在定义这个接口的时候在函数的后面加上<code>throws Exception</code>，这样调用者就知道这个函数如果调用可能会发生异常，所以在调用这个函数的时候就需要加上<code>try...catch...</code></p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">package</span> com.ycit.one;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">divide</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span> <span class="keyword">throws</span> Exception</span>&#123;</div><div class="line">		<span class="keyword">int</span> result = x/y;</div><div class="line">		<span class="keyword">return</span> result;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestException</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			<span class="keyword">new</span> Test().divide(<span class="number">20</span>, <span class="number">0</span>);</div><div class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">			<span class="comment">// TODO Auto-generated catch block</span></div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">		System.out.println(<span class="string">"pragram is running here!"</span>);</div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -605,134 +803,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/15/iOS-20161101关于下拉刷新和上拉刷新/" itemprop="url">
-                  关于下拉刷新和上拉刷新
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-15T22:01:03+08:00" content="2016-06-15">
-              2016-06-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/06/15/iOS-20161101关于下拉刷新和上拉刷新/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/15/iOS-20161101关于下拉刷新和上拉刷新/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>移动端开发离不开向后台请求数据，用户往往会通过下拉或上拉来请求数据。而每个App对下拉和上拉处理数据的方式不同。</p>
-<p>关于下拉刷新，新浪微博是将请求下来的最新数据拼接到已有数据的前面，并且给出提示有多少条数据更新了，同样上拉刷新是将请求来的数据拼接到已有数据的后面。</p>
-<p>而大部分的App采取的方式跟微博不同：一般来说下拉都是请求最新数据，会把之前请求下来的数据给替换掉；而上拉刷新是请求更多数据，会将请求的数据拼接到之前的数据末端。</p>
-<p>我们公司也采取了方式二的处理方式，对此我做了一个简单的总结。</p>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>可能涉及到的参数：</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="comment">/** 请求第几页的数据 */</span></div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">NSInteger</span> pageNum;</div><div class="line"><span class="comment">/** 每个页面显示多少条数据，一般是固定值 */</span></div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">NSInteger</span> pageSize;</div></pre></td></tr></table></figure>
-<p>此处的pageNum用来表示用户请求的是第几页的数据，而pageSize则用来表示每页显示多少条数据；</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/15/iOS-20161101关于下拉刷新和上拉刷新/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -778,7 +848,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-count">23</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
